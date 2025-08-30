@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Languages } from "lucide-react";
+import { Languages, Stethoscope } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
 import { trackPageView, trackLanguageSelect } from "@/lib/analytics";
 import { useEffect } from "react";
@@ -125,7 +125,7 @@ const Index = () => {
                 className="flex items-center justify-center gap-2 mb-6"
                 variants={itemVariants}
               >
-                <Languages className="h-6 w-6 text-primary" />
+                <Stethoscope className="h-6 w-6 text-primary" />
                 <h2 className="text-2xl font-semibold text-foreground">
                   اختر لغتك | Choose Your Language | زمانت هەڵبژێرە
                 </h2>
