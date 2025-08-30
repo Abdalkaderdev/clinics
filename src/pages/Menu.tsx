@@ -199,10 +199,10 @@ export default function Menu() {
 
   // Available filter options for clinics
   const filterOptions = useMemo(() => [
-    { id: 'free', label: '🆓 Free Services', count: 0 },
-    { id: 'discount', label: '💰 Discount', count: 0 },
-    { id: 'favorites', label: '❤️ Favorites', count: favorites.length },
-  ], [favorites]);
+    { id: 'free', label: isRTL ? '🆓 الخدمات المجانية' : '🆓 Free Services', count: 0 },
+    { id: 'discount', label: isRTL ? '💰 الخصم' : '💰 Discount', count: 0 },
+    { id: 'favorites', label: isRTL ? '❤️ المفضلة' : '❤️ Favorites', count: favorites.length },
+  ], [favorites, isRTL]);
 
   if (loading) {
     return (

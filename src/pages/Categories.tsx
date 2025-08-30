@@ -63,7 +63,11 @@ const Categories = () => {
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Beauty Land Card Partners</h1>
           <p className="text-muted-foreground mb-2">12 Premium Clinics in Erbil</p>
-          <p className="text-sm text-muted-foreground">Exclusive discounts & free services with your Beauty Land Card</p>
+          <p className="text-sm text-muted-foreground">
+          {lang === 'ar' ? 'خصومات حصرية وخدمات مجانية مع بطاقة بيوتي لاند' : 
+           lang === 'ku' ? 'خەڵات و خزمەتگوزاری بەردەست لەگەڵ کارتی بیوتی لاند' : 
+           'Exclusive discounts & free services with your Beauty Land Card'}
+        </p>
         </div>
         
         {/* Search Input */}
@@ -101,9 +105,9 @@ const Categories = () => {
                           📍 {clinic.location}
                         </p>
                       </div>
-                      <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto shadow-sm">
-                        {totalServices} services • Discounts Available
-                      </div>
+                                  <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto shadow-sm">
+              {totalServices} {lang === 'ar' ? 'خدمة' : lang === 'ku' ? 'خزمەتگوزاری' : 'services'} • {lang === 'ar' ? 'الخصومات متاحة' : lang === 'ku' ? 'خەڵات بەردەستە' : 'Discounts Available'}
+            </div>
                     </div>
                   </Card>
                 </motion.button>
