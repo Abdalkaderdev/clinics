@@ -210,7 +210,7 @@ export default function Menu() {
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full"
+          className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full"
         />
       </div>
     );
@@ -299,7 +299,7 @@ export default function Menu() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? 'bg-pink-600 text-white border-pink-600 shadow-md' : 'bg-white text-pink-700 border-pink-200 hover:bg-pink-50 hover:border-pink-300'}`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? 'bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300'}`}
                   aria-pressed={selectedCategoryId === cat.id}
                 >
                   {cat.name}
@@ -359,8 +359,8 @@ export default function Menu() {
                   }}
                   className={`px-3 py-1 rounded-full text-sm border-2 transition-colors shadow-sm ${
                     selectedFilters.includes(filter.id)
-                      ? 'bg-pink-600 text-white border-pink-600'
-                      : 'bg-white text-pink-700 border-pink-200 hover:bg-pink-50 hover:border-pink-300'
+                      ? 'bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500'
+                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300'
                   }`}
                 >
                   {filter.label}
@@ -397,9 +397,8 @@ export default function Menu() {
         {/* Back to main menu (category cards) */}
         <div className="mt-10 flex justify-center">
           <Button
-            variant="outline"
             onClick={() => navigate(`/categories/${lang}`)}
-            className="px-6"
+            className="px-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white border-0 shadow-md"
           >
             {isRTL ? 'الرجوع إلى العيادات' : 'Back to clinics'}
           </Button>
