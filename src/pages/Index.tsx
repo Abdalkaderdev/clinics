@@ -137,37 +137,7 @@ const Index = () => {
           </Card>
         </motion.div>
 
-        {/* Medical Clinics Info */}
-        <motion.div 
-          className="grid md:grid-cols-2 gap-4 mt-8"
-          variants={itemVariants}
-        >
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Card className="bg-card backdrop-blur-sm border border-border hover:border-primary transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl mb-3">📍</div>
-                <h3 className="font-semibold text-foreground mb-2">Location</h3>
-                <p className="text-[hsl(39_92%_53%)]">Queen Towers, Erbil</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-          
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Card className="bg-card backdrop-blur-sm border border-border hover:border-primary transition-all duration-300">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl mb-3">📞</div>
-                <h3 className="font-semibold text-foreground mb-2">Contact</h3>
-                <p className="text-[hsl(39_92%_53%)]">+964 750 000 0000</p>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </motion.div>
+
       </motion.div>
     </div>
   );
