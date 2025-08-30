@@ -13,44 +13,40 @@ import WorkingHours from "@/components/WorkingHours";
 // Using a medical-themed placeholder logo - replace with actual clinic logo
 const logo = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop";
 
-interface MenuItem {
+interface ClinicItem {
   id: string;
   name: string;
   description: string;
-  price: number;
-  originalPrice?: number;
-  location?: string;
-  image?: string;
-  spicy?: boolean;
-  vegetarian?: boolean;
-  popular?: boolean;
-  available?: boolean;
-  stock?: number;
-  isSpecial?: boolean;
-  specialPrice?: number;
-  vegan?: boolean;
-  glutenFree?: boolean;
-  allergens?: string[];
+  beforePrice: string;
+  afterPrice: string;
 }
 
-interface MenuCategory {
+interface ClinicCategory {
   id: string;
   name: string;
-  items: MenuItem[];
+  items: ClinicItem[];
 }
 
-interface MenuData {
-  shopName: string;
-  currency: string;
-  categories: MenuCategory[];
+interface Clinic {
+  id: number;
+  name: string;
+  location: string;
+  contact: string;
+  categories: ClinicCategory[];
+}
+
+interface ClinicsData {
+  clinics: Clinic[];
 }
 
 export default function Menu() {
   const { lang } = useParams();
-  const urlCategory = new URLSearchParams(window.location.search).get('category') || undefined;
+  const urlClinic = new URLSearchParams(window.location.search).get('clinic');
+  const urlCategory = new URLSearchParams(window.location.search).get('category');
   const navigate = useNavigate();
   const { toast } = useToast();
-  const [menuData, setMenuData] = useState<MenuData | null>(null);
+  const [clinicsData, setClinicsData] = useState<ClinicsData | null>(null);
+  const [selectedClinic, setSelectedClinic] = useState<Clinic | null>(null);
   const [loading, setLoading] = useState(true);
   const [isRTL, setIsRTL] = useState(false);
   
@@ -61,7 +57,7 @@ export default function Menu() {
   const [favorites, setFavorites] = useState<string[]>([]);
   
   const { activeCategory } = useScrollCategory({
-    categories: menuData?.categories.map(cat => cat.id) || []
+    categories: selectedClinic?.categories.map(cat => cat.id) || []
   });
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>(urlCategory || "all");
 
@@ -97,7 +93,7 @@ export default function Menu() {
     }, 100);
   };
 
-  // Load menu data based on lang param
+  // Load clinics data based on lang param
   useEffect(() => {
     if (!currentLanguage) return;
     localStorage.setItem("selectedLanguage", currentLanguage);
@@ -105,17 +101,25 @@ export default function Menu() {
     document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = currentLanguage;
     setLoading(true);
-    const loadMenuData = async () => {
+    const loadClinicsData = async () => {
       try {
-        const response = await fetch(`/menu_${currentLanguage}.json`);
+        const response = await fetch(`/clinics_${currentLanguage}.json`);
         if (!response.ok) {
-          throw new Error('Failed to load menu');
+          throw new Error('Failed to load clinics');
         }
         const data = await response.json();
-        setMenuData(data);
+        setClinicsData(data);
+        
+        // Set selected clinic if specified in URL
+        if (urlClinic) {
+          const clinic = data.clinics.find((c: Clinic) => c.id.toString() === urlClinic);
+          setSelectedClinic(clinic || data.clinics[0]);
+        } else {
+          setSelectedClinic(data.clinics[0]);
+        }
       } catch (error) {
         toast({
-          title: "Error loading menu",
+          title: "Error loading clinics",
           description: "Please try refreshing the page",
           variant: "destructive"
         });
@@ -123,8 +127,8 @@ export default function Menu() {
         setLoading(false);
       }
     };
-    loadMenuData();
-  }, [currentLanguage, toast]);
+    loadClinicsData();
+  }, [currentLanguage, urlClinic, toast]);
 
   // Toggle favorite item
   const toggleFavorite = (itemId: string) => {
@@ -137,20 +141,27 @@ export default function Menu() {
 
   // Build list of items filtered by selected category
   const allItems = useMemo(() => {
-    if (!menuData) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
-    return menuData.categories.flatMap(cat =>
-      cat.items.map(item => ({ categoryId: cat.id, categoryName: cat.name, item }))
+    if (!selectedClinic) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+    return selectedClinic.categories.flatMap(cat =>
+      cat.items.map(item => ({
+        categoryId: cat.id,
+        categoryName: cat.name,
+        item: {
+          ...item,
+          price: parseFloat(item.afterPrice.replace('$', '')),
+          originalPrice: parseFloat(item.beforePrice.replace('$', '')),
+          location: selectedClinic.location,
+          contact: selectedClinic.contact
+        }
+      }))
     );
-  }, [menuData]);
+  }, [selectedClinic]);
 
   const visibleItems = useMemo(() => {
-    if (!menuData) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+    if (!selectedClinic) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
     let base = selectedCategoryId === 'all'
       ? allItems
       : allItems.filter(entry => entry.categoryId === selectedCategoryId);
-    
-    // Filter by availability
-    base = base.filter(({ item }) => item.available !== false && (item.stock === undefined || item.stock > 0));
     
     // Filter by search query
     if (searchQuery.trim()) {
@@ -167,10 +178,6 @@ export default function Menu() {
       base = base.filter(({ item }) => {
         return selectedFilters.every(filter => {
           switch (filter) {
-            case 'popular':
-              return item.popular === true;
-            case 'special':
-              return item.isSpecial === true;
             case 'discount':
               return item.originalPrice && item.originalPrice > item.price;
             case 'favorites':
@@ -183,12 +190,10 @@ export default function Menu() {
     }
     
     return base;
-  }, [allItems, menuData, selectedCategoryId, searchQuery, selectedFilters, favorites]);
+  }, [allItems, selectedClinic, selectedCategoryId, searchQuery, selectedFilters, favorites]);
 
   // Available filter options for clinics
   const filterOptions = useMemo(() => [
-    { id: 'popular', label: '⭐ Popular', count: 0 },
-    { id: 'special', label: '🏷️ Special Offers', count: 0 },
     { id: 'discount', label: '💰 Discount', count: 0 },
     { id: 'favorites', label: '❤️ Favorites', count: favorites.length },
   ], [favorites]);
@@ -205,10 +210,10 @@ export default function Menu() {
     );
   }
 
-  if (!menuData) {
+  if (!clinicsData || !selectedClinic) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-destructive">Failed to load menu</p>
+        <p className="text-destructive">Failed to load clinics</p>
       </div>
     );
   }
@@ -256,23 +261,45 @@ export default function Menu() {
         </div>
       </header>
 
-      {/* Category navigation bar */}
+      {/* Clinic and Category navigation */}
       <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 border-b border-border">
-        <div className="container mx-auto px-2 py-3 overflow-x-auto no-scrollbar">
-          <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
-            {[
-              { id: 'all', name: isRTL ? 'الكل' : 'All' },
-              ...(menuData?.categories || []).map(c => ({ id: c.id, name: c.name }))
-            ].map(cat => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategoryId(cat.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${selectedCategoryId === cat.id ? 'bg-[hsl(39_92%_53%)] text-[hsl(0_0%_15%)] border-[hsl(39_92%_53%)]' : 'bg-card text-foreground border-border hover:bg-muted'}`}
-                aria-pressed={selectedCategoryId === cat.id}
+        <div className="container mx-auto px-2 py-3">
+          {/* Clinic selector */}
+          <div className="mb-3">
+            <h2 className="text-lg font-semibold mb-2">{selectedClinic.name}</h2>
+            <p className="text-sm text-muted-foreground mb-2">��� {selectedClinic.location}</p>
+            {clinicsData.clinics.length > 1 && (
+              <select
+                value={selectedClinic.id}
+                onChange={(e) => {
+                  const clinic = clinicsData.clinics.find(c => c.id.toString() === e.target.value);
+                  if (clinic) setSelectedClinic(clinic);
+                }}
+                className="px-3 py-2 rounded-lg border border-border bg-card text-foreground"
               >
-                {cat.name}
-              </button>
-            ))}
+                {clinicsData.clinics.map(clinic => (
+                  <option key={clinic.id} value={clinic.id}>{clinic.name}</option>
+                ))}
+              </select>
+            )}
+          </div>
+          {/* Category navigation */}
+          <div className="overflow-x-auto no-scrollbar">
+            <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
+              {[
+                { id: 'all', name: isRTL ? 'الكل' : 'All' },
+                ...selectedClinic.categories.map(c => ({ id: c.id, name: c.name }))
+              ].map(cat => (
+                <button
+                  key={cat.id}
+                  onClick={() => setSelectedCategoryId(cat.id)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${selectedCategoryId === cat.id ? 'bg-[hsl(39_92%_53%)] text-[hsl(0_0%_15%)] border-[hsl(39_92%_53%)]' : 'bg-card text-foreground border-border hover:bg-muted'}`}
+                  aria-pressed={selectedCategoryId === cat.id}
+                >
+                  {cat.name}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -284,7 +311,7 @@ export default function Menu() {
           <div className="mb-3">
             <input
               type="text"
-              placeholder={isRTL ? "البحث عن العيادات..." : "Search clinics..."}
+              placeholder={isRTL ? "البحث عن الخدمات..." : "Search services..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
@@ -357,7 +384,7 @@ export default function Menu() {
               <MenuItemCard
                 key={item.id}
                 item={item}
-                currency={menuData.currency}
+                currency="$"
                 isRTL={isRTL}
                 isFavorite={favorites.includes(item.id)}
                 onFavoriteToggle={toggleFavorite}
@@ -366,7 +393,7 @@ export default function Menu() {
           </div>
         ) : (
           <motion.div className="text-center py-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-lg text-foreground">{isRTL ? "القائمة فارغة" : "Menu is empty."}</p>
+            <p className="text-lg text-foreground">{isRTL ? "لا توجد خدمات" : "No services found."}</p>
           </motion.div>
         )}
 
@@ -377,7 +404,7 @@ export default function Menu() {
             onClick={() => navigate(`/categories/${lang}`)}
             className="px-6"
           >
-            {isRTL ? 'الرجوع إلى القائمة الرئيسية' : 'Back to main menu'}
+            {isRTL ? 'الرجوع إلى العيادات' : 'Back to clinics'}
           </Button>
         </div>
       </main>
