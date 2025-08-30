@@ -51,8 +51,8 @@ All colors MUST be HSL.
     --clean-white: 0 0% 98%;
 
     /* Shadows */
-    --shadow-warm: 0 10px 30px -5px hsl(330 81% 60% / 0.25);
-    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.15);
+    --shadow-warm: 0 10px 30px -5px hsl(330, 81%, 60%, 0.25);
+    --shadow-elegant: 0 20px 40px -10px hsl(0, 0%, 0%, 0.15);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -102,8 +102,8 @@ All colors MUST be HSL.
     --input: 0 0% 19%;
     --ring: 330 81% 60%;
 
-    --warm-gradient: linear-gradient(135deg, hsl(330 81% 60%), hsl(217 91% 60%));
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 9% / 0.95), hsl(0 0% 14% / 0.90));
+    --warm-gradient: linear-gradient(135deg, hsl(330, 81%, 60%), hsl(217, 91%, 60%));
+    --hero-gradient: linear-gradient(135deg, hsl(0, 0%, 9%, 0.95), hsl(0, 0%, 14%, 0.90));
     --beauty-pink: 330 81% 60%;
     --land-blue: 217 91% 60%;
     --accent-purple: 270 91% 65%;
@@ -137,15 +137,15 @@ All colors MUST be HSL.
   }
   
   .beauty-text {
-    color: hsl(330 81% 60%); /* Beauty Pink */
+    color: hsl(330, 81%, 60%); /* Beauty Pink */
   }
   
   .land-text {
-    color: hsl(217 91% 60%); /* Land Blue */
+    color: hsl(217, 91%, 60%); /* Land Blue */
   }
   
   .beauty-bg {
-    background-color: hsl(0 0% 98%); /* Clean White background */
+    background-color: hsl(0, 0%, 98%); /* Clean White background */
   }
   
   .beauty-card {
@@ -153,7 +153,7 @@ All colors MUST be HSL.
   }
   
   .gradient-text {
-    background: linear-gradient(135deg, hsl(330 81% 60%), hsl(217 91% 60%));
+    background: linear-gradient(135deg, hsl(330, 81%, 60%), hsl(217, 91%, 60%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
