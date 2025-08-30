@@ -4,47 +4,48 @@
 
 @layer base {
   :root {
-    --primary: 330 81% 60%;
+    /* Logo-Harmonious Color Scheme */
+    --primary: 330 81% 60%; /* Pink: #EC4899 - matches "beauty" in logo */
     --primary-foreground: 0 0% 100%;
-    --secondary: 217 91% 60%;
+    --secondary: 217 91% 60%; /* Blue: #3B82F6 - matches rest of logo */
     --secondary-foreground: 0 0% 100%;
-    --background: 0 0% 98%;
-    --foreground: 0 0% 15%;
+    --background: 248 250 252; /* Light gray: #F8FAFC - professional background */
+    --foreground: 30 41% 55%; /* Dark slate: #1E293B - readable text */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 15%;
+    --card-foreground: 30 41% 55%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 15%;
-    --muted: 0 0% 92%;
-    --muted-foreground: 0 0% 35%;
+    --popover-foreground: 30 41% 55%;
+    --muted: 248 250 252;
+    --muted-foreground: 100 116 139;
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 85%;
-    --input: 0 0% 85%;
+    --border: 226 232 240;
+    --input: 226 232 240;
     --ring: 330 81% 60%;
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 9%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 14%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 14%;
-    --popover-foreground: 0 0% 95%;
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 55;
+    --card-foreground: 248 250 252;
+    --popover: 30 41 55;
+    --popover-foreground: 248 250 252;
     --primary: 330 81% 60%;
     --primary-foreground: 0 0% 100%;
     --secondary: 217 91% 60%;
     --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 19%;
-    --muted-foreground: 0 0% 75%;
+    --muted: 30 41 55;
+    --muted-foreground: 148 163 184;
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 19%;
-    --input: 0 0% 19%;
+    --border: 51 65 85;
+    --input: 51 65 85;
     --ring: 330 81% 60%;
   }
 
@@ -91,10 +92,10 @@
     color: #3b82f6;
   }
   .beauty-bg {
-    background-color: #fafafa;
+    background-color: #f8fafc;
   }
   .beauty-card {
-    @apply border-gray-200 shadow-sm;
+    @apply border-slate-200 shadow-sm bg-white;
   }
   .gradient-text {
     background: linear-gradient(135deg, #ec4899, #3b82f6);

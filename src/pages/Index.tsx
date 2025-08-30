@@ -111,15 +111,15 @@ const Index = () => {
             className="flex flex-wrap justify-center gap-2 mb-6 text-sm sm:text-base"
             variants={itemVariants}
           >
-            <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full font-medium">Beauty Treatments</span>
-            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Medical Services</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">Free Items Available</span>
+            <span className="bg-pink-50 text-pink-700 px-3 py-1 rounded-full font-medium border border-pink-200">Beauty Treatments</span>
+            <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium border border-blue-200">Medical Services</span>
+            <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium border border-emerald-200">Free Items Available</span>
           </motion.div>
         </motion.div>
 
         {/* Language Selection */}
         <motion.div variants={itemVariants}>
-          <Card className="bg-card backdrop-blur-sm shadow-elegant border border-border">
+          <Card className="bg-white backdrop-blur-sm shadow-lg border border-slate-200">
             <CardContent className="p-4 sm:p-8">
               <motion.div 
                 className="flex items-center justify-center gap-2 mb-6"
@@ -144,7 +144,7 @@ const Index = () => {
                       variant="default"
                       size="lg"
                       onClick={() => handleLanguageSelect(lang.code)}
-                      className={`w-full text-base sm:text-lg py-4 sm:py-6 ${lang.code === 'ar' ? 'font-arabic' : ''}`}
+                      className={`w-full text-base sm:text-lg py-4 sm:py-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 ${lang.code === 'ar' ? 'font-arabic' : ''}`}
                     >
                       <span className="font-semibold">{lang.nativeName}</span>
                     </Button>
