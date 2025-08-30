@@ -437,6 +437,7 @@ export default function Menu() {
                 isRTL={isRTL}
                 isFavorite={favorites.includes(item.id)}
                 onFavoriteToggle={toggleFavorite}
+                language={lang}
               />
             ))}
           </div>

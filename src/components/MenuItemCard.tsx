@@ -35,6 +35,7 @@ interface MenuItemCardProps {
   isRTL: boolean;
   isFavorite?: boolean;
   onFavoriteToggle?: (id: string) => void;
+  language?: string; // Add language prop
 }
 
 const itemVariants = {
@@ -59,10 +60,47 @@ const formatPrice = (price: number, currency: string) => {
   return `${currency}${(price / 1000).toFixed(2)}`;
 };
 
-const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle }) => {
+const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle, language = 'en' }) => {
   // Check if this is a clinic item (has location and originalPrice)
   const isClinic = item.location && item.originalPrice;
   const discountPercentage = isClinic && item.originalPrice ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
+
+  // Translation functions
+  const t = (key: string) => {
+    const translations = {
+      before: {
+        en: 'Before',
+        ar: 'قبل',
+        ku: 'پێش'
+      },
+      after: {
+        en: 'After',
+        ar: 'بعد',
+        ku: 'دوای'
+      },
+      free: {
+        en: 'FREE',
+        ar: 'مجاني',
+        ku: 'بێ بەرامبەر'
+      },
+      save: {
+        en: 'Save',
+        ar: 'وفر',
+        ku: 'پاشەکەوت'
+      },
+      off: {
+        en: 'OFF',
+        ar: 'خصم',
+        ku: 'خەڵات'
+      },
+      freeWithCard: {
+        en: '100% FREE with Beauty Land Card!',
+        ar: '100% مجاني مع بطاقة بيوتي لاند!',
+        ku: '100% بێ بەرامبەر لەگەڵ کارتی بیوتی لاند!'
+      }
+    };
+    return translations[key as keyof typeof translations]?.[language as keyof typeof translations.before] || translations[key as keyof typeof translations]?.en || key;
+  };
 
   return (
     <motion.div
@@ -78,7 +116,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             {item.isFree ? (
               <div className="absolute top-3 right-3">
                 <Badge className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-sm px-3 py-1 shadow-md">
-                  💎 FREE
+                  💎 {t('free')}
                 </Badge>
               </div>
             ) : isClinic && discountPercentage > 0 && (
@@ -113,42 +151,42 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                     <div className="flex flex-col items-center gap-2">
                       <div className="flex items-center gap-4">
                         <div className="flex flex-col items-center">
-                          <span className="text-xs text-red-500 mb-1 font-semibold">Before</span>
+                          <span className="text-xs text-red-500 mb-1 font-semibold">{t('before')}</span>
                           <span className="text-lg text-red-500 line-through font-bold">
                             {item.beforePrice || formatPrice(item.originalPrice || item.price, currency)}
                           </span>
                         </div>
                         <div className="text-2xl font-bold text-pink-600">→</div>
                         <div className="flex flex-col items-center">
-                          <span className="text-xs text-green-600 mb-1 font-semibold">After</span>
+                          <span className="text-xs text-green-600 mb-1 font-semibold">{t('after')}</span>
                           <span className="text-2xl font-bold text-green-600">
-                            FREE
+                            {t('free')}
                           </span>
                         </div>
                       </div>
                       <div className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-green-300">
-                        💎 100% FREE with Beauty Land Card!
+                        💎 {t('freeWithCard')}
                       </div>
                     </div>
                   ) : isClinic && item.originalPrice ? (
                     <div className="flex flex-col items-center gap-2">
                       <div className="flex items-center gap-4">
                         <div className="flex flex-col items-center">
-                          <span className="text-xs text-red-500 mb-1 font-semibold">Before</span>
+                          <span className="text-xs text-red-500 mb-1 font-semibold">{t('before')}</span>
                           <span className="text-lg text-red-500 line-through font-bold">
                             {item.beforePrice || formatPrice(item.originalPrice, currency)}
                           </span>
                         </div>
                         <div className="text-2xl font-bold text-pink-600">→</div>
                         <div className="flex flex-col items-center">
-                          <span className="text-xs text-green-600 mb-1 font-semibold">After</span>
+                          <span className="text-xs text-green-600 mb-1 font-semibold">{t('after')}</span>
                           <span className="text-2xl font-bold text-green-600">
                             {item.afterPrice || formatPrice(item.price, currency)}
                           </span>
                         </div>
                       </div>
                       <div className="bg-gradient-to-r from-pink-100 to-blue-100 text-pink-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-pink-300">
-                        💰 Save {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% OFF)
+                        💰 {t('save')} {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% {t('off')})
                       </div>
                     </div>
                   ) : (
