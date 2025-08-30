@@ -64,18 +64,18 @@ const Categories = () => {
         <p className="text-muted-foreground mb-6">Choose a clinic to browse services.</p>
         
         {/* Search Input */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <input
             type="text"
             placeholder={lang === 'ar' ? "البحث عن العيادات أو الخدمات..." : lang === 'ku' ? "گەڕان بۆ کلینیک یان خزمەتگوزاری..." : "Search clinics or services..."}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full max-w-md mx-auto px-4 py-3 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-center"
+            className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-center"
           />
         </div>
 
         {filteredClinics.length > 0 ? (
-          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {filteredClinics.map((clinic) => {
               const totalServices = clinic.categories.reduce((sum, cat) => sum + cat.items.length, 0);
               return (
@@ -84,19 +84,21 @@ const Categories = () => {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => navigate(`/menu/${lang}?clinic=${clinic.id}`)}
-                  className="text-left"
+                  className="text-left w-full"
                   aria-label={`Open ${clinic.name}`}
                 >
-                  <Card className="relative border border-border overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-primary/10 to-primary/5">
-                    <div className="p-6 text-center">
-                      <div className="text-4xl mb-4">🏥</div>
-                      <h2 className="text-foreground text-lg sm:text-xl md:text-2xl font-extrabold mb-2">
-                        {clinic.name}
-                      </h2>
-                      <p className="text-muted-foreground text-sm mb-1">
-                        📍 {clinic.location}
-                      </p>
-                      <p className="text-primary text-xs sm:text-sm font-semibold">
+                  <Card className="relative border border-border overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-primary/10 to-primary/5 h-full">
+                    <div className="p-4 sm:p-5 md:p-6 text-center flex flex-col justify-between min-h-[180px] sm:min-h-[200px]">
+                      <div className="flex-1">
+                        <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🏥</div>
+                        <h2 className="text-foreground text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold mb-2 leading-tight break-words hyphens-auto">
+                          {clinic.name}
+                        </h2>
+                        <p className="text-muted-foreground text-xs sm:text-sm mb-2 leading-relaxed break-words">
+                          📍 {clinic.location}
+                        </p>
+                      </div>
+                      <p className="text-primary text-xs sm:text-sm font-semibold mt-auto">
                         {totalServices} services available
                       </p>
                     </div>
