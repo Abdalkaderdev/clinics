@@ -52,7 +52,7 @@ const Categories = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+        <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin" />
       </div>
     );
   }
@@ -73,7 +73,7 @@ const Categories = () => {
             placeholder={lang === 'ar' ? "البحث عن العيادات أو الخدمات..." : lang === 'ku' ? "گەڕان بۆ کلینیک یان خزمەتگوزاری..." : "Search clinics or services..."}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary text-center"
+            className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-center shadow-sm"
           />
         </div>
 
@@ -90,18 +90,18 @@ const Categories = () => {
                   className="text-left w-full"
                   aria-label={`Open ${clinic.name}`}
                 >
-                  <Card className="relative border-2 border-pink-100 hover:border-pink-300 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-pink-50 to-blue-50 h-full group">
+                  <Card className="relative border-2 border-slate-200 hover:border-pink-300 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
                     <div className="p-6 text-center flex flex-col justify-between min-h-[200px] sm:min-h-[220px]">
                       <div className="flex-1">
-                        <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">💎</div>
-                        <h2 className="text-pink-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
+                        <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🏥</div>
+                        <h2 className="text-slate-800 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}
                         </h2>
-                        <p className="text-blue-700 text-xs sm:text-sm mb-3 leading-relaxed break-words">
+                        <p className="text-slate-600 text-xs sm:text-sm mb-3 leading-relaxed break-words">
                           📍 {clinic.location}
                         </p>
                       </div>
-                      <div className="bg-gradient-to-r from-pink-100 to-blue-100 text-pink-800 px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto">
+                      <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto shadow-sm">
                         {totalServices} services • Discounts Available
                       </div>
                     </div>
