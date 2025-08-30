@@ -65,7 +65,9 @@ const Index = () => {
 
   return (
     <div 
+      id="main-content"
       className="min-h-screen relative flex items-center justify-center bg-background"
+      role="main"
     >
       {/* Content */}
       <motion.div 
@@ -95,7 +97,7 @@ const Index = () => {
             className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Exclusive discounts & free services at 12 partner clinics in Erbil
+            Discounts & freebies at 12 partner clinics
           </motion.p>
           <motion.div 
             className="flex flex-wrap justify-center gap-2 mb-6 text-sm sm:text-base"

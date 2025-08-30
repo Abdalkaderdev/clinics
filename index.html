@@ -9,21 +9,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/images/beauty قبل نهائي.png" />
     <link rel="shortcut icon" href="/images/beauty قبل نهائي.png" />
-    <title>Beauty Land Card - Discounts & Free Services at 12 Partner Clinics</title>
-    <meta name="description" content="Beauty Land Card offers exclusive discounts and free services across 12 partner medical and beauty clinics in Erbil. Get premium treatments at unbeatable prices." />
+    <title>Beauty Land Card — Discounts & freebies at 12 partner clinics</title>
+    <meta name="description" content="Beauty Land Card offers discounts and free items across 12 partner clinics. Get exclusive deals on beauty treatments and medical services." />
     <meta name="author" content="Beauty Land Card" />
 
-    <meta property="og:title" content="Beauty Land Card - Discounts & Free Services at 12 Partner Clinics" />
-    <meta property="og:description" content="Beauty Land Card offers exclusive discounts and free services across 12 partner medical and beauty clinics in Erbil. Get premium treatments at unbeatable prices." />
+    <meta property="og:title" content="Beauty Land Card — Discounts & freebies at 12 partner clinics" />
+    <meta property="og:description" content="Beauty Land Card offers discounts and free items across 12 partner clinics. Get exclusive deals on beauty treatments and medical services." />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://beauty-land-card.vercel.app" />
     <meta property="og:image" content="https://beauty-land-card.vercel.app/images/beauty قبل نهائي.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Beauty Land Card - Discounts & freebies at 12 partner clinics" />
+    <meta property="og:site_name" content="Beauty Land Card" />
+    <meta property="og:locale" content="en_US" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@beauty_land_card" />
+    <meta name="twitter:creator" content="@beauty_land_card" />
+    <meta name="twitter:title" content="Beauty Land Card — Discounts & freebies at 12 partner clinics" />
+    <meta name="twitter:description" content="Beauty Land Card offers discounts and free items across 12 partner clinics. Get exclusive deals on beauty treatments and medical services." />
     <meta name="twitter:image" content="https://beauty-land-card.vercel.app/images/beauty قبل نهائي.png" />
+    <meta name="twitter:image:alt" content="Beauty Land Card - Discounts & freebies at 12 partner clinics" />
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Beauty Land Card",
+      "description": "Company offering discounts and free items across partner clinics",
+      "url": "https://beauty-land-card.vercel.app",
+      "logo": "https://beauty-land-card.vercel.app/images/beauty قبل نهائي.png",
+      "sameAs": [
+        "https://twitter.com/beauty_land_card"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Kurdish", "Arabic"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Beauty Land Card Discounts",
+        "description": "Discounts and free items across 12 partner clinics"
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "MedicalClinic",
+      "name": "Al-Shifa Clinic",
+      "description": "Partner clinic offering dental and general medical services",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "60 Meter Street",
+        "addressLocality": "Erbil",
+        "addressCountry": "IQ"
+      },
+      "telephone": "+9647500000001",
+      "medicalSpecialty": ["Dental", "General Medicine"],
+      "availableService": [
+        {
+          "@type": "MedicalProcedure",
+          "name": "Teeth Cleaning",
+          "description": "Professional dental cleaning service"
+        },
+        {
+          "@type": "MedicalProcedure", 
+          "name": "Doctor Consultation",
+          "description": "General health checkup and consultation"
+        }
+      ]
+    }
+    </script>
   </head>
 
   <body>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50">
+      Skip to main content
+    </a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
