@@ -9,7 +9,6 @@ import { useScrollCategory } from "@/hooks/useScrollCategory";
 import ImageOptimized from "@/components/ImageOptimized";
 import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
-import WorkingHours from "@/components/WorkingHours";
 // Using a medical-themed placeholder logo - replace with actual clinic logo
 const logo = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop";
 
@@ -367,16 +366,7 @@ export default function Menu() {
         </div>
       </div>
 
-      {/* Working Hours Info */}
-      <div className="container mx-auto px-2 py-4">
-        <div className="flex justify-center">
-          <WorkingHours 
-            language={currentLanguage as 'en' | 'ku' | 'ar'} 
-            variant="compact" 
-            className="text-center"
-          />
-        </div>
-      </div>
+
 
       {/* Menu Grid */}
       <main ref={mainRef} className="container mx-auto px-2 py-6 mt-4">

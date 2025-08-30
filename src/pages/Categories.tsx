@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import ImageOptimized from "@/components/ImageOptimized";
-import WorkingHours from "@/components/WorkingHours";
 
 interface ClinicItem { id: string; name: string; description: string; beforePrice: string; afterPrice: string }
 interface ClinicCategory { id: string; name: string; items: ClinicItem[] }
@@ -46,14 +45,7 @@ const Categories = () => {
         <h1 className="text-3xl md:text-4xl font-bold mb-6">Medical Clinics</h1>
         <p className="text-muted-foreground mb-8">Choose a clinic to browse services.</p>
         
-        {/* Working Hours */}
-        <div className="flex justify-center mb-8">
-          <WorkingHours 
-            language={lang as 'en' | 'ku' | 'ar'} 
-            variant="compact" 
-            className="text-center"
-          />
-        </div>
+
 
         <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {clinics.map((clinic) => {

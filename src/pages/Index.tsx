@@ -3,7 +3,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
-import WorkingHours from "@/components/WorkingHours";
 // Using a medical-themed placeholder logo - replace with actual clinic logo
 const logo = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop";
 import { useNavigate } from "react-router-dom";
@@ -160,7 +159,13 @@ const Index = () => {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <WorkingHours language="en" />
+            <Card className="bg-card backdrop-blur-sm border border-border hover:border-primary transition-all duration-300">
+              <CardContent className="p-6 text-center">
+                <div className="text-3xl mb-3">📞</div>
+                <h3 className="font-semibold text-foreground mb-2">Contact</h3>
+                <p className="text-[hsl(39_92%_53%)]">+964 750 000 0000</p>
+              </CardContent>
+            </Card>
           </motion.div>
         </motion.div>
       </motion.div>
