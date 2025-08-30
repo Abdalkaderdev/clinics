@@ -9,6 +9,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Menu = lazy(() => import("./pages/Menu"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Categories = lazy(() => import("./pages/Categories"));
+const QAChecklist = lazy(() => import("./components/QAChecklist"));
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/menu/:lang" element={<Menu />} />
             <Route path="/categories/:lang" element={<Categories />} />
+            {process.env.NODE_ENV === 'development' && (
+              <Route path="/qa-checklist" element={<QAChecklist />} />
+            )}
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

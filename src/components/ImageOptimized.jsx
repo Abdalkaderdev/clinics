@@ -26,18 +26,21 @@ const ImageOptimized = ({
   const generateSrcSet = (originalSrc) => {
     if (srcSet) return srcSet;
 
-    // Only attempt auto srcset for already-optimized webp assets
+    // Check if WebP version exists
     const isWebp = /\.webp$/i.test(originalSrc);
-    if (!isWebp) return undefined;
-
-    const baseName = originalSrc.replace(/\.(webp)$/i, '');
-    return [
-      `${baseName}-thumbnail.webp 150w`,
-      `${baseName}-small.webp 300w`,
-      `${baseName}-medium.webp 600w`,
-      `${baseName}-large.webp 1200w`,
-      `${baseName}.webp 800w`
-    ].join(', ');
+    const baseName = originalSrc.replace(/\.(webp|png|jpg|jpeg)$/i, '');
+    
+    if (isWebp) {
+      return [
+        `${baseName}-thumbnail.webp 150w`,
+        `${baseName}-small.webp 300w`,
+        `${baseName}-medium.webp 600w`,
+        `${baseName}-large.webp 1200w`,
+        `${baseName}.webp 800w`
+      ].join(', ');
+    }
+    
+    return undefined;
   };
 
   // Generate responsive sizes if not provided

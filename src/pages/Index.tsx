@@ -3,12 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
+import { trackPageView, trackLanguageSelect } from "@/lib/analytics";
+import { useEffect } from "react";
 // Beauty Land Card logo
-const logo = "/images/beauty قبل نهائي.png";
+const logo = "/images/beauty قبل نهائي.webp";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
+
+  // Track page view on mount
+  useEffect(() => {
+    trackPageView('home');
+  }, []);
 
   const languages = [
     { code: "en", name: "English", flag: "🇬🇧", nativeName: "English" },
@@ -18,6 +25,7 @@ const Index = () => {
 
   const handleLanguageSelect = (langCode: string) => {
     localStorage.setItem('selectedLanguage', langCode);
+    trackLanguageSelect(langCode);
     navigate(`/categories/${langCode}`);
   };
 
