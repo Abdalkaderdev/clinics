@@ -6,7 +6,6 @@
   :root {
     --primary: 330 81% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 81% 70%;
     --secondary: 217 91% 60%;
     --secondary-foreground: 0 0% 100%;
     --background: 0 0% 98%;
@@ -25,14 +24,6 @@
     --input: 0 0% 85%;
     --ring: 330 81% 60%;
     --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 330 81% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 91% 60%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 90%;
-    --sidebar-ring: 330 81% 60%;
   }
 
   .dark {
@@ -44,7 +35,6 @@
     --popover-foreground: 0 0% 95%;
     --primary: 330 81% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 81% 70%;
     --secondary: 217 91% 60%;
     --secondary-foreground: 0 0% 100%;
     --muted: 0 0% 19%;
@@ -56,26 +46,16 @@
     --border: 0 0% 19%;
     --input: 0 0% 19%;
     --ring: 330 81% 60%;
-    --sidebar-background: 0 0% 9%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 330 81% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 19%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 19%;
-    --sidebar-ring: 330 81% 60%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground font-sans;
   }
-  
-  /* Accessibility improvements */
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -87,56 +67,31 @@
     white-space: nowrap;
     border: 0;
   }
-  
-  /* Focus styles for better keyboard navigation */
+
   button:focus-visible,
   a:focus-visible,
   input:focus-visible,
   select:focus-visible,
   textarea:focus-visible {
-    outline: 2px solid hsl(330, 81%, 60%);
+    outline: 2px solid #ec4899;
     outline-offset: 2px;
     border-radius: 0.25rem;
-  }
-  
-  /* High contrast mode support */
-  @media (prefers-contrast: high) {
-    .bg-pink-100 {
-      background-color: hsl(330, 81%, 95%);
-    }
-    .bg-blue-100 {
-      background-color: hsl(217, 91%, 95%);
-    }
-    .bg-green-100 {
-      background-color: hsl(142, 76%, 95%);
-    }
-  }
-  
-  /* Reduced motion support */
-  @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
   }
 }
 
 @layer components {
   .beauty-number {
     @apply font-bold;
-    color: hsl(330, 81%, 60%);
+    color: #ec4899;
   }
   .beauty-text {
-    color: hsl(330, 81%, 60%);
+    color: #ec4899;
   }
   .land-text {
-    color: hsl(217, 91%, 60%);
+    color: #3b82f6;
   }
   .beauty-bg {
-    background-color: hsl(0, 0%, 98%);
+    background-color: #fafafa;
   }
   .beauty-card {
     @apply border-gray-200 shadow-sm;

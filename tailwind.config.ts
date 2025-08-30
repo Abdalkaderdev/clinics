@@ -43,8 +43,7 @@ export default {
 					foreground: 'hsl(var(--foreground))',
 				primary: {
 						DEFAULT: 'hsl(var(--primary))',
-						foreground: 'hsl(var(--primary-foreground))',
-						glow: 'hsl(var(--primary-glow))'
+						foreground: 'hsl(var(--primary-foreground))'
 				},
 				secondary: {
 						DEFAULT: 'hsl(var(--secondary))',
@@ -81,16 +80,7 @@ export default {
 					'brand-purple': '#8B5CF6', // Accent Purple
 					'brand-green': '#059669', // Success Green
 					'brand-white': '#FAFAFA' // Clean White
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
