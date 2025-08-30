@@ -4,7 +4,7 @@
       "id": 1,
       "name": "Al-Shifa Clinic",
       "location": "Erbil, 60 Meter Street",
-      "contact": "+9647500000000",
+      "contact": "+9647500000001",
       "categories": [
         {
           "id": "dental",
@@ -51,8 +51,8 @@
     {
       "id": 2,
       "name": "HealthPlus Clinic",
-      "location": "Baghdad, Karrada",
-      "contact": "+9647700000000",
+      "location": "Erbil, Ankawa",
+      "contact": "+9647500000002",
       "categories": [
         {
           "id": "pediatrics",
@@ -91,6 +91,216 @@
               "description": "Personalized acne treatment plan.",
               "beforePrice": "$80",
               "afterPrice": "$60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Erbil Medical Center",
+      "location": "Erbil, Gulan Street",
+      "contact": "+9647500000003",
+      "categories": [
+        {
+          "id": "cardiology",
+          "name": "Cardiology",
+          "items": [
+            {
+              "id": "ecg",
+              "name": "ECG Test",
+              "description": "Electrocardiogram heart test.",
+              "beforePrice": "$35",
+              "afterPrice": "$25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Kurdistan Dental Clinic",
+      "location": "Erbil, Sami Abdul Rahman Park",
+      "contact": "+9647500000004",
+      "categories": [
+        {
+          "id": "dental",
+          "name": "Dental Services",
+          "items": [
+            {
+              "id": "implant",
+              "name": "Dental Implant",
+              "description": "Professional dental implant service.",
+              "beforePrice": "$800",
+              "afterPrice": "$600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Family Care Clinic",
+      "location": "Erbil, Iskan Street",
+      "contact": "+9647500000005",
+      "categories": [
+        {
+          "id": "family",
+          "name": "Family Medicine",
+          "items": [
+            {
+              "id": "checkup",
+              "name": "Family Checkup",
+              "description": "Complete family health assessment.",
+              "beforePrice": "$45",
+              "afterPrice": "$30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Eye Care Center",
+      "location": "Erbil, Pirmam Road",
+      "contact": "+9647500000006",
+      "categories": [
+        {
+          "id": "ophthalmology",
+          "name": "Eye Care",
+          "items": [
+            {
+              "id": "eye-exam",
+              "name": "Eye Examination",
+              "description": "Comprehensive eye health check.",
+              "beforePrice": "$40",
+              "afterPrice": "$25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Women's Health Clinic",
+      "location": "Erbil, Dream City",
+      "contact": "+9647500000007",
+      "categories": [
+        {
+          "id": "gynecology",
+          "name": "Women's Health",
+          "items": [
+            {
+              "id": "consultation",
+              "name": "Gynecology Consultation",
+              "description": "Women's health consultation.",
+              "beforePrice": "$50",
+              "afterPrice": "$35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Orthopedic Center",
+      "location": "Erbil, Koya Road",
+      "contact": "+9647500000008",
+      "categories": [
+        {
+          "id": "orthopedic",
+          "name": "Orthopedic",
+          "items": [
+            {
+              "id": "xray",
+              "name": "X-Ray Scan",
+              "description": "Bone and joint X-ray imaging.",
+              "beforePrice": "$30",
+              "afterPrice": "$20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Mental Health Clinic",
+      "location": "Erbil, Masif Street",
+      "contact": "+9647500000009",
+      "categories": [
+        {
+          "id": "psychology",
+          "name": "Mental Health",
+          "items": [
+            {
+              "id": "therapy",
+              "name": "Therapy Session",
+              "description": "Professional psychological therapy.",
+              "beforePrice": "$60",
+              "afterPrice": "$40"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Diagnostic Lab",
+      "location": "Erbil, Hawler Street",
+      "contact": "+9647500000010",
+      "categories": [
+        {
+          "id": "laboratory",
+          "name": "Lab Tests",
+          "items": [
+            {
+              "id": "blood-test",
+              "name": "Blood Test",
+              "description": "Complete blood analysis.",
+              "beforePrice": "$25",
+              "afterPrice": "$15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Physiotherapy Center",
+      "location": "Erbil, Shaqlawa Road",
+      "contact": "+9647500000011",
+      "categories": [
+        {
+          "id": "physiotherapy",
+          "name": "Physiotherapy",
+          "items": [
+            {
+              "id": "session",
+              "name": "Physio Session",
+              "description": "Physical therapy treatment.",
+              "beforePrice": "$35",
+              "afterPrice": "$25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Emergency Medical Center",
+      "location": "Erbil, Airport Road",
+      "contact": "+9647500000012",
+      "categories": [
+        {
+          "id": "emergency",
+          "name": "Emergency Care",
+          "items": [
+            {
+              "id": "urgent-care",
+              "name": "Urgent Care",
+              "description": "24/7 emergency medical care.",
+              "beforePrice": "$100",
+              "afterPrice": "$70"
             }
           ]
         }

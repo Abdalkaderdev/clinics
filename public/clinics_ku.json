@@ -2,25 +2,25 @@
   "clinics": [
     {
       "id": 1,
-      "name": "clinic.alshifa.name",
-      "location": "clinic.alshifa.location",
-      "contact": "+9647500000000",
+      "name": "کلینیکی شیفا",
+      "location": "هەولێر، شەقامی 60 مەتری",
+      "contact": "+9647500000001",
       "categories": [
         {
           "id": "dental",
-          "name": "clinic.alshifa.dental.name",
+          "name": "نەشتەرگەری ددان",
           "items": [
             {
               "id": "cleaning",
-              "name": "clinic.alshifa.dental.cleaning.name",
-              "description": "clinic.alshifa.dental.cleaning.description",
+              "name": "پاککردنەوەی ددان",
+              "description": "خزمەتگوزاری پیشەیی بۆ پاککردنەوەی ددان.",
               "beforePrice": "$50",
               "afterPrice": "$35"
             },
             {
               "id": "whitening",
-              "name": "clinic.alshifa.dental.whitening.name",
-              "description": "clinic.alshifa.dental.whitening.description",
+              "name": "سپیکردنەوەی ددان",
+              "description": "سپیکردنەوەی سەلامەت بۆ زەردەخەنەیەکی گەشتر.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             }
@@ -28,19 +28,19 @@
         },
         {
           "id": "general",
-          "name": "clinic.alshifa.general.name",
+          "name": "پزیشکی گشتی",
           "items": [
             {
               "id": "consultation",
-              "name": "clinic.alshifa.general.consultation.name",
-              "description": "clinic.alshifa.general.consultation.description",
+              "name": "ڕاوێژکاری پزیشکی",
+              "description": "پشکنینی تەندروستی گشتی و ڕاوێژکاری.",
               "beforePrice": "$30",
               "afterPrice": "$20"
             },
             {
               "id": "vaccination",
-              "name": "clinic.alshifa.general.vaccination.name",
-              "description": "clinic.alshifa.general.vaccination.description",
+              "name": "کوتان",
+              "description": "کوتانی ئاسایی و گەشتیاری.",
               "beforePrice": "$25",
               "afterPrice": "$15"
             }
@@ -50,25 +50,25 @@
     },
     {
       "id": 2,
-      "name": "clinic.healthplus.name",
-      "location": "clinic.healthplus.location",
-      "contact": "+9647700000000",
+      "name": "کلینیکی هێلس پڵەس",
+      "location": "هەولێر، عەنکاوا",
+      "contact": "+9647500000002",
       "categories": [
         {
           "id": "pediatrics",
-          "name": "clinic.healthplus.pediatrics.name",
+          "name": "پزیشکی منداڵان",
           "items": [
             {
               "id": "child-checkup",
-              "name": "clinic.healthplus.pediatrics.childcheckup.name",
-              "description": "clinic.healthplus.pediatrics.childcheckup.description",
+              "name": "پشکنینی منداڵان",
+              "description": "پشکنینی تەواوی منداڵان.",
               "beforePrice": "$40",
               "afterPrice": "$30"
             },
             {
               "id": "immunization",
-              "name": "clinic.healthplus.pediatrics.immunization.name",
-              "description": "clinic.healthplus.pediatrics.immunization.description",
+              "name": "کوتانی منداڵان",
+              "description": "خزمەتگوزاری کوتانی منداڵان.",
               "beforePrice": "$20",
               "afterPrice": "$10"
             }
@@ -76,21 +76,231 @@
         },
         {
           "id": "dermatology",
-          "name": "clinic.healthplus.dermatology.name",
+          "name": "نەخۆشی پێست",
           "items": [
             {
               "id": "skin-check",
-              "name": "clinic.healthplus.dermatology.skincheck.name",
-              "description": "clinic.healthplus.dermatology.skincheck.description",
+              "name": "پشکنینی پێست",
+              "description": "پشکنینی تەواوی جەستە بۆ پێست.",
               "beforePrice": "$60",
               "afterPrice": "$45"
             },
             {
               "id": "acne-treatment",
-              "name": "clinic.healthplus.dermatology.acnetreatment.name",
-              "description": "clinic.healthplus.dermatology.acnetreatment.description",
+              "name": "چارەسەری پووکە",
+              "description": "پلانی چارەسەری تایبەتی بۆ پووکە.",
               "beforePrice": "$80",
               "afterPrice": "$60"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ناوەندی پزیشکی هەولێر",
+      "location": "هەولێر، شەقامی گوڵان",
+      "contact": "+9647500000003",
+      "categories": [
+        {
+          "id": "cardiology",
+          "name": "نەخۆشی دڵ",
+          "items": [
+            {
+              "id": "ecg",
+              "name": "تاقیکردنەوەی دڵ",
+              "description": "تاقیکردنەوەی کارەبای دڵ.",
+              "beforePrice": "$35",
+              "afterPrice": "$25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "کلینیکی ددانی کوردستان",
+      "location": "هەولێر، پارکی سامی عەبدولڕەحمان",
+      "contact": "+9647500000004",
+      "categories": [
+        {
+          "id": "dental",
+          "name": "خزمەتگوزاری ددان",
+          "items": [
+            {
+              "id": "implant",
+              "name": "چاندنی ددان",
+              "description": "خزمەتگوزاری پیشەیی بۆ چاندنی ددان.",
+              "beforePrice": "$800",
+              "afterPrice": "$600"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "کلینیکی چاودێری خێزان",
+      "location": "هەولێر، شەقامی ئیسکان",
+      "contact": "+9647500000005",
+      "categories": [
+        {
+          "id": "family",
+          "name": "پزیشکی خێزان",
+          "items": [
+            {
+              "id": "checkup",
+              "name": "پشکنینی خێزان",
+              "description": "هەڵسەنگاندنی تەندروستی تەواو بۆ خێزان.",
+              "beforePrice": "$45",
+              "afterPrice": "$30"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "ناوەندی چاودێری چاو",
+      "location": "هەولێر، ڕێگای پیرمام",
+      "contact": "+9647500000006",
+      "categories": [
+        {
+          "id": "ophthalmology",
+          "name": "پزیشکی چاو",
+          "items": [
+            {
+              "id": "eye-exam",
+              "name": "پشکنینی چاو",
+              "description": "پشکنینی تەواو بۆ تەندروستی چاو.",
+              "beforePrice": "$40",
+              "afterPrice": "$25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "کلینیکی تەندروستی ژن",
+      "location": "هەولێر، شاری خەون",
+      "contact": "+9647500000007",
+      "categories": [
+        {
+          "id": "gynecology",
+          "name": "تەندروستی ژن",
+          "items": [
+            {
+              "id": "consultation",
+              "name": "ڕاوێژکاری ژنان",
+              "description": "ڕاوێژکاری تەندروستی ژن.",
+              "beforePrice": "$50",
+              "afterPrice": "$35"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "ناوەندی ئێسک",
+      "location": "هەولێر، ڕێگای کۆیە",
+      "contact": "+9647500000008",
+      "categories": [
+        {
+          "id": "orthopedic",
+          "name": "نەشتەرگەری ئێسک",
+          "items": [
+            {
+              "id": "xray",
+              "name": "تیشکی ئێکس",
+              "description": "وێنەگرتنی ئێسک و جومگە بە تیشکی ئێکس.",
+              "beforePrice": "$30",
+              "afterPrice": "$20"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "کلینیکی تەندروستی دەروونی",
+      "location": "هەولێر، شەقامی مەسیف",
+      "contact": "+9647500000009",
+      "categories": [
+        {
+          "id": "psychology",
+          "name": "تەندروستی دەروونی",
+          "items": [
+            {
+              "id": "therapy",
+              "name": "دانیشتنی چارەسەری دەروونی",
+              "description": "چارەسەری دەروونی پیشەیی.",
+              "beforePrice": "$60",
+              "afterPrice": "$40"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "تاقیگەی دەستنیشانکردن",
+      "location": "هەولێر، شەقامی هەولێر",
+      "contact": "+9647500000010",
+      "categories": [
+        {
+          "id": "laboratory",
+          "name": "تاقیکردنەوەی تاقیگە",
+          "items": [
+            {
+              "id": "blood-test",
+              "name": "تاقیکردنەوەی خوێن",
+              "description": "شیکردنەوەی تەواوی خوێن.",
+              "beforePrice": "$25",
+              "afterPrice": "$15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "ناوەندی چارەسەری سروشتی",
+      "location": "هەولێر، ڕێگای شەقڵاوە",
+      "contact": "+9647500000011",
+      "categories": [
+        {
+          "id": "physiotherapy",
+          "name": "چارەسەری سروشتی",
+          "items": [
+            {
+              "id": "session",
+              "name": "دانیشتنی چارەسەری سروشتی",
+              "description": "چارەسەری جەستەیی تایبەتمەند.",
+              "beforePrice": "$35",
+              "afterPrice": "$25"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "ناوەندی پزیشکی فریاگوزاری",
+      "location": "هەولێر، ڕێگای فڕۆکەخانە",
+      "contact": "+9647500000012",
+      "categories": [
+        {
+          "id": "emergency",
+          "name": "چاودێری فریاگوزاری",
+          "items": [
+            {
+              "id": "urgent-care",
+              "name": "چاودێری پەلە",
+              "description": "چاودێری پزیشکی فریاگوزاری 24/7.",
+              "beforePrice": "$100",
+              "afterPrice": "$70"
             }
           ]
         }
