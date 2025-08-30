@@ -4,17 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Languages, Stethoscope } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
 import { trackPageView, trackLanguageSelect } from "@/lib/analytics";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 // Beauty Land Card logo
 const logo = "/images/beauty قبل نهائي.webp";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
+  const [currentLang, setCurrentLang] = useState('en');
 
-  // Track page view on mount
+  // Track page view on mount and get current language
   useEffect(() => {
     trackPageView('home');
+    const savedLang = localStorage.getItem('selectedLanguage') || 'en';
+    setCurrentLang(savedLang);
   }, []);
 
   const languages = [
@@ -105,8 +108,8 @@ const Index = () => {
                  className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed"
                  variants={itemVariants}
                >
-                 {lang === 'ar' ? 'خصومات وعناصر مجانية في 12 عيادة شريكة' : 
-                  lang === 'ku' ? 'خەڵات و بەخشین لە 12 کلینیک هاوپەیمان' : 
+                 {currentLang === 'ar' ? 'خصومات وعناصر مجانية في 12 عيادة شريكة' : 
+                  currentLang === 'ku' ? 'خەڵات و بەخشین لە 12 کلینیک هاوپەیمان' : 
                   'Discounts & freebies at 12 partner clinics'}
                </motion.p>
                          <motion.div
@@ -114,13 +117,13 @@ const Index = () => {
                  variants={itemVariants}
                >
                  <span className="bg-pink-50 text-pink-700 px-3 py-1 rounded-full font-medium border border-pink-200">
-                   {lang === 'ar' ? 'علاجات التجميل' : lang === 'ku' ? 'چارەسەری جوانکاری' : 'Beauty Treatments'}
+                   {currentLang === 'ar' ? 'علاجات التجميل' : currentLang === 'ku' ? 'چارەسەری جوانکاری' : 'Beauty Treatments'}
                  </span>
                  <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium border border-blue-200">
-                   {lang === 'ar' ? 'الخدمات الطبية' : lang === 'ku' ? 'خزمەتگوزاری پزیشکی' : 'Medical Services'}
+                   {currentLang === 'ar' ? 'الخدمات الطبية' : currentLang === 'ku' ? 'خزمەتگوزاری پزیشکی' : 'Medical Services'}
                  </span>
                  <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium border border-emerald-200">
-                   {lang === 'ar' ? 'العناصر المجانية متاحة' : lang === 'ku' ? 'بەخشین بەردەستە' : 'Free Items Available'}
+                   {currentLang === 'ar' ? 'العناصر المجانية متاحة' : currentLang === 'ku' ? 'بەخشین بەردەستە' : 'Free Items Available'}
                  </span>
                </motion.div>
         </motion.div>
