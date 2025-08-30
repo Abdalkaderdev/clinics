@@ -9,13 +9,13 @@
     --primary-foreground: 0 0% 100%;
     --secondary: 217 91% 60%; /* Blue: #3B82F6 - matches rest of logo */
     --secondary-foreground: 0 0% 100%;
-    --background: 248 250 252; /* Light gray: #F8FAFC - professional background */
+    --background: 0 0% 98%; /* Light gray: #FAFAFA - professional background */
     --foreground: 30 41% 55%; /* Dark slate: #1E293B - readable text */
     --card: 0 0% 100%;
     --card-foreground: 30 41% 55%;
     --popover: 0 0% 100%;
     --popover-foreground: 30 41% 55%;
-    --muted: 248 250 252;
+    --muted: 0 0% 96%;
     --muted-foreground: 100 116 139;
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 100%;
@@ -92,7 +92,7 @@
     color: #3b82f6;
   }
   .beauty-bg {
-    background-color: #f8fafc;
+    background-color: #fafafa;
   }
   .beauty-card {
     @apply border-slate-200 shadow-sm bg-white;
