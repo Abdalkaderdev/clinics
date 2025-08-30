@@ -12,6 +12,7 @@ interface MenuItem {
   originalPrice?: number;
   beforePrice?: string;
   afterPrice?: string;
+  isFree?: boolean;
   location?: string;
   image?: string;
   popular?: boolean;
@@ -73,8 +74,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
         <CardContent className="p-0">
           {/* Content Section */}
           <div className="flex-1 flex flex-col p-5 gap-2 items-center text-center relative">
-            {/* Discount badge for clinics */}
-            {isClinic && discountPercentage > 0 && (
+            {/* Free or Discount badge */}
+            {item.isFree ? (
+              <div className="absolute top-2 right-2">
+                <Badge className="bg-green-500 text-white font-bold text-sm">
+                  FREE
+                </Badge>
+              </div>
+            ) : isClinic && discountPercentage > 0 && (
               <div className="absolute top-2 right-2">
                 <Badge className="bg-red-500 text-white font-bold text-sm">
                   -{discountPercentage}%
@@ -101,8 +108,29 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
               {/* Price and Contact Row */}
               <div className="flex items-center justify-center mt-auto flex-row gap-3 w-full">
                 <div className="flex flex-col flex-1 items-center">
-                  {/* Always show before/after pricing for clinic services */}
-                  {isClinic && item.originalPrice ? (
+                  {/* Free or regular pricing display */}
+                  {item.isFree ? (
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="flex items-center gap-4">
+                        <div className="flex flex-col items-center">
+                          <span className="text-xs text-red-500 mb-1 font-semibold">Before</span>
+                          <span className="text-lg text-red-500 line-through font-bold">
+                            {item.beforePrice || formatPrice(item.originalPrice || item.price, currency)}
+                          </span>
+                        </div>
+                        <div className="text-2xl font-bold text-primary">→</div>
+                        <div className="flex flex-col items-center">
+                          <span className="text-xs text-green-600 mb-1 font-semibold">After</span>
+                          <span className="text-2xl font-bold text-green-600">
+                            FREE
+                          </span>
+                        </div>
+                      </div>
+                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">
+                        100% FREE!
+                      </div>
+                    </div>
+                  ) : isClinic && item.originalPrice ? (
                     <div className="flex flex-col items-center gap-2">
                       <div className="flex items-center gap-4">
                         <div className="flex flex-col items-center">

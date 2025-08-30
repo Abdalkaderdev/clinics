@@ -18,6 +18,7 @@ interface ClinicItem {
   description: string;
   beforePrice: string;
   afterPrice: string;
+  isFree?: boolean;
 }
 
 interface ClinicCategory {
@@ -147,10 +148,11 @@ export default function Menu() {
         categoryName: cat.name,
         item: {
           ...item,
-          price: parseFloat(item.afterPrice.replace('$', '')),
+          price: item.isFree ? 0 : parseFloat(item.afterPrice.replace('$', '')),
           originalPrice: parseFloat(item.beforePrice.replace('$', '')),
           beforePrice: item.beforePrice,
           afterPrice: item.afterPrice,
+          isFree: item.isFree,
           location: selectedClinic.location,
           contact: selectedClinic.contact
         }
@@ -180,7 +182,9 @@ export default function Menu() {
         return selectedFilters.every(filter => {
           switch (filter) {
             case 'discount':
-              return item.originalPrice && item.originalPrice > item.price;
+              return !item.isFree && item.originalPrice && item.originalPrice > item.price;
+            case 'free':
+              return item.isFree === true;
             case 'favorites':
               return favorites.includes(item.id);
             default:
@@ -195,6 +199,7 @@ export default function Menu() {
 
   // Available filter options for clinics
   const filterOptions = useMemo(() => [
+    { id: 'free', label: '🆓 Free Services', count: 0 },
     { id: 'discount', label: '💰 Discount', count: 0 },
     { id: 'favorites', label: '❤️ Favorites', count: favorites.length },
   ], [favorites]);

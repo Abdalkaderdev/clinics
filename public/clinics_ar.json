@@ -43,6 +43,14 @@
               "description": "تطعيمات روتينية وسفرية.",
               "beforePrice": "$25",
               "afterPrice": "$15"
+            },
+            {
+              "id": "free-consultation",
+              "name": "استشارة مجانية",
+              "description": "فحص صحي واستشارة طبية مجانية.",
+              "beforePrice": "$30",
+              "afterPrice": "مجاني",
+              "isFree": true
             }
           ]
         }

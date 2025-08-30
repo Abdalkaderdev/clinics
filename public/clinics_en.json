@@ -43,6 +43,14 @@
               "description": "Routine and travel vaccinations.",
               "beforePrice": "$25",
               "afterPrice": "$15"
+            },
+            {
+              "id": "free-consultation",
+              "name": "Free Consultation",
+              "description": "Complimentary health checkup and consultation.",
+              "beforePrice": "$30",
+              "afterPrice": "FREE",
+              "isFree": true
             }
           ]
         }
