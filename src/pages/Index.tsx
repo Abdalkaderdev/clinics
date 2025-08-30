@@ -138,7 +138,9 @@ const Index = () => {
               >
                 <Stethoscope className="h-6 w-6 text-primary" />
                 <h2 className="text-2xl font-semibold text-foreground">
-                  اختر لغتك | Choose Your Language | زمانت هەڵبژێرە
+                  {currentLang === 'ar' ? 'اختر لغتك' : 
+                   currentLang === 'ku' ? 'زمانت هەڵبژێرە' : 
+                   'Choose Your Language'}
                 </h2>
               </motion.div>
               

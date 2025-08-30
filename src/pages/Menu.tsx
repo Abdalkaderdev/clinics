@@ -124,8 +124,12 @@ export default function Menu() {
       } catch (error) {
         console.error('Error loading clinics:', error);
         toast({
-          title: "Error loading clinics",
-          description: "Please try refreshing the page",
+          title: lang === 'ar' ? "خطأ في تحميل العيادات" : 
+                 lang === 'ku' ? "هەڵە لە بارکردنی کلینیک" : 
+                 "Error loading clinics",
+          description: lang === 'ar' ? "يرجى تحديث الصفحة" : 
+                      lang === 'ku' ? "تکایە پەڕەکە نوێ بکەرەوە" : 
+                      "Please try refreshing the page",
           variant: "destructive"
         });
       } finally {
@@ -215,11 +219,32 @@ export default function Menu() {
   }, [allItems, selectedClinic, selectedCategoryId, searchQuery, selectedFilters, favorites]);
 
   // Available filter options for clinics
-  const filterOptions = useMemo(() => [
-    { id: 'free', label: isRTL ? '🆓 الخدمات المجانية' : '🆓 Free Services', count: 0 },
-    { id: 'discount', label: isRTL ? '💰 الخصم' : '💰 Discount', count: 0 },
-    { id: 'favorites', label: isRTL ? '❤️ المفضلة' : '❤️ Favorites', count: favorites.length },
-  ], [favorites, isRTL]);
+  const filterOptions = useMemo(() => {
+    const currentLanguage = lang || 'en';
+    return [
+      { 
+        id: 'free', 
+        label: currentLanguage === 'ar' ? '🆓 الخدمات المجانية' : 
+               currentLanguage === 'ku' ? '🆓 خزمەتگوزاری بەردەست' : 
+               '🆓 Free Services', 
+        count: 0 
+      },
+      { 
+        id: 'discount', 
+        label: currentLanguage === 'ar' ? '💰 الخصم' : 
+               currentLanguage === 'ku' ? '💰 خەڵات' : 
+               '💰 Discount', 
+        count: 0 
+      },
+      { 
+        id: 'favorites', 
+        label: currentLanguage === 'ar' ? '❤️ المفضلة' : 
+               currentLanguage === 'ku' ? '❤️ دڵخواز' : 
+               '❤️ Favorites', 
+        count: favorites.length 
+      },
+    ];
+  }, [favorites, lang]);
 
   if (loading) {
     return (
@@ -236,7 +261,11 @@ export default function Menu() {
   if (!clinicsData || !selectedClinic) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-destructive">Failed to load clinics</p>
+        <p className="text-destructive">
+        {lang === 'ar' ? "فشل في تحميل العيادات" : 
+         lang === 'ku' ? "هەڵە لە بارکردنی کلینیک" : 
+         "Failed to load clinics"}
+      </p>
       </div>
     );
   }
@@ -334,7 +363,9 @@ export default function Menu() {
           <div className="mb-3">
             <input
               type="text"
-              placeholder={isRTL ? "البحث عن الخدمات..." : "Search services..."}
+              placeholder={lang === 'ar' ? "البحث عن الخدمات..." : 
+                          lang === 'ku' ? "گەڕان بۆ خزمەتگوزاری..." : 
+                          "Search services..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-900 placeholder:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 shadow-sm"
@@ -347,7 +378,9 @@ export default function Menu() {
               onClick={() => setShowFilters(!showFilters)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-700 hover:bg-pink-50 transition-colors shadow-sm"
             >
-              <span>{isRTL ? "المرشحات" : "Filters"}</span>
+                              <span>{lang === 'ar' ? "المرشحات" : 
+                       lang === 'ku' ? "فلتەر" : 
+                       "Filters"}</span>
               <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
             </button>
             
@@ -356,7 +389,9 @@ export default function Menu() {
                 onClick={() => setSelectedFilters([])}
                 className="text-sm text-pink-600 hover:text-pink-800"
               >
-                {isRTL ? "مسح الكل" : "Clear all"}
+                {lang === 'ar' ? "مسح الكل" : 
+                 lang === 'ku' ? "سڕینەوەی هەموو" : 
+                 "Clear all"}
               </button>
             )}
           </div>
@@ -407,7 +442,11 @@ export default function Menu() {
           </div>
         ) : (
           <motion.div className="text-center py-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <p className="text-lg text-foreground">{isRTL ? "لا توجد خدمات" : "No services found."}</p>
+            <p className="text-lg text-foreground">
+              {lang === 'ar' ? "لا توجد خدمات" : 
+               lang === 'ku' ? "هیچ خزمەتگوزاریەک نەدۆزرایەوە" : 
+               "No services found."}
+            </p>
           </motion.div>
         )}
 
@@ -417,7 +456,9 @@ export default function Menu() {
             onClick={() => navigate(`/categories/${lang}`)}
             className="px-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white border-0 shadow-md"
           >
-            {isRTL ? 'الرجوع إلى العيادات' : 'Back to clinics'}
+            {lang === 'ar' ? 'الرجوع إلى العيادات' : 
+             lang === 'ku' ? 'گەڕانەوە بۆ کلینیک' : 
+             'Back to clinics'}
           </Button>
         </div>
       </main>
