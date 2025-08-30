@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
-// Using a medical-themed placeholder logo - replace with actual clinic logo
-const logo = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop";
+// Beauty Land Card logo
+const logo = "/images/beauty قبل نهائي.png";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -78,25 +78,33 @@ const Index = () => {
         <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
           <ImageOptimized
             src={logo}
-            alt="Medical Clinics Logo"
-            className="mx-auto mb-6 w-24 sm:w-32 md:w-40 lg:w-48 h-auto max-w-full object-contain"
+            alt="Beauty Land Card Logo"
+            className="mx-auto mb-6 w-32 sm:w-40 md:w-48 lg:w-56 h-auto max-w-full object-contain"
             priority={true}
             width={400}
             sizes="(min-width:1024px) 480px, 40vw"
-            srcSet={`${logo} 400w, ${logo} 800w`}
           />
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-2 sm:mb-4 drop-shadow-lg font-display tracking-wide"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 sm:mb-4 drop-shadow-lg font-display tracking-wide"
+            style={{ background: 'linear-gradient(135deg, #EC4899 0%, #3B82F6 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
             variants={itemVariants}
           >
-            Welcome to
+            Beauty Land Card
           </motion.h1>
-          <motion.h2 
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-[hsl(39_92%_53%)] mb-4 drop-shadow-lg font-display tracking-wide"
+          <motion.p 
+            className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Medical Clinics
-          </motion.h2>
+            Exclusive discounts & free services at 12 partner clinics in Erbil
+          </motion.p>
+          <motion.div 
+            className="flex flex-wrap justify-center gap-2 mb-6 text-sm sm:text-base"
+            variants={itemVariants}
+          >
+            <span className="bg-pink-100 text-pink-800 px-3 py-1 rounded-full font-medium">Beauty Treatments</span>
+            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full font-medium">Medical Services</span>
+            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-medium">Free Items Available</span>
+          </motion.div>
         </motion.div>
 
         {/* Language Selection */}
@@ -109,7 +117,7 @@ const Index = () => {
               >
                 <Languages className="h-6 w-6 text-primary" />
                 <h2 className="text-2xl font-semibold text-foreground">
-                  Choose Your Language
+                  اختر لغتك | Choose Your Language | زمانت هەڵبژێرە
                 </h2>
               </motion.div>
               

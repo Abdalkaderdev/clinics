@@ -60,8 +60,11 @@ const Categories = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">Medical Clinics</h1>
-        <p className="text-muted-foreground mb-6">Choose a clinic to browse services.</p>
+        <div className="text-center mb-8">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Beauty Land Card Partners</h1>
+          <p className="text-muted-foreground mb-2">12 Premium Clinics in Erbil</p>
+          <p className="text-sm text-muted-foreground">Exclusive discounts & free services with your Beauty Land Card</p>
+        </div>
         
         {/* Search Input */}
         <div className="mb-6 sm:mb-8">
@@ -87,19 +90,19 @@ const Categories = () => {
                   className="text-left w-full"
                   aria-label={`Open ${clinic.name}`}
                 >
-                  <Card className="relative border-2 border-blue-100 hover:border-blue-300 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-green-50 h-full group">
+                  <Card className="relative border-2 border-pink-100 hover:border-pink-300 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-pink-50 to-blue-50 h-full group">
                     <div className="p-6 text-center flex flex-col justify-between min-h-[200px] sm:min-h-[220px]">
                       <div className="flex-1">
-                        <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🏥</div>
-                        <h2 className="text-blue-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
+                        <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">💎</div>
+                        <h2 className="text-pink-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}
                         </h2>
                         <p className="text-blue-700 text-xs sm:text-sm mb-3 leading-relaxed break-words">
                           📍 {clinic.location}
                         </p>
                       </div>
-                      <div className="bg-green-100 text-green-800 px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto">
-                        {totalServices} services available
+                      <div className="bg-gradient-to-r from-pink-100 to-blue-100 text-pink-800 px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto">
+                        {totalServices} services • Discounts Available
                       </div>
                     </div>
                   </Card>

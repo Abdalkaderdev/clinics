@@ -8,21 +8,21 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Modern Street-Food Palette */
+    /* Beauty Land Card Palette */
     /* Primary Colors */
-    /* Warm Red: #D62828 */
-    --primary: 1 69% 49%;
-    --primary-foreground: 40 79% 95%; /* Cream White text on primary */
-    --primary-glow: 1 69% 59%;
+    /* Beauty Pink: #EC4899 */
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%; /* White text on pink */
+    --primary-glow: 330 81% 70%;
 
-    /* Golden Mustard: #F6AA1C */
-    --secondary: 39 92% 53%;
-    --secondary-foreground: 0 0% 15%; /* Dark text on mustard */
+    /* Land Card Blue: #3B82F6 */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%; /* White text on blue */
 
     /* Neutrals */
-    /* Cream White background: #FAF3E0 */
-    --background: 42 73% 94%;
-    --foreground: 0 0% 15%; /* Dark Charcoal text in light sections */
+    /* Clean White background */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 15%; /* Dark text in light sections */
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 15%;
@@ -33,27 +33,26 @@ All colors MUST be HSL.
     --muted: 0 0% 92%;
     --muted-foreground: 0 0% 35%;
 
-    --accent: 39 92% 53%; /* Golden Mustard as accent */
-    --accent-foreground: 0 0% 15%;
+    --accent: 217 91% 60%; /* Blue as accent */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 1 69% 49%; /* Warm Red */
-    --destructive-foreground: 42 73% 94%; /* Cream White */
+    --destructive: 0 84% 60%; /* Red for destructive actions */
+    --destructive-foreground: 0 0% 100%; /* White */
 
     --border: 0 0% 85%;
     --input: 0 0% 85%;
-    --ring: 1 69% 49%;
+    --ring: 330 81% 60%;
 
-    /* Brand aliases for old usage mapping */
-    --berlin-red: 1 69% 49%;
-    --berlin-gold: 39 92% 53%;
-    --spice-gold: 39 92% 63%;
-    --meat-brown: 0 0% 23%;
-    --fresh-green: 82 70% 38%; /* #76A21E */
-    --cream-white: 42 73% 94%;
+    /* Beauty Land Card brand colors */
+    --beauty-pink: 330 81% 60%;
+    --land-blue: 217 91% 60%;
+    --accent-purple: 270 91% 65%;
+    --success-green: 142 76% 36%;
+    --clean-white: 0 0% 98%;
 
     /* Shadows */
-    --shadow-warm: 0 10px 30px -5px hsl(1 69% 49% / 0.25);
-    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.25);
+    --shadow-warm: 0 10px 30px -5px hsl(330 81% 60% / 0.25);
+    --shadow-elegant: 0 20px 40px -10px hsl(0 0% 0% / 0.15);
 
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -61,64 +60,63 @@ All colors MUST be HSL.
 
     --radius: 0.5rem;
 
-    /* Sidebar and dark sections use Dark Charcoal */
-    --sidebar-background: 0 0% 17%; /* #2B2B2B */
-    --sidebar-foreground: 39 92% 53%;
-    --sidebar-primary: 39 92% 53%;
-    --sidebar-primary-foreground: 0 0% 15%;
-    --sidebar-accent: 0 0% 24%; /* #3C3C3C */
-    --sidebar-accent-foreground: 42 73% 94%;
-    --sidebar-border: 0 0% 24%;
-    --sidebar-ring: 1 69% 49%;
+    /* Sidebar uses clean design */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 330 81% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 91% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 330 81% 60%;
   }
 
   .dark {
-    /* Dark mode uses Dark Charcoal surfaces with mustard accents */
-    --background: 0 0% 17%; /* #2B2B2B */
-    --foreground: 42 73% 94%; /* Cream White text on dark */
+    /* Dark mode with Beauty Land Card colors */
+    --background: 0 0% 9%; /* Very dark background */
+    --foreground: 0 0% 95%; /* Light text on dark */
 
-    --card: 0 0% 24%; /* #3C3C3C */
-    --card-foreground: 42 73% 94%;
+    --card: 0 0% 14%; /* Dark cards */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 24%;
-    --popover-foreground: 42 73% 94%;
+    --popover: 0 0% 14%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 1 69% 49%;
-    --primary-foreground: 42 73% 94%;
-    --primary-glow: 1 69% 59%;
+    --primary: 330 81% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 330 81% 70%;
 
-    --secondary: 39 92% 53%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 29%;
-    --muted-foreground: 42 73% 84%;
+    --muted: 0 0% 19%;
+    --muted-foreground: 0 0% 75%;
 
-    --accent: 39 92% 53%;
-    --accent-foreground: 0 0% 15%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 1 69% 49%;
-    --destructive-foreground: 42 73% 94%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 24%;
-    --input: 0 0% 24%;
-    --ring: 39 92% 53%;
+    --border: 0 0% 19%;
+    --input: 0 0% 19%;
+    --ring: 330 81% 60%;
 
-    --warm-gradient: linear-gradient(135deg, hsl(1 69% 49%), hsl(39 92% 53%));
-    --hero-gradient: linear-gradient(135deg, hsl(0 0% 17% / 0.95), hsl(0 0% 24% / 0.90));
-    --berlin-red: 1 69% 49%;
-    --berlin-gold: 39 92% 53%;
-    --spice-gold: 39 92% 63%;
-    --meat-brown: 0 0% 23%;
-    --fresh-green: 82 70% 38%;
+    --warm-gradient: linear-gradient(135deg, hsl(330 81% 60%), hsl(217 91% 60%));
+    --hero-gradient: linear-gradient(135deg, hsl(0 0% 9% / 0.95), hsl(0 0% 14% / 0.90));
+    --beauty-pink: 330 81% 60%;
+    --land-blue: 217 91% 60%;
+    --accent-purple: 270 91% 65%;
+    --success-green: 142 76% 36%;
 
-    --sidebar-background: 0 0% 17%;
-    --sidebar-foreground: 39 92% 53%;
-    --sidebar-primary: 39 92% 53%;
-    --sidebar-primary-foreground: 0 0% 15%;
-    --sidebar-accent: 0 0% 24%;
-    --sidebar-accent-foreground: 42 73% 94%;
-    --sidebar-border: 0 0% 24%;
-    --sidebar-ring: 1 69% 49%;
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 330 81% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 19%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 19%;
+    --sidebar-ring: 330 81% 60%;
   }
 }
 
@@ -132,21 +130,32 @@ All colors MUST be HSL.
   }
 }
 
-/* Custom German Flag Theme Classes */
+/* Beauty Land Card Theme Classes */
 @layer components {
-  .german-number {
-    @apply font-bold text-[hsl(39_92%_53%)]; /* Golden Mustard */
+  .beauty-number {
+    @apply font-bold text-[hsl(330_81%_60%)]; /* Beauty Pink */
   }
   
-  .german-text {
-    color: hsl(1 69% 49%); /* Warm Red */
+  .beauty-text {
+    color: hsl(330 81% 60%); /* Beauty Pink */
   }
   
-  .german-bg {
-    background-color: hsl(42 73% 94%); /* Cream White background */
+  .land-text {
+    color: hsl(217 91% 60%); /* Land Blue */
   }
   
-  .german-card {
-    @apply border-gray-200; /* Light border; card bg from tokens */
+  .beauty-bg {
+    background-color: hsl(0 0% 98%); /* Clean White background */
+  }
+  
+  .beauty-card {
+    @apply border-gray-200 shadow-sm; /* Light border with subtle shadow */
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(330 81% 60%), hsl(217 91% 60%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

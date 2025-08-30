@@ -70,18 +70,17 @@ export default {
 						DEFAULT: 'hsl(var(--card))',
 						foreground: 'hsl(var(--card-foreground))'
 				},
-					'berlin-red': 'hsl(var(--berlin-red))',
-					'berlin-gold': 'hsl(var(--berlin-gold))',
-					'spice-gold': 'hsl(var(--spice-gold))',
-					'meat-brown': 'hsl(var(--meat-brown))',
-					'fresh-green': 'hsl(var(--fresh-green))',
-					'cream-white': 'hsl(var(--cream-white))',
-				// German Flag Colors
-					'german-black': '#000000',
-					'german-red': '#D62828', // Warm Red
-					'german-yellow': '#F6AA1C', // Golden Mustard
-					'german-dark-gray': '#2B2B2B', // Dark Charcoal
-					'german-medium-gray': '#3C3C3C', // Lighter Charcoal
+					'beauty-pink': 'hsl(var(--beauty-pink))',
+					'land-blue': 'hsl(var(--land-blue))',
+					'accent-purple': 'hsl(var(--accent-purple))',
+					'success-green': 'hsl(var(--success-green))',
+					'clean-white': 'hsl(var(--clean-white))',
+				// Beauty Land Card Brand Colors
+					'brand-pink': '#EC4899', // Beauty Pink
+					'brand-blue': '#3B82F6', // Land Card Blue
+					'brand-purple': '#8B5CF6', // Accent Purple
+					'brand-green': '#059669', // Success Green
+					'brand-white': '#FAFAFA' // Clean White
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
