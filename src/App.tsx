@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "./components/ErrorBoundary";
-const Index = lazy(() => import("./pages/Index"));
+import Index from "./pages/Index";
 const Menu = lazy(() => import("./pages/Menu"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Categories = lazy(() => import("./pages/Categories"));
@@ -37,7 +37,8 @@ const App = () => {
               </Routes>
             </Suspense>
           </BrowserRouter>
-          <Analytics />
+          {/* Temporarily disabled analytics for debugging */}
+          {/* <Analytics /> */}
         </TooltipProvider>
       </QueryClientProvider>
     </ErrorBoundary>
