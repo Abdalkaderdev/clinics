@@ -103,11 +103,14 @@ export default function Menu() {
     setLoading(true);
     const loadClinicsData = async () => {
       try {
+        console.log('Loading clinics data for language:', currentLanguage);
         const response = await fetch(`/clinics_${currentLanguage}.json`);
+        console.log('Response status:', response.status);
         if (!response.ok) {
-          throw new Error('Failed to load clinics');
+          throw new Error(`Failed to load clinics: ${response.status}`);
         }
         const data = await response.json();
+        console.log('Loaded clinics data:', data);
         setClinicsData(data);
         
         // Set selected clinic if specified in URL
@@ -117,7 +120,9 @@ export default function Menu() {
         } else {
           setSelectedClinic(data.clinics[0]);
         }
+        console.log('Selected clinic:', data.clinics[0]);
       } catch (error) {
+        console.error('Error loading clinics:', error);
         toast({
           title: "Error loading clinics",
           description: "Please try refreshing the page",
@@ -161,10 +166,21 @@ export default function Menu() {
   }, [selectedClinic]);
 
   const visibleItems = useMemo(() => {
-    if (!selectedClinic) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+    console.log('Calculating visible items...');
+    console.log('selectedClinic:', selectedClinic);
+    console.log('allItems:', allItems);
+    console.log('selectedCategoryId:', selectedCategoryId);
+    
+    if (!selectedClinic) {
+      console.log('No selected clinic, returning empty array');
+      return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+    }
+    
     let base = selectedCategoryId === 'all'
       ? allItems
       : allItems.filter(entry => entry.categoryId === selectedCategoryId);
+    
+    console.log('Base items after category filter:', base);
     
     // Filter by search query
     if (searchQuery.trim()) {
@@ -194,6 +210,7 @@ export default function Menu() {
       });
     }
     
+    console.log('Final visible items:', base);
     return base;
   }, [allItems, selectedClinic, selectedCategoryId, searchQuery, selectedFilters, favorites]);
 
