@@ -1,334 +1,138 @@
 {
-  "shopName": "German Doner",
+  "shopName": "Medical Clinics",
   "currency": "IQD",
   "workingHours": {
     "daily": "Daily",
-    "hours": "12:00 PM - 11:00 PM",
-    "noDaysOff": "No days off",
+    "hours": "9:00 AM - 6:00 PM",
+    "noDaysOff": "Weekdays only",
     "open": "Open",
     "closed": "Closed"
   },
   "categories": [
     {
-      "id": "doner",
-      "name": "Doner Kebab",
+      "id": "clinics",
+      "name": "Clinics",
       "items": [
         {
-          "id": "doner-kebap-beef",
-          "name": "Doner Kebap Beef",
-          "description": "Classic beef doner kebap in fresh bread.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-1",
+          "name": "Al-Rashid Medical Center",
+          "description": "Comprehensive medical services with modern facilities. Located in the heart of the city.",
+          "price": 150000,
+          "originalPrice": 200000,
+          "location": "Central District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+          "contact": "+9647700000001"
         },
         {
-          "id": "doner-kebap-chicken",
-          "name": "Doner Kebap Chicken",
-          "description": "Classic chicken doner kebap in fresh bread.",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-2",
+          "name": "Al-Noor Specialized Clinic",
+          "description": "Specialized medical care with experienced doctors. Advanced diagnostic equipment available.",
+          "price": 120000,
+          "originalPrice": 180000,
+          "location": "Al-Mansour District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+          "contact": "+9647700000002"
         },
         {
-          "id": "doner-kebap-mix",
-          "name": "Doner Kebap Mix",
-          "description": "Mixed beef and chicken doner kebap in fresh bread.",
-          "price": 6000
+          "id": "clinic-3",
+          "name": "Al-Salam Family Clinic",
+          "description": "Family-oriented medical care with pediatric and general practice services.",
+          "price": 80000,
+          "originalPrice": 120000,
+          "location": "Al-Karrada District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop",
+          "contact": "+9647700000003"
         },
         {
-          "id": "yufka-kebap-beef",
-          "name": "Yufka Kebap Beef",
-          "description": "Onions, tomatoes, red cabbage, green lettuce.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+          "id": "clinic-4",
+          "name": "Al-Hikma Dental Clinic",
+          "description": "Modern dental care with state-of-the-art equipment. Cosmetic and general dentistry.",
+          "price": 100000,
+          "originalPrice": 150000,
+          "location": "Al-Jadriya District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop",
+          "contact": "+9647700000004"
         },
         {
-          "id": "yufka-kebap-chicken",
-          "name": "Yufka Kebap Chicken",
-          "description": "Onions, tomatoes, red cabbage, green lettuce.",
-          "price": 5500
+          "id": "clinic-5",
+          "name": "Al-Amal Orthopedic Center",
+          "description": "Specialized orthopedic care with physical therapy services. Sports injury treatment.",
+          "price": 180000,
+          "originalPrice": 250000,
+          "location": "Al-Yarmouk District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop",
+          "contact": "+9647700000005"
         },
         {
-          "id": "yufka-kebap-mix",
-          "name": "Yufka Kebap Mix",
-          "description": "Mixed beef and chicken with onions, tomatoes, red cabbage, green lettuce.",
-          "price": 6000
+          "id": "clinic-6",
+          "name": "Al-Nahda Women's Clinic",
+          "description": "Women's health and gynecology services. Prenatal and postnatal care available.",
+          "price": 130000,
+          "originalPrice": 190000,
+          "location": "Al-Adhamiya District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+          "contact": "+9647700000006"
         },
         {
-          "id": "kebap-plate-beef",
-          "name": "Kebap Plate Beef",
-          "description": "Beef doner kebap served on a plate with sides.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "id": "clinic-7",
+          "name": "Al-Tibbi Eye Clinic",
+          "description": "Comprehensive eye care and vision services. Laser treatment and surgery available.",
+          "price": 160000,
+          "originalPrice": 220000,
+          "location": "Al-Zayouna District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+          "contact": "+9647700000007"
         },
         {
-          "id": "kebap-plate-chicken",
-          "name": "Kebap Plate Chicken",
-          "description": "Chicken doner kebap served on a plate with sides.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "id": "clinic-8",
+          "name": "Al-Shifa Cardiology Center",
+          "description": "Cardiac care and heart health services. ECG and stress testing available.",
+          "price": 200000,
+          "originalPrice": 280000,
+          "location": "Al-Saadoun District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop",
+          "contact": "+9647700000008"
         },
         {
-          "id": "lahmacun",
-          "name": "Lahmacun",
-          "description": "Minced meat with a special mixture. Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
-          "price": 9000
+          "id": "clinic-9",
+          "name": "Al-Rahma Pediatric Clinic",
+          "description": "Specialized pediatric care for children. Vaccination and wellness checkups.",
+          "price": 90000,
+          "originalPrice": 140000,
+          "location": "Al-Dora District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop",
+          "contact": "+9647700000009"
         },
         {
-          "id": "lahmacun-plate",
-          "name": "Lahmacun Plate",
-          "description": "Meat, lettuce, tomatoes, cabbage, onions and optional sauce.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-10",
+          "name": "Al-Tawfiq Dermatology Clinic",
+          "description": "Skin care and dermatological treatments. Cosmetic procedures available.",
+          "price": 110000,
+          "originalPrice": 170000,
+          "location": "Al-Kadhimiya District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop",
+          "contact": "+9647700000010"
         },
         {
-          "id": "doner-box",
-          "name": "Meat Doner Box",
-          "description": "Beef doner meat with fries and salad.",
-          "price": 6500,
-          "image": "/new/IMG_3899.JPG"
+          "id": "clinic-11",
+          "name": "Al-Mustaqbal Neurology Clinic",
+          "description": "Neurological care and treatment. Brain and nerve disorder specialists.",
+          "price": 220000,
+          "originalPrice": 300000,
+          "location": "Al-Hurriya District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
+          "contact": "+9647700000011"
         },
         {
-          "id": "chicken-doner-box",
-          "name": "Chicken Doner Box",
-          "description": "Chicken doner meat with fries and salad.",
-          "price": 5500,
-          "image": "/new/IMG_3899.JPG"
-        },
-        {
-          "id": "mixed-doner-box",
-          "name": "Mixed Doner Box",
-          "description": "Mixed beef and chicken doner meat with fries and salad.",
-          "price": 6000
-        },
-        {
-          "id": "kapsalon-plate",
-          "name": "Kapsalon Plate",
-          "description": "Fries topped with meat doner and melted cheese.",
-          "price": 12000
+          "id": "clinic-12",
+          "name": "Al-Ataa Physiotherapy Center",
+          "description": "Physical therapy and rehabilitation services. Post-surgery recovery programs.",
+          "price": 70000,
+          "originalPrice": 110000,
+          "location": "Al-Shaab District, Baghdad",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+          "contact": "+9647700000012"
         }
-      ]
-    },
-    
-    {
-      "id": "pide",
-      "name": "Pide",
-      "items": [
-        {
-          "id": "sucuk-pide",
-          "name": "Sucuk Pide",
-          "description": "Turkish flatbread with spicy sausage.",
-          "price": 12000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "cheese-pide",
-          "name": "Cheese Pide",
-          "description": "Mozzarella, feta cheese.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "minced-meat-pide",
-          "name": "Minced Meat Pide",
-          "description": "Minced meat with special recipe.",
-          "price": 11000
-        },
-        {
-          "id": "doner-pide",
-          "name": "Doner Pide",
-          "description": "Pide stuffed with doner meat.",
-          "price": 12000
-        },
-        {
-          "id": "special-pide",
-          "name": "Special Pide",
-          "description": "Meat, chicken, green pepper, jalapeno, red onion, tomato.",
-          "price": 13000,
-          "image": "/new/IMG_3902.JPG"
-        },
-        {
-          "id": "spinach-pide",
-          "name": "Spinach Pide",
-          "description": "Cooked spinach with mozzarella and white cheese.",
-          "price": 11000
-        }
-      ]
-    },
-    {
-      "id": "pizza",
-      "name": "Pizza",
-      "items": [
-        {
-          "id": "salmon-pizza",
-          "name": "Salmon Pizza",
-          "description": "Pizza topped with fresh salmon and cheese.",
-          "price": 14000
-        },
-        {
-          "id": "four-season-pizza",
-          "name": "Four Season Pizza",
-          "description": "Mushrooms, peppers, salami, turkey.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_3777.PNG.webp"
-        },
-        {
-          "id": "doner-pizza",
-          "name": "Doner Pizza",
-          "description": "Doner meat.",
-          "price": 12000
-        },
-        {
-          "id": "doner-chicken-pizza",
-          "name": "Doner Chicken Pizza",
-          "description": "Pizza topped with doner chicken and cheese.",
-          "price": 11000
-        },
-        {
-          "id": "diavolo-pizza",
-          "name": "Diavolo Pizza",
-          "description": "Spicy pizza with pepperoni and chili.",
-          "price": 12000
-        },
-        {
-          "id": "pizza-mix",
-          "name": "Pizza Mix",
-          "description": "Pizza with a mix of meats and vegetables.",
-          "price": 13000
-        },
-        {
-          "id": "turkey-beef-salami-pizza",
-          "name": "Turkey & Beef Salami Pizza",
-          "description": "Pizza topped with turkey and beef salami.",
-          "price": 12000
-        },
-        {
-          "id": "four-cheese-pizza",
-          "name": "Four Cheese Pizza",
-          "description": "Mozzarella, Gorgonzola, feta, and Parmesan.",
-          "price": 11000
-        },
-        {
-          "id": "tuna-pizza",
-          "name": "Tuna Pizza",
-          "description": "Tuna, fresh onions.",
-          "price": 9000,
-          "image": "/images/optimized/IMG_3780.PNG.webp"
-        },
-        {
-          "id": "pepperoni-pizza",
-          "name": "Pepperoni Pizza",
-          "description": "Pizza topped with pepperoni and cheese.",
-          "price": 12000
-        },
-        {
-          "id": "margherita-pizza",
-          "name": "Margherita Pizza",
-          "description": "Classic pizza with tomato sauce, mozzarella, and basil.",
-          "price": 8000
-        },
-        {
-          "id": "turkey-pizza",
-          "name": "Turkey Pizza",
-          "description": "Pizza topped with turkey and cheese.",
-          "price": 10000,
-          "image": "/images/optimized/IMG_3778.PNG.webp"
-        },
-        {
-          "id": "salami-pizza",
-          "name": "Salami Pizza",
-          "description": "Beef salami.",
-          "price": 10000,
-          "image": "/images/optimized/IMG_3781.PNG.webp"
-        },
-        {
-          "id": "mushroom-pizza",
-          "name": "Mushroom Pizza",
-          "description": "Pizza topped with mushrooms and cheese.",
-          "price": 9000
-        },
-        {
-          "id": "spinach-pizza",
-          "name": "Spinach Pizza",
-          "description": "Pizza topped with spinach and cheese.",
-          "price": 10000,
-          "image": "/new/IMG_3903.JPG"
-        },
-        {
-          "id": "vegetarian-pizza",
-          "name": "Vegetarian Pizza",
-          "description": "Vegetarian pizza with assorted vegetables.",
-          "price": 11000
-        },
-        {
-          "id": "calzone-pizza",
-          "name": "Calzone",
-          "description": "Salami, turkey, mushrooms.",
-          "price": 12000
-        }
-      ]
-    },
-    {
-      "id": "kids-meal",
-      "name": "Kids Meal",
-      "items": [
-        {
-          "id": "kids-nugget",
-          "name": "Nugget",
-          "description": "Chicken nuggets for kids.",
-          "price": 5000,
-          "image": "/new/IMG_3900.JPG"
-        },
-        {
-          "id": "kids-fries",
-          "name": "Fries",
-          "description": "Crispy fries for kids.",
-          "price": 3500,
-          "image": "/new/IMG_3904.JPG"
-        }
-      ]
-    },
-    {
-      "id": "rizzo",
-      "name": "Rizzo",
-      "items": [
-        {
-          "id": "rizzo-item",
-          "name": "Rizzo",
-          "description": "Crispy chicken and rice bowl.",
-          "price": 6500
-        }
-      ]
-    },
-    {
-      "id": "special",
-      "name": "Special",
-      "items": [
-        {
-          "id": "german-pizza",
-          "name": "German Pizza",
-          "description": "Crème fraîche sauce, turkey, mushrooms.",
-          "price": 12000
-        },
-        {
-          "id": "kurdish-pizza",
-          "name": "Kurdish Pizza",
-          "description": "Doner meat in fresh cream sauce with red onions.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_3902.JPG.webp"
-        }
-      ]
-    },
-    {
-      "id": "drinks",
-      "name": "Beverages",
-      "items": [
-        { "id": "cola", "name": "Cola", "description": "Refreshing cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
-        { "id": "fanta", "name": "Fanta", "description": "Orange flavored soda.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "Water", "description": "Bottled water.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "sprite", "name": "Sprite", "description": "Lemon-lime soda.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "cola-diet", "name": "Cola Diet", "description": "Diet cola drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "Yogurt", "description": "Yogurt drink.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "soda", "name": "Soda", "description": "Sparkling soda water.", "price": 1500, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "tea", "name": "Tea", "description": "Hot black tea.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }
   ]

@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Languages } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
 import WorkingHours from "@/components/WorkingHours";
-const logo = "/images/optimized/logo.webp";
+// Using a medical-themed placeholder logo - replace with actual clinic logo
+const logo = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop";
 import { useNavigate } from "react-router-dom";
 
 const Index = () => {
@@ -78,7 +79,7 @@ const Index = () => {
         <motion.div className="mb-6 sm:mb-8" variants={itemVariants}>
           <ImageOptimized
             src={logo}
-            alt="German Doner Logo"
+            alt="Medical Clinics Logo"
             className="mx-auto mb-6 w-24 sm:w-32 md:w-40 lg:w-48 h-auto max-w-full object-contain"
             priority={true}
             width={400}
@@ -95,7 +96,7 @@ const Index = () => {
             className="text-3xl sm:text-4xl md:text-5xl font-bold text-[hsl(39_92%_53%)] mb-4 drop-shadow-lg font-display tracking-wide"
             variants={itemVariants}
           >
-            German Doner
+            Medical Clinics
           </motion.h2>
         </motion.div>
 
@@ -137,7 +138,7 @@ const Index = () => {
           </Card>
         </motion.div>
 
-        {/* Berlin Doner Info */}
+        {/* Medical Clinics Info */}
         <motion.div 
           className="grid md:grid-cols-2 gap-4 mt-8"
           variants={itemVariants}

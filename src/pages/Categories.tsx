@@ -43,8 +43,8 @@ const Categories = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">{data?.shopName || "Menu"}</h1>
-        <p className="text-muted-foreground mb-8">Choose a category to browse items.</p>
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">{data?.shopName || "Medical Clinics"}</h1>
+        <p className="text-muted-foreground mb-8">Choose a category to browse clinics.</p>
         
         {/* Working Hours */}
         <div className="flex justify-center mb-8">
@@ -57,19 +57,10 @@ const Categories = () => {
 
         <div className="grid gap-6 sm:gap-8 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {categories.map((cat) => {
-            const preview = cat.id === 'pide'
-              ? '/images/optimized/IMG_2885.webp'
-              : cat.id === 'doner'
-                ? '/images/optimized/IMG_1098_TIF.webp'
-                : cat.id === 'pizza'
-                  ? '/images/optimized/IMG_2865.webp'
-              : cat.id === 'drinks'
-                ? '/images/optimized/assorted-beverages.webp'
-              : cat.id === 'special'
-                ? '/images/optimized/IMG_3902.JPG.jpg'
-              : cat.id === 'rizzo'
-                ? '/images/upload/IMG_4123.JPG'
-                  : resolveItemImage(cat.items?.[0] || {});
+            // Use medical-themed images for clinic categories
+            const preview = cat.id === 'clinics'
+              ? 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop'
+              : resolveItemImage(cat.items?.[0] || {});
             return (
               <motion.button
                 key={cat.id}
@@ -94,7 +85,7 @@ const Categories = () => {
                         {cat.name}
                       </h2>
                       <p className="text-white/85 text-xs sm:text-sm mt-1">
-                        {cat.items.length} items
+                        {cat.items.length} {cat.id === 'clinics' ? 'clinics' : 'items'}
                       </p>
                     </div>
                   </div>

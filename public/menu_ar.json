@@ -1,326 +1,126 @@
 {
-  "shopName": "دونر ألماني",
+  "shopName": "العيادات الطبية",
   "currency": "IQD",
+  "workingHours": {
+    "daily": "يومياً",
+    "hours": "9:00 ص - 6:00 م",
+    "noDaysOff": "أيام العمل فقط",
+    "open": "مفتوح",
+    "closed": "مغلق"
+  },
   "categories": [
     {
-      "id": "doner",
-      "name": "دونر كباب",
+      "id": "clinics",
+      "name": "العيادات",
       "items": [
         {
-          "id": "doner-kebap-beef",
-          "name": "دونر كباب لحم",
-          "description": "دونر كباب لحم بقري كلاسيكي في خبز طازج.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-1",
+          "name": "مركز الرشيد الطبي",
+          "description": "خدمات طبية شاملة مع مرافق حديثة. يقع في قلب المدينة.",
+          "price": 150000,
+          "originalPrice": 200000,
+          "location": "المنطقة المركزية، بغداد",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
         },
         {
-          "id": "doner-kebap-chicken",
-          "name": "دونر كباب دجاج",
-          "description": "دونر كباب دجاج كلاسيكي في خبز طازج.",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-2",
+          "name": "عيادة النور المتخصصة",
+          "description": "رعاية طبية متخصصة مع أطباء ذوي خبرة. معدات تشخيص متقدمة متوفرة.",
+          "price": 120000,
+          "originalPrice": 180000,
+          "location": "حي المنصور، بغداد",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
         },
         {
-          "id": "doner-kebap-mix",
-          "name": "دونر كباب ميكس",
-          "description": "مزيج من لحم البقر والدجاج دونر كباب في خبز طازج.",
-          "price": 6000
+          "id": "clinic-3",
+          "name": "عيادة السلام العائلية",
+          "description": "رعاية طبية موجهة للعائلة مع خدمات طب الأطفال والممارسة العامة.",
+          "price": 80000,
+          "originalPrice": 120000,
+          "location": "حي الكرادة، بغداد",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap-beef",
-          "name": "يوفكا كباب لحم",
-          "description": "بصل، طماطم، ملفوف أحمر، خس أخضر.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+          "id": "clinic-4",
+          "name": "عيادة الحكمة لطب الأسنان",
+          "description": "رعاية أسنان حديثة مع معدات متطورة. تجميل الأسنان وطب الأسنان العام.",
+          "price": 100000,
+          "originalPrice": 150000,
+          "location": "حي الجادرية، بغداد",
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap-chicken",
-          "name": "يوفكا كباب دجاج",
-          "description": "بصل، طماطم، ملفوف أحمر، خس أخضر.",
-          "price": 5500
+          "id": "clinic-5",
+          "name": "مركز الأمل للعظام",
+          "description": "رعاية عظام متخصصة مع خدمات العلاج الطبيعي. علاج إصابات الرياضة.",
+          "price": 180000,
+          "originalPrice": 250000,
+          "location": "حي اليرموك، بغداد",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap-mix",
-          "name": "يوفكا كباب ميكس",
-          "description": "مزيج من لحم البقر والدجاج مع بصل، طماطم، ملفوف أحمر، خس أخضر.",
-          "price": 6000
+          "id": "clinic-6",
+          "name": "عيادة النهضة النسائية",
+          "description": "خدمات صحة المرأة والنسائية. رعاية ما قبل وبعد الولادة متوفرة.",
+          "price": 130000,
+          "originalPrice": 190000,
+          "location": "حي الأعظمية، بغداد",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate-beef",
-          "name": "طبق كباب لحم",
-          "description": "دونر كباب لحم بقري يقدم في طبق مع مقبلات.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "id": "clinic-7",
+          "name": "عيادة الطبي للعيون",
+          "description": "رعاية شاملة للعيون وخدمات البصر. العلاج بالليزر والجراحة متوفرة.",
+          "price": 160000,
+          "originalPrice": 220000,
+          "location": "حي الزيونة، بغداد",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate-chicken",
-          "name": "طبق كباب دجاج",
-          "description": "دونر كباب دجاج يقدم في طبق مع مقبلات.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "id": "clinic-8",
+          "name": "مركز الشفاء لأمراض القلب",
+          "description": "رعاية القلب وصحة القلب. تخطيط القلب واختبار الإجهاد متوفرة.",
+          "price": 200000,
+          "originalPrice": 280000,
+          "location": "حي السعدون، بغداد",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop"
         },
         {
-          "id": "lahmacun",
-          "name": "لحم عجين",
-          "description": "لحم مفروم مع خليط خاص. لحم، خس، طماطم، ملفوف، بصل وصلصة اختيارية.",
-          "price": 9000
+          "id": "clinic-9",
+          "name": "عيادة الرحمة لطب الأطفال",
+          "description": "رعاية أطفال متخصصة للأطفال. التطعيم وفحوصات الرفاهية.",
+          "price": 90000,
+          "originalPrice": 140000,
+          "location": "حي الدورة، بغداد",
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop"
         },
         {
-          "id": "lahmacun-plate",
-          "name": "طبق لحم عجين",
-          "description": "لحم، خس، طماطم، ملفوف، بصل وصلصة اختيارية.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-10",
+          "name": "عيادة التوفيق للأمراض الجلدية",
+          "description": "رعاية البشرة والعلاجات الجلدية. الإجراءات التجميلية متوفرة.",
+          "price": 110000,
+          "originalPrice": 170000,
+          "location": "حي الكاظمية، بغداد",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop"
         },
         {
-          "id": "doner-box",
-          "name": "صندوق لحم دونر",
-          "description": "لحم دونر بقري مع بطاطس مقلية وسلطة.",
-          "price": 6500,
-          "image": "/new/IMG_3899.JPG"
+          "id": "clinic-11",
+          "name": "عيادة المستقبل للأعصاب",
+          "description": "رعاية عصبية وعلاج. أخصائيون في اضطرابات الدماغ والأعصاب.",
+          "price": 220000,
+          "originalPrice": 300000,
+          "location": "حي الحرية، بغداد",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
         },
         {
-          "id": "chicken-doner-box",
-          "name": "صندوق دجاج دونر",
-          "description": "لحم دجاج دونر مع بطاطس مقلية وسلطة.",
-          "price": 5500,
-          "image": "/new/IMG_3899.JPG"
-        },
-        {
-          "id": "mixed-doner-box",
-          "name": "صندوق دونر ميكس",
-          "description": "مزيج من لحم البقر والدجاج دونر مع بطاطس مقلية وسلطة.",
-          "price": 6000
-        },
-        {
-          "id": "kapsalon-plate",
-          "name": "طبق كابسالون",
-          "description": "بطاطس مقلية مع لحم دونر وجبن مذاب.",
-          "price": 12000
+          "id": "clinic-12",
+          "name": "مركز العطاء للعلاج الطبيعي",
+          "description": "خدمات العلاج الطبيعي وإعادة التأهيل. برامج التعافي بعد الجراحة.",
+          "price": 70000,
+          "originalPrice": 110000,
+          "location": "حي الشعب، بغداد",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
         }
-      ]
-    },
-    
-    {
-      "id": "pide",
-      "name": "بيدا",
-      "items": [
-        {
-          "id": "sucuk-pide",
-          "name": "بيدا سجق",
-          "description": "خبز تركي مسطح مع سجق حار.",
-          "price": 12000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "cheese-pide",
-          "name": "بيدا جبن",
-          "description": "موزاريلا، جبن فيتا.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "minced-meat-pide",
-          "name": "لحم مفروم بيدا",
-          "description": "لحم مفروم بوصفة خاصة.",
-          "price": 11000
-        },
-        {
-          "id": "doner-pide",
-          "name": "بيدا دونر",
-          "description": "بيدا محشوة بلحم دونر.",
-          "price": 12000
-        },
-        {
-          "id": "special-pide",
-          "name": "بيدا خاصة",
-          "description": "لحم، دجاج، فلفل أخضر، هالبينو، بصل أحمر، طماطم.",
-          "price": 13000,
-          "image": "/new/IMG_3902.JPG"
-        },
-        {
-          "id": "spinach-pide",
-          "name": "بيدا سبانخ",
-          "description": "سبانخ مطبوخ مع موزاريلا وجبن أبيض.",
-          "price": 11000
-        }
-      ]
-    },
-    {
-      "id": "pizza",
-      "name": "بيتزا",
-      "items": [
-        {
-          "id": "salmon-pizza",
-          "name": "بيتزا سلمون",
-          "description": "بيتزا مع سلمون طازج وجبن.",
-          "price": 14000
-        },
-        {
-          "id": "four-season-pizza",
-          "name": "بيتزا أربع فصول",
-          "description": "فطر، فلفل، سالامي، ديك رومي.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_3777.PNG.webp"
-        },
-        {
-          "id": "doner-pizza",
-          "name": "بيتزا دونر",
-          "description": "لحم دونر.",
-          "price": 12000
-        },
-        {
-          "id": "doner-chicken-pizza",
-          "name": "بيتزا دجاج دونر",
-          "description": "بيتزا مع دجاج دونر وجبن.",
-          "price": 11000
-        },
-        {
-          "id": "diavolo-pizza",
-          "name": "بيتزا ديافولو",
-          "description": "بيتزا حارة مع بيبروني وفلفل حار.",
-          "price": 12000
-        },
-        {
-          "id": "pizza-mix",
-          "name": "بيتزا ميكس",
-          "description": "بيتزا مع مزيج من اللحوم والخضروات.",
-          "price": 13000
-        },
-        {
-          "id": "turkey-beef-salami-pizza",
-          "name": "بيتزا سالامي ديك رومي ولحم بقري",
-          "description": "بيتزا مع سالامي ديك رومي ولحم بقري.",
-          "price": 12000
-        },
-        {
-          "id": "four-cheese-pizza",
-          "name": "بيتزا أربع جبن",
-          "description": "موزاريلا، جورجونزولا، فيتا، وبارميزان.",
-          "price": 11000
-        },
-        {
-          "id": "tuna-pizza",
-          "name": "بيتزا تونة",
-          "description": "تونة، بصل طازج.",
-          "price": 9000,
-          "image": "/images/optimized/IMG_3780.PNG.webp"
-        },
-        {
-          "id": "pepperoni-pizza",
-          "name": "بيتزا بيبروني",
-          "description": "بيتزا مع بيبروني وجبن.",
-          "price": 12000
-        },
-        {
-          "id": "margherita-pizza",
-          "name": "بيتزا مارجريتا",
-          "description": "بيتزا كلاسيكية مع صلصة طماطم وموزاريلا وريحان.",
-          "price": 8000
-        },
-        {
-          "id": "turkey-pizza",
-          "name": "بيتزا ديك رومي",
-          "description": "بيتزا مع ديك رومي وجبن.",
-          "price": 10000,
-          "image": "/images/optimized/IMG_3778.PNG.webp"
-        },
-        {
-          "id": "salami-pizza",
-          "name": "بيتزا سالامي",
-          "description": "سالامي لحم بقري.",
-          "price": 10000,
-          "image": "/images/optimized/IMG_3781.PNG.webp"
-        },
-        {
-          "id": "mushroom-pizza",
-          "name": "بيتزا فطر",
-          "description": "بيتزا مع فطر وجبن.",
-          "price": 9000
-        },
-        {
-          "id": "spinach-pizza",
-          "name": "بيتزا سبانخ",
-          "description": "بيتزا مع سبانخ وجبن.",
-          "price": 10000
-        },
-        {
-          "id": "vegetarian-pizza",
-          "name": "بيتزا نباتية",
-          "description": "بيتزا نباتية مع خضروات متنوعة.",
-          "price": 11000
-        },
-        {
-          "id": "calzone-pizza",
-          "name": "كالزون",
-          "description": "سالامي، ديك رومي، فطر.",
-          "price": 12000
-        }
-      ]
-    },
-    {
-      "id": "kids-meal",
-      "name": "وجبة أطفال",
-      "items": [
-        {
-          "id": "kids-nugget",
-          "name": "ناجت",
-          "description": "ناجت دجاج للأطفال.",
-          "price": 5000,
-          "image": "/new/IMG_3900.JPG"
-        },
-        {
-          "id": "kids-fries",
-          "name": "بطاطس مقلية",
-          "description": "بطاطس مقلية مقرمشة للأطفال.",
-          "price": 3500,
-          "image": "/new/IMG_3904.JPG"
-        }
-      ]
-    },
-    {
-      "id": "rizzo",
-      "name": "ريزو",
-      "items": [
-        {
-          "id": "rizzo-item",
-          "name": "ريزو",
-          "description": "وعاء دجاج مقرمش وأرز.",
-          "price": 6500
-        }
-      ]
-    },
-    {
-      "id": "special",
-      "name": "خاص",
-      "items": [
-        {
-          "id": "german-pizza",
-          "name": "بيتزا ألمانية",
-          "description": "صلصة كريم فريش، ديك رومي، فطر.",
-          "price": 12000
-        },
-        {
-          "id": "kurdish-pizza",
-          "name": "بيتزا كردية",
-          "description": "لحم دونر في صلصة كريم طازج مع بصل أحمر.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_3902.JPG.webp"
-        }
-      ]
-    },
-    {
-      "id": "drinks",
-      "name": "مشروبات",
-      "items": [
-        { "id": "cola", "name": "كولا", "description": "مشروب كولا منعش.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
-        { "id": "fanta", "name": "فانتا", "description": "صودا بنكهة البرتقال.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "ماء", "description": "ماء معبأ.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "sprite", "name": "سبرايت", "description": "صودا ليمون وليمون.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "cola-diet", "name": "كولا دايت", "description": "مشروب كولا دايت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "زبادي", "description": "مشروب زبادي.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "soda", "name": "صودا", "description": "ماء صودا فوار.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "tea", "name": "شاي", "description": "شاي أسود ساخن.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }
   ]

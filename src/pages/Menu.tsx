@@ -10,13 +10,16 @@ import ImageOptimized from "@/components/ImageOptimized";
 import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
 import WorkingHours from "@/components/WorkingHours";
-const logo = "/images/optimized/logo.webp";
+// Using a medical-themed placeholder logo - replace with actual clinic logo
+const logo = "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=200&fit=crop";
 
 interface MenuItem {
   id: string;
   name: string;
   description: string;
   price: number;
+  originalPrice?: number;
+  location?: string;
   image?: string;
   spicy?: boolean;
   vegetarian?: boolean;
@@ -142,20 +145,51 @@ export default function Menu() {
 
   const visibleItems = useMemo(() => {
     if (!menuData) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
-    const base = selectedCategoryId === 'all'
+    let base = selectedCategoryId === 'all'
       ? allItems
       : allItems.filter(entry => entry.categoryId === selectedCategoryId);
-    return base.filter(({ item }) => item.available !== false && (item.stock === undefined || item.stock > 0));
-  }, [allItems, menuData, selectedCategoryId]);
+    
+    // Filter by availability
+    base = base.filter(({ item }) => item.available !== false && (item.stock === undefined || item.stock > 0));
+    
+    // Filter by search query
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      base = base.filter(({ item }) => 
+        item.name.toLowerCase().includes(query) ||
+        item.description.toLowerCase().includes(query) ||
+        (item.location && item.location.toLowerCase().includes(query))
+      );
+    }
+    
+    // Filter by selected filters
+    if (selectedFilters.length > 0) {
+      base = base.filter(({ item }) => {
+        return selectedFilters.every(filter => {
+          switch (filter) {
+            case 'popular':
+              return item.popular === true;
+            case 'special':
+              return item.isSpecial === true;
+            case 'discount':
+              return item.originalPrice && item.originalPrice > item.price;
+            case 'favorites':
+              return favorites.includes(item.id);
+            default:
+              return true;
+          }
+        });
+      });
+    }
+    
+    return base;
+  }, [allItems, menuData, selectedCategoryId, searchQuery, selectedFilters, favorites]);
 
-  // Available filter options
+  // Available filter options for clinics
   const filterOptions = useMemo(() => [
-    { id: 'vegetarian', label: '🌱 Vegetarian', count: 0 },
-    { id: 'vegan', label: '🌿 Vegan', count: 0 },
-    { id: 'glutenFree', label: '🌾 Gluten Free', count: 0 },
-    { id: 'spicy', label: '🌶️ Spicy', count: 0 },
     { id: 'popular', label: '⭐ Popular', count: 0 },
     { id: 'special', label: '🏷️ Special Offers', count: 0 },
+    { id: 'discount', label: '💰 Discount', count: 0 },
     { id: 'favorites', label: '❤️ Favorites', count: favorites.length },
   ], [favorites]);
 
@@ -189,7 +223,7 @@ export default function Menu() {
         <div className="grid grid-cols-3 items-center">
           <div />
           <div className="flex justify-center">
-            <ImageOptimized src={logo} alt="German Doner" className="h-10 sm:h-12 md:h-14 w-auto" width={400} priority={true} sizes="200px" srcSet={`${logo} 400w, ${logo} 800w`} />
+            <ImageOptimized src={logo} alt="Medical Clinics" className="h-10 sm:h-12 md:h-14 w-auto" width={400} priority={true} sizes="200px" srcSet={`${logo} 400w, ${logo} 800w`} />
           </div>
           {/* Language Menu Button shows current language */}
           <div className="relative justify-self-end">
@@ -243,6 +277,67 @@ export default function Menu() {
         </div>
       </div>
 
+      {/* Search and Filter Section */}
+      <div className="w-full sticky top-[104px] sm:top-[112px] z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 border-b border-border">
+        <div className="container mx-auto px-2 py-3">
+          {/* Search Input */}
+          <div className="mb-3">
+            <input
+              type="text"
+              placeholder={isRTL ? "البحث عن العيادات..." : "Search clinics..."}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+          
+          {/* Filter Toggle and Filters */}
+          <div className="flex items-center justify-between">
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border bg-card text-foreground hover:bg-muted transition-colors"
+            >
+              <span>{isRTL ? "المرشحات" : "Filters"}</span>
+              <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {selectedFilters.length > 0 && (
+              <button
+                onClick={() => setSelectedFilters([])}
+                className="text-sm text-muted-foreground hover:text-foreground"
+              >
+                {isRTL ? "مسح الكل" : "Clear all"}
+              </button>
+            )}
+          </div>
+          
+          {/* Filter Options */}
+          {showFilters && (
+            <div className="mt-3 flex flex-wrap gap-2">
+              {filterOptions.map(filter => (
+                <button
+                  key={filter.id}
+                  onClick={() => {
+                    setSelectedFilters(prev => 
+                      prev.includes(filter.id)
+                        ? prev.filter(f => f !== filter.id)
+                        : [...prev, filter.id]
+                    );
+                  }}
+                  className={`px-3 py-1 rounded-full text-sm border transition-colors ${
+                    selectedFilters.includes(filter.id)
+                      ? 'bg-primary text-primary-foreground border-primary'
+                      : 'bg-card text-foreground border-border hover:bg-muted'
+                  }`}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Working Hours Info */}
       <div className="container mx-auto px-2 py-4">
         <div className="flex justify-center">
@@ -255,7 +350,7 @@ export default function Menu() {
       </div>
 
       {/* Menu Grid */}
-      <main ref={mainRef} className="container mx-auto px-2 py-6">
+      <main ref={mainRef} className="container mx-auto px-2 py-6 mt-4">
         {visibleItems.length > 0 ? (
           <div className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'rtl font-arabic' : ''}`}>
             {visibleItems.map(({ item, categoryId }) => (

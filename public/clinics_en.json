@@ -1,0 +1,100 @@
+{
+  "clinics": [
+    {
+      "id": 1,
+      "name": "Al-Shifa Clinic",
+      "location": "Erbil, 60 Meter Street",
+      "contact": "+9647500000000",
+      "categories": [
+        {
+          "id": "dental",
+          "name": "Dental",
+          "items": [
+            {
+              "id": "cleaning",
+              "name": "Teeth Cleaning",
+              "description": "Professional dental cleaning service.",
+              "beforePrice": "$50",
+              "afterPrice": "$35"
+            },
+            {
+              "id": "whitening",
+              "name": "Teeth Whitening",
+              "description": "Brighten your smile with safe whitening.",
+              "beforePrice": "$120",
+              "afterPrice": "$90"
+            }
+          ]
+        },
+        {
+          "id": "general",
+          "name": "General Medicine",
+          "items": [
+            {
+              "id": "consultation",
+              "name": "Doctor Consultation",
+              "description": "General health checkup and consultation.",
+              "beforePrice": "$30",
+              "afterPrice": "$20"
+            },
+            {
+              "id": "vaccination",
+              "name": "Vaccination",
+              "description": "Routine and travel vaccinations.",
+              "beforePrice": "$25",
+              "afterPrice": "$15"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "HealthPlus Clinic",
+      "location": "Baghdad, Karrada",
+      "contact": "+9647700000000",
+      "categories": [
+        {
+          "id": "pediatrics",
+          "name": "Pediatrics",
+          "items": [
+            {
+              "id": "child-checkup",
+              "name": "Child Checkup",
+              "description": "Comprehensive checkup for children.",
+              "beforePrice": "$40",
+              "afterPrice": "$30"
+            },
+            {
+              "id": "immunization",
+              "name": "Immunization",
+              "description": "Childhood immunization services.",
+              "beforePrice": "$20",
+              "afterPrice": "$10"
+            }
+          ]
+        },
+        {
+          "id": "dermatology",
+          "name": "Dermatology",
+          "items": [
+            {
+              "id": "skin-check",
+              "name": "Skin Check",
+              "description": "Full body skin examination.",
+              "beforePrice": "$60",
+              "afterPrice": "$45"
+            },
+            {
+              "id": "acne-treatment",
+              "name": "Acne Treatment",
+              "description": "Personalized acne treatment plan.",
+              "beforePrice": "$80",
+              "afterPrice": "$60"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

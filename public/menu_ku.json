@@ -1,326 +1,126 @@
 {
-  "shopName": "دۆنەری ئەڵمانی",
+  "shopName": "کلینیکە پزیشکییەکان",
   "currency": "IQD",
+  "workingHours": {
+    "daily": "هەموو ڕۆژ",
+    "hours": "9:00 پ.ن - 6:00 د.ن",
+    "noDaysOff": "تەنها ڕۆژەکانی کار",
+    "open": "کراوەیە",
+    "closed": "داخراوەیە"
+  },
   "categories": [
     {
-      "id": "doner",
-      "name": "دۆنەر کباب",
+      "id": "clinics",
+      "name": "کلینیکەکان",
       "items": [
         {
-          "id": "doner-kebap-beef",
-          "name": "دۆنەر کباب گۆشت",
-          "description": "دۆنەر کبابی گۆشتی کلاسیکی لە نانی تازەدا.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-1",
+          "name": "سەنتەری پزیشکی ڕەشید",
+          "description": "خزمەتگوزاری پزیشکی فراوان لەگەڵ دەستگەکانی مۆدێرن. لە ناوەڕاستی شاردا دایە.",
+          "price": 150000,
+          "originalPrice": 200000,
+          "location": "ناوچەی ناوەڕاست، بەغداد",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
         },
         {
-          "id": "doner-kebap-chicken",
-          "name": "دۆنەر کباب مۆرغ",
-          "description": "دۆنەر کبابی مۆرغی کلاسیکی لە نانی تازەدا.",
-          "price": 5500,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-2",
+          "name": "کلینیکی تایبەتی نۆر",
+          "description": "چاودێری پزیشکی تایبەت لەگەڵ پزیشکانی ئەزمووندار. ئامێری دەستنیشانکردنی پێشکەوتوو بەردەستە.",
+          "price": 120000,
+          "originalPrice": 180000,
+          "location": "گەڕەکی مەنسوور، بەغداد",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
         },
         {
-          "id": "doner-kebap-mix",
-          "name": "دۆنەر کباب تێکەڵە",
-          "description": "تێکەڵەی گۆشت و مۆرغی دۆنەر کباب لە نانی تازەدا.",
-          "price": 6000
+          "id": "clinic-3",
+          "name": "کلینیکی خێزانی سەلام",
+          "description": "چاودێری پزیشکی خێزانی لەگەڵ خزمەتگوزاری پزیشکی منداڵان و پزیشکی گشتی.",
+          "price": 80000,
+          "originalPrice": 120000,
+          "location": "گەڕەکی کەرەدە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap-beef",
-          "name": "یوفکا کباب گۆشت",
-          "description": "پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
-          "price": 6500,
-          "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop"
+          "id": "clinic-4",
+          "name": "کلینیکی حیکمەت بۆ ددانپزیشکی",
+          "description": "چاودێری ددانپزیشکی مۆدێرن لەگەڵ ئامێری پێشکەوتوو. جوانکردنی ددان و ددانپزیشکی گشتی.",
+          "price": 100000,
+          "originalPrice": 150000,
+          "location": "گەڕەکی جەدریە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap-chicken",
-          "name": "یوفکا کباب مۆرغ",
-          "description": "پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
-          "price": 5500
+          "id": "clinic-5",
+          "name": "سەنتەری ئەمل بۆ ئێسکپزیشکی",
+          "description": "چاودێری ئێسکپزیشکی تایبەت لەگەڵ خزمەتگوزاری چارەسەری سروشتی. چارەسەری برینداری وەرزش.",
+          "price": 180000,
+          "originalPrice": 250000,
+          "location": "گەڕەکی یەرموک، بەغداد",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop"
         },
         {
-          "id": "yufka-kebap-mix",
-          "name": "یوفکا کباب تێکەڵە",
-          "description": "تێکەڵەی گۆشت و مۆرغ لەگەڵ پێڵەو، تەماتە، کەڵەمبڕی سوور، کەسڵەتی سەوز.",
-          "price": 6000
+          "id": "clinic-6",
+          "name": "کلینیکی نەھدا بۆ ژنان",
+          "description": "خزمەتگوزاری تەندروستی ژنان و پزیشکی ژنان. چاودێری پێش و دوای منداڵبوون بەردەستە.",
+          "price": 130000,
+          "originalPrice": 190000,
+          "location": "گەڕەکی ئەعزەمیە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate-beef",
-          "name": "خواردنی کباب گۆشت",
-          "description": "دۆنەر کبابی گۆشت لە خواردنەکدا بە پێشکەشکراوە.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "id": "clinic-7",
+          "name": "کلینیکی تیبی بۆ چاوپزیشکی",
+          "description": "چاودێری فراوانی چاو و خزمەتگوزاری بینین. چارەسەری لەیزەر و نەشتەرگەری بەردەستە.",
+          "price": 160000,
+          "originalPrice": 220000,
+          "location": "گەڕەکی زەیوونە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
         },
         {
-          "id": "kebap-plate-chicken",
-          "name": "خواردنی کباب مۆرغ",
-          "description": "دۆنەر کبابی مۆرغ لە خواردنەکدا بە پێشکەشکراوە.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop"
+          "id": "clinic-8",
+          "name": "سەنتەری شفا بۆ دڵپزیشکی",
+          "description": "چاودێری دڵ و تەندروستی دڵ. تەختەی دڵ و تاقیکردنەوەی فشاری بەردەستە.",
+          "price": 200000,
+          "originalPrice": 280000,
+          "location": "گەڕەکی سەعدوون، بەغداد",
+          "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop"
         },
         {
-          "id": "lahmacun",
-          "name": "لەحمەجون",
-          "description": "گۆشتی نەرمکراوە بە تێکەڵەیەکی تایبەت. گۆشت، کەسڵەت، تەماتە، کەڵەمڕ، پێڵەو و سۆسی بەردەست.",
-          "price": 9000
+          "id": "clinic-9",
+          "name": "کلینیکی ڕەحمەت بۆ پزیشکی منداڵان",
+          "description": "چاودێری منداڵان تایبەت بۆ منداڵان. پێکوتن و پشکنینەکانی تەندروستی.",
+          "price": 90000,
+          "originalPrice": 140000,
+          "location": "گەڕەکی دۆرە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop"
         },
         {
-          "id": "lahmacun-plate",
-          "name": "خواردنی لەحمەجون",
-          "description": "گۆشت، کەسڵەت، تەماتە، کەڵەمبڕ، پێڵەو و سۆسی بەردەست.",
-          "price": 11000,
-          "image": "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400&h=300&fit=crop"
+          "id": "clinic-10",
+          "name": "کلینیکی تەوفیق بۆ پێستپزیشکی",
+          "description": "چاودێری پێست و چارەسەری پێستپزیشکی. پرۆسەی جوانکردن بەردەستە.",
+          "price": 110000,
+          "originalPrice": 170000,
+          "location": "گەڕەکی کەزیمیە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop"
         },
         {
-          "id": "doner-box",
-          "name": "بۆکسی گۆشتی دۆنەر",
-          "description": "گۆشتی گۆشتی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
-          "price": 6500,
-          "image": "/new/IMG_3899.JPG"
+          "id": "clinic-11",
+          "name": "کلینیکی مستەقبەل بۆ دەمارپزیشکی",
+          "description": "چاودێری دەمار و چارەسەر. پسپۆڕ لە نەخۆشییەکانی مێشک و دەمار.",
+          "price": 220000,
+          "originalPrice": 300000,
+          "location": "گەڕەکی حەریە، بەغداد",
+          "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop"
         },
         {
-          "id": "chicken-doner-box",
-          "name": "بۆکسی مۆرغی دۆنەر",
-          "description": "گۆشتی مۆرغی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
-          "price": 5500,
-          "image": "/new/IMG_3899.JPG"
-        },
-        {
-          "id": "mixed-doner-box",
-          "name": "بۆکسی تێکەڵەی دۆنەر",
-          "description": "تێکەڵەی گۆشتی گۆشت و مۆرغی دۆنەر لەگەڵ فرەنچ فرایز و سەلاتە.",
-          "price": 6000
-        },
-        {
-          "id": "kapsalon-plate",
-          "name": "خواردنی کەپسەلۆن",
-          "description": "فرەنچ فرایز بە گۆشتی دۆنەر و پەنیری تواوە.",
-          "price": 12000
+          "id": "clinic-12",
+          "name": "سەنتەری عەتا بۆ چارەسەری سروشتی",
+          "description": "خزمەتگوزاری چارەسەری سروشتی و ڕێکخستنەوە. پرۆگرامەکانی گەڕانەوە دوای نەشتەرگەری.",
+          "price": 70000,
+          "originalPrice": 110000,
+          "location": "گەڕەکی شەعب، بەغداد",
+          "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
         }
-      ]
-    },
-    
-    {
-      "id": "pide",
-      "name": "پیدە",
-      "items": [
-        {
-          "id": "sucuk-pide",
-          "name": "پیدەی سۆجوق",
-          "description": "نانی تورکی لەگەڵ سۆجوقی تیژ.",
-          "price": 12000,
-          "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "cheese-pide",
-          "name": "پیدەی پەنیر",
-          "description": "مۆزەرێلا، پەنیری فێتا.",
-          "price": 10000,
-          "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop"
-        },
-        {
-          "id": "minced-meat-pide",
-          "name": "گۆشتی وردکراو پیدە",
-          "description": "گۆشتی وردکراو بە رێچەتەیەکی تایبەت.",
-          "price": 11000
-        },
-        {
-          "id": "doner-pide",
-          "name": "پیدەی دۆنەر",
-          "description": "پیدە پڕکراوە بە گۆشتی دۆنەر.",
-          "price": 12000
-        },
-        {
-          "id": "special-pide",
-          "name": "پیدەی تایبەت",
-          "description": "گۆشت، مۆرغ، بەرگە سەوز، جەلەپینۆ، پێڵەوی سوور، تەماتە.",
-          "price": 13000,
-          "image": "/new/IMG_3902.JPG"
-        },
-        {
-          "id": "spinach-pide",
-          "name": "پیدەی سپێناخ",
-          "description": "سپێناخی چێکراو لەگەڵ مۆزەرێلا و پەنیری سپی.",
-          "price": 11000
-        }
-      ]
-    },
-    {
-      "id": "pizza",
-      "name": "پیتزا",
-      "items": [
-        {
-          "id": "salmon-pizza",
-          "name": "پیتزای سەڵمۆن",
-          "description": "پیتزا بە سەڵمۆنی تازە و پەنیر.",
-          "price": 14000
-        },
-        {
-          "id": "four-season-pizza",
-          "name": "پیتزای چوار وەرز",
-          "description": "کەڕوو، بەرگە، سەلەمی، تورکی.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_3777.PNG.webp"
-        },
-        {
-          "id": "doner-pizza",
-          "name": "پیتزای دۆنەر",
-          "description": "گۆشتی دۆنەر.",
-          "price": 12000
-        },
-        {
-          "id": "doner-chicken-pizza",
-          "name": "پیتزای مۆرغی دۆنەر",
-          "description": "پیتزا بە مۆرغی دۆنەر و پەنیر.",
-          "price": 11000
-        },
-        {
-          "id": "diavolo-pizza",
-          "name": "پیتزای دیاڤۆلۆ",
-          "description": "پیتزای تیژ بە پێپەرۆنی و چیلی.",
-          "price": 12000
-        },
-        {
-          "id": "pizza-mix",
-          "name": "پیتزای تێکەڵە",
-          "description": "پیتزا بە تێکەڵەیەک لە گۆشت و سەوزەوات.",
-          "price": 13000
-        },
-        {
-          "id": "turkey-beef-salami-pizza",
-          "name": "پیتزای سەلەمی تورکی و گۆشتی",
-          "description": "پیتزا بە سەلەمی تورکی و گۆشتی.",
-          "price": 12000
-        },
-        {
-          "id": "four-cheese-pizza",
-          "name": "پیتزای چوار پەنیر",
-          "description": "مۆزەرێلا، گۆرگۆنزۆلا، فێتا، و پارمێسان.",
-          "price": 11000
-        },
-        {
-          "id": "tuna-pizza",
-          "name": "پیتزای تونا",
-          "description": "تونا، پێڵەوی تازە.",
-          "price": 9000,
-          "image": "/images/optimized/IMG_3780.PNG.webp"
-        },
-        {
-          "id": "pepperoni-pizza",
-          "name": "پیتزای پێپەرۆنی",
-          "description": "پیتزا بە پێپەرۆنی و پەنیر.",
-          "price": 12000
-        },
-        {
-          "id": "margherita-pizza",
-          "name": "پیتزای مارگەریتا",
-          "description": "پیتزای کلاسیک بە سۆسی تەماتە، مۆزەرێلا، و بەیزیل.",
-          "price": 8000
-        },
-        {
-          "id": "turkey-pizza",
-          "name": "پیتزای تورکی",
-          "description": "پیتزا بە تورکی و پەنیر.",
-          "price": 10000,
-          "image": "/images/optimized/IMG_3778.PNG.webp"
-        },
-        {
-          "id": "salami-pizza",
-          "name": "پیتزای سەلەمی",
-          "description": "سەلەمی گۆشتی.",
-          "price": 10000,
-          "image": "/images/optimized/IMG_3781.PNG.webp"
-        },
-        {
-          "id": "mushroom-pizza",
-          "name": "پیتزای کەڕوو",
-          "description": "پیتزا بە کەڕوو و پەنیر.",
-          "price": 9000
-        },
-        {
-          "id": "spinach-pizza",
-          "name": "پیتزای سپێناخ",
-          "description": "پیتزا بە سپێناخ و پەنیر.",
-          "price": 10000
-        },
-        {
-          "id": "vegetarian-pizza",
-          "name": "پیتزای گیانلەبەر",
-          "description": "پیتزای گیانلەبەر بە سەوزەواتی جۆراوجۆر.",
-          "price": 11000
-        },
-        {
-          "id": "calzone-pizza",
-          "name": "کاڵزۆن",
-          "description": "سەلەمی، تورکی، کەڕوو.",
-          "price": 12000
-        }
-      ]
-    },
-    {
-      "id": "kids-meal",
-      "name": "خواردنی منداڵان",
-      "items": [
-        {
-          "id": "kids-nugget",
-          "name": "نەگەت",
-          "description": "نەگەتی مۆرغ بۆ منداڵان.",
-          "price": 5000,
-          "image": "/new/IMG_3900.JPG"
-        },
-        {
-          "id": "kids-fries",
-          "name": "فرەنچ فرایز",
-          "description": "فرەنچ فرایزی کرەسپی بۆ منداڵان.",
-          "price": 3500,
-          "image": "/new/IMG_3904.JPG"
-        }
-      ]
-    },
-    {
-      "id": "rizzo",
-      "name": "ریزۆ",
-      "items": [
-        {
-          "id": "rizzo-item",
-          "name": "ریزۆ",
-          "description": "کەوەی مۆرغی کرەسپی و برنج.",
-          "price": 6500
-        }
-      ]
-    },
-    {
-      "id": "special",
-      "name": "تایبەت",
-      "items": [
-        {
-          "id": "german-pizza",
-          "name": "پیتزای ئەڵمانی",
-          "description": "سۆسی کرێم فڕێش، تورکی، کەڕوو.",
-          "price": 12000
-        },
-        {
-          "id": "kurdish-pizza",
-          "name": "پیتزای کوردی",
-          "description": "گۆشتی دۆنەر لە سۆسی کرێمی تازەدا لەگەڵ پێڵەوی سوور.",
-          "price": 12000,
-          "image": "/images/optimized/IMG_3902.JPG.webp"
-        }
-      ]
-    },
-    {
-      "id": "drinks",
-      "name": "خواردنەوەکان",
-      "items": [
-        { "id": "cola", "name": "کۆلا", "description": "خواردنەوەی کۆلای نوێکەرەوە.", "price": 1000, "image": "https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop" },
-        { "id": "fanta", "name": "فانتا", "description": "سۆدای بەتامی پرتەقاڵ.", "price": 1000, "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400&h=300&fit=crop" },
-        { "id": "water", "name": "ئاو", "description": "ئاوی شووشەیی.", "price": 500, "image": "https://images.unsplash.com/photo-1519864600265-abb23847ef2c?w=400&h=300&fit=crop" },
-        { "id": "sprite", "name": "سپرایت", "description": "سۆدای لایم و لیمۆن.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "cola-diet", "name": "کۆلای دایەت", "description": "خواردنەوەی کۆلای دایەت.", "price": 1000, "image": "https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?w=400&h=300&fit=crop" },
-        { "id": "yogurt", "name": "مەست", "description": "خواردنەوەی مەست.", "price": 1000, "image": "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?w=400&h=300&fit=crop" },
-        { "id": "soda", "name": "سۆدا", "description": "ئاوی سۆدای گازدار.", "price": 1000, "image": "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=400&h=300&fit=crop" },
-        { "id": "tea", "name": "چای", "description": "چایە ڕەنگی گەرم.", "price": 1000, "image": "https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400&h=300&fit=crop" }
       ]
     }
   ]

@@ -4,12 +4,15 @@ import { Card, CardContent } from "@/components/ui/card";
 import React, { useState } from "react";
 import ImageOptimized from "@/components/ImageOptimized";
 import { resolveItemImage } from "@/lib/imageMap";
+import { Phone, MessageCircle } from 'lucide-react';
 
 interface MenuItem {
   id: string;
   name: string;
   description: string;
   price: number;
+  originalPrice?: number;
+  location?: string;
   image?: string;
   popular?: boolean;
   vegetarian?: boolean;
@@ -21,6 +24,7 @@ interface MenuItem {
   vegan?: boolean;
   glutenFree?: boolean;
   allergens?: string[];
+  contact?: string; // Added for contact number
 }
 
 // Props for MenuItemCard
@@ -73,6 +77,10 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
   const imageBgClass = isFallbackLogo ? 'bg-[hsl(42_73%_94%)]' : 'bg-[hsl(0_0%_24%)]';
   const imageObjectClass = isFallbackLogo ? 'object-contain p-6' : 'object-cover';
 
+  // Check if this is a clinic item (has location and originalPrice)
+  const isClinic = item.location && item.originalPrice;
+  const discountPercentage = isClinic && item.originalPrice ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
+
   return (
     <>
       <motion.div
@@ -92,12 +100,26 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                 sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
                 srcSet={`${imageSrc} 400w, ${imageSrc} 800w, ${imageSrc} 1200w`}
               />
+              {/* Discount badge for clinics */}
+              {isClinic && discountPercentage > 0 && (
+                <div className="absolute top-2 right-2">
+                  <Badge className="bg-red-500 text-white font-bold text-sm">
+                    -{discountPercentage}%
+                  </Badge>
+                </div>
+              )}
             </div>
 
             {/* Content Section */}
             <div className="flex-1 flex flex-col p-5 gap-2 items-center text-center">
               <div className="flex flex-col items-center gap-1 mb-1">
                 <h3 className="text-2xl font-extrabold text-foreground leading-tight">{item.name}</h3>
+                {/* Location for clinics */}
+                {isClinic && item.location && (
+                  <p className="text-sm text-muted-foreground mt-1">
+                    📍 {item.location}
+                  </p>
+                )}
               </div>
               <div className="flex items-center justify-center gap-1 mb-2 flex-wrap">
                 {item.popular && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">Popular</Badge>}
@@ -107,10 +129,61 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                 {item.glutenFree && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">🌾 Gluten Free</Badge>}
               </div>
               <p className="text-muted-foreground text-base mb-4 min-h-[2.5em] leading-relaxed text-center">{item.description}</p>
-              <div className="flex items-center justify-center mt-auto">
-                <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">{formatPrice(item.price, currency)}</span>
-                {item.isSpecial && (
-                  <Badge className="bg-primary text-[hsl(42_73%_94%)] ml-2">New</Badge>
+              {/* Price and Contact Row */}
+              <div className="flex items-center justify-center mt-auto flex-row gap-3 w-full">
+                <div className="flex flex-col flex-1 items-center">
+                  {/* Price display for clinics with discount */}
+                  {isClinic && item.originalPrice ? (
+                    <div className="flex flex-col items-center gap-1">
+                      <div className="flex items-center gap-3">
+                        <div className="flex flex-col items-center">
+                          <span className="text-xs text-muted-foreground mb-0.5">Before</span>
+                          <span className="text-lg text-gray-400 line-through font-medium">
+                            {formatPrice(item.originalPrice, currency)}
+                          </span>
+                        </div>
+                        <div className="flex flex-col items-center">
+                          <span className="text-xs text-green-600 mb-0.5 font-semibold">After</span>
+                          <span className="text-2xl font-bold text-green-600">
+                            {formatPrice(item.price, currency)}
+                          </span>
+                        </div>
+                      </div>
+                      <span className="text-sm text-green-600 font-semibold mt-1">
+                        Save {formatPrice(item.originalPrice - item.price, currency)}
+                      </span>
+                    </div>
+                  ) : (
+                    <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">
+                      {formatPrice(item.price, currency)}
+                    </span>
+                  )}
+                  {item.isSpecial && (
+                    <Badge className="bg-primary text-[hsl(42_73%_94%)]">New</Badge>
+                  )}
+                </div>
+                {/* Contact Button */}
+                {isClinic && item.contact && (
+                  <div className="flex flex-col items-end gap-2">
+                    <a
+                      href={`tel:${item.contact}`}
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/90 hover:bg-primary text-white shadow transition-colors"
+                      aria-label={`Call ${item.name}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Phone className="w-5 h-5" />
+                    </a>
+                    <a
+                      href={`https://wa.me/${item.contact.replace('+', '')}`}
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 text-white shadow transition-colors"
+                      aria-label={`WhatsApp ${item.name}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MessageCircle className="w-5 h-5" />
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
@@ -131,6 +204,11 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
             <ImageOptimized src={imageSrc} alt={item.name} className={`w-full h-72 object-contain rounded-t-lg ${imageBgClass}`} width={800} height={600} />
             <div className="p-4 text-center">
               <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
+              {isClinic && item.location && (
+                <p className="text-sm text-muted-foreground mb-2">
+                  📍 {item.location}
+                </p>
+              )}
             </div>
           </div>
         </div>
