@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import ImageOptimized from "@/components/ImageOptimized";
+
 
 interface ClinicItem { id: string; name: string; description: string; beforePrice: string; afterPrice: string }
 interface ClinicCategory { id: string; name: string; items: ClinicItem[] }
@@ -59,27 +59,18 @@ const Categories = () => {
                 className="text-left"
                 aria-label={`Open ${clinic.name}`}
               >
-                <Card className="relative border border-border overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-shadow">
-                  <div className="relative aspect-[4/3]">
-                    <ImageOptimized
-                      src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=400&fit=crop"
-                      alt={`${clinic.name} preview`}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 90vw"
-                      width={400}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-3">
-                      <h2 className="text-white text-lg sm:text-xl md:text-2xl font-extrabold drop-shadow mb-2">
-                        {clinic.name}
-                      </h2>
-                      <p className="text-white/90 text-sm mb-1">
-                        📍 {clinic.location}
-                      </p>
-                      <p className="text-white/85 text-xs sm:text-sm">
-                        {totalServices} services available
-                      </p>
-                    </div>
+                <Card className="relative border border-border overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-primary/10 to-primary/5">
+                  <div className="p-6 text-center">
+                    <div className="text-4xl mb-4">🏥</div>
+                    <h2 className="text-foreground text-lg sm:text-xl md:text-2xl font-extrabold mb-2">
+                      {clinic.name}
+                    </h2>
+                    <p className="text-muted-foreground text-sm mb-1">
+                      📍 {clinic.location}
+                    </p>
+                    <p className="text-primary text-xs sm:text-sm font-semibold">
+                      {totalServices} services available
+                    </p>
                   </div>
                 </Card>
               </motion.button>

@@ -1,9 +1,7 @@
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import React, { useState } from "react";
-import ImageOptimized from "@/components/ImageOptimized";
-import { resolveItemImage } from "@/lib/imageMap";
+import React from "react";
 import { Phone, MessageCircle } from 'lucide-react';
 
 interface MenuItem {
@@ -61,59 +59,28 @@ const formatPrice = (price: number, currency: string) => {
 };
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle }) => {
-  const [modalOpen, setModalOpen] = useState(false);
-
-  // Disable scroll when modal is open
-  React.useEffect(() => {
-    if (modalOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [modalOpen]);
-
-  // Resolve image source shared with categories
-  const imageSrc: string = resolveItemImage(item);
-  const isFallbackLogo = imageSrc.endsWith("/images/logo.webp");
-  const imageBgClass = isFallbackLogo ? 'bg-[hsl(42_73%_94%)]' : 'bg-[hsl(0_0%_24%)]';
-  const imageObjectClass = isFallbackLogo ? 'object-contain p-6' : 'object-cover';
-
   // Check if this is a clinic item (has location and originalPrice)
   const isClinic = item.location && item.originalPrice;
   const discountPercentage = isClinic && item.originalPrice ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
 
   return (
-    <>
-      <motion.div
-        variants={itemVariants}
-        whileHover="hover"
-        className="h-full"
-      >
-        <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
-          <CardContent className="p-0">
-            {/* Image Section */}
-          <div className={`w-full h-48 relative overflow-hidden ${imageBgClass} flex-shrink-0 cursor-zoom-in aspect-[4/3] mb-4`} onClick={() => setModalOpen(true)}>
-              <ImageOptimized
-                src={imageSrc}
-                alt={item?.name || "Menu item"}
-                className={`w-full h-full ${imageObjectClass} rounded-t-xl`}
-                width={400}
-                sizes="(min-width:1024px) 25vw, (min-width:640px) 33vw, 50vw"
-                srcSet={`${imageSrc} 400w, ${imageSrc} 800w, ${imageSrc} 1200w`}
-              />
-              {/* Discount badge for clinics */}
-              {isClinic && discountPercentage > 0 && (
-                <div className="absolute top-2 right-2">
-                  <Badge className="bg-red-500 text-white font-bold text-sm">
-                    -{discountPercentage}%
-                  </Badge>
-                </div>
-              )}
-            </div>
-
-            {/* Content Section */}
-            <div className="flex-1 flex flex-col p-5 gap-2 items-center text-center">
+    <motion.div
+      variants={itemVariants}
+      whileHover="hover"
+      className="h-full"
+    >
+      <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
+        <CardContent className="p-0">
+          {/* Content Section */}
+          <div className="flex-1 flex flex-col p-5 gap-2 items-center text-center relative">
+            {/* Discount badge for clinics */}
+            {isClinic && discountPercentage > 0 && (
+              <div className="absolute top-2 right-2">
+                <Badge className="bg-red-500 text-white font-bold text-sm">
+                  -{discountPercentage}%
+                </Badge>
+              </div>
+            )}
               <div className="flex flex-col items-center gap-1 mb-1">
                 <h3 className="text-2xl font-extrabold text-foreground leading-tight">{item.name}</h3>
                 {/* Location for clinics */}
@@ -189,34 +156,10 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                   </div>
                 )}
               </div>
-            </div>
-          </CardContent>
-        </Card>
-      </motion.div>
-      {/* Modal/Lightbox */}
-      {modalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-[hsl(0_0%_17%)]/90 backdrop-blur-sm" onClick={() => setModalOpen(false)}>
-          <div className="relative bg-card rounded-lg shadow-lg max-w-md w-full mx-4 border border-border" onClick={e => e.stopPropagation()}>
-            <button
-              className="absolute top-2 right-2 text-2xl text-foreground hover:text-primary focus:outline-none"
-              onClick={() => setModalOpen(false)}
-              aria-label="Close"
-            >
-              &times;
-            </button>
-            <ImageOptimized src={imageSrc} alt={item.name} className={`w-full h-72 object-contain rounded-t-lg ${imageBgClass}`} width={800} height={600} />
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-bold text-foreground mb-2">{item.name}</h3>
-              {isClinic && item.location && (
-                <p className="text-sm text-muted-foreground mb-2">
-                  📍 {item.location}
-                </p>
-              )}
-            </div>
           </div>
-        </div>
-      )}
-    </>
+        </CardContent>
+      </Card>
+    </motion.div>
   );
 };
 
