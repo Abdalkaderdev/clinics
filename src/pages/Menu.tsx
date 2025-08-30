@@ -230,7 +230,7 @@ export default function Menu() {
       dir={isRTL ? 'rtl' : 'ltr'}
     >
       {/* Sticky Header with centered logo and language menu */}
-      <header className="sticky top-0 z-50 bg-[hsl(0_0%_17%)] text-[hsl(42_73%_94%)] py-3 sm:py-4 px-3 sm:px-4 shadow-md border-b border-border">
+      <header className="sticky top-0 z-50 bg-blue-900 text-white py-3 sm:py-4 px-3 sm:px-4 shadow-lg border-b border-blue-800">
         <div className="grid grid-cols-3 items-center">
           <div />
           <div className="flex justify-center">
@@ -239,7 +239,7 @@ export default function Menu() {
           {/* Language Menu Button shows current language */}
           <div className="relative justify-self-end">
           <button
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[hsl(0_0%_24%)] hover:bg-[hsl(1_69%_49%)] hover:text-[hsl(42_73%_94%)] focus:outline-none focus:ring-2 focus:ring-[hsl(39_92%_53%)] text-[hsl(42_73%_94%)] font-semibold border border-border"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-800 hover:bg-blue-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-400 text-white font-semibold border border-blue-700"
             onClick={() => setLangMenuOpen(v => !v)}
             aria-label="Open language menu"
           >
@@ -247,17 +247,17 @@ export default function Menu() {
             <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
           </button>
           {langMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-[hsl(0_0%_24%)] text-[hsl(42_73%_94%)] rounded-lg shadow-lg py-2 z-50 border border-border animate-fade-in" onClick={() => setLangMenuOpen(false)}>
+            <div className="absolute right-0 mt-2 w-48 bg-blue-800 text-white rounded-lg shadow-xl py-2 z-50 border border-blue-700 animate-fade-in" onClick={() => setLangMenuOpen(false)}>
               {languages.map(lang => (
                 <button
                   key={lang.code}
                   onClick={e => { e.stopPropagation(); handleLanguageSwitch(lang.code); }}
-                  className={`flex items-center w-full px-4 py-2 text-left hover:bg-[hsl(39_92%_53%)] hover:text-[hsl(0_0%_15%)] focus:bg-[hsl(39_92%_53%)] focus:text-[hsl(0_0%_15%)] transition-colors relative ${selectedLang === lang.code ? 'font-bold text-[hsl(39_92%_53%)]' : ''}`}
+                  className={`flex items-center w-full px-4 py-2 text-left hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white transition-colors relative ${selectedLang === lang.code ? 'font-bold text-blue-300' : ''}`}
                   aria-current={selectedLang === lang.code ? 'page' : undefined}
                 >
                   <span className="flex-1">{lang.label}</span>
                   {selectedLang === lang.code && (
-                    <span className="ml-2 w-2 h-2 bg-[hsl(39_92%_53%)] rounded-full inline-block" aria-label="Current language" />
+                    <span className="ml-2 w-2 h-2 bg-blue-300 rounded-full inline-block" aria-label="Current language" />
                   )}
                 </button>
               ))}
@@ -268,7 +268,7 @@ export default function Menu() {
       </header>
 
       {/* Clinic and Category navigation */}
-      <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 border-b border-border">
+      <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-blue-50/95 backdrop-blur supports-[backdrop-filter]:bg-blue-50/90 border-b border-blue-200 shadow-sm">
         <div className="container mx-auto px-2 py-3">
           {/* Clinic selector */}
           <div className="mb-3">
@@ -299,7 +299,7 @@ export default function Menu() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border transition-colors ${selectedCategoryId === cat.id ? 'bg-[hsl(39_92%_53%)] text-[hsl(0_0%_15%)] border-[hsl(39_92%_53%)]' : 'bg-card text-foreground border-border hover:bg-muted'}`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? 'bg-blue-600 text-white border-blue-600 shadow-md' : 'bg-white text-blue-700 border-blue-200 hover:bg-blue-50 hover:border-blue-300'}`}
                   aria-pressed={selectedCategoryId === cat.id}
                 >
                   {cat.name}
@@ -311,7 +311,7 @@ export default function Menu() {
       </div>
 
       {/* Search and Filter Section */}
-      <div className="w-full sticky top-[104px] sm:top-[112px] z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/75 border-b border-border">
+      <div className="w-full sticky top-[104px] sm:top-[112px] z-30 bg-green-50/95 backdrop-blur supports-[backdrop-filter]:bg-green-50/90 border-b border-green-200 shadow-sm">
         <div className="container mx-auto px-2 py-3">
           {/* Search Input */}
           <div className="mb-3">
@@ -320,7 +320,7 @@ export default function Menu() {
               placeholder={isRTL ? "البحث عن الخدمات..." : "Search services..."}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg border border-border bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+              className="w-full px-4 py-2 rounded-lg border-2 border-blue-200 bg-white text-blue-900 placeholder:text-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400 shadow-sm"
             />
           </div>
           
@@ -328,7 +328,7 @@ export default function Menu() {
           <div className="flex items-center justify-between">
             <button
               onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border border-border bg-card text-foreground hover:bg-muted transition-colors"
+              className="flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-blue-200 bg-white text-blue-700 hover:bg-blue-50 transition-colors shadow-sm"
             >
               <span>{isRTL ? "المرشحات" : "Filters"}</span>
               <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
@@ -337,7 +337,7 @@ export default function Menu() {
             {selectedFilters.length > 0 && (
               <button
                 onClick={() => setSelectedFilters([])}
-                className="text-sm text-muted-foreground hover:text-foreground"
+                className="text-sm text-blue-600 hover:text-blue-800"
               >
                 {isRTL ? "مسح الكل" : "Clear all"}
               </button>
@@ -357,10 +357,10 @@ export default function Menu() {
                         : [...prev, filter.id]
                     );
                   }}
-                  className={`px-3 py-1 rounded-full text-sm border transition-colors ${
+                  className={`px-3 py-1 rounded-full text-sm border-2 transition-colors shadow-sm ${
                     selectedFilters.includes(filter.id)
-                      ? 'bg-primary text-primary-foreground border-primary'
-                      : 'bg-card text-foreground border-border hover:bg-muted'
+                      ? 'bg-blue-600 text-white border-blue-600'
+                      : 'bg-white text-blue-700 border-blue-200 hover:bg-blue-50 hover:border-blue-300'
                   }`}
                 >
                   {filter.label}

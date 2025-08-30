@@ -70,29 +70,29 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
       whileHover="hover"
       className="h-full"
     >
-      <Card className="overflow-hidden rounded-xl shadow-md bg-card flex flex-col h-full border border-border hover:border-primary transition-colors">
+      <Card className="overflow-hidden rounded-xl shadow-lg hover:shadow-xl bg-gradient-to-br from-blue-50 to-white flex flex-col h-full border-2 border-blue-100 hover:border-blue-300 transition-all duration-300">
         <CardContent className="p-0">
           {/* Content Section */}
-          <div className="flex-1 flex flex-col p-5 gap-2 items-center text-center relative">
+          <div className="flex-1 flex flex-col p-6 gap-3 items-center text-center relative">
             {/* Free or Discount badge */}
             {item.isFree ? (
-              <div className="absolute top-2 right-2">
-                <Badge className="bg-green-500 text-white font-bold text-sm">
+              <div className="absolute top-3 right-3">
+                <Badge className="bg-green-600 hover:bg-green-700 text-white font-bold text-sm px-3 py-1 shadow-md">
                   FREE
                 </Badge>
               </div>
             ) : isClinic && discountPercentage > 0 && (
-              <div className="absolute top-2 right-2">
-                <Badge className="bg-red-500 text-white font-bold text-sm">
+              <div className="absolute top-3 right-3">
+                <Badge className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm px-3 py-1 shadow-md">
                   -{discountPercentage}%
                 </Badge>
               </div>
             )}
               <div className="flex flex-col items-center gap-1 mb-1">
-                <h3 className="text-2xl font-extrabold text-foreground leading-tight">{item.name}</h3>
+                <h3 className="text-xl font-bold text-blue-900 leading-tight">{item.name}</h3>
                 {/* Location for clinics */}
                 {isClinic && item.location && (
-                  <p className="text-sm text-muted-foreground mt-1">
+                  <p className="text-sm text-blue-700 mt-1">
                     📍 {item.location}
                   </p>
                 )}
@@ -104,7 +104,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                 {item.vegan && <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)]">🌿 Vegan</Badge>}
                 {item.glutenFree && <Badge className="bg-secondary text-[hsl(0_0%_15%)]">🌾 Gluten Free</Badge>}
               </div>
-              <p className="text-muted-foreground text-base mb-4 min-h-[2.5em] leading-relaxed text-center">{item.description}</p>
+              <p className="text-blue-700 text-sm mb-4 min-h-[2.5em] leading-relaxed text-center">{item.description}</p>
               {/* Price and Contact Row */}
               <div className="flex items-center justify-center mt-auto flex-row gap-3 w-full">
                 <div className="flex flex-col flex-1 items-center">
@@ -126,7 +126,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                           </span>
                         </div>
                       </div>
-                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">
+                      <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm">
                         100% FREE!
                       </div>
                     </div>
@@ -147,12 +147,12 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                           </span>
                         </div>
                       </div>
-                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">
+                      <div className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm">
                         Save {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% OFF)
                       </div>
                     </div>
                   ) : (
-                    <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">
+                    <span className="text-2xl font-bold px-4 py-2 rounded-lg bg-blue-100 text-blue-900 shadow-sm">
                       {formatPrice(item.price, currency)}
                     </span>
                   )}
@@ -165,7 +165,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                   <div className="flex flex-col items-end gap-2">
                     <a
                       href={`tel:${item.contact}`}
-                      className="w-10 h-10 flex items-center justify-center rounded-full bg-primary/90 hover:bg-primary text-white shadow transition-colors"
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md transition-colors"
                       aria-label={`Call ${item.name}`}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -174,7 +174,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                     </a>
                     <a
                       href={`https://wa.me/${item.contact.replace('+', '')}`}
-                      className="w-10 h-10 flex items-center justify-center rounded-full bg-green-500 hover:bg-green-600 text-white shadow transition-colors"
+                      className="w-10 h-10 flex items-center justify-center rounded-full bg-green-600 hover:bg-green-700 text-white shadow-md transition-colors"
                       aria-label={`WhatsApp ${item.name}`}
                       target="_blank"
                       rel="noopener noreferrer"

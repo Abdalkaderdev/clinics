@@ -87,20 +87,20 @@ const Categories = () => {
                   className="text-left w-full"
                   aria-label={`Open ${clinic.name}`}
                 >
-                  <Card className="relative border border-border overflow-hidden rounded-2xl shadow-sm hover:shadow-md transition-shadow bg-gradient-to-br from-primary/10 to-primary/5 h-full">
-                    <div className="p-4 sm:p-5 md:p-6 text-center flex flex-col justify-between min-h-[180px] sm:min-h-[200px]">
+                  <Card className="relative border-2 border-blue-100 hover:border-blue-300 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-blue-50 to-green-50 h-full group">
+                    <div className="p-6 text-center flex flex-col justify-between min-h-[200px] sm:min-h-[220px]">
                       <div className="flex-1">
-                        <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🏥</div>
-                        <h2 className="text-foreground text-base sm:text-lg md:text-xl lg:text-2xl font-extrabold mb-2 leading-tight break-words hyphens-auto">
+                        <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">🏥</div>
+                        <h2 className="text-blue-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}
                         </h2>
-                        <p className="text-muted-foreground text-xs sm:text-sm mb-2 leading-relaxed break-words">
+                        <p className="text-blue-700 text-xs sm:text-sm mb-3 leading-relaxed break-words">
                           📍 {clinic.location}
                         </p>
                       </div>
-                      <p className="text-primary text-xs sm:text-sm font-semibold mt-auto">
+                      <div className="bg-green-100 text-green-800 px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto">
                         {totalServices} services available
-                      </p>
+                      </div>
                     </div>
                   </Card>
                 </motion.button>
