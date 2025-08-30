@@ -12,6 +12,8 @@ interface MenuItem {
   description: string;
   price: number;
   originalPrice?: number;
+  beforePrice?: string;
+  afterPrice?: string;
   location?: string;
   image?: string;
   popular?: boolean;
@@ -132,26 +134,27 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
               {/* Price and Contact Row */}
               <div className="flex items-center justify-center mt-auto flex-row gap-3 w-full">
                 <div className="flex flex-col flex-1 items-center">
-                  {/* Price display for clinics with discount */}
+                  {/* Always show before/after pricing for clinic services */}
                   {isClinic && item.originalPrice ? (
-                    <div className="flex flex-col items-center gap-1">
-                      <div className="flex items-center gap-3">
+                    <div className="flex flex-col items-center gap-2">
+                      <div className="flex items-center gap-4">
                         <div className="flex flex-col items-center">
-                          <span className="text-xs text-muted-foreground mb-0.5">Before</span>
-                          <span className="text-lg text-gray-400 line-through font-medium">
-                            {formatPrice(item.originalPrice, currency)}
+                          <span className="text-xs text-red-500 mb-1 font-semibold">Before</span>
+                          <span className="text-lg text-red-500 line-through font-bold">
+                            {item.beforePrice || formatPrice(item.originalPrice, currency)}
                           </span>
                         </div>
+                        <div className="text-2xl font-bold text-primary">→</div>
                         <div className="flex flex-col items-center">
-                          <span className="text-xs text-green-600 mb-0.5 font-semibold">After</span>
+                          <span className="text-xs text-green-600 mb-1 font-semibold">After</span>
                           <span className="text-2xl font-bold text-green-600">
-                            {formatPrice(item.price, currency)}
+                            {item.afterPrice || formatPrice(item.price, currency)}
                           </span>
                         </div>
                       </div>
-                      <span className="text-sm text-green-600 font-semibold mt-1">
-                        Save {formatPrice(item.originalPrice - item.price, currency)}
-                      </span>
+                      <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-bold">
+                        Save {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% OFF)
+                      </div>
                     </div>
                   ) : (
                     <span className="text-2xl font-bold px-2 py-1 rounded bg-secondary text-[hsl(0_0%_15%)]">

@@ -150,6 +150,8 @@ export default function Menu() {
           ...item,
           price: parseFloat(item.afterPrice.replace('$', '')),
           originalPrice: parseFloat(item.beforePrice.replace('$', '')),
+          beforePrice: item.beforePrice,
+          afterPrice: item.afterPrice,
           location: selectedClinic.location,
           contact: selectedClinic.contact
         }
