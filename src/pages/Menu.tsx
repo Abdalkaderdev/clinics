@@ -281,7 +281,7 @@ export default function Menu() {
                   const clinic = clinicsData.clinics.find(c => c.id.toString() === e.target.value);
                   if (clinic) setSelectedClinic(clinic);
                 }}
-                className="px-3 py-2 rounded-lg border border-border bg-card text-foreground"
+                className="px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 shadow-sm"
               >
                 {clinicsData.clinics.map(clinic => (
                   <option key={clinic.id} value={clinic.id}>{clinic.name}</option>
