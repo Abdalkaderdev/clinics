@@ -176,7 +176,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                             {item.beforePrice || formatPrice(item.originalPrice || item.price, currency)}
                           </span>
                         </div>
-                        <div className="text-2xl font-bold text-pink-600">→</div>
+                        <div className="text-2xl font-bold text-pink-600">{isRTL ? '←' : '→'}</div>
                         <div className="flex flex-col items-center">
                           <span className="text-xs text-green-600 mb-1 font-semibold">{t('after')}</span>
                           <span className="text-2xl font-bold text-green-600">
@@ -197,7 +197,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                             {item.beforePrice || (typeof item.originalPrice === 'number' ? formatPrice(item.originalPrice, currency) : item.originalPrice)}
                           </span>
                         </div>
-                        <div className="text-2xl font-bold text-pink-600">→</div>
+                        <div className="text-2xl font-bold text-pink-600">{isRTL ? '←' : '→'}</div>
                         <div className="flex flex-col items-center">
                           <span className="text-xs text-green-600 mb-1 font-semibold">{t('after')}</span>
                           <span className="text-2xl font-bold text-green-600">
@@ -216,7 +216,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                       {item.beforePrice && item.afterPrice ? (
                         <div className="flex items-center gap-2">
                           <span className="text-sm text-red-500 line-through">{item.beforePrice}</span>
-                          <span>→</span>
+                          <span>{isRTL ? '←' : '→'}</span>
                           <span className="text-green-600">{item.afterPrice}</span>
                         </div>
                       ) : (
