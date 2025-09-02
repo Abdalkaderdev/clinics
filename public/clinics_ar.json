@@ -23,6 +23,20 @@
               "description": "تبييض آمن لابتسامة أكثر إشراقاً.",
               "beforePrice": "$120",
               "afterPrice": "$90"
+            },
+            {
+              "id": "filling",
+              "name": "حشو الأسنان",
+              "description": "خدمة حشو الأسنان المركب.",
+              "beforePrice": "$80",
+              "afterPrice": "$60"
+            },
+            {
+              "id": "extraction",
+              "name": "خلع الأسنان",
+              "description": "إجراء آمن لإزالة الأسنان.",
+              "beforePrice": "$60",
+              "afterPrice": "$40"
             }
           ]
         },
@@ -309,6 +323,152 @@
               "description": "رعاية طبية طارئة على مدار 24/7.",
               "beforePrice": "$100",
               "afterPrice": "$70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "عيادة د. علاء إسماعيل شاكر",
+      "location": "أربيل، شارع بختياري 20 متر، أمام بازار هولندا",
+      "contact": "+9647506060611",
+      "categories": [
+        {
+          "id": "general",
+          "name": "الطب العام",
+          "items": [
+            {
+              "id": "consultation",
+              "name": "استشارة طبية",
+              "description": "استشارة طبية مهنية.",
+              "beforePrice": "$40",
+              "afterPrice": "$25"
+            },
+            {
+              "id": "surgery-discount",
+              "name": "خصم 10% على الجراحات",
+              "description": "احصل على خصم 10% على جميع العمليات الجراحية ببطاقة بيوتي لاند.",
+              "beforePrice": "السعر العادي",
+              "afterPrice": "خصم 10%"
+            }
+          ]
+        },
+        {
+          "id": "beauty",
+          "name": "علاجات التجميل",
+          "items": [
+            {
+              "id": "botox-basic",
+              "name": "علاج البوتوكس (أساسي)",
+              "description": "علاج حقن البوتوكس الأساسي.",
+              "beforePrice": "$100",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "botox-premium",
+              "name": "علاج البوتوكس (مميز)",
+              "description": "علاج حقن البوتوكس المميز.",
+              "beforePrice": "$250",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "filler-1",
+              "name": "حقن الفيلر (1مل)",
+              "description": "علاج حقن الفيلر للبشرة.",
+              "beforePrice": "$100",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "filler-2",
+              "name": "حقن الفيلر (1.5مل)",
+              "description": "علاج حقن الفيلر للبشرة.",
+              "beforePrice": "$150",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "filler-3",
+              "name": "حقن الفيلر (2مل)",
+              "description": "علاج حقن الفيلر للبشرة.",
+              "beforePrice": "$200",
+              "afterPrice": "$160"
+            },
+            {
+              "id": "filler-4",
+              "name": "حقن الفيلر (مميز)",
+              "description": "علاج حقن الفيلر المميز للبشرة.",
+              "beforePrice": "$250",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "prp-1",
+              "name": "علاج البلازما (أساسي)",
+              "description": "علاج بالبلازما الغنية بالصفائح الدموية.",
+              "beforePrice": "$120",
+              "afterPrice": "$96"
+            },
+            {
+              "id": "prp-2",
+              "name": "علاج البلازما (مميز)",
+              "description": "علاج مميز بالبلازما الغنية بالصفائح الدموية.",
+              "beforePrice": "$250",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "meso",
+              "name": "علاج الميزوثيرابي",
+              "description": "علاج تجديد البشرة بالميزوثيرابي.",
+              "beforePrice": "$80",
+              "afterPrice": "$64"
+            },
+            {
+              "id": "morpheus-rovar",
+              "name": "جهاز مورفيوس (روفار)",
+              "description": "علاج مورفيوس بالتردد اللاسلكي والإبر الدقيقة - روفار.",
+              "beforePrice": "$240",
+              "afterPrice": "$192"
+            },
+            {
+              "id": "morpheus-lo",
+              "name": "جهاز مورفيوس (لو)",
+              "description": "علاج مورفيوس بالتردد اللاسلكي والإبر الدقيقة - لو.",
+              "beforePrice": "$240",
+              "afterPrice": "$192"
+            },
+            {
+              "id": "laser-fullbody-1",
+              "name": "ليزر كامل الجسم (أساسي)",
+              "description": "علاج إزالة الشعر بالليزر لكامل الجسم.",
+              "beforePrice": "150,000 دينار",
+              "afterPrice": "120,000 دينار"
+            },
+            {
+              "id": "laser-fullbody-2",
+              "name": "ليزر كامل الجسم (مميز)",
+              "description": "علاج مميز لإزالة الشعر بالليزر لكامل الجسم.",
+              "beforePrice": "220,000 دينار",
+              "afterPrice": "175,000 دينار"
+            },
+            {
+              "id": "hydrafacial-1",
+              "name": "هايدرافيشل (أساسي)",
+              "description": "علاج هايدرافيشل أساسي للبشرة.",
+              "beforePrice": "50,000 دينار",
+              "afterPrice": "40,000 دينار"
+            },
+            {
+              "id": "hydrafacial-2",
+              "name": "هايدرافيشل (قياسي)",
+              "description": "علاج هايدرافيشل قياسي للبشرة.",
+              "beforePrice": "80,000 دينار",
+              "afterPrice": "64,000 دينار"
+            },
+            {
+              "id": "hydrafacial-3",
+              "name": "هايدرافيشل (مميز)",
+              "description": "علاج هايدرافيشل مميز للبشرة.",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "80,000 دينار"
             }
           ]
         }

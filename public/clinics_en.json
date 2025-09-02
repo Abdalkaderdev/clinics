@@ -23,6 +23,20 @@
               "description": "Brighten your smile with safe whitening.",
               "beforePrice": "$120",
               "afterPrice": "$90"
+            },
+            {
+              "id": "filling",
+              "name": "Dental Filling",
+              "description": "Composite tooth filling service.",
+              "beforePrice": "$80",
+              "afterPrice": "$60"
+            },
+            {
+              "id": "extraction",
+              "name": "Tooth Extraction",
+              "description": "Safe tooth removal procedure.",
+              "beforePrice": "$60",
+              "afterPrice": "$40"
             }
           ]
         },
@@ -49,6 +63,34 @@
               "name": "Free Consultation",
               "description": "Complimentary health checkup and consultation.",
               "beforePrice": "$30",
+              "afterPrice": "FREE",
+              "isFree": true
+            }
+          ]
+        },
+        {
+          "id": "beauty",
+          "name": "Beauty Treatments",
+          "items": [
+            {
+              "id": "facial",
+              "name": "Deep Cleansing Facial",
+              "description": "Professional facial treatment for glowing skin.",
+              "beforePrice": "$70",
+              "afterPrice": "$45"
+            },
+            {
+              "id": "botox",
+              "name": "Botox Treatment",
+              "description": "Anti-aging botox injections.",
+              "beforePrice": "$200",
+              "afterPrice": "$150"
+            },
+            {
+              "id": "laser-hair",
+              "name": "Laser Hair Removal",
+              "description": "Permanent hair removal treatment.",
+              "beforePrice": "$100",
               "afterPrice": "FREE",
               "isFree": true
             }
@@ -99,6 +141,21 @@
               "description": "Personalized acne treatment plan.",
               "beforePrice": "$80",
               "afterPrice": "$60"
+            },
+            {
+              "id": "mole-removal",
+              "name": "Mole Removal",
+              "description": "Safe mole and skin tag removal.",
+              "beforePrice": "$120",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "chemical-peel",
+              "name": "Chemical Peel",
+              "description": "Skin rejuvenation treatment.",
+              "beforePrice": "$90",
+              "afterPrice": "FREE",
+              "isFree": true
             }
           ]
         }
@@ -120,6 +177,21 @@
               "description": "Electrocardiogram heart test.",
               "beforePrice": "$35",
               "afterPrice": "$25"
+            },
+            {
+              "id": "echo",
+              "name": "Echocardiogram",
+              "description": "Heart ultrasound examination.",
+              "beforePrice": "$80",
+              "afterPrice": "$60"
+            },
+            {
+              "id": "stress-test",
+              "name": "Cardiac Stress Test",
+              "description": "Heart function under stress evaluation.",
+              "beforePrice": "$120",
+              "afterPrice": "FREE",
+              "isFree": true
             }
           ]
         }
@@ -141,6 +213,28 @@
               "description": "Professional dental implant service.",
               "beforePrice": "$800",
               "afterPrice": "$600"
+            },
+            {
+              "id": "crown",
+              "name": "Dental Crown",
+              "description": "Ceramic dental crown placement.",
+              "beforePrice": "$300",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "braces",
+              "name": "Dental Braces",
+              "description": "Orthodontic treatment with braces.",
+              "beforePrice": "$1200",
+              "afterPrice": "$900"
+            },
+            {
+              "id": "root-canal",
+              "name": "Root Canal Treatment",
+              "description": "Endodontic root canal therapy.",
+              "beforePrice": "$200",
+              "afterPrice": "FREE",
+              "isFree": true
             }
           ]
         }
@@ -309,6 +403,152 @@
               "description": "24/7 emergency medical care.",
               "beforePrice": "$100",
               "afterPrice": "$70"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Dr. Ala Ismail Shakur Clinic",
+      "location": "Erbil, Bakhtiary 20m Street, in front of Holland Bazaar",
+      "contact": "+9647506060611",
+      "categories": [
+        {
+          "id": "general",
+          "name": "General Medicine",
+          "items": [
+            {
+              "id": "consultation",
+              "name": "Medical Consultation",
+              "description": "Professional medical consultation.",
+              "beforePrice": "$40",
+              "afterPrice": "$25"
+            },
+            {
+              "id": "surgery-discount",
+              "name": "10% Surgery Discount",
+              "description": "Get 10% discount on all surgical procedures with Beauty Land Card.",
+              "beforePrice": "Regular Price",
+              "afterPrice": "10% OFF"
+            }
+          ]
+        },
+        {
+          "id": "beauty",
+          "name": "Beauty Treatments",
+          "items": [
+            {
+              "id": "botox-basic",
+              "name": "Botox Treatment (Basic)",
+              "description": "Basic botox injection treatment.",
+              "beforePrice": "$100",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "botox-premium",
+              "name": "Botox Treatment (Premium)",
+              "description": "Premium botox injection treatment.",
+              "beforePrice": "$250",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "filler-1",
+              "name": "Dermal Filler (1ml)",
+              "description": "Dermal filler injection treatment.",
+              "beforePrice": "$100",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "filler-2",
+              "name": "Dermal Filler (1.5ml)",
+              "description": "Dermal filler injection treatment.",
+              "beforePrice": "$150",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "filler-3",
+              "name": "Dermal Filler (2ml)",
+              "description": "Dermal filler injection treatment.",
+              "beforePrice": "$200",
+              "afterPrice": "$160"
+            },
+            {
+              "id": "filler-4",
+              "name": "Dermal Filler (Premium)",
+              "description": "Premium dermal filler injection treatment.",
+              "beforePrice": "$250",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "prp-1",
+              "name": "PRP Treatment (Basic)",
+              "description": "Platelet-rich plasma therapy.",
+              "beforePrice": "$120",
+              "afterPrice": "$96"
+            },
+            {
+              "id": "prp-2",
+              "name": "PRP Treatment (Premium)",
+              "description": "Premium platelet-rich plasma therapy.",
+              "beforePrice": "$250",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "meso",
+              "name": "Mesotherapy",
+              "description": "Mesotherapy skin rejuvenation treatment.",
+              "beforePrice": "$80",
+              "afterPrice": "$64"
+            },
+            {
+              "id": "morpheus-rovar",
+              "name": "Morpheus Device (Rovar)",
+              "description": "Morpheus RF microneedling treatment - Rovar.",
+              "beforePrice": "$240",
+              "afterPrice": "$192"
+            },
+            {
+              "id": "morpheus-lo",
+              "name": "Morpheus Device (Lo)",
+              "description": "Morpheus RF microneedling treatment - Lo.",
+              "beforePrice": "$240",
+              "afterPrice": "$192"
+            },
+            {
+              "id": "laser-fullbody-1",
+              "name": "Laser Full Body (Basic)",
+              "description": "Full body laser hair removal treatment.",
+              "beforePrice": "150,000 IQD",
+              "afterPrice": "120,000 IQD"
+            },
+            {
+              "id": "laser-fullbody-2",
+              "name": "Laser Full Body (Premium)",
+              "description": "Premium full body laser hair removal treatment.",
+              "beforePrice": "220,000 IQD",
+              "afterPrice": "175,000 IQD"
+            },
+            {
+              "id": "hydrafacial-1",
+              "name": "HydraFacial (Basic)",
+              "description": "Basic HydraFacial skin treatment.",
+              "beforePrice": "50,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "hydrafacial-2",
+              "name": "HydraFacial (Standard)",
+              "description": "Standard HydraFacial skin treatment.",
+              "beforePrice": "80,000 IQD",
+              "afterPrice": "64,000 IQD"
+            },
+            {
+              "id": "hydrafacial-3",
+              "name": "HydraFacial (Premium)",
+              "description": "Premium HydraFacial skin treatment.",
+              "beforePrice": "100,000 IQD",
+              "afterPrice": "80,000 IQD"
             }
           ]
         }
