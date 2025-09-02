@@ -1,37 +1,108 @@
 # Beauty Land Card
 
-A modern web application offering discounts and free items across 12 partner clinics.
+A modern web application offering exclusive discounts and free services across partner beauty and medical clinics in Erbil, Kurdistan Region of Iraq.
 
 ## Features
 
-- 🏥 **12 Partner Clinics** - Access to multiple medical and beauty clinics
-- 💰 **Exclusive Discounts** - Special pricing on treatments and services
-- 🎁 **Free Items** - Complimentary services and products
-- 🌍 **Multi-language Support** - English, Kurdish, and Arabic
-- 📱 **Responsive Design** - Works on all devices
-- ♿ **Accessibility** - WCAG AA compliant
+- 🏥 **2 Partner Clinics** - Premium beauty and medical centers
+- 💰 **Exclusive Discounts** - Up to 50% off on treatments and services
+- 🎁 **Free Services** - Complimentary consultations and treatments
+- 🌍 **Multi-language Support** - English, Kurdish (Sorani), and Arabic
+- 📱 **Responsive Design** - Optimized for all devices
+- ♿ **Accessibility** - WCAG AA compliant with RTL support
 - 🔒 **Security** - HTTPS, CSP, and security headers
 - 📊 **Analytics** - Track user interactions and clinic visits
+- 📞 **Direct Contact** - Call and WhatsApp integration
+
+## Partner Clinics
+
+### 1. Dr. Ala Ismail Shakur Clinic
+**Location:** Bakhtiary 20m Street, in front of Holland Bazaar, Erbil  
+**Contact:** +9647506060611  
+**Services:**
+- Injectable Treatments (Botox, Dermal Fillers)
+- Regenerative Treatments (PRP, Mesotherapy)
+- Device Treatments (Morpheus RF, HydraFacial)
+- Laser Treatments (Full Body Hair Removal)
+- 10% Surgery Discount
+
+### 2. Queen Art Center
+**Location:** Koya Road, in front of Majidi Mall, Erbil  
+**Contact:** +9647509232233 / +9647709232233  
+**Services:**
+- Premium HydraFacial (VIP & VVIP)
+- International Fillers (Korean, French, German, Swiss)
+- Botox Treatments (Regular & British)
+- Microneedling & Chemical Peeling
+- Tattoo Removal (20% discount)
+- **FREE Services:** Face Analysis, Normal Plasma, Carbon Laser, Doctor Consultation
 
 ## Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite
 - **Styling**: Tailwind CSS, Framer Motion
+- **UI Components**: Shadcn/ui, Lucide React
 - **Deployment**: Vercel
 - **Analytics**: Vercel Analytics
 - **Image Optimization**: WebP, Sharp
+- **Internationalization**: Multi-language JSON files
+
+## Project Structure
+
+```
+src/
+├── components/
+│   ├── MenuItemCard.tsx    # Service card component
+│   ├── ui/                 # Reusable UI components
+│   └── ...
+├── pages/
+├── hooks/
+└── utils/
+
+public/
+├── clinics_en.json        # English clinic data
+├── clinics_ar.json        # Arabic clinic data
+└── clinics_ku.json        # Kurdish clinic data
+```
 
 ## Quick Start
 
 ```bash
+# Install dependencies
 npm install
+
+# Start development server
 npm run dev
+
+# Build for production
 npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## Development
+
+### Adding New Clinics
+1. Update clinic data in `public/clinics_*.json` files
+2. Ensure all three language files are synchronized
+3. Test discount calculations and contact integration
+
+### Supported Currencies
+- **USD ($)** - For premium services
+- **IQD (Iraqi Dinar)** - For local pricing
+
+### RTL Support
+The application automatically adjusts layout and text direction for Arabic language, including:
+- Arrow directions in price displays
+- Text alignment and spacing
+- Component positioning
 
 ## Deployment
 
 This project is automatically deployed on Vercel when changes are pushed to the main branch.
+
+**Live URL:** [Your Vercel URL]
 
 ## Brand Colors
 
@@ -39,6 +110,14 @@ This project is automatically deployed on Vercel when changes are pushed to the 
 - **Land Card Blue**: #3B82F6
 - **Accent Purple**: #8B5CF6
 - **Success Green**: #059669
+
+## Contributing
+
+When adding new services or clinics:
+1. Update all three language files simultaneously
+2. Test discount percentage calculations
+3. Verify contact integration (phone/WhatsApp)
+4. Ensure RTL layout compatibility
 
 ## License
 
