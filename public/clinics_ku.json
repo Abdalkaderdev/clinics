@@ -452,6 +452,151 @@
           ]
         }
       ]
+    },
+    {
+      "id": 14,
+      "name": "ناوەندی کوین ئارت",
+      "location": "هەولێر، ڕێگای کۆیە، بەرامبەر مۆڵی ماجدی",
+      "contact": "+9647509232233 / +9647709232233",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "خزمەتگوزاری جوانکاری",
+          "items": [
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دینار",
+              "afterPrice": "100,000 دینار"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "230,000 دینار",
+              "afterPrice": "180,000 دینار"
+            },
+            {
+              "id": "service-3",
+              "name": "هایدرافەیشەل VIP",
+              "description": "چارەسەری هایدرافەیشەلی پیشکەوتوو.",
+              "beforePrice": "90,000 دینار",
+              "afterPrice": "60,000 دینار"
+            },
+            {
+              "id": "service-4",
+              "name": "هایدرافەیشەل VVIP",
+              "description": "چارەسەری هایدرافەیشەلی فاخر.",
+              "beforePrice": "$150",
+              "afterPrice": "$110"
+            },
+            {
+              "id": "service-5",
+              "name": "فیلەری کۆریایی",
+              "description": "دەرزیکردنی فیلەری کۆریایی پیشکەوتوو.",
+              "beforePrice": "$90",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-6",
+              "name": "فیلەری فەڕەنسی",
+              "description": "دەرزیکردنی فیلەری فەڕەنسی پیشکەوتوو.",
+              "beforePrice": "$150",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "service-7",
+              "name": "فیلەری ئەڵمانی",
+              "description": "دەرزیکردنی فیلەری ئەڵمانی پیشکەوتوو.",
+              "beforePrice": "$180",
+              "afterPrice": "$135"
+            },
+            {
+              "id": "service-8",
+              "name": "فیلەری سویسری",
+              "description": "دەرزیکردنی فیلەری سویسری پیشکەوتوو.",
+              "beforePrice": "$220",
+              "afterPrice": "$170"
+            },
+            {
+              "id": "service-9",
+              "name": "بۆتۆکس",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی پیشەیی.",
+              "beforePrice": "$130",
+              "afterPrice": "$100"
+            },
+            {
+              "id": "service-10",
+              "name": "بۆتۆکسی بریتانی",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی بریتانی پیشکەوتوو.",
+              "beforePrice": "$220",
+              "afterPrice": "$160"
+            },
+            {
+              "id": "service-11",
+              "name": "مایکرۆنیدلینگ",
+              "description": "چارەسەری مایکرۆنیدلینگی پیشەیی.",
+              "beforePrice": "$120",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-12",
+              "name": "مایکرۆنیدلینگ",
+              "description": "چارەسەری مایکرۆنیدلینگی پیشەیی.",
+              "beforePrice": "$150",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-13",
+              "name": "خەلاتی 20% بۆ لابردنی تاتوو",
+              "description": "خەلاتی 20% وەربگرە بۆ لابردنی تاتوو بە کارتی بیوتی لاند.",
+              "beforePrice": "نرخی ئاسایی",
+              "afterPrice": "خەلات 20%",
+              "isSpecial": true
+            },
+            {
+              "id": "service-14",
+              "name": "پاککردنەوەی کیمیایی",
+              "description": "چارەسەری پاککردنەوەی کیمیایی پیشەیی.",
+              "beforePrice": "$150",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-15",
+              "name": "شیکردنەوەی ڕوو بێ بەرامبەر",
+              "description": "شیکردنەوەی بێ بەرامبەری پێستی ڕوو.",
+              "beforePrice": "$30",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "service-16",
+              "name": "پلازمای ئاسایی بێ بەرامبەر",
+              "description": "چارەسەری پلازمای ئاسایی بێ بەرامبەر.",
+              "beforePrice": "$80",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "service-17",
+              "name": "لەیزەری کاربۆن بێ بەرامبەر",
+              "description": "چارەسەری لەیزەری کاربۆن بێ بەرامبەر.",
+              "beforePrice": "$100",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "service-18",
+              "name": "ڕاوێژکاری پزیشکی بێ بەرامبەر (جارێک)",
+              "description": "ڕاوێژکاری پزیشکی بێ بەرامبەر بۆ جارێک.",
+              "beforePrice": "$40",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

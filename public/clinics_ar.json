@@ -470,6 +470,151 @@
           ]
         }
       ]
+    },
+    {
+      "id": 14,
+      "name": "مركز كوين آرت",
+      "location": "أربيل، طريق كويا، أمام مول ماجدي",
+      "contact": "+9647509232233 / +9647709232233",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "خدمات التجميل",
+          "items": [
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دينار",
+              "afterPrice": "100,000 دينار"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "230,000 دينار",
+              "afterPrice": "180,000 دينار"
+            },
+            {
+              "id": "service-3",
+              "name": "هايدرافيشل VIP",
+              "description": "علاج هايدرافيشل مميز.",
+              "beforePrice": "90,000 دينار",
+              "afterPrice": "60,000 دينار"
+            },
+            {
+              "id": "service-4",
+              "name": "هايدرافيشل VVIP",
+              "description": "علاج هايدرافيشل فاخر.",
+              "beforePrice": "$150",
+              "afterPrice": "$110"
+            },
+            {
+              "id": "service-5",
+              "name": "فيلر كوري",
+              "description": "حقن فيلر كوري مميز.",
+              "beforePrice": "$90",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-6",
+              "name": "فيلر فرنسي",
+              "description": "حقن فيلر فرنسي مميز.",
+              "beforePrice": "$150",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "service-7",
+              "name": "فيلر ألماني",
+              "description": "حقن فيلر ألماني مميز.",
+              "beforePrice": "$180",
+              "afterPrice": "$135"
+            },
+            {
+              "id": "service-8",
+              "name": "فيلر سويسري",
+              "description": "حقن فيلر سويسري مميز.",
+              "beforePrice": "$220",
+              "afterPrice": "$170"
+            },
+            {
+              "id": "service-9",
+              "name": "بوتوكس",
+              "description": "علاج حقن بوتوكس مهني.",
+              "beforePrice": "$130",
+              "afterPrice": "$100"
+            },
+            {
+              "id": "service-10",
+              "name": "بوتوكس بريطاني",
+              "description": "علاج حقن بوتوكس بريطاني مميز.",
+              "beforePrice": "$220",
+              "afterPrice": "$160"
+            },
+            {
+              "id": "service-11",
+              "name": "مايكرونيدلينج",
+              "description": "علاج مايكرونيدلينج مهني.",
+              "beforePrice": "$120",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-12",
+              "name": "مايكرونيدلينج",
+              "description": "علاج مايكرونيدلينج مهني.",
+              "beforePrice": "$150",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-13",
+              "name": "خصم 20% على إزالة الوشم",
+              "description": "احصل على خصم 20% على إزالة الوشم ببطاقة بيوتي لاند.",
+              "beforePrice": "السعر العادي",
+              "afterPrice": "خصم 20%",
+              "isSpecial": true
+            },
+            {
+              "id": "service-14",
+              "name": "تقشير كيميائي",
+              "description": "علاج تقشير كيميائي مهني.",
+              "beforePrice": "$150",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-15",
+              "name": "تحليل الوجه مجاناً",
+              "description": "تحليل مجاني لبشرة الوجه.",
+              "beforePrice": "$30",
+              "afterPrice": "مجاني",
+              "isFree": true
+            },
+            {
+              "id": "service-16",
+              "name": "بلازما عادية مجاناً",
+              "description": "علاج بلازما عادية مجاني.",
+              "beforePrice": "$80",
+              "afterPrice": "مجاني",
+              "isFree": true
+            },
+            {
+              "id": "service-17",
+              "name": "ليزر كربون مجاني",
+              "description": "علاج ليزر كربون مجاني.",
+              "beforePrice": "$100",
+              "afterPrice": "مجاني",
+              "isFree": true
+            },
+            {
+              "id": "service-18",
+              "name": "استشارة طبية مجانية (مرة واحدة)",
+              "description": "استشارة طبية مجانية لمرة واحدة.",
+              "beforePrice": "$40",
+              "afterPrice": "مجاني",
+              "isFree": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

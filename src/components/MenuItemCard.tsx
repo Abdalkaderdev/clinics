@@ -60,10 +60,30 @@ const formatPrice = (price: number, currency: string) => {
   return `${currency}${price}`;
 };
 
+const parsePrice = (priceString: string): number => {
+  if (!priceString) return 0;
+  // Remove currency symbols and commas, extract numbers
+  const numStr = priceString.replace(/[^0-9.]/g, '');
+  return parseFloat(numStr) || 0;
+};
+
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle, language = 'en' }) => {
-  // Check if this is a clinic item (has location and originalPrice)
-  const isClinic = item.location && item.originalPrice;
-  const discountPercentage = isClinic && item.originalPrice && !isNaN(item.originalPrice) && !isNaN(item.price) ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
+  // Check if this is a clinic item (has location)
+  const isClinic = !!item.location;
+  
+  // Calculate discount percentage from beforePrice and afterPrice strings
+  let discountPercentage = 0;
+  let savingsAmount = 0;
+  
+  if (isClinic && item.beforePrice && item.afterPrice && !item.isFree && !item.isSpecial) {
+    const beforeNum = parsePrice(item.beforePrice);
+    const afterNum = parsePrice(item.afterPrice);
+    
+    if (beforeNum > 0 && afterNum > 0 && beforeNum > afterNum) {
+      discountPercentage = Math.round(((beforeNum - afterNum) / beforeNum) * 100);
+      savingsAmount = beforeNum - afterNum;
+    }
+  }
 
   // Translation functions
   const t = (key: string) => {
@@ -119,7 +139,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                   💎 {t('free')}
                 </Badge>
               </div>
-            ) : isClinic && discountPercentage > 0 && (
+            ) : discountPercentage > 0 && (
               <div className="absolute top-3 right-3">
                 <Badge className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white font-bold text-sm px-3 py-1 shadow-md">
                   -{discountPercentage}%
@@ -185,9 +205,9 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                           </span>
                         </div>
                       </div>
-                      {discountPercentage > 0 && (
+                      {discountPercentage > 0 && savingsAmount > 0 && (
                         <div className="bg-gradient-to-r from-pink-100 to-blue-100 text-pink-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-pink-300">
-                          💰 {t('save')} {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% {t('off')})
+                          💰 {t('save')} {item.beforePrice?.includes('IQD') ? `${savingsAmount.toLocaleString()} IQD` : `$${savingsAmount}`} ({discountPercentage}% {t('off')})
                         </div>
                       )}
                     </div>

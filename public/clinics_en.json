@@ -565,6 +565,151 @@
           ]
         }
       ]
+    },
+    {
+      "id": 14,
+      "name": "Queen Art Center",
+      "location": "Erbil, Koya Road, in front of Majidi Mall",
+      "contact": "+9647509232233 / +9647709232233",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "Beauty Services",
+          "items": [
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 IQD",
+              "afterPrice": "100,000 IQD"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "230,000 IQD",
+              "afterPrice": "180,000 IQD"
+            },
+            {
+              "id": "service-3",
+              "name": "HydraFacial VIP",
+              "description": "Premium HydraFacial VIP treatment.",
+              "beforePrice": "90,000 IQD",
+              "afterPrice": "60,000 IQD"
+            },
+            {
+              "id": "service-4",
+              "name": "HydraFacial VVIP",
+              "description": "Luxury HydraFacial VVIP treatment.",
+              "beforePrice": "$150",
+              "afterPrice": "$110"
+            },
+            {
+              "id": "service-5",
+              "name": "Korean Filler",
+              "description": "Premium Korean dermal filler treatment.",
+              "beforePrice": "$90",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-6",
+              "name": "French Filler",
+              "description": "Premium French dermal filler treatment.",
+              "beforePrice": "$150",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "service-7",
+              "name": "German Filler",
+              "description": "Premium German dermal filler treatment.",
+              "beforePrice": "$180",
+              "afterPrice": "$135"
+            },
+            {
+              "id": "service-8",
+              "name": "Swiss Filler",
+              "description": "Premium Swiss dermal filler treatment.",
+              "beforePrice": "$220",
+              "afterPrice": "$170"
+            },
+            {
+              "id": "service-9",
+              "name": "Botox",
+              "description": "Professional botox injection treatment.",
+              "beforePrice": "$130",
+              "afterPrice": "$100"
+            },
+            {
+              "id": "service-10",
+              "name": "British Botox",
+              "description": "Premium British botox injection treatment.",
+              "beforePrice": "$220",
+              "afterPrice": "$160"
+            },
+            {
+              "id": "service-11",
+              "name": "Microneedling",
+              "description": "Professional microneedling skin treatment.",
+              "beforePrice": "$120",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-12",
+              "name": "Microneedling",
+              "description": "Professional microneedling skin treatment.",
+              "beforePrice": "$150",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-13",
+              "name": "Tattoo Removal 20% Discount",
+              "description": "Get 20% discount on tattoo removal with Beauty Land Card.",
+              "beforePrice": "Regular Price",
+              "afterPrice": "20% OFF",
+              "isSpecial": true
+            },
+            {
+              "id": "service-14",
+              "name": "Chemical Peeling",
+              "description": "Professional chemical peeling treatment.",
+              "beforePrice": "$150",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-15",
+              "name": "Free Face Analysis",
+              "description": "Complimentary facial skin analysis.",
+              "beforePrice": "$30",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "service-16",
+              "name": "Free Normal Plasma",
+              "description": "Complimentary normal plasma treatment.",
+              "beforePrice": "$80",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "service-17",
+              "name": "Free Carbon Laser",
+              "description": "Complimentary carbon laser treatment.",
+              "beforePrice": "$100",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "service-18",
+              "name": "Free Doctor Consultation (One Time)",
+              "description": "Complimentary one-time doctor consultation.",
+              "beforePrice": "$40",
+              "afterPrice": "FREE",
+              "isFree": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }
