@@ -57,7 +57,7 @@ const formatPrice = (price: number, currency: string) => {
   if (currency === "IQD") {
     return `${price.toLocaleString()} ${currency}`;
   }
-  return `${currency}${(price / 1000).toFixed(2)}`;
+  return `${currency}${price}`;
 };
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle, language = 'en' }) => {

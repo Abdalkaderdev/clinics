@@ -355,6 +355,10 @@
           ]
         },
         {
+          "id": "injectables",
+          "name": "علاجات الحقن",
+          "items": [
+        {
           "id": "beauty",
           "name": "علاجات التجميل",
           "items": [

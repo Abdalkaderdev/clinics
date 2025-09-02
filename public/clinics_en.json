@@ -435,8 +435,8 @@
           ]
         },
         {
-          "id": "beauty",
-          "name": "Beauty Treatments",
+          "id": "injectables",
+          "name": "Injectable Treatments",
           "items": [
             {
               "id": "botox-basic",
@@ -479,7 +479,13 @@
               "description": "Premium dermal filler injection treatment.",
               "beforePrice": "$250",
               "afterPrice": "$200"
-            },
+            }
+          ]
+        },
+        {
+          "id": "regenerative",
+          "name": "Regenerative Treatments",
+          "items": [
             {
               "id": "prp-1",
               "name": "PRP Treatment (Basic)",
@@ -500,7 +506,13 @@
               "description": "Mesotherapy skin rejuvenation treatment.",
               "beforePrice": "$80",
               "afterPrice": "$64"
-            },
+            }
+          ]
+        },
+        {
+          "id": "devices",
+          "name": "Device Treatments",
+          "items": [
             {
               "id": "morpheus-rovar",
               "name": "Morpheus Device (Rovar)",
@@ -514,20 +526,6 @@
               "description": "Morpheus RF microneedling treatment - Lo.",
               "beforePrice": "$240",
               "afterPrice": "$192"
-            },
-            {
-              "id": "laser-fullbody-1",
-              "name": "Laser Full Body (Basic)",
-              "description": "Full body laser hair removal treatment.",
-              "beforePrice": "150,000 IQD",
-              "afterPrice": "120,000 IQD"
-            },
-            {
-              "id": "laser-fullbody-2",
-              "name": "Laser Full Body (Premium)",
-              "description": "Premium full body laser hair removal treatment.",
-              "beforePrice": "220,000 IQD",
-              "afterPrice": "175,000 IQD"
             },
             {
               "id": "hydrafacial-1",
@@ -549,6 +547,26 @@
               "description": "Premium HydraFacial skin treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "80,000 IQD"
+            }
+          ]
+        },
+        {
+          "id": "laser",
+          "name": "Laser Treatments",
+          "items": [
+            {
+              "id": "laser-fullbody-1",
+              "name": "Laser Full Body (Basic)",
+              "description": "Full body laser hair removal treatment.",
+              "beforePrice": "150,000 IQD",
+              "afterPrice": "120,000 IQD"
+            },
+            {
+              "id": "laser-fullbody-2",
+              "name": "Laser Full Body (Premium)",
+              "description": "Premium full body laser hair removal treatment.",
+              "beforePrice": "220,000 IQD",
+              "afterPrice": "175,000 IQD"
             }
           ]
         }
