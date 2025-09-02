@@ -419,13 +419,6 @@
           "name": "General Medicine",
           "items": [
             {
-              "id": "consultation",
-              "name": "Medical Consultation",
-              "description": "Professional medical consultation.",
-              "beforePrice": "$40",
-              "afterPrice": "$25"
-            },
-            {
               "id": "surgery-discount",
               "name": "10% Surgery Discount",
               "description": "Get 10% discount on all surgical procedures with Beauty Land Card.",

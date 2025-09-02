@@ -339,13 +339,6 @@
           "name": "الطب العام",
           "items": [
             {
-              "id": "consultation",
-              "name": "استشارة طبية",
-              "description": "استشارة طبية مهنية.",
-              "beforePrice": "$40",
-              "afterPrice": "$25"
-            },
-            {
               "id": "surgery-discount",
               "name": "خصم 10% على الجراحات",
               "description": "احصل على خصم 10% على جميع العمليات الجراحية ببطاقة بيوتي لاند.",
