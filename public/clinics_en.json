@@ -429,8 +429,9 @@
               "id": "surgery-discount",
               "name": "10% Surgery Discount",
               "description": "Get 10% discount on all surgical procedures with Beauty Land Card.",
-              "beforePrice": "Regular Price",
-              "afterPrice": "10% OFF"
+              "beforePrice": "Any Surgery",
+              "afterPrice": "10% Discount",
+              "isSpecial": true
             }
           ]
         },

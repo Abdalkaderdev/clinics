@@ -63,7 +63,7 @@ const formatPrice = (price: number, currency: string) => {
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle, language = 'en' }) => {
   // Check if this is a clinic item (has location and originalPrice)
   const isClinic = item.location && item.originalPrice;
-  const discountPercentage = isClinic && item.originalPrice ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
+  const discountPercentage = isClinic && item.originalPrice && !isNaN(item.originalPrice) && !isNaN(item.price) ? Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
 
   // Translation functions
   const t = (key: string) => {
@@ -174,24 +174,34 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                         <div className="flex flex-col items-center">
                           <span className="text-xs text-red-500 mb-1 font-semibold">{t('before')}</span>
                           <span className="text-lg text-red-500 line-through font-bold">
-                            {item.beforePrice || formatPrice(item.originalPrice, currency)}
+                            {item.beforePrice || (typeof item.originalPrice === 'number' ? formatPrice(item.originalPrice, currency) : item.originalPrice)}
                           </span>
                         </div>
                         <div className="text-2xl font-bold text-pink-600">→</div>
                         <div className="flex flex-col items-center">
                           <span className="text-xs text-green-600 mb-1 font-semibold">{t('after')}</span>
                           <span className="text-2xl font-bold text-green-600">
-                            {item.afterPrice || formatPrice(item.price, currency)}
+                            {item.afterPrice || (typeof item.price === 'number' ? formatPrice(item.price, currency) : item.price)}
                           </span>
                         </div>
                       </div>
-                      <div className="bg-gradient-to-r from-pink-100 to-blue-100 text-pink-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-pink-300">
-                        💰 {t('save')} {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% {t('off')})
-                      </div>
+                      {discountPercentage > 0 && (
+                        <div className="bg-gradient-to-r from-pink-100 to-blue-100 text-pink-800 px-4 py-2 rounded-full text-sm font-bold shadow-sm border border-pink-300">
+                          💰 {t('save')} {formatPrice(item.originalPrice - item.price, currency)} ({discountPercentage}% {t('off')})
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <span className="text-2xl font-bold px-4 py-2 rounded-lg bg-gradient-to-r from-pink-100 to-blue-100 text-pink-900 shadow-sm border border-pink-200">
-                      {formatPrice(item.price, currency)}
+                      {item.beforePrice && item.afterPrice ? (
+                        <div className="flex items-center gap-2">
+                          <span className="text-sm text-red-500 line-through">{item.beforePrice}</span>
+                          <span>→</span>
+                          <span className="text-green-600">{item.afterPrice}</span>
+                        </div>
+                      ) : (
+                        typeof item.price === 'number' ? formatPrice(item.price, currency) : (item.afterPrice || item.beforePrice || 'Contact for pricing')
+                      )}
                     </span>
                   )}
                   {item.isSpecial && (
