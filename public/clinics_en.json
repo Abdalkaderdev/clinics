@@ -617,6 +617,439 @@
           ]
         }
       ]
+    },
+    {
+      "id": 4,
+      "name": "Luminos Beauty Center",
+      "location": "Italy",
+      "contact": "+9647505634747",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "Beauty Services",
+          "items": [
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "$500",
+              "afterPrice": "$300"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "$600",
+              "afterPrice": "$400"
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "$650",
+              "afterPrice": "$450"
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "$90",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "$150",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "$120",
+              "afterPrice": "$90"
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "$190",
+              "afterPrice": "$150"
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "$120",
+              "afterPrice": "$90"
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "$150",
+              "afterPrice": "$100"
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "$120",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "$120",
+              "afterPrice": "$80"
+            },
+            {
+              "id": "service-12",
+              "name": "",
+              "description": "",
+              "beforePrice": "$90",
+              "afterPrice": "$60"
+            },
+            {
+              "id": "service-13",
+              "name": "",
+              "description": "",
+              "beforePrice": "$250",
+              "afterPrice": "$180"
+            },
+            {
+              "id": "service-14",
+              "name": "",
+              "description": "",
+              "beforePrice": "$100",
+              "afterPrice": "$70"
+            },
+            {
+              "id": "service-15",
+              "name": "",
+              "description": "",
+              "beforePrice": "$140",
+              "afterPrice": "$100"
+            },
+            {
+              "id": "service-16",
+              "name": "",
+              "description": "",
+              "beforePrice": "Regular Price",
+              "afterPrice": "30% OFF",
+              "isSpecial": true
+            },
+            {
+              "id": "service-17",
+              "name": "",
+              "description": "",
+              "beforePrice": "175,000 IQD",
+              "afterPrice": "100,000 IQD"
+            },
+            {
+              "id": "service-18",
+              "name": "",
+              "description": "",
+              "beforePrice": "200,000 IQD",
+              "afterPrice": "140,000 IQD"
+            },
+            {
+              "id": "free-service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Dr. Farhad Jaff Clinic",
+      "location": "Erbil, Havalan",
+      "contact": "+9647504910180",
+      "categories": [
+        {
+          "id": "medical",
+          "name": "Medical Services",
+          "items": [
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "60,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "60,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "45,000 IQD",
+              "afterPrice": "25,000 IQD"
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "35,000 IQD",
+              "afterPrice": "25,000 IQD"
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "80,000 IQD",
+              "afterPrice": "50,000 IQD"
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "35,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "$100",
+              "afterPrice": "$60"
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "$300",
+              "afterPrice": "$200"
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "$180",
+              "afterPrice": "$120"
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "60,000 IQD",
+              "afterPrice": "45,000 IQD"
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "50,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-12",
+              "name": "",
+              "description": "",
+              "beforePrice": "35,000 IQD",
+              "afterPrice": "25,000 IQD"
+            },
+            {
+              "id": "service-13",
+              "name": "",
+              "description": "",
+              "beforePrice": "80,000 IQD",
+              "afterPrice": "60,000 IQD"
+            },
+            {
+              "id": "free-service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Dr. Honar Beauty Center",
+      "location": "Erbil, Dream Villa, Number 1151",
+      "contact": "+9647505352000 / +9647505752000",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "Beauty Services",
+          "items": [
+            {
+              "id": "free-service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "$1400",
+              "afterPrice": "$700"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "$500",
+              "afterPrice": "$250"
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "$500",
+              "afterPrice": "$250"
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "$500",
+              "afterPrice": "$250"
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "$350",
+              "afterPrice": "$175"
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "$70",
+              "afterPrice": "$35"
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "$80",
+              "afterPrice": "$40"
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "$450",
+              "afterPrice": "$290"
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "$30",
+              "afterPrice": "$15"
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "$100",
+              "afterPrice": "$50"
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "$2000",
+              "afterPrice": "$1500"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
