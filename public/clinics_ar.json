@@ -301,6 +301,321 @@
           ]
         }
       ]
+    },
+    {
+      "id": 3,
+      "name": "مركز سوزي إم إن",
+      "location": "أربيل، شارع شورش، أمام مستشفى شورش الطبي، الطابق 5، مقابل ميجا مول",
+      "contact": "+9647514503838",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "خدمات التجميل",
+          "items": [
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "75,000 دينار"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "75,000 دينار",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "25,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "45,000 دينار",
+              "afterPrice": "30,000 دينار"
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "45,000 دينار",
+              "afterPrice": "25,000 دينار"
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "75,000 دينار",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-12",
+              "name": "",
+              "description": "",
+              "beforePrice": "50,000 دينار",
+              "afterPrice": "30,000 دينار"
+            },
+            {
+              "id": "service-13",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-14",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-15",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-16",
+              "name": "",
+              "description": "",
+              "beforePrice": "45,000 دينار",
+              "afterPrice": "25,000 دينار"
+            },
+            {
+              "id": "service-17",
+              "name": "",
+              "description": "",
+              "beforePrice": "15,000 دينار",
+              "afterPrice": "10,000 دينار"
+            },
+            {
+              "id": "service-18",
+              "name": "",
+              "description": "",
+              "beforePrice": "15,000 دينار",
+              "afterPrice": "10,000 دينار"
+            },
+            {
+              "id": "service-19",
+              "name": "",
+              "description": "",
+              "beforePrice": "15,000 دينار",
+              "afterPrice": "10,000 دينار"
+            },
+            {
+              "id": "service-20",
+              "name": "",
+              "description": "",
+              "beforePrice": "45,000 دينار",
+              "afterPrice": "25,000 دينار"
+            },
+            {
+              "id": "service-21",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دينار",
+              "afterPrice": "125,000 دينار"
+            },
+            {
+              "id": "service-22",
+              "name": "",
+              "description": "",
+              "beforePrice": "$150",
+              "afterPrice": "$130"
+            },
+            {
+              "id": "service-23",
+              "name": "",
+              "description": "",
+              "beforePrice": "$50",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-24",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "75,000 دينار"
+            },
+            {
+              "id": "service-25",
+              "name": "",
+              "description": "",
+              "beforePrice": "25,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-26",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "75,000 دينار"
+            },
+            {
+              "id": "service-27",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دينار",
+              "afterPrice": "125,000 دينار"
+            },
+            {
+              "id": "service-28",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "75,000 دينار"
+            },
+            {
+              "id": "service-29",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "75,000 دينار"
+            },
+            {
+              "id": "service-30",
+              "name": "",
+              "description": "",
+              "beforePrice": "75,000 دينار",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-31",
+              "name": "",
+              "description": "",
+              "beforePrice": "40,000 دينار",
+              "afterPrice": "25,000 دينار"
+            },
+            {
+              "id": "service-32",
+              "name": "",
+              "description": "",
+              "beforePrice": "75,000 دينار",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-33",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-34",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "80,000 دينار"
+            },
+            {
+              "id": "service-35",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "75,000 دينار"
+            },
+            {
+              "id": "service-36",
+              "name": "",
+              "description": "",
+              "beforePrice": "50,000 دينار",
+              "afterPrice": "30,000 دينار"
+            },
+            {
+              "id": "service-37",
+              "name": "",
+              "description": "",
+              "beforePrice": "50,000 دينار",
+              "afterPrice": "30,000 دينار"
+            },
+            {
+              "id": "service-38",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "50,000 دينار"
+            },
+            {
+              "id": "service-39",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "service-40",
+              "name": "",
+              "description": "",
+              "beforePrice": "25,000 دينار",
+              "afterPrice": "20,000 دينار"
+            },
+            {
+              "id": "service-41",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "60,000 دينار"
+            },
+            {
+              "id": "service-42",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دينار",
+              "afterPrice": "60,000 دينار"
+            },
+            {
+              "id": "service-43",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دينار",
+              "afterPrice": "100,000 دينار"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
