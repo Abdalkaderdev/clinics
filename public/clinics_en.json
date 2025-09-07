@@ -651,57 +651,57 @@
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "Korean Filler",
+              "description": "Premium Korean dermal filler treatment.",
               "beforePrice": "$90",
               "afterPrice": "$70"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "French Filler",
+              "description": "Premium French dermal filler treatment.",
               "beforePrice": "$150",
               "afterPrice": "$120"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "Russian Filler",
+              "description": "Premium Russian dermal filler treatment.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "Swiss Filler",
+              "description": "Premium Swiss dermal filler treatment.",
               "beforePrice": "$190",
               "afterPrice": "$150"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "Hitox Botox",
+              "description": "Premium Hitox botox injection treatment.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "Botox Dysport",
+              "description": "Professional Dysport botox injection treatment.",
               "beforePrice": "$150",
               "afterPrice": "$100"
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "Baby Face Laser Session",
+              "description": "Professional baby face laser treatment session.",
               "beforePrice": "$120",
               "afterPrice": "$80"
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "CO2 Laser",
+              "description": "Professional CO2 laser treatment.",
               "beforePrice": "$120",
               "afterPrice": "$80"
             },
@@ -714,8 +714,8 @@
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "Bikini Filler",
+              "description": "Professional bikini area filler treatment.",
               "beforePrice": "$250",
               "afterPrice": "$180"
             },
@@ -743,8 +743,8 @@
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "Laser Full Body Candela 2025",
+              "description": "Advanced Candela 2025 full body laser hair removal treatment.",
               "beforePrice": "175,000 IQD",
               "afterPrice": "100,000 IQD"
             },
@@ -757,32 +757,32 @@
             },
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "Consultation",
+              "description": "Professional beauty consultation.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "Face Sonar",
+              "description": "Professional face sonar analysis.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-3",
-              "name": "",
-              "description": "",
+              "name": "Carbon Laser",
+              "description": "Professional carbon laser treatment.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-4",
-              "name": "",
-              "description": "",
+              "name": "Laser for Face",
+              "description": "Professional facial laser treatment.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
@@ -924,48 +924,48 @@
           "items": [
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "Free Consultation",
+              "description": "Professional beauty consultation with our expert doctors.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "HydraFacial",
+              "description": "Professional HydraFacial skin treatment.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-3",
-              "name": "",
-              "description": "",
+              "name": "Laser for Face",
+              "description": "Professional facial laser treatment.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-4",
-              "name": "",
-              "description": "",
+              "name": "PRP Session",
+              "description": "Platelet-rich plasma therapy session.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-5",
-              "name": "",
-              "description": "",
+              "name": "CO2 Laser Session",
+              "description": "Professional CO2 laser treatment session.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
             {
               "id": "free-service-6",
-              "name": "",
-              "description": "",
+              "name": "Carbon Peeling Session",
+              "description": "Professional carbon peeling treatment session.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
@@ -1007,15 +1007,15 @@
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "Botox",
+              "description": "Professional botox injection treatment.",
               "beforePrice": "$70",
               "afterPrice": "$35"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "Filler",
+              "description": "Professional dermal filler treatment.",
               "beforePrice": "$80",
               "afterPrice": "$40"
             },
@@ -1028,15 +1028,15 @@
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "Plasma",
+              "description": "Professional plasma treatment.",
               "beforePrice": "$30",
               "afterPrice": "$15"
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "Full Body Laser",
+              "description": "Complete full body laser hair removal treatment.",
               "beforePrice": "$100",
               "afterPrice": "$50"
             },

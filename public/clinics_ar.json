@@ -650,57 +650,57 @@
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "فيلر كوري",
+              "description": "علاج فيلر جلدي كوري ممتاز.",
               "beforePrice": "$90",
               "afterPrice": "$70"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "فيلر فرنسي",
+              "description": "علاج فيلر جلدي فرنسي ممتاز.",
               "beforePrice": "$150",
               "afterPrice": "$120"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "فيلر روسي",
+              "description": "علاج فيلر جلدي روسي ممتاز.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "فيلر سويسري",
+              "description": "علاج فيلر جلدي سويسري ممتاز.",
               "beforePrice": "$190",
               "afterPrice": "$150"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "بوتوكس هيتوكس",
+              "description": "علاج حقن بوتوكس هيتوكس ممتاز.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "بوتوكس ديسبورت",
+              "description": "علاج حقن بوتوكس ديسبورت مهني.",
               "beforePrice": "$150",
               "afterPrice": "$100"
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "جلسة ليزر وجه الطفل",
+              "description": "جلسة علاج ليزر وجه الطفل مهنية.",
               "beforePrice": "$120",
               "afterPrice": "$80"
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "ليزر ثاني أكسيد الكربون",
+              "description": "علاج ليزر CO2 مهني.",
               "beforePrice": "$120",
               "afterPrice": "$80"
             },
@@ -713,8 +713,8 @@
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "فيلر بيكيني",
+              "description": "علاج فيلر منطقة البيكيني مهني.",
               "beforePrice": "$250",
               "afterPrice": "$180"
             },
@@ -742,8 +742,8 @@
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "ليزر كامل الجسم كانديلا 2025",
+              "description": "علاج ليزر إزالة الشعر لكامل الجسم بتقنية كانديلا 2025 المتقدمة.",
               "beforePrice": "175,000 دينار",
               "afterPrice": "100,000 دينار"
             },
@@ -756,32 +756,32 @@
             },
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "استشارة",
+              "description": "استشارة تجميل مهنية.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "سونار الوجه",
+              "description": "تحليل سونار الوجه المهني.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-3",
-              "name": "",
-              "description": "",
+              "name": "ليزر الكربون",
+              "description": "علاج ليزر الكربون المهني.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-4",
-              "name": "",
-              "description": "",
+              "name": "ليزر للوجه",
+              "description": "علاج ليزر مهني للوجه.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
@@ -923,48 +923,48 @@
           "items": [
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "استشارة مجانية",
+              "description": "استشارة تجميل مهنية مع أطبائنا الخبراء.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "هايدرافيشل",
+              "description": "علاج هايدرافيشل مهني للبشرة.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-3",
-              "name": "",
-              "description": "",
+              "name": "ليزر للوجه",
+              "description": "علاج ليزر مهني للوجه.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-4",
-              "name": "",
-              "description": "",
+              "name": "جلسة بلازما",
+              "description": "جلسة علاج بالبلازما الغنية بالصفائح الدموية.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-5",
-              "name": "",
-              "description": "",
+              "name": "جلسة ليزر ثاني أكسيد الكربون",
+              "description": "جلسة علاج ليزر CO2 مهنية.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-6",
-              "name": "",
-              "description": "",
+              "name": "جلسة تقشير بالكربون",
+              "description": "جلسة علاج تقشير بالكربون مهنية.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
@@ -1006,15 +1006,15 @@
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "بوتوكس",
+              "description": "علاج حقن بوتوكس مهني.",
               "beforePrice": "$70",
               "afterPrice": "$35"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "فيلر",
+              "description": "علاج فيلر جلدي مهني.",
               "beforePrice": "$80",
               "afterPrice": "$40"
             },
@@ -1027,15 +1027,15 @@
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "بلازما",
+              "description": "علاج بلازما مهني.",
               "beforePrice": "$30",
               "afterPrice": "$15"
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "ليزر كامل الجسم",
+              "description": "علاج ليزر إزالة الشعر لكامل الجسم.",
               "beforePrice": "$100",
               "afterPrice": "$50"
             },

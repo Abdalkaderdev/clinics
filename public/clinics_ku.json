@@ -650,57 +650,57 @@
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "فیلەری کۆریایی",
+              "description": "چارەسەری فیلەری پێستی کۆریایی باشترین.",
               "beforePrice": "$90",
               "afterPrice": "$70"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "فیلەری فەرەنسی",
+              "description": "چارەسەری فیلەری پێستی فەرەنسی باشترین.",
               "beforePrice": "$150",
               "afterPrice": "$120"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "فیلەری ڕووسی",
+              "description": "چارەسەری فیلەری پێستی ڕووسی باشترین.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "فیلەری سویسی",
+              "description": "چارەسەری فیلەری پێستی سویسی باشترین.",
               "beforePrice": "$190",
               "afterPrice": "$150"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "بۆتۆکسی هیتۆکس",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی هیتۆکسی باشترین.",
               "beforePrice": "$120",
               "afterPrice": "$90"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "بۆتۆکسی دیسپۆرت",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی دیسپۆرتی پیشەیی.",
               "beforePrice": "$150",
               "afterPrice": "$100"
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "دانیشتنی لەیزەری ڕووی منداڵ",
+              "description": "دانیشتنی چارەسەری لەیزەری ڕووی منداڵی پیشەیی.",
               "beforePrice": "$120",
               "afterPrice": "$80"
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری CO2",
+              "description": "چارەسەری لەیزەری CO2 پیشەیی.",
               "beforePrice": "$120",
               "afterPrice": "$80"
             },
@@ -713,8 +713,8 @@
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "فیلەری بیکینی",
+              "description": "چارەسەری فیلەری ناوچەی بیکینی پیشەیی.",
               "beforePrice": "$250",
               "afterPrice": "$180"
             },
@@ -742,8 +742,8 @@
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی لەش کاندیلا 2025",
+              "description": "چارەسەری لابردنی مووی تەواوی لەش بە تەکنۆلۆژیای پێشکەوتووی کاندیلا 2025.",
               "beforePrice": "175,000 دینار",
               "afterPrice": "100,000 دینار"
             },
@@ -756,32 +756,32 @@
             },
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "راوێژکاری",
+              "description": "راوێژکاری جوانکاری پیشەیی.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "سۆناری ڕوو",
+              "description": "شیکاری سۆناری ڕووی پیشەیی.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-3",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری کاربۆن",
+              "description": "چارەسەری لەیزەری کاربۆنی پیشەیی.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-4",
-              "name": "",
-              "description": "",
+              "name": "لەیزەر بۆ ڕوو",
+              "description": "چارەسەری لەیزەری پیشەیی بۆ ڕوو.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
@@ -923,48 +923,48 @@
           "items": [
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "راوێژکاری بێ بەرامبەر",
+              "description": "راوێژکاری جوانکاری پیشەیی لەگەڵ پزیشکە شارەزاکانمان.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵ",
+              "description": "چارەسەری هایدرافیشڵی پیشەیی بۆ پێست.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-3",
-              "name": "",
-              "description": "",
+              "name": "لەیزەر بۆ ڕوو",
+              "description": "چارەسەری لەیزەری پیشەیی بۆ ڕوو.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-4",
-              "name": "",
-              "description": "",
+              "name": "دانیشتنی پی ئار پی",
+              "description": "دانیشتنی چارەسەری پلازمای دەولەمەند بە پلەیت.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-5",
-              "name": "",
-              "description": "",
+              "name": "دانیشتنی لەیزەری CO2",
+              "description": "دانیشتنی چارەسەری لەیزەری CO2 پیشەیی.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "free-service-6",
-              "name": "",
-              "description": "",
+              "name": "دانیشتنی پاککردنەوەی کاربۆن",
+              "description": "دانیشتنی چارەسەری پاککردنەوەی کاربۆنی پیشەیی.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
@@ -1006,15 +1006,15 @@
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "بۆتۆکس",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی پیشەیی.",
               "beforePrice": "$70",
               "afterPrice": "$35"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "فیلەر",
+              "description": "چارەسەری فیلەری پێستی پیشەیی.",
               "beforePrice": "$80",
               "afterPrice": "$40"
             },
@@ -1027,15 +1027,15 @@
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "پلازما",
+              "description": "چارەسەری پلازمای پیشەیی.",
               "beforePrice": "$30",
               "afterPrice": "$15"
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی لەش",
+              "description": "چارەسەری لابردنی مووی تەواوی لەش بە لەیزەر.",
               "beforePrice": "$100",
               "afterPrice": "$50"
             },
