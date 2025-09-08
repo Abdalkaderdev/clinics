@@ -1050,6 +1050,219 @@
           ]
         }
       ]
+    },
+    {
+      "id": 7,
+      "name": "Salon by Mostafa",
+      "location": "40m Street",
+      "contact": "",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "Beauty Services",
+          "items": [
+            {
+              "id": "free-service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "25,000 IQD",
+              "afterPrice": "10,000 IQD"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "25,000 IQD",
+              "afterPrice": "15,000 IQD"
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "45,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "35,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 IQD",
+              "afterPrice": "60,000 IQD"
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "90,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "75,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "75,000 IQD",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "35,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "$50",
+              "afterPrice": "40,000 IQD"
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "40,000 IQD",
+              "afterPrice": "30,000 IQD"
+            },
+            {
+              "id": "service-12",
+              "name": "",
+              "description": "",
+              "beforePrice": "30,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-13",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 IQD",
+              "afterPrice": "10,000 IQD"
+            },
+            {
+              "id": "service-14",
+              "name": "",
+              "description": "",
+              "beforePrice": "$2",
+              "afterPrice": "2,000 IQD"
+            },
+            {
+              "id": "service-15",
+              "name": "",
+              "description": "",
+              "beforePrice": "$2",
+              "afterPrice": "$1"
+            },
+            {
+              "id": "service-16",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 IQD",
+              "afterPrice": "50,000 IQD"
+            },
+            {
+              "id": "service-17",
+              "name": "",
+              "description": "",
+              "beforePrice": "35,000 IQD",
+              "afterPrice": "15,000 IQD"
+            },
+            {
+              "id": "service-18",
+              "name": "",
+              "description": "",
+              "beforePrice": "$150",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-19",
+              "name": "",
+              "description": "",
+              "beforePrice": "30,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-20",
+              "name": "",
+              "description": "",
+              "beforePrice": "30,000 IQD",
+              "afterPrice": "20,000 IQD"
+            },
+            {
+              "id": "service-21",
+              "name": "",
+              "description": "",
+              "beforePrice": "$100",
+              "afterPrice": "$40"
+            },
+            {
+              "id": "service-22",
+              "name": "",
+              "description": "",
+              "beforePrice": "$300",
+              "afterPrice": "$150"
+            },
+            {
+              "id": "service-23",
+              "name": "",
+              "description": "",
+              "beforePrice": "$40",
+              "afterPrice": "$25"
+            },
+            {
+              "id": "service-24",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 IQD",
+              "afterPrice": "45,000 IQD"
+            },
+            {
+              "id": "service-25",
+              "name": "",
+              "description": "",
+              "beforePrice": "$60",
+              "afterPrice": "25,000 IQD"
+            },
+            {
+              "id": "discount-service",
+              "name": "Korean Peeling",
+              "description": "Professional Korean peeling treatment.",
+              "beforePrice": "Regular Price",
+              "afterPrice": "50% OFF",
+              "isSpecial": true
+            }
+          ]
+        }
+      ]
     }
   ]
 }

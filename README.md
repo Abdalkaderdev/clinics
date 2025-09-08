@@ -4,7 +4,7 @@ A modern web application offering exclusive discounts and free services across p
 
 ## Features
 
-- 🏥 **2 Partner Clinics** - Premium beauty and medical centers
+- 🏥 **7 Partner Clinics** - Premium beauty and medical centers
 - 💰 **Exclusive Discounts** - Up to 50% off on treatments and services
 - 🎁 **Free Services** - Complimentary consultations and treatments
 - 🌍 **Multi-language Support** - English, Kurdish (Sorani), and Arabic
@@ -36,6 +36,48 @@ A modern web application offering exclusive discounts and free services across p
 - Microneedling & Chemical Peeling
 - Tattoo Removal (20% discount)
 - **FREE Services:** Face Analysis, Normal Plasma, Carbon Laser, Doctor Consultation
+
+### 3. Sozy MN Center
+**Location:** Erbil, Shorsh Street, in front of Shorsh Medical Hospital, Floor 5, opposite Mega Mall  
+**Contact:** +9647514503838  
+**Services:**
+- 43 Beauty Services with IQD and USD pricing
+- Comprehensive beauty treatments
+
+### 4. Luminos Beauty Center
+**Location:** Italy  
+**Contact:** +9647505634747  
+**Services:**
+- Korean, French, Russian, Swiss Fillers
+- Hitox & Dysport Botox
+- Baby Face & CO2 Laser Sessions
+- Bikini Filler
+- Laser Full Body Candela 2025
+- **FREE Services:** Consultation, Face Sonar, Carbon Laser, Laser for Face
+
+### 5. Dr. Farhad Jaff Clinic
+**Location:** Erbil, Havalan  
+**Contact:** +9647504910180  
+**Services:**
+- 13 Medical Services (IQD & USD pricing)
+- **FREE Services:** 2 complimentary treatments
+
+### 6. Dr. Honar Beauty Center
+**Location:** Erbil, Dream Villa, Number 1151  
+**Contact:** +9647505352000 / +9647505752000  
+**Services:**
+- Premium beauty treatments ($15-$1500 range)
+- Botox, Fillers, Plasma treatments
+- Full Body Laser
+- **FREE Services:** Consultation, HydraFacial, Laser for Face, PRP Session, CO2 Laser, Carbon Peeling
+
+### 7. Salon by Mostafa
+**Location:** 40m Street  
+**Contact:** (Contact number pending)  
+**Services:**
+- 25 Beauty Services (IQD & USD pricing)
+- Korean Peeling (50% discount)
+- **FREE Services:** 2 complimentary treatments
 
 ## Tech Stack
 
