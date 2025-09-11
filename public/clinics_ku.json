@@ -1437,6 +1437,485 @@
           ]
         }
       ]
+    },
+    {
+      "id": 8,
+      "name": "ناوەندی جوانکاری فلۆرینسیا",
+      "location": "هەولێر، سایدین بەختیاری وەزیران",
+      "contact": "+9647514609797 / +9647764609797",
+      "categories": [
+        {
+          "id": "beauty",
+          "name": "خزمەتگوزاری جوانکاری",
+          "items": [
+            {
+              "id": "free-service-1",
+              "name": "پشکنینی پزیشکی بێ بەرامبەر",
+              "description": "پشکنینی پزیشکی بێ بەرامبەر.",
+              "beforePrice": "",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "CO2 بێ بەرامبەر",
+              "description": "چارەسەری لەیزەری CO2 بێ بەرامبەر.",
+              "beforePrice": "",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "free-service-3",
+              "name": "پلازمای بێ بەرامبەر",
+              "description": "چارەسەری پلازمای بێ بەرامبەر.",
+              "beforePrice": "",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-12",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-13",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-14",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-15",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-16",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-17",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-18",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-19",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-20",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-21",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-22",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-23",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-24",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-25",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-26",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-27",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-28",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-29",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-30",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-31",
+              "name": "",
+              "description": "",
+              "beforePrice": "",
+              "afterPrice": ""
+            },
+            {
+              "id": "service-1",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دینار",
+              "afterPrice": "10,000 دینار"
+            },
+            {
+              "id": "service-2",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دینار",
+              "afterPrice": "10,000 دینار"
+            },
+            {
+              "id": "service-3",
+              "name": "",
+              "description": "",
+              "beforePrice": "30,000 دینار",
+              "afterPrice": "15,000 دینار"
+            },
+            {
+              "id": "service-4",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دینار",
+              "afterPrice": "10,000 دینار"
+            },
+            {
+              "id": "service-5",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دینار",
+              "afterPrice": "10,000 دینار"
+            },
+            {
+              "id": "service-6",
+              "name": "",
+              "description": "",
+              "beforePrice": "40,000 دینار",
+              "afterPrice": "20,000 دینار"
+            },
+            {
+              "id": "service-7",
+              "name": "",
+              "description": "",
+              "beforePrice": "40,000 دینار",
+              "afterPrice": "20,000 دینار"
+            },
+            {
+              "id": "service-8",
+              "name": "",
+              "description": "",
+              "beforePrice": "40,000 دینار",
+              "afterPrice": "20,000 دینار"
+            },
+            {
+              "id": "service-9",
+              "name": "",
+              "description": "",
+              "beforePrice": "130,000 دینار",
+              "afterPrice": "65,000 دینار"
+            },
+            {
+              "id": "service-10",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دینار",
+              "afterPrice": "50,000 دینار"
+            },
+            {
+              "id": "service-11",
+              "name": "",
+              "description": "",
+              "beforePrice": "80,000 دینار",
+              "afterPrice": "40,000 دینار"
+            },
+            {
+              "id": "service-12",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دینار",
+              "afterPrice": "75,000 دینار"
+            },
+            {
+              "id": "service-13",
+              "name": "",
+              "description": "",
+              "beforePrice": "300,000 دینار",
+              "afterPrice": "150,000 دینار"
+            },
+            {
+              "id": "service-14",
+              "name": "",
+              "description": "",
+              "beforePrice": "60,000 دینار",
+              "afterPrice": "30,000 دینار"
+            },
+            {
+              "id": "service-15",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دینار",
+              "afterPrice": "50,000 دینار"
+            },
+            {
+              "id": "service-16",
+              "name": "",
+              "description": "",
+              "beforePrice": "300,000 دینار",
+              "afterPrice": "150,000 دینار"
+            },
+            {
+              "id": "service-17",
+              "name": "",
+              "description": "",
+              "beforePrice": "$100",
+              "afterPrice": "100,000 دینار"
+            },
+            {
+              "id": "service-18",
+              "name": "",
+              "description": "",
+              "beforePrice": "$10",
+              "afterPrice": "$5"
+            },
+            {
+              "id": "service-19",
+              "name": "",
+              "description": "",
+              "beforePrice": "20,000 دینار",
+              "afterPrice": "10,000 دینار"
+            },
+            {
+              "id": "service-20",
+              "name": "",
+              "description": "",
+              "beforePrice": "100,000 دینار",
+              "afterPrice": "50,000 دینار"
+            },
+            {
+              "id": "service-21",
+              "name": "",
+              "description": "",
+              "beforePrice": "80,000 دینار",
+              "afterPrice": "40,000 دینار"
+            },
+            {
+              "id": "service-22",
+              "name": "",
+              "description": "",
+              "beforePrice": "40,000 دینار",
+              "afterPrice": "20,000 دینار"
+            },
+            {
+              "id": "service-23",
+              "name": "",
+              "description": "",
+              "beforePrice": "150,000 دینار",
+              "afterPrice": "75,000 دینار"
+            },
+            {
+              "id": "service-24",
+              "name": "",
+              "description": "",
+              "beforePrice": "$170",
+              "afterPrice": "$85"
+            },
+            {
+              "id": "service-25",
+              "name": "",
+              "description": "",
+              "beforePrice": "$300",
+              "afterPrice": "$150"
+            },
+            {
+              "id": "service-26",
+              "name": "",
+              "description": "",
+              "beforePrice": "$160",
+              "afterPrice": "$130"
+            },
+            {
+              "id": "service-27",
+              "name": "",
+              "description": "",
+              "beforePrice": "$140",
+              "afterPrice": "$115"
+            },
+            {
+              "id": "service-28",
+              "name": "",
+              "description": "",
+              "beforePrice": "$160",
+              "afterPrice": "$140"
+            },
+            {
+              "id": "service-29",
+              "name": "",
+              "description": "",
+              "beforePrice": "200,000 دینار",
+              "afterPrice": "100,000 دینار"
+            },
+            {
+              "id": "service-30",
+              "name": "",
+              "description": "",
+              "beforePrice": "$110",
+              "afterPrice": "$95"
+            },
+            {
+              "id": "service-31",
+              "name": "",
+              "description": "",
+              "beforePrice": "$110",
+              "afterPrice": "$95"
+            },
+            {
+              "id": "service-32",
+              "name": "",
+              "description": "",
+              "beforePrice": "130,000 دینار",
+              "afterPrice": "65,000 دینار"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
