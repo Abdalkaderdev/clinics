@@ -315,64 +315,64 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "Full Body Hair Removal (Snow White)",
+              "description": "Complete full body hair removal using Snow White laser device.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "75,000 IQD"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "Half Body Hair Removal (Snow White)",
+              "description": "Half body hair removal using Snow White laser device.",
               "beforePrice": "75,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "Armpits Hair Removal (Snow White)",
+              "description": "Armpit hair removal using Snow White laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "Face Hair Removal (Snow White)",
+              "description": "Facial hair removal using Snow White laser device.",
               "beforePrice": "25,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "Bikini Hair Removal (Snow White)",
+              "description": "Bikini area hair removal using Snow White laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "Armpits + Bikini + Face Hair Removal (Snow White)",
+              "description": "Combined armpits, bikini and face hair removal using Snow White laser device.",
               "beforePrice": "45,000 IQD",
               "afterPrice": "30,000 IQD"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "Lifeline Hair Removal (Snow White)",
+              "description": "Lifeline hair removal using Snow White laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "Under the Neck Hair Removal (Snow White)",
+              "description": "Under the neck hair removal using Snow White laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "Lifeline + Under Neck + Back of Neck Hair Removal (Snow White)",
+              "description": "Combined lifeline, under neck and back of neck hair removal using Snow White laser device.",
               "beforePrice": "45,000 IQD",
               "afterPrice": "25,000 IQD"
             },
@@ -385,71 +385,71 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "Full Body Hair Removal (Epilyum)",
+              "description": "Complete full body hair removal using Epilyum laser device.",
               "beforePrice": "75,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "Half Body Hair Removal (Epilyum)",
+              "description": "Half body hair removal using Epilyum laser device.",
               "beforePrice": "50,000 IQD",
               "afterPrice": "30,000 IQD"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "Armpits Hair Removal (Epilyum)",
+              "description": "Armpit hair removal using Epilyum laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "Face Hair Removal (Epilyum)",
+              "description": "Facial hair removal using Epilyum laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "Bikini Hair Removal (Epilyum)",
+              "description": "Bikini area hair removal using Epilyum laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "Armpits + Bikini + Face Hair Removal (Epilyum)",
+              "description": "Combined armpits, bikini and face hair removal using Epilyum laser device.",
               "beforePrice": "45,000 IQD",
               "afterPrice": "25,000 IQD"
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "Beard Line Hair Removal (Epilyum)",
+              "description": "Beard line hair removal using Epilyum laser device.",
               "beforePrice": "15,000 IQD",
               "afterPrice": "10,000 IQD"
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "Under the Neck Hair Removal (Epilyum)",
+              "description": "Under the neck hair removal using Epilyum laser device.",
               "beforePrice": "15,000 IQD",
               "afterPrice": "10,000 IQD"
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "Back of the Neck Hair Removal (Epilyum)",
+              "description": "Back of the neck hair removal using Epilyum laser device.",
               "beforePrice": "15,000 IQD",
               "afterPrice": "10,000 IQD"
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "Beard Line + Under Neck + Back of Neck Hair Removal (Epilyum)",
+              "description": "Combined beard line, under neck and back of neck hair removal using Epilyum laser device.",
               "beforePrice": "45,000 IQD",
               "afterPrice": "25,000 IQD"
             },
@@ -469,29 +469,29 @@
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "Tattoo Removal",
+              "description": "Professional tattoo removal treatment.",
               "beforePrice": "$50",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "CO2",
+              "description": "Professional CO2 laser treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "75,000 IQD"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "Excess Fat Removal",
+              "description": "Professional excess fat removal treatment.",
               "beforePrice": "25,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-26",
-              "name": "",
-              "description": "",
+              "name": "Secret",
+              "description": "Professional Secret treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "75,000 IQD"
             },
@@ -504,22 +504,22 @@
             },
             {
               "id": "service-28",
-              "name": "",
-              "description": "",
+              "name": "Dermapen",
+              "description": "Professional dermapen microneedling treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "75,000 IQD"
             },
             {
               "id": "service-29",
-              "name": "",
-              "description": "",
+              "name": "Dermapen + Meso",
+              "description": "Combined dermapen and mesotherapy treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "75,000 IQD"
             },
             {
               "id": "service-30",
-              "name": "",
-              "description": "",
+              "name": "Meso",
+              "description": "Professional mesotherapy treatment.",
               "beforePrice": "75,000 IQD",
               "afterPrice": "50,000 IQD"
             },
@@ -560,36 +560,36 @@
             },
             {
               "id": "service-36",
-              "name": "",
-              "description": "",
+              "name": "Armpits Carbon Laser",
+              "description": "Professional carbon laser treatment for armpits.",
               "beforePrice": "50,000 IQD",
               "afterPrice": "30,000 IQD"
             },
             {
               "id": "service-37",
-              "name": "",
-              "description": "",
+              "name": "Bikini Carbon Laser",
+              "description": "Professional carbon laser treatment for bikini area.",
               "beforePrice": "50,000 IQD",
               "afterPrice": "30,000 IQD"
             },
             {
               "id": "service-38",
-              "name": "",
-              "description": "",
+              "name": "Armpits + Bikini Carbon Laser",
+              "description": "Combined carbon laser treatment for armpits and bikini area.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-39",
-              "name": "",
-              "description": "",
+              "name": "Small Mole Removal",
+              "description": "Professional small mole removal treatment.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-40",
-              "name": "",
-              "description": "",
+              "name": "Big Mole Removal",
+              "description": "Professional big mole removal treatment.",
               "beforePrice": "25,000 IQD",
               "afterPrice": "20,000 IQD"
             },
@@ -613,6 +613,13 @@
               "description": "Professional HIFU neck and face treatment.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "100,000 IQD"
+            },
+            {
+              "id": "service-44",
+              "name": "Back of the Neck Hair Removal (Snow White)",
+              "description": "Back of the neck hair removal using Snow White laser device.",
+              "beforePrice": "20,000 IQD",
+              "afterPrice": "15,000 IQD"
             }
           ]
         }
@@ -781,8 +788,8 @@
             },
             {
               "id": "free-service-4",
-              "name": "Laser for Face",
-              "description": "Professional facial laser treatment.",
+              "name": "Face Hair Removal",
+              "description": "Professional facial hair removal laser treatment.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
@@ -986,22 +993,22 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "Buttock Augmentation",
+              "description": "Professional buttock augmentation procedure.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "Forehead Lift",
+              "description": "Professional forehead lift procedure.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "Blepharoplasty",
+              "description": "Professional blepharoplasty eyelid surgery.",
               "beforePrice": "$350",
               "afterPrice": "$175"
             },
@@ -1021,8 +1028,8 @@
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "Facelift Radiesse",
+              "description": "Professional facelift with Radiesse treatment.",
               "beforePrice": "$450",
               "afterPrice": "$290"
             },
@@ -1042,8 +1049,8 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "Breast Implants Surgery",
+              "description": "Professional breast implants surgery procedure.",
               "beforePrice": "$2000",
               "afterPrice": "$1500"
             }

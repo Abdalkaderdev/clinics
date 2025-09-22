@@ -314,64 +314,64 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی تەواوی لەش (سنۆ وایت)",
+              "description": "لابردنی مووی تەواوی لەش بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "75,000 دینار"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی نیوەی لەش (سنۆ وایت)",
+              "description": "لابردنی مووی نیوەی لەش بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "75,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ژێر بازوو (سنۆ وایت)",
+              "description": "لابردنی مووی ژێر بازوو بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ڕوو (سنۆ وایت)",
+              "description": "لابردنی مووی ڕوو بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "25,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی بیکینی (سنۆ وایت)",
+              "description": "لابردنی مووی ناوچەی بیکینی بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ژێر بازوو + بیکینی + ڕوو (سنۆ وایت)",
+              "description": "لابردنی مووی تێکەڵاو بۆ ژێر بازوو و بیکینی و ڕوو بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "30,000 دینار"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی هێڵی ژیان (سنۆ وایت)",
+              "description": "لابردنی مووی هێڵی ژیان بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ژێر مل (سنۆ وایت)",
+              "description": "لابردنی مووی ژێر مل بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی هێڵی ژیان + ژێر مل + پشتی مل (سنۆ وایت)",
+              "description": "لابردنی مووی تێکەڵاو بۆ هێڵی ژیان و ژێر مل و پشتی مل بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "25,000 دینار"
             },
@@ -384,71 +384,71 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی تەواوی لەش (ئیپیلیوم)",
+              "description": "لابردنی مووی تەواوی لەش بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "75,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی نیوەی لەش (ئیپیلیوم)",
+              "description": "لابردنی مووی نیوەی لەش بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "50,000 دینار",
               "afterPrice": "30,000 دینار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ژێر بازوو (ئیپیلیوم)",
+              "description": "لابردنی مووی ژێر بازوو بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ڕوو (ئیپیلیوم)",
+              "description": "لابردنی مووی ڕوو بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی بیکینی (ئیپیلیوم)",
+              "description": "لابردنی مووی ناوچەی بیکینی بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ژێر بازوو + بیکینی + ڕوو (ئیپیلیوم)",
+              "description": "لابردنی مووی تێکەڵاو بۆ ژێر بازوو و بیکینی و ڕوو بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "25,000 دینار"
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی هێڵی ڕیش (ئیپیلیوم)",
+              "description": "لابردنی مووی هێڵی ڕیش بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "15,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی ژێر مل (ئیپیلیوم)",
+              "description": "لابردنی مووی ژێر مل بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "15,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی پشتی مل (ئیپیلیوم)",
+              "description": "لابردنی مووی پشتی مل بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "15,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "لابردنی مووی هێڵی ڕیش + ژێر مل + پشتی مل (ئیپیلیوم)",
+              "description": "لابردنی مووی تێکەڵاو بۆ هێڵی ڕیش و ژێر مل و پشتی مل بە ئامێری لەیزەری ئیپیلیوم.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "25,000 دینار"
             },
@@ -468,29 +468,29 @@
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "لابردنی تاتوو",
+              "description": "چارەسەری لابردنی تاتووی پیشەیی.",
               "beforePrice": "$50",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "CO2",
+              "description": "چارەسەری لەیزەری CO2 پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "75,000 دینار"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "لابردنی چەوری زیادە",
+              "description": "چارەسەری لابردنی چەوری زیادەی پیشەیی.",
               "beforePrice": "25,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-26",
-              "name": "",
-              "description": "",
+              "name": "نهێنی",
+              "description": "چارەسەری نهێنیی پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "75,000 دینار"
             },
@@ -503,22 +503,22 @@
             },
             {
               "id": "service-28",
-              "name": "",
-              "description": "",
+              "name": "دیرماپین",
+              "description": "چارەسەری دیرماپینی پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "75,000 دینار"
             },
             {
               "id": "service-29",
-              "name": "",
-              "description": "",
+              "name": "دیرماپین + میزۆ",
+              "description": "چارەسەری تێکەڵاوی دیرماپین و میزۆثیراپی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "75,000 دینار"
             },
             {
               "id": "service-30",
-              "name": "",
-              "description": "",
+              "name": "میزۆ",
+              "description": "چارەسەری میزۆثیراپیی پیشەیی.",
               "beforePrice": "75,000 دینار",
               "afterPrice": "50,000 دینار"
             },
@@ -559,36 +559,36 @@
             },
             {
               "id": "service-36",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری کاربۆن بۆ ژێر بازوو",
+              "description": "چارەسەری لەیزەری کاربۆنی پیشەیی بۆ ژێر بازوو.",
               "beforePrice": "50,000 دینار",
               "afterPrice": "30,000 دینار"
             },
             {
               "id": "service-37",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری کاربۆن بۆ بیکینی",
+              "description": "چارەسەری لەیزەری کاربۆنی پیشەیی بۆ ناوچەی بیکینی.",
               "beforePrice": "50,000 دینار",
               "afterPrice": "30,000 دینار"
             },
             {
               "id": "service-38",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری کاربۆن بۆ ژێر بازوو + بیکینی",
+              "description": "چارەسەری لەیزەری کاربۆنی تێکەڵاو بۆ ژێر بازوو و ناوچەی بیکینی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-39",
-              "name": "",
-              "description": "",
+              "name": "لابردنی خاڵی بچووک",
+              "description": "چارەسەری لابردنی خاڵی بچووکی پیشەیی.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-40",
-              "name": "",
-              "description": "",
+              "name": "لابردنی خاڵی گەورە",
+              "description": "چارەسەری لابردنی خاڵی گەورەی پیشەیی.",
               "beforePrice": "25,000 دینار",
               "afterPrice": "20,000 دینار"
             },
@@ -612,6 +612,13 @@
               "description": "چارەسەری هایفوی پیشەیی بۆ مل و ڕوو.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "100,000 دینار"
+            },
+            {
+              "id": "service-44",
+              "name": "لابردنی مووی پشتی مل (سنۆ وایت)",
+              "description": "لابردنی مووی پشتی مل بە ئامێری لەیزەری سنۆ وایت.",
+              "beforePrice": "20,000 دینار",
+              "afterPrice": "15,000 دینار"
             }
           ]
         }
@@ -780,8 +787,8 @@
             },
             {
               "id": "free-service-4",
-              "name": "لەیزەر بۆ ڕوو",
-              "description": "چارەسەری لەیزەری پیشەیی بۆ ڕوو.",
+              "name": "لابردنی مووی ڕوو",
+              "description": "چارەسەری لابردنی مووی ڕوو بە لەیزەری پیشەیی.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
@@ -985,22 +992,22 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "گەورەکردنی پاشکۆڵ",
+              "description": "نەشتەرگەری گەورەکردنی پاشکۆڵی پیشەیی.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "بەرزکردنەوەی ناوچەوان",
+              "description": "نەشتەرگەری بەرزکردنەوەی ناوچەوانی پیشەیی.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "نەشتەرگەری پڵک",
+              "description": "نەشتەرگەری جوانکاری پڵکی پیشەیی.",
               "beforePrice": "$350",
               "afterPrice": "$175"
             },
@@ -1020,8 +1027,8 @@
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "ڕاکیشکردنی ڕوو بە ڕادیس",
+              "description": "نەشتەرگەری ڕاکیشکردنی ڕوو بە ڕادیسی پیشەیی.",
               "beforePrice": "$450",
               "afterPrice": "$290"
             },
@@ -1041,8 +1048,8 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "نەشتەرگەری چاندنی مەمک",
+              "description": "نەشتەرگەری چاندنی مەمکی پیشەیی.",
               "beforePrice": "$2000",
               "afterPrice": "$1500"
             }

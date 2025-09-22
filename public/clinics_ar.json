@@ -314,64 +314,64 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر كامل الجسم (سنو وايت)",
+              "description": "إزالة شعر كامل الجسم باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "75,000 دينار"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر نصف الجسم (سنو وايت)",
+              "description": "إزالة شعر نصف الجسم باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "75,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر الإبط (سنو وايت)",
+              "description": "إزالة شعر الإبط باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر الوجه (سنو وايت)",
+              "description": "إزالة شعر الوجه باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "25,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر البيكيني (سنو وايت)",
+              "description": "إزالة شعر منطقة البيكيني باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر الإبط + البيكيني + الوجه (سنو وايت)",
+              "description": "إزالة شعر مجمعة للإبط والبيكيني والوجه باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "45,000 دينار",
               "afterPrice": "30,000 دينار"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر خط الحياة (سنو وايت)",
+              "description": "إزالة شعر خط الحياة باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر تحت الرقبة (سنو وايت)",
+              "description": "إزالة شعر تحت الرقبة باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر خط الحياة + تحت الرقبة + خلف الرقبة (سنو وايت)",
+              "description": "إزالة شعر مجمعة لخط الحياة وتحت الرقبة وخلف الرقبة باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "45,000 دينار",
               "afterPrice": "25,000 دينار"
             },
@@ -384,71 +384,71 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر كامل الجسم (إبيليوم)",
+              "description": "إزالة شعر كامل الجسم باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "75,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر نصف الجسم (إبيليوم)",
+              "description": "إزالة شعر نصف الجسم باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "50,000 دينار",
               "afterPrice": "30,000 دينار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر الإبط (إبيليوم)",
+              "description": "إزالة شعر الإبط باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر الوجه (إبيليوم)",
+              "description": "إزالة شعر الوجه باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر البيكيني (إبيليوم)",
+              "description": "إزالة شعر منطقة البيكيني باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر الإبط + البيكيني + الوجه (إبيليوم)",
+              "description": "إزالة شعر مجمعة للإبط والبيكيني والوجه باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "45,000 دينار",
               "afterPrice": "25,000 دينار"
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر خط اللحية (إبيليوم)",
+              "description": "إزالة شعر خط اللحية باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "15,000 دينار",
               "afterPrice": "10,000 دينار"
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر تحت الرقبة (إبيليوم)",
+              "description": "إزالة شعر تحت الرقبة باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "15,000 دينار",
               "afterPrice": "10,000 دينار"
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر خلف الرقبة (إبيليوم)",
+              "description": "إزالة شعر خلف الرقبة باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "15,000 دينار",
               "afterPrice": "10,000 دينار"
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "إزالة شعر خط اللحية + تحت الرقبة + خلف الرقبة (إبيليوم)",
+              "description": "إزالة شعر مجمعة لخط اللحية وتحت الرقبة وخلف الرقبة باستخدام جهاز ليزر إبيليوم.",
               "beforePrice": "45,000 دينار",
               "afterPrice": "25,000 دينار"
             },
@@ -468,29 +468,29 @@
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "إزالة الوشم",
+              "description": "علاج إزالة الوشم المهني.",
               "beforePrice": "$50",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "ثاني أكسيد الكربون",
+              "description": "علاج ليزر CO2 مهني.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "75,000 دينار"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "إزالة الدهون الزائدة",
+              "description": "علاج إزالة الدهون الزائدة المهني.",
               "beforePrice": "25,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-26",
-              "name": "",
-              "description": "",
+              "name": "سيكريت",
+              "description": "علاج سيكريت المهني.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "75,000 دينار"
             },
@@ -503,22 +503,22 @@
             },
             {
               "id": "service-28",
-              "name": "",
-              "description": "",
+              "name": "ديرمابين",
+              "description": "علاج ديرمابين مهني.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "75,000 دينار"
             },
             {
               "id": "service-29",
-              "name": "",
-              "description": "",
+              "name": "ديرمابين + ميزو",
+              "description": "علاج مجمع ديرمابين وميزوثيرابي.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "75,000 دينار"
             },
             {
               "id": "service-30",
-              "name": "",
-              "description": "",
+              "name": "ميزو",
+              "description": "علاج ميزوثيرابي مهني.",
               "beforePrice": "75,000 دينار",
               "afterPrice": "50,000 دينار"
             },
@@ -559,36 +559,36 @@
             },
             {
               "id": "service-36",
-              "name": "",
-              "description": "",
+              "name": "ليزر كربون للإبط",
+              "description": "علاج ليزر كربون مهني للإبط.",
               "beforePrice": "50,000 دينار",
               "afterPrice": "30,000 دينار"
             },
             {
               "id": "service-37",
-              "name": "",
-              "description": "",
+              "name": "ليزر كربون للبيكيني",
+              "description": "علاج ليزر كربون مهني لمنطقة البيكيني.",
               "beforePrice": "50,000 دينار",
               "afterPrice": "30,000 دينار"
             },
             {
               "id": "service-38",
-              "name": "",
-              "description": "",
+              "name": "ليزر كربون للإبط + البيكيني",
+              "description": "علاج ليزر كربون مجمع للإبط ومنطقة البيكيني.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-39",
-              "name": "",
-              "description": "",
+              "name": "إزالة الشامة الصغيرة",
+              "description": "علاج إزالة الشامة الصغيرة المهني.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-40",
-              "name": "",
-              "description": "",
+              "name": "إزالة الشامة الكبيرة",
+              "description": "علاج إزالة الشامة الكبيرة المهني.",
               "beforePrice": "25,000 دينار",
               "afterPrice": "20,000 دينار"
             },
@@ -612,6 +612,13 @@
               "description": "علاج هايفو مهني للرقبة والوجه.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "100,000 دينار"
+            },
+            {
+              "id": "service-44",
+              "name": "إزالة شعر خلف الرقبة (سنو وايت)",
+              "description": "إزالة شعر خلف الرقبة باستخدام جهاز ليزر سنو وايت.",
+              "beforePrice": "20,000 دينار",
+              "afterPrice": "15,000 دينار"
             }
           ]
         }
@@ -780,8 +787,8 @@
             },
             {
               "id": "free-service-4",
-              "name": "ليزر للوجه",
-              "description": "علاج ليزر مهني للوجه.",
+              "name": "إزالة شعر الوجه",
+              "description": "علاج إزالة شعر الوجه بالليزر المهني.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
@@ -985,22 +992,22 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "تكبير الأرداف",
+              "description": "عملية تكبير الأرداف المهنية.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "رفع الجبهة",
+              "description": "عملية رفع الجبهة المهنية.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "جراحة الجفون",
+              "description": "جراحة الجفون التجميلية المهنية.",
               "beforePrice": "$350",
               "afterPrice": "$175"
             },
@@ -1020,8 +1027,8 @@
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "شد الوجه بالراديس",
+              "description": "عملية شد الوجه بالراديس المهنية.",
               "beforePrice": "$450",
               "afterPrice": "$290"
             },
@@ -1041,8 +1048,8 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "جراحة زرع الثدي",
+              "description": "عملية جراحة زرع الثدي المهنية.",
               "beforePrice": "$2000",
               "afterPrice": "$1500"
             }
