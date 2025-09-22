@@ -176,8 +176,8 @@
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "لابردنی موو بە ساینۆشور ئیلایت پلاس",
+              "description": "چارەسەری لابردنی مووی پێشکەوتوو بە تەکنۆلۆژیای ساینۆشور ئیلایت پلاس.",
               "beforePrice": "230,000 دینار",
               "afterPrice": "180,000 دینار"
             },
@@ -454,15 +454,15 @@
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "فیلەری کۆریایی",
+              "description": "چارەسەری فیلەری پێستی کۆریایی باشترین.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "125,000 دینار"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "فیلەری فەرەنسی",
+              "description": "چارەسەری فیلەری پێستی فەرەنسی باشترین.",
               "beforePrice": "$150",
               "afterPrice": "$130"
             },
@@ -496,8 +496,8 @@
             },
             {
               "id": "service-27",
-              "name": "",
-              "description": "",
+              "name": "بۆتۆکس",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی پیشەیی.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "125,000 دینار"
             },
@@ -524,36 +524,36 @@
             },
             {
               "id": "service-31",
-              "name": "",
-              "description": "",
+              "name": "پلازما",
+              "description": "چارەسەری پلازمای پیشەیی.",
               "beforePrice": "40,000 دینار",
               "afterPrice": "25,000 دینار"
             },
             {
               "id": "service-32",
-              "name": "",
-              "description": "",
+              "name": "میزۆثیراپی و پلازما",
+              "description": "چارەسەری تێکەڵاوی میزۆثیراپی و پلازما.",
               "beforePrice": "75,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-33",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵ",
+              "description": "چارەسەری هایدرافیشڵی پیشەیی بۆ پێست.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-34",
-              "name": "",
-              "description": "",
+              "name": "میزۆثیراپی و پلازما و هایدرافیشڵ",
+              "description": "چارەسەری تێکەڵاوی میزۆثیراپی و پلازما و هایدرافیشڵ.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "80,000 دینار"
             },
             {
               "id": "service-35",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵی ڤی ئای پی",
+              "description": "چارەسەری هایدرافیشڵی ڤی ئای پی باشترین.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "75,000 دینار"
             },
@@ -594,22 +594,22 @@
             },
             {
               "id": "service-41",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ ڕوو",
+              "description": "چارەسەری هایفوی پیشەیی بۆ ڕوو.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "60,000 دینار"
             },
             {
               "id": "service-42",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ مل",
+              "description": "چارەسەری هایفوی پیشەیی بۆ مل.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "60,000 دینار"
             },
             {
               "id": "service-43",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ مل و ڕوو",
+              "description": "چارەسەری هایفوی پیشەیی بۆ مل و ڕوو.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "100,000 دینار"
             }
@@ -1754,43 +1754,43 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی لەش",
+              "description": "چارەسەری لابردنی مووی تەواوی لەش بە لەیزەر.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵی ئاسایی",
+              "description": "چارەسەری هایدرافیشڵی ئاسایی بۆ پێست.",
               "beforePrice": "80,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵی ڤی ئای پی",
+              "description": "چارەسەری هایدرافیشڵی ڤی ئای پی باشترین بۆ پێست.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "75,000 دینار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵی شاهانە",
+              "description": "چارەسەری هایدرافیشڵی شاهانەی فاخر بۆ پێست.",
               "beforePrice": "300,000 دینار",
               "afterPrice": "150,000 دینار"
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "هایفو",
+              "description": "چارەسەری هایفوی پیشەیی.",
               "beforePrice": "60,000 دینار",
               "afterPrice": "30,000 دینار"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "CO2",
+              "description": "چارەسەری لەیزەری CO2 پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "50,000 دینار"
             },
@@ -1824,64 +1824,64 @@
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "میزۆثیراپی",
+              "description": "چارەسەری میزۆثیراپیی پیشەیی بۆ پێست.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "پلازما",
+              "description": "چارەسەری پلازمای پیشەیی.",
               "beforePrice": "80,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "دیرماتیک",
+              "description": "چارەسەری دیرماتیکی پیشەیی.",
               "beforePrice": "40,000 دینار",
               "afterPrice": "20,000 دینار"
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "میزۆ پلازما",
+              "description": "چارەسەری تێکەڵاوی میزۆثیراپی و پلازما.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "75,000 دینار"
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "فیلەری کۆریایی",
+              "description": "چارەسەری فیلەری پێستی کۆریایی باشترین.",
               "beforePrice": "$170",
               "afterPrice": "$85"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "فیلەری فەرەنسی",
+              "description": "چارەسەری فیلەری پێستی فەرەنسی باشترین.",
               "beforePrice": "$300",
               "afterPrice": "$150"
             },
             {
               "id": "service-26",
-              "name": "",
-              "description": "",
+              "name": "فیلەری ڕووسی",
+              "description": "چارەسەری فیلەری پێستی ڕووسی باشترین.",
               "beforePrice": "$160",
               "afterPrice": "$130"
             },
             {
               "id": "service-27",
-              "name": "",
-              "description": "",
+              "name": "فیلەری ئەڵمانی",
+              "description": "چارەسەری فیلەری پێستی ئەڵمانی باشترین.",
               "beforePrice": "$140",
               "afterPrice": "$115"
             },
             {
               "id": "service-28",
-              "name": "",
-              "description": "",
+              "name": "میزۆ پلازما دیرمابین",
+              "description": "چارەسەری تێکەڵاوی میزۆثیراپی و پلازما و دیرمابین.",
               "beforePrice": "$160",
               "afterPrice": "$140"
             },
@@ -1894,15 +1894,15 @@
             },
             {
               "id": "service-30",
-              "name": "",
-              "description": "",
+              "name": "دەرزی کاهرەبا",
+              "description": "چارەسەری دەرزی کاهرەبای پیشەیی.",
               "beforePrice": "$110",
               "afterPrice": "$95"
             },
             {
               "id": "service-31",
-              "name": "",
-              "description": "",
+              "name": "دەرزی سەلمۆن",
+              "description": "چارەسەری دەرزی سەلمۆنی پیشەیی.",
               "beforePrice": "$110",
               "afterPrice": "$95"
             },

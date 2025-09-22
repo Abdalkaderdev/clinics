@@ -177,8 +177,8 @@
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "Cynosure Elite Plus Hair Removal",
+              "description": "Advanced Cynosure Elite Plus laser hair removal treatment.",
               "beforePrice": "230,000 IQD",
               "afterPrice": "180,000 IQD"
             },
@@ -455,15 +455,15 @@
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "Korean Filler",
+              "description": "Premium Korean dermal filler treatment.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "125,000 IQD"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "French Filler",
+              "description": "Premium French dermal filler treatment.",
               "beforePrice": "$150",
               "afterPrice": "$130"
             },
@@ -497,8 +497,8 @@
             },
             {
               "id": "service-27",
-              "name": "",
-              "description": "",
+              "name": "Botox",
+              "description": "Professional botox injection treatment.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "125,000 IQD"
             },
@@ -525,36 +525,36 @@
             },
             {
               "id": "service-31",
-              "name": "",
-              "description": "",
+              "name": "Plasma",
+              "description": "Professional plasma treatment.",
               "beforePrice": "40,000 IQD",
               "afterPrice": "25,000 IQD"
             },
             {
               "id": "service-32",
-              "name": "",
-              "description": "",
+              "name": "Mesotherapy and Plasma",
+              "description": "Combined mesotherapy and plasma treatment.",
               "beforePrice": "75,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-33",
-              "name": "",
-              "description": "",
+              "name": "HydraFacial",
+              "description": "Professional HydraFacial skin treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-34",
-              "name": "",
-              "description": "",
+              "name": "Mesotherapy, Plasma and HydraFacial",
+              "description": "Combined mesotherapy, plasma and HydraFacial treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "80,000 IQD"
             },
             {
               "id": "service-35",
-              "name": "",
-              "description": "",
+              "name": "HydraFacial VIP",
+              "description": "Premium HydraFacial VIP treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "75,000 IQD"
             },
@@ -595,22 +595,22 @@
             },
             {
               "id": "service-41",
-              "name": "",
-              "description": "",
+              "name": "HIFU Face",
+              "description": "Professional HIFU facial treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "60,000 IQD"
             },
             {
               "id": "service-42",
-              "name": "",
-              "description": "",
+              "name": "HIFU Neck",
+              "description": "Professional HIFU neck treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "60,000 IQD"
             },
             {
               "id": "service-43",
-              "name": "",
-              "description": "",
+              "name": "HIFU Neck and Face",
+              "description": "Professional HIFU neck and face treatment.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "100,000 IQD"
             }
@@ -1363,43 +1363,43 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "Full Body Laser",
+              "description": "Complete full body laser hair removal treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "Normal HydraFacial",
+              "description": "Standard HydraFacial skin treatment.",
               "beforePrice": "80,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "VIP HydraFacial",
+              "description": "Premium VIP HydraFacial skin treatment.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "75,000 IQD"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "Royal HydraFacial",
+              "description": "Luxury Royal HydraFacial skin treatment.",
               "beforePrice": "300,000 IQD",
               "afterPrice": "150,000 IQD"
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "HIFU",
+              "description": "Professional HIFU treatment.",
               "beforePrice": "60,000 IQD",
               "afterPrice": "30,000 IQD"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "CO2",
+              "description": "Professional CO2 laser treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "50,000 IQD"
             },
@@ -1433,64 +1433,64 @@
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "Mesotherapy",
+              "description": "Professional mesotherapy skin treatment.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "Plasma",
+              "description": "Professional plasma treatment.",
               "beforePrice": "80,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "Dermatic",
+              "description": "Professional dermatic treatment.",
               "beforePrice": "40,000 IQD",
               "afterPrice": "20,000 IQD"
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "Meso Plasma",
+              "description": "Combined mesotherapy and plasma treatment.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "75,000 IQD"
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "Korean Filler",
+              "description": "Premium Korean dermal filler treatment.",
               "beforePrice": "$170",
               "afterPrice": "$85"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "French Filler",
+              "description": "Premium French dermal filler treatment.",
               "beforePrice": "$300",
               "afterPrice": "$150"
             },
             {
               "id": "service-26",
-              "name": "",
-              "description": "",
+              "name": "Russian Filler",
+              "description": "Premium Russian dermal filler treatment.",
               "beforePrice": "$160",
               "afterPrice": "$130"
             },
             {
               "id": "service-27",
-              "name": "",
-              "description": "",
+              "name": "German Filler",
+              "description": "Premium German dermal filler treatment.",
               "beforePrice": "$140",
               "afterPrice": "$115"
             },
             {
               "id": "service-28",
-              "name": "",
-              "description": "",
+              "name": "Meso Plasma Dermabin",
+              "description": "Combined mesotherapy, plasma and dermabin treatment.",
               "beforePrice": "$160",
               "afterPrice": "$140"
             },
@@ -1503,15 +1503,15 @@
             },
             {
               "id": "service-30",
-              "name": "",
-              "description": "",
+              "name": "Amber Needle",
+              "description": "Professional amber needle treatment.",
               "beforePrice": "$110",
               "afterPrice": "$95"
             },
             {
               "id": "service-31",
-              "name": "",
-              "description": "",
+              "name": "Salmon Needle",
+              "description": "Professional salmon needle treatment.",
               "beforePrice": "$110",
               "afterPrice": "$95"
             },

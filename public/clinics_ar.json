@@ -176,8 +176,8 @@
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "إزالة الشعر بالليزر ساينوشور إيليت بلاس",
+              "description": "علاج إزالة الشعر بالليزر المتقدم بتقنية ساينوشور إيليت بلاس.",
               "beforePrice": "230,000 دينار",
               "afterPrice": "180,000 دينار"
             },
@@ -454,15 +454,15 @@
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "فيلر كوري",
+              "description": "علاج فيلر جلدي كوري ممتاز.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "125,000 دينار"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "فيلر فرنسي",
+              "description": "علاج فيلر جلدي فرنسي ممتاز.",
               "beforePrice": "$150",
               "afterPrice": "$130"
             },
@@ -496,8 +496,8 @@
             },
             {
               "id": "service-27",
-              "name": "",
-              "description": "",
+              "name": "بوتوكس",
+              "description": "علاج حقن بوتوكس مهني.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "125,000 دينار"
             },
@@ -524,36 +524,36 @@
             },
             {
               "id": "service-31",
-              "name": "",
-              "description": "",
+              "name": "بلازما",
+              "description": "علاج بلازما مهني.",
               "beforePrice": "40,000 دينار",
               "afterPrice": "25,000 دينار"
             },
             {
               "id": "service-32",
-              "name": "",
-              "description": "",
+              "name": "ميزوثيرابي وبلازما",
+              "description": "علاج مجمع ميزوثيرابي وبلازما.",
               "beforePrice": "75,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-33",
-              "name": "",
-              "description": "",
+              "name": "هايدرافيشل",
+              "description": "علاج هايدرافيشل مهني للبشرة.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-34",
-              "name": "",
-              "description": "",
+              "name": "ميزوثيرابي وبلازما وهايدرافيشل",
+              "description": "علاج مجمع ميزوثيرابي وبلازما وهايدرافيشل.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "80,000 دينار"
             },
             {
               "id": "service-35",
-              "name": "",
-              "description": "",
+              "name": "هايدرافيشل في آي پي",
+              "description": "علاج هايدرافيشل في آي پي ممتاز.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "75,000 دينار"
             },
@@ -594,22 +594,22 @@
             },
             {
               "id": "service-41",
-              "name": "",
-              "description": "",
+              "name": "هايفو للوجه",
+              "description": "علاج هايفو مهني للوجه.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "60,000 دينار"
             },
             {
               "id": "service-42",
-              "name": "",
-              "description": "",
+              "name": "هايفو للرقبة",
+              "description": "علاج هايفو مهني للرقبة.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "60,000 دينار"
             },
             {
               "id": "service-43",
-              "name": "",
-              "description": "",
+              "name": "هايفو للرقبة والوجه",
+              "description": "علاج هايفو مهني للرقبة والوجه.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "100,000 دينار"
             }
@@ -1754,43 +1754,43 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "ليزر كامل الجسم",
+              "description": "علاج ليزر إزالة الشعر لكامل الجسم.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "هايدرافيشل عادي",
+              "description": "علاج هايدرافيشل عادي للبشرة.",
               "beforePrice": "80,000 دينار",
               "afterPrice": "40,000 دينار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "هايدرافيشل في آي پي",
+              "description": "علاج هايدرافيشل في آي پي ممتاز للبشرة.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "75,000 دينار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "هايدرافيشل ملكي",
+              "description": "علاج هايدرافيشل ملكي فاخر للبشرة.",
               "beforePrice": "300,000 دينار",
               "afterPrice": "150,000 دينار"
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "هايفو",
+              "description": "علاج هايفو مهني.",
               "beforePrice": "60,000 دينار",
               "afterPrice": "30,000 دينار"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "ثاني أكسيد الكربون",
+              "description": "علاج ليزر CO2 مهني.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "50,000 دينار"
             },
@@ -1824,64 +1824,64 @@
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "ميزوثيرابي",
+              "description": "علاج ميزوثيرابي مهني للبشرة.",
               "beforePrice": "100,000 دينار",
               "afterPrice": "50,000 دينار"
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "بلازما",
+              "description": "علاج بلازما مهني.",
               "beforePrice": "80,000 دينار",
               "afterPrice": "40,000 دينار"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "ديرماتيك",
+              "description": "علاج ديرماتيك مهني.",
               "beforePrice": "40,000 دينار",
               "afterPrice": "20,000 دينار"
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "ميزو بلازما",
+              "description": "علاج مجمع ميزوثيرابي وبلازما.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "75,000 دينار"
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "فيلر كوري",
+              "description": "علاج فيلر جلدي كوري ممتاز.",
               "beforePrice": "$170",
               "afterPrice": "$85"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "فيلر فرنسي",
+              "description": "علاج فيلر جلدي فرنسي ممتاز.",
               "beforePrice": "$300",
               "afterPrice": "$150"
             },
             {
               "id": "service-26",
-              "name": "",
-              "description": "",
+              "name": "فيلر روسي",
+              "description": "علاج فيلر جلدي روسي ممتاز.",
               "beforePrice": "$160",
               "afterPrice": "$130"
             },
             {
               "id": "service-27",
-              "name": "",
-              "description": "",
+              "name": "فيلر ألماني",
+              "description": "علاج فيلر جلدي ألماني ممتاز.",
               "beforePrice": "$140",
               "afterPrice": "$115"
             },
             {
               "id": "service-28",
-              "name": "",
-              "description": "",
+              "name": "ميزو بلازما ديرمابين",
+              "description": "علاج مجمع ميزوثيرابي وبلازما وديرمابين.",
               "beforePrice": "$160",
               "afterPrice": "$140"
             },
@@ -1894,15 +1894,15 @@
             },
             {
               "id": "service-30",
-              "name": "",
-              "description": "",
+              "name": "إبرة العنبر",
+              "description": "علاج إبرة العنبر المهني.",
               "beforePrice": "$110",
               "afterPrice": "$95"
             },
             {
               "id": "service-31",
-              "name": "",
-              "description": "",
+              "name": "إبرة السلمون",
+              "description": "علاج إبرة السلمون المهني.",
               "beforePrice": "$110",
               "afterPrice": "$95"
             },
