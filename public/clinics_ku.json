@@ -650,8 +650,8 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "نەشتەرگەری پڵک",
+              "description": "نەشتەرگەری جوانکاری پڵکی پیشەیی.",
               "beforePrice": "$650",
               "afterPrice": "$450"
             },
@@ -727,15 +727,15 @@
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ ڕوو",
+              "description": "چارەسەری هایفوی پیشەیی بۆ ڕوو.",
               "beforePrice": "$100",
               "afterPrice": "$70"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "ئار ئێف نهێنی",
+              "description": "چارەسەری ئار ئێف نهێنیی پیشەیی.",
               "beforePrice": "$140",
               "afterPrice": "$100"
             },
@@ -809,50 +809,50 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی لەش",
+              "description": "چارەسەری لابردنی مووی تەواوی لەش بە لەیزەر.",
               "beforePrice": "60,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "لابردنی تاتوو پیکۆ",
+              "description": "چارەسەری لابردنی تاتوو بە تەکنۆلۆژیای لەیزەری پیکۆ.",
               "beforePrice": "60,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵ",
+              "description": "چارەسەری هایدرافیشڵی پیشەیی بۆ پێست.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "25,000 دینار"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "پلازما",
+              "description": "چارەسەری پلازمای پیشەیی.",
               "beforePrice": "35,000 دینار",
               "afterPrice": "25,000 دینار"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری CO2",
+              "description": "چارەسەری لەیزەری CO2 پیشەیی.",
               "beforePrice": "80,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "لابردنی چەوری زیادە",
+              "description": "چارەسەری لابردنی چەوری زیادەی پیشەیی.",
               "beforePrice": "35,000 دینار",
               "afterPrice": "20,000 دینار"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "بۆتۆکسی فەرەنسی",
+              "description": "چارەسەری دەرزیکردنی بۆتۆکسی فەرەنسی باشترین.",
               "beforePrice": "$100",
               "afterPrice": "$60"
             },
@@ -872,8 +872,8 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "هایدرافیشڵی ڤی ئای پی",
+              "description": "چارەسەری هایدرافیشڵی ڤی ئای پی باشترین بۆ پێست.",
               "beforePrice": "60,000 دینار",
               "afterPrice": "45,000 دینار"
             },
@@ -1069,8 +1069,8 @@
           "items": [
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "دیزاینی بێ بەرامبەر",
+              "description": "خزمەتگوزاری راوێژکاری دیزاینی بێ بەرامبەر.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
@@ -1087,237 +1087,62 @@
               "id": "service-1",
               "name": "",
               "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-2",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-3",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-4",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-5",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-6",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-7",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-8",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-9",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-10",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-11",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-12",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-13",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-14",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-15",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-16",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-17",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-18",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-19",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-20",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-21",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-22",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-23",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-24",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-25",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-1",
-              "name": "",
-              "description": "",
               "beforePrice": "25,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "پێدیکیور",
+              "description": "خزمەتگوزاری پێدیکیوری پیشەیی.",
               "beforePrice": "25,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "میکئاپ",
+              "description": "خزمەتگوزاری میکئاپی پیشەیی.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "20,000 دینار"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "شێوازی پرچ",
+              "description": "خزمەتگوزاری شێوازکردنی پرچی پیشەیی.",
               "beforePrice": "35,000 دینار",
               "afterPrice": "20,000 دینار"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "هایلایت",
+              "description": "خزمەتگوزاری هایلایتی پرچی پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "60,000 دینار"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "کریستاڵ",
+              "description": "خزمەتگوزاری چارەسەری کریستاڵی پیشەیی.",
               "beforePrice": "90,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "کریاتین",
+              "description": "چارەسەری پرچ بە کریاتینی پیشەیی.",
               "beforePrice": "75,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "بۆتۆکس",
+              "description": "چارەسەری پرچ بە بۆتۆکسی پیشەیی.",
               "beforePrice": "75,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "مانیکیور و پێدیکیور",
+              "description": "خزمەتگوزاری مانیکیور و پێدیکیوری پیشەیی.",
               "beforePrice": "35,000 دینار",
               "afterPrice": "20,000 دینار"
             },
@@ -1330,22 +1155,22 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "درێژکردنی جێل",
+              "description": "خزمەتگوزاری درێژکردنی نێخن بە جێلی پیشەیی.",
               "beforePrice": "40,000 دینار",
               "afterPrice": "30,000 دینار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "ڕەنگکردنی ڕەگی پرچ",
+              "description": "خزمەتگوزاری ڕەنگکردنی ڕەگی پرچی پیشەیی.",
               "beforePrice": "30,000 دینار",
               "afterPrice": "20,000 دینار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "بۆیای جێل",
+              "description": "خزمەتگوزاری بۆیای نێخن بە جێلی پیشەیی.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
@@ -1358,22 +1183,22 @@
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "درێژکردنی پرچی سروشتی",
+              "description": "خزمەتگوزاری درێژکردنی پرچی سروشتی پیشەیی.",
               "beforePrice": "$2",
               "afterPrice": "$1"
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "مۆمکردنی تەواوی لەش",
+              "description": "خزمەتگوزاری مۆمکردنی تەواوی لەشی پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "50,000 دینار"
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "هایدرافێشڵ",
+              "description": "چارەسەری هایدرافێشڵی پیشەیی بۆ پێست.",
               "beforePrice": "35,000 دینار",
               "afterPrice": "15,000 دینار"
             },
@@ -1421,15 +1246,15 @@
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی لەش",
+              "description": "لابردنی مووی تەواوی لەش بە لەیزەری پیشەیی.",
               "beforePrice": "100,000 دینار",
               "afterPrice": "45,000 دینار"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "کاڤیاری زێڕین",
+              "description": "چارەسەری ڕوو بە کاڤیاری زێڕینی پیشەیی.",
               "beforePrice": "$60",
               "afterPrice": "25,000 دینار"
             },
@@ -1483,223 +1308,6 @@
               "id": "service-1",
               "name": "",
               "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-2",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-3",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-4",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-5",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-6",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-7",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-8",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-9",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-10",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-11",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-12",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-13",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-14",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-15",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-16",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-17",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-18",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-19",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-20",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-21",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-22",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-23",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-24",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-25",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-26",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-27",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-28",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-29",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-30",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-31",
-              "name": "",
-              "description": "",
-              "beforePrice": "",
-              "afterPrice": ""
-            },
-            {
-              "id": "service-1",
-              "name": "",
-              "description": "",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
@@ -1712,29 +1320,29 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری ڕوو بۆ ژنان",
+              "description": "چارەسەری لابردنی مووی ڕوو بە لەیزەر بۆ ژنان.",
               "beforePrice": "30,000 دینار",
               "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری ڕوو بۆ پیاوان",
+              "description": "چارەسەری لابردنی مووی ڕوو بە لەیزەر بۆ پیاوان.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری ژێر مل",
+              "description": "چارەسەری لابردنی مووی ژێر مل بە لەیزەر.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "بیکینی",
+              "description": "چارەسەری لابردنی مووی ناوچەی بیکینی بە لەیزەر.",
               "beforePrice": "40,000 دینار",
               "afterPrice": "20,000 دینار"
             },
@@ -1754,8 +1362,8 @@
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "تەواوی لەش",
+              "description": "چارەسەری لابردنی مووی تەواوی لەش بە لەیزەر.",
               "beforePrice": "130,000 دینار",
               "afterPrice": "65,000 دینار"
             },
@@ -1810,8 +1418,8 @@
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "ئار ئێف نهێنی",
+              "description": "چارەسەری ئار ئێف نهێنیی پیشەیی.",
               "beforePrice": "$100",
               "afterPrice": "100,000 دینار"
             },
@@ -1824,8 +1432,8 @@
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "لابردنی گۆشتی زیادە",
+              "description": "چارەسەری لابردنی گۆشتی زیادەی پیشەیی.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
@@ -1894,8 +1502,8 @@
             },
             {
               "id": "service-29",
-              "name": "",
-              "description": "",
+              "name": "میزۆ + پلازما + دیرماپین",
+              "description": "چارەسەری تێکەڵاوی میزۆثیراپی و پلازما و دیرماپین.",
               "beforePrice": "200,000 دینار",
               "afterPrice": "100,000 دینار"
             },

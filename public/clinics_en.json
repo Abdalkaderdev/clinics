@@ -651,8 +651,8 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "Blepharoplasty",
+              "description": "Professional blepharoplasty eyelid surgery.",
               "beforePrice": "$650",
               "afterPrice": "$450"
             },
@@ -728,15 +728,15 @@
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "HIFU for Face",
+              "description": "Professional HIFU facial treatment.",
               "beforePrice": "$100",
               "afterPrice": "$70"
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "RF Secret",
+              "description": "Professional RF Secret treatment.",
               "beforePrice": "$140",
               "afterPrice": "$100"
             },
@@ -810,50 +810,50 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "Laser Full Body",
+              "description": "Complete full body laser hair removal treatment.",
               "beforePrice": "60,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "Tattoo Removal PICO",
+              "description": "Professional tattoo removal using PICO laser technology.",
               "beforePrice": "60,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "HydraFacial",
+              "description": "Professional HydraFacial skin treatment.",
               "beforePrice": "45,000 IQD",
               "afterPrice": "25,000 IQD"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "Plasma",
+              "description": "Professional plasma treatment.",
               "beforePrice": "35,000 IQD",
               "afterPrice": "25,000 IQD"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "CO2 Laser",
+              "description": "Professional CO2 laser treatment.",
               "beforePrice": "80,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "Excess Fat Removal",
+              "description": "Professional excess fat removal treatment.",
               "beforePrice": "35,000 IQD",
               "afterPrice": "20,000 IQD"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "French Botox",
+              "description": "Premium French botox injection treatment.",
               "beforePrice": "$100",
               "afterPrice": "$60"
             },
@@ -873,8 +873,8 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "VIP HydraFacial",
+              "description": "Premium VIP HydraFacial skin treatment.",
               "beforePrice": "60,000 IQD",
               "afterPrice": "45,000 IQD"
             },
@@ -1070,8 +1070,8 @@
           "items": [
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "Free Design",
+              "description": "Complimentary design consultation service.",
               "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
@@ -1093,57 +1093,57 @@
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "Pedicure",
+              "description": "Professional pedicure service.",
               "beforePrice": "25,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "Makeup",
+              "description": "Professional makeup service.",
               "beforePrice": "45,000 IQD",
               "afterPrice": "20,000 IQD"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "Hairstyle",
+              "description": "Professional hairstyling service.",
               "beforePrice": "35,000 IQD",
               "afterPrice": "20,000 IQD"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "Highlight",
+              "description": "Professional hair highlighting service.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "60,000 IQD"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "Crystal",
+              "description": "Professional crystal treatment service.",
               "beforePrice": "90,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "Creatine",
+              "description": "Professional creatine hair treatment.",
               "beforePrice": "75,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "Bottox",
+              "description": "Professional bottox hair treatment.",
               "beforePrice": "75,000 IQD",
               "afterPrice": "40,000 IQD"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "Manicure and Pedicure",
+              "description": "Professional manicure and pedicure service.",
               "beforePrice": "35,000 IQD",
               "afterPrice": "20,000 IQD"
             },
@@ -1156,22 +1156,22 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "Gel Extension",
+              "description": "Professional gel nail extension service.",
               "beforePrice": "40,000 IQD",
               "afterPrice": "30,000 IQD"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "Root Hair Dye",
+              "description": "Professional root hair dyeing service.",
               "beforePrice": "30,000 IQD",
               "afterPrice": "20,000 IQD"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "Gel Polish",
+              "description": "Professional gel nail polish service.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "10,000 IQD"
             },
@@ -1184,22 +1184,22 @@
             },
             {
               "id": "service-15",
-              "name": "",
-              "description": "",
+              "name": "Natural Hair Extensions",
+              "description": "Professional natural hair extension service.",
               "beforePrice": "$2",
               "afterPrice": "$1"
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "Full Body Wax",
+              "description": "Professional full body waxing service.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "50,000 IQD"
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "HydraFacial",
+              "description": "Professional HydraFacial skin treatment.",
               "beforePrice": "35,000 IQD",
               "afterPrice": "15,000 IQD"
             },
@@ -1247,15 +1247,15 @@
             },
             {
               "id": "service-24",
-              "name": "",
-              "description": "",
+              "name": "Laser Full Body",
+              "description": "Professional full body laser hair removal.",
               "beforePrice": "100,000 IQD",
               "afterPrice": "45,000 IQD"
             },
             {
               "id": "service-25",
-              "name": "",
-              "description": "",
+              "name": "Gold Caviar",
+              "description": "Professional gold caviar facial treatment.",
               "beforePrice": "$60",
               "afterPrice": "25,000 IQD"
             },
@@ -1321,29 +1321,29 @@
             },
             {
               "id": "service-3",
-              "name": "",
-              "description": "",
+              "name": "Face Laser for Women",
+              "description": "Professional facial laser hair removal treatment for women.",
               "beforePrice": "30,000 IQD",
               "afterPrice": "15,000 IQD"
             },
             {
               "id": "service-4",
-              "name": "",
-              "description": "",
+              "name": "Face Laser for Men",
+              "description": "Professional facial laser hair removal treatment for men.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "10,000 IQD"
             },
             {
               "id": "service-5",
-              "name": "",
-              "description": "",
+              "name": "Under the Neck Laser",
+              "description": "Professional under the neck laser hair removal treatment.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "10,000 IQD"
             },
             {
               "id": "service-6",
-              "name": "",
-              "description": "",
+              "name": "Bikini",
+              "description": "Professional bikini area laser hair removal treatment.",
               "beforePrice": "40,000 IQD",
               "afterPrice": "20,000 IQD"
             },
@@ -1363,8 +1363,8 @@
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "Full Body",
+              "description": "Complete full body laser hair removal treatment.",
               "beforePrice": "130,000 IQD",
               "afterPrice": "65,000 IQD"
             },
@@ -1419,8 +1419,8 @@
             },
             {
               "id": "service-17",
-              "name": "",
-              "description": "",
+              "name": "RF Secret",
+              "description": "Professional RF Secret treatment.",
               "beforePrice": "$100",
               "afterPrice": "100,000 IQD"
             },
@@ -1433,8 +1433,8 @@
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "Excess Meat Removal",
+              "description": "Professional excess meat removal treatment.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "10,000 IQD"
             },
@@ -1503,8 +1503,8 @@
             },
             {
               "id": "service-29",
-              "name": "",
-              "description": "",
+              "name": "Meso + Plasma + Dermapen",
+              "description": "Combined mesotherapy, plasma and dermapen treatment.",
               "beforePrice": "200,000 IQD",
               "afterPrice": "100,000 IQD"
             },
