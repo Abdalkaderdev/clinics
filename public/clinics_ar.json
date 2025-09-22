@@ -1211,15 +1211,15 @@
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "رفع الحواجب",
+              "description": "خدمة رفع وتشكيل الحواجب المهنية.",
               "beforePrice": "30,000 دينار",
               "afterPrice": "20,000 دينار"
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "رفع الرموش",
+              "description": "خدمة رفع وتجعيد الرموش المهنية.",
               "beforePrice": "30,000 دينار",
               "afterPrice": "20,000 دينار"
             },

@@ -1212,15 +1212,15 @@
             },
             {
               "id": "service-19",
-              "name": "",
-              "description": "",
+              "name": "Eyebrow Lifting",
+              "description": "Professional eyebrow lifting and shaping service.",
               "beforePrice": "30,000 IQD",
               "afterPrice": "20,000 IQD"
             },
             {
               "id": "service-20",
-              "name": "",
-              "description": "",
+              "name": "Eyelash Lifting",
+              "description": "Professional eyelash lifting and curling service.",
               "beforePrice": "30,000 IQD",
               "afterPrice": "20,000 IQD"
             },
