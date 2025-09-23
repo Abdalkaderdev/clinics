@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -21,7 +21,7 @@ const App = () => {
         <TooltipProvider>
           <Toaster />
           <Sonner />
-          <BrowserRouter>
+          <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Suspense
               fallback={
                 <div className="min-h-screen flex items-center justify-center">
@@ -31,7 +31,25 @@ const App = () => {
             >
               <Routes>
                 <Route path="/" element={<Index />} />
+                <Route
+                  path="/menu"
+                  element={
+                    <Navigate
+                      to={`/menu/${localStorage.getItem("selectedLanguage") || "en"}`}
+                      replace
+                    />
+                  }
+                />
                 <Route path="/menu/:lang" element={<Menu />} />
+                <Route
+                  path="/categories"
+                  element={
+                    <Navigate
+                      to={`/categories/${localStorage.getItem("selectedLanguage") || "en"}`}
+                      replace
+                    />
+                  }
+                />
                 <Route path="/categories/:lang" element={<Categories />} />
                 {process.env.NODE_ENV === "development" && (
                   <Route path="/qa-checklist" element={<QAChecklist />} />
