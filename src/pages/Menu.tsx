@@ -341,8 +341,8 @@ export default function Menu() {
               className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 min-h-[44px]"
               aria-label="Back to clinics"
             >
-              <span className="text-lg sm:text-xl">←</span>
-              <span className="hidden sm:inline text-sm">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
+              <span className="text-lg">←</span>
+              <span className="text-xs sm:text-sm">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
             </button>
             
             <ImageOptimized

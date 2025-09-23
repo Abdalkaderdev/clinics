@@ -161,11 +161,11 @@ const Categories = () => {
           <div className="justify-self-start">
             <button
               onClick={() => navigate('/')}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors"
+              className="flex items-center gap-1 px-2 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors min-h-[44px]"
               aria-label="Back to home"
             >
-              <span className="text-lg sm:text-xl">←</span>
-              <span className="hidden sm:inline">{t("home", lang as "en" | "ar" | "ku") || "Home"}</span>
+              <span className="text-lg">←</span>
+              <span className="text-xs sm:text-sm">{t("home", lang as "en" | "ar" | "ku") || "Home"}</span>
             </button>
           </div>
           <div className="flex justify-center">
