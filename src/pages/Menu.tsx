@@ -135,7 +135,9 @@ export default function Menu() {
     const loadClinicsData = async () => {
       try {
         console.log("Loading clinics data for language:", currentLanguage);
-        const response = await fetch(`/clinics_${currentLanguage}.json`);
+        const response = await fetch(`/clinics_${currentLanguage}.json`, {
+          cache: "no-cache",
+        });
         console.log("Response status:", response.status);
         if (!response.ok) {
           throw new Error(`Failed to load clinics: ${response.status}`);
