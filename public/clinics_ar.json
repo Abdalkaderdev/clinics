@@ -172,15 +172,15 @@
           "items": [
             {
               "id": "service-1",
-              "name": "باقة التجميل المميزة",
-              "description": "باقة علاج تجميل مميزة شاملة بتقنيات متقدمة.",
+              "name": "جراحة الجفن العلوي بكانديلا",
+              "description": "جراحة الجفن العلوي المهنية باستخدام تقنية الليزر المتقدمة كانديلا.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "100,000 دينار"
             },
             {
               "id": "service-2",
-              "name": "إزالة الشعر بالليزر ساينوشور إيليت بلاس",
-              "description": "علاج إزالة الشعر بالليزر المتقدم بتقنية ساينوشور إيليت بلاس.",
+              "name": "جراحة الجفن السفلي بسينوشور إيليت",
+              "description": "جراحة الجفن السفلي المهنية باستخدام تقنية الليزر المتقدمة سينوشور إيليت.",
               "beforePrice": "230,000 دينار",
               "afterPrice": "180,000 دينار"
             },
@@ -378,13 +378,6 @@
               "description": "إزالة شعر مجمعة لخط الحياة وتحت الرقبة وخلف الرقبة باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "45,000 دينار",
               "afterPrice": "25,000 دينار"
-            },
-            {
-              "id": "service-10",
-              "name": "",
-              "description": "",
-              "beforePrice": "20,000 دينار",
-              "afterPrice": "15,000 دينار"
             },
             {
               "id": "service-11",
@@ -641,15 +634,15 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "جراحة الجفن العلوي",
+              "description": "عملية جراحة الجفن العلوي المهنية.",
               "beforePrice": "$500",
               "afterPrice": "$300"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "جراحة الجفن السفلي",
+              "description": "عملية جراحة الجفن السفلي المهنية.",
               "beforePrice": "$600",
               "afterPrice": "$400"
             },
@@ -864,15 +857,15 @@
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "فيلر روماني",
+              "description": "علاج فيلر جلدي روماني ممتاز.",
               "beforePrice": "$300",
               "afterPrice": "$200"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "فيلر سويسري",
+              "description": "علاج فيلر جلدي سويسري ممتاز.",
               "beforePrice": "$180",
               "afterPrice": "$120"
             },
@@ -885,37 +878,37 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "هايفو للوجه",
+              "description": "علاج هايفو مهني للوجه.",
               "beforePrice": "50,000 دينار",
               "afterPrice": "40,000 دينار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "هايفو للرقبة",
+              "description": "علاج هايفو مهني للرقبة.",
               "beforePrice": "35,000 دينار",
               "afterPrice": "25,000 دينار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "هايفو للوجه والرقبة",
+              "description": "علاج هايفو مهني للوجه والرقبة.",
               "beforePrice": "80,000 دينار",
               "afterPrice": "60,000 دينار"
             },
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "استشارة طبية لمدة سنة",
+              "description": "استشارة طبية شاملة ومتابعة مع الدكتور فرهاد جاف لمدة سنة كاملة، تشمل الفحوصات الدورية وتخطيط العلاج.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "تقشير الكربون المجاني",
+              "description": "علاج تقشير الكربون بالليزر المهني لتجديد البشرة وتنقية المسام وتحسين ملمس البشرة ولونها.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
@@ -985,15 +978,15 @@
             },
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "تجميل الأنف (عملية الأنف)",
+              "description": "جراحة تجميل وإعادة تشكيل الأنف المهنية.",
               "beforePrice": "$1400",
               "afterPrice": "$700"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "تجميل الأذن (جراحة الأذن)",
+              "description": "جراحة تجميل وإعادة تشكيل الأذن المهنية.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
@@ -1085,16 +1078,16 @@
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "تسريحة شعر مجانية",
+              "description": "خدمة تسريح الشعر المجانية.",
               "beforePrice": "",
               "afterPrice": "مجاني",
               "isFree": true
             },
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "قص الشعر",
+              "description": "خدمة قص الشعر المهنية.",
               "beforePrice": "25,000 دينار",
               "afterPrice": "10,000 دينار"
             },
@@ -1156,8 +1149,8 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "صبغة الشعر",
+              "description": "خدمة صبغ الشعر المهنية.",
               "beforePrice": "$50",
               "afterPrice": "40,000 دينار"
             },
@@ -1184,8 +1177,8 @@
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "وصلات شعر صناعية",
+              "description": "خدمة وصلات الشعر الصناعية المهنية.",
               "beforePrice": "$2",
               "afterPrice": "2,000 دينار"
             },
@@ -1212,10 +1205,10 @@
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "إبرة العنبر",
+              "description": "علاج إبرة العنبر المهني مع خدمة صبغة الشعر المجانية.",
               "beforePrice": "$150",
-              "afterPrice": ""
+              "afterPrice": "صبغة شعر مجانية"
             },
             {
               "id": "service-19",
@@ -1233,22 +1226,22 @@
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "طلاء الأظافر",
+              "description": "خدمة طلاء الأظافر المهنية.",
               "beforePrice": "$100",
               "afterPrice": "$40"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "موهير",
+              "description": "خدمة علاج الشعر بالموهير المهنية.",
               "beforePrice": "$300",
               "afterPrice": "$150"
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "رنساج",
+              "description": "خدمة رنساج الشعر المهنية.",
               "beforePrice": "$40",
               "afterPrice": "$25"
             },
@@ -1315,15 +1308,15 @@
             },
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "ليزر نصف اليد",
+              "description": "علاج إزالة شعر نصف اليد بالليزر المهني.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "10,000 دينار"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "ليزر الساق",
+              "description": "علاج إزالة شعر الساق بالليزر المهني.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "10,000 دينار"
             },
@@ -1357,15 +1350,15 @@
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "ليزر اليد الكاملة",
+              "description": "علاج إزالة شعر اليد الكاملة بالليزر المهني.",
               "beforePrice": "40,000 دينار",
               "afterPrice": "20,000 دينار"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "ليزر الساق الكاملة",
+              "description": "علاج إزالة شعر الساق الكاملة بالليزر المهني.",
               "beforePrice": "40,000 دينار",
               "afterPrice": "20,000 دينار"
             },
@@ -1420,8 +1413,8 @@
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "الإبر النانوية",
+              "description": "علاج البشرة بالإبر النانوية المهني.",
               "beforePrice": "300,000 دينار",
               "afterPrice": "150,000 دينار"
             },
@@ -1434,8 +1427,8 @@
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "إزالة الشامة",
+              "description": "علاج إزالة الشامة المهني.",
               "beforePrice": "$10",
               "afterPrice": "$5"
             },
@@ -1530,13 +1523,7 @@
               "beforePrice": "$110",
               "afterPrice": "$95"
             },
-            {
-              "id": "service-32",
-              "name": "",
-              "description": "",
-              "beforePrice": "130,000 دينار",
-              "afterPrice": "65,000 دينار"
-            }
+
           ]
         }
       ]

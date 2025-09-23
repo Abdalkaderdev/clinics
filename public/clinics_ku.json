@@ -172,15 +172,15 @@
           "items": [
             {
               "id": "service-1",
-              "name": "پاکێجی جوانکاری پیشکەوتوو",
-              "description": "پاکێجی چارەسەری جوانکاری پیشکەوتووی تەواو بە تەکنیکی پێشکەوتوو.",
+              "name": "نەشتەرگەری پڵکی سەرەوە بە کاندیلا",
+              "description": "نەشتەرگەری پڵکی سەرەوەی پیشەیی بە بەکارهێنانی تەکنۆلۆژیای لەیزەری پێشکەوتووی کاندیلا.",
               "beforePrice": "150,000 دینار",
               "afterPrice": "100,000 دینار"
             },
             {
               "id": "service-2",
-              "name": "لابردنی موو بە ساینۆشور ئیلایت پلاس",
-              "description": "چارەسەری لابردنی مووی پێشکەوتوو بە تەکنۆلۆژیای ساینۆشور ئیلایت پلاس.",
+              "name": "نەشتەرگەری پڵکی خوارەوە بە ساینۆشور ئیلایت",
+              "description": "نەشتەرگەری پڵکی خوارەوەی پیشەیی بە بەکارهێنانی تەکنۆلۆژیای لەیزەری پێشکەوتووی ساینۆشور ئیلایت.",
               "beforePrice": "230,000 دینار",
               "afterPrice": "180,000 دینار"
             },
@@ -378,13 +378,6 @@
               "description": "لابردنی مووی تێکەڵاو بۆ هێڵی ژیان و ژێر مل و پشتی مل بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "45,000 دینار",
               "afterPrice": "25,000 دینار"
-            },
-            {
-              "id": "service-10",
-              "name": "",
-              "description": "",
-              "beforePrice": "20,000 دینار",
-              "afterPrice": "15,000 دینار"
             },
             {
               "id": "service-11",
@@ -641,15 +634,15 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "نەشتەرگەری پڵکی سەرەوە",
+              "description": "نەشتەرگەری پڵکی سەرەوەی پیشەیی.",
               "beforePrice": "$500",
               "afterPrice": "$300"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "نەشتەرگەری پڵکی خوارەوە",
+              "description": "نەشتەرگەری پڵکی خوارەوەی پیشەیی.",
               "beforePrice": "$600",
               "afterPrice": "$400"
             },
@@ -864,15 +857,15 @@
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "فیلەری ڕۆمانی",
+              "description": "چارەسەری فیلەری پێستی ڕۆمانی باشترین.",
               "beforePrice": "$300",
               "afterPrice": "$200"
             },
             {
               "id": "service-9",
-              "name": "",
-              "description": "",
+              "name": "فیلەری سویسی",
+              "description": "چارەسەری فیلەری پێستی سویسی باشترین.",
               "beforePrice": "$180",
               "afterPrice": "$120"
             },
@@ -885,39 +878,39 @@
             },
             {
               "id": "service-11",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ ڕوو",
+              "description": "چارەسەری هایفوی پیشەیی بۆ ڕوو.",
               "beforePrice": "50,000 دینار",
               "afterPrice": "40,000 دینار"
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ مل",
+              "description": "چارەسەری هایفوی پیشەیی بۆ مل.",
               "beforePrice": "35,000 دینار",
               "afterPrice": "25,000 دینار"
             },
             {
               "id": "service-13",
-              "name": "",
-              "description": "",
+              "name": "هایفو بۆ ڕوو و مل",
+              "description": "چارەسەری هایفوی پیشەیی بۆ ڕوو و مل.",
               "beforePrice": "80,000 دینار",
               "afterPrice": "60,000 دینار"
             },
             {
               "id": "free-service-1",
-              "name": "",
-              "description": "",
+              "name": "ڕاوێژکاری پزیشک بۆ ساڵێک",
+              "description": "ڕاوێژکاری پزیشکی تەواو و بەدواداچوونەوە لەگەڵ دکتۆر فەرهاد جاف بۆ ساڵێکی تەواو، بەشی پشکنینی بەردەوام و پلاندانانی چارەسەر.",
               "beforePrice": "",
-              "afterPrice": "بێ بەرامبەر",
+              "afterPrice": "بەخۆڕایی",
               "isFree": true
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "پاککردنەوەی کاربۆنی بەخۆڕایی",
+              "description": "چارەسەری پاککردنەوەی کاربۆنی بە لەیزەر بۆ نوێکردنەوەی پێست، پاککردنەوەی کون و باشترکردنی بافت و ڕەنگی پێست.",
               "beforePrice": "",
-              "afterPrice": "بێ بەرامبەر",
+              "afterPrice": "بەخۆڕایی",
               "isFree": true
             }
           ]
@@ -985,15 +978,15 @@
             },
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "جوانکاری لوت (نەشتەرگەری لوت)",
+              "description": "نەشتەرگەری جوانکاری و دووبارە شێوەکردنەوەی لوتی پیشەیی.",
               "beforePrice": "$1400",
               "afterPrice": "$700"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "جوانکاری گوێ (نەشتەرگەری گوێ)",
+              "description": "نەشتەرگەری جوانکاری و دووبارە شێوەکردنەوەی گوێی پیشەیی.",
               "beforePrice": "$500",
               "afterPrice": "$250"
             },
@@ -1085,16 +1078,16 @@
             },
             {
               "id": "free-service-2",
-              "name": "",
-              "description": "",
+              "name": "شێوازی پرچی بێ بەرامبەر",
+              "description": "خزمەتگوزاری شێوازکردنی پرچی بێ بەرامبەر.",
               "beforePrice": "",
               "afterPrice": "بێ بەرامبەر",
               "isFree": true
             },
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "بڕینی پرچ",
+              "description": "خزمەتگوزاری بڕینی پرچی پیشەیی.",
               "beforePrice": "25,000 دینار",
               "afterPrice": "10,000 دینار"
             },
@@ -1156,8 +1149,8 @@
             },
             {
               "id": "service-10",
-              "name": "",
-              "description": "",
+              "name": "ڕەنگکردنی پرچ",
+              "description": "خزمەتگوزاری ڕەنگکردنی پرچی پیشەیی.",
               "beforePrice": "$50",
               "afterPrice": "40,000 دینار"
             },
@@ -1184,8 +1177,8 @@
             },
             {
               "id": "service-14",
-              "name": "",
-              "description": "",
+              "name": "درێژکردنی پرچی دەستکرد",
+              "description": "خزمەتگوزاری درێژکردنی پرچی دەستکردی پیشەیی.",
               "beforePrice": "$2",
               "afterPrice": "2,000 دینار"
             },
@@ -1212,10 +1205,10 @@
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "دەرزی کاهرەبا",
+              "description": "چارەسەری دەرزی کاهرەبای پیشەیی لەگەڵ خزمەتگوزاری ڕەنگکردنی پرچی بێ بەرامبەر.",
               "beforePrice": "$150",
-              "afterPrice": ""
+              "afterPrice": "ڕەنگکردنی پرچ بێ بەرامبەر"
             },
             {
               "id": "service-19",
@@ -1233,22 +1226,22 @@
             },
             {
               "id": "service-21",
-              "name": "",
-              "description": "",
+              "name": "پۆلیش",
+              "description": "خزمەتگوزاری پۆلیشی نێخنی پیشەیی.",
               "beforePrice": "$100",
               "afterPrice": "$40"
             },
             {
               "id": "service-22",
-              "name": "",
-              "description": "",
+              "name": "مۆهیر",
+              "description": "خزمەتگوزاری چارەسەری پرچ بە مۆهیری پیشەیی.",
               "beforePrice": "$300",
               "afterPrice": "$150"
             },
             {
               "id": "service-23",
-              "name": "",
-              "description": "",
+              "name": "رینساج",
+              "description": "خزمەتگوزاری رینساجی پرچی پیشەیی.",
               "beforePrice": "$40",
               "afterPrice": "$25"
             },
@@ -1315,15 +1308,15 @@
             },
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری نیوەی دەست",
+              "description": "چارەسەری لابردنی مووی نیوەی دەست بە لەیزەری پیشەیی.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
             {
               "id": "service-2",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری قاچ",
+              "description": "چارەسەری لابردنی مووی قاچ بە لەیزەری پیشەیی.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "10,000 دینار"
             },
@@ -1357,15 +1350,15 @@
             },
             {
               "id": "service-7",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی دەست",
+              "description": "چارەسەری لابردنی مووی تەواوی دەست بە لەیزەری پیشەیی.",
               "beforePrice": "40,000 دینار",
               "afterPrice": "20,000 دینار"
             },
             {
               "id": "service-8",
-              "name": "",
-              "description": "",
+              "name": "لەیزەری تەواوی قاچ",
+              "description": "چارەسەری لابردنی مووی تەواوی قاچ بە لەیزەری پیشەیی.",
               "beforePrice": "40,000 دینار",
               "afterPrice": "20,000 دینار"
             },
@@ -1420,8 +1413,8 @@
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "دەرزی نانۆ",
+              "description": "چارەسەری پێست بە دەرزی نانۆی پیشەیی.",
               "beforePrice": "300,000 دینار",
               "afterPrice": "150,000 دینار"
             },
@@ -1434,8 +1427,8 @@
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "لابردنی خاڵ",
+              "description": "چارەسەری لابردنی خاڵی پیشەیی.",
               "beforePrice": "$10",
               "afterPrice": "$5"
             },
@@ -1530,13 +1523,7 @@
               "beforePrice": "$110",
               "afterPrice": "$95"
             },
-            {
-              "id": "service-32",
-              "name": "",
-              "description": "",
-              "beforePrice": "130,000 دینار",
-              "afterPrice": "65,000 دینار"
-            }
+
           ]
         }
       ]
