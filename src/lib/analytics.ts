@@ -69,9 +69,14 @@ class Analytics {
 
     this.events.push(analyticsEvent);
 
-    // Send to Vercel Analytics if available
-    if (typeof window !== "undefined" && (window as any).va) {
-      (window as any).va.track(event, properties);
+    // Send to Vercel Analytics if available (non-blocking)
+    try {
+      if (typeof window !== "undefined" && (window as any).va?.track) {
+        (window as any).va.track(event, properties);
+      }
+    } catch (error) {
+      // Silently fail - don't block user interactions
+      console.warn('Analytics tracking failed:', error);
     }
 
     // Log to console in development with sanitized data

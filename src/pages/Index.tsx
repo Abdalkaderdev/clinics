@@ -28,8 +28,12 @@ const Index = () => {
   ];
 
   const handleLanguageSelect = (langCode: string) => {
-    localStorage.setItem("selectedLanguage", langCode);
-    trackLanguageSelect(langCode);
+    try {
+      localStorage.setItem("selectedLanguage", langCode);
+      trackLanguageSelect(langCode);
+    } catch (error) {
+      console.warn('Analytics failed:', error);
+    }
     navigate(`/categories/${langCode}`);
   };
 
