@@ -160,7 +160,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
               )
             )}
             <div className="flex flex-col items-center gap-1 mb-1 w-full">
-              <h3 className={`text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-2 ${language === "ar" ? "leading-loose" : "leading-tight"}`}>
+              <h3 className={`text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-2 line-clamp-2 ${language === "ar" ? "leading-loose" : "leading-tight"}`}>
                 {item.name}
               </h3>
               {/* Location for clinics */}
@@ -313,7 +313,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
               {isClinic &&
                 item.contact &&
                 validatePhoneNumber(item.contact) && (
-                  <div className={`flex flex-col gap-2 ${isRTL ? 'items-start' : 'items-end'}`}>
+                  <div className={`flex flex-col gap-2 ${isRTL ? 'items-start' : 'items-end'} ml-2`}>
                     <a
                       href={`tel:${sanitizePhoneNumber(item.contact)}`}
                       className="w-10 h-10 flex items-center justify-center rounded-full bg-pink-600 hover:bg-pink-700 text-white shadow-md transition-colors"

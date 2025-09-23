@@ -150,7 +150,7 @@ const Index = () => {
                 </h2>
               </motion.div>
 
-              <div className="grid gap-3 sm:gap-4">
+              <div className="grid gap-4 sm:gap-5">
                 {languages.map((lang, index) => (
                   <motion.div
                     key={lang.code}

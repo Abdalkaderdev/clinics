@@ -185,7 +185,7 @@ const Categories = () => {
                       e.stopPropagation();
                       handleLanguageSwitch(language.code);
                     }}
-                    className={`flex items-center w-full px-4 py-2 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${lang === language.code ? "font-bold text-pink-300" : ""}`}
+                    className={`flex items-center w-full px-4 py-3 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${lang === language.code ? "font-bold text-pink-300" : ""}`}
                     aria-current={lang === language.code ? "page" : undefined}
                   >
                     <span className="flex-1">{language.label}</span>
@@ -222,7 +222,7 @@ const Categories = () => {
             placeholder={t("searchPlaceholder", lang as "en" | "ar" | "ku")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-center shadow-sm"
+            className="w-full max-w-lg sm:max-w-xl mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-center shadow-sm"
           />
         </div>
 

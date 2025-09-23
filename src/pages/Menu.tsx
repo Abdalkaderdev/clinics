@@ -361,7 +361,7 @@ export default function Menu() {
                       e.stopPropagation();
                       handleLanguageSwitch(lang.code);
                     }}
-                    className={`flex items-center w-full px-4 py-2 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${selectedLang === lang.code ? "font-bold text-pink-300" : ""}`}
+                    className={`flex items-center w-full px-4 py-3 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${selectedLang === lang.code ? "font-bold text-pink-300" : ""}`}
                     aria-current={
                       selectedLang === lang.code ? "page" : undefined
                     }
@@ -383,7 +383,7 @@ export default function Menu() {
 
       {/* Clinic and Category navigation */}
       <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-pink-50/95 backdrop-blur supports-[backdrop-filter]:bg-pink-50/90 border-b border-pink-200 shadow-sm">
-        <div className="container mx-auto px-2 py-3">
+        <div className="container mx-auto px-2 py-2 sm:py-3">
           {/* Clinic selector */}
           <div className="mb-3">
             <h2 className="text-lg font-semibold mb-2">
@@ -424,7 +424,7 @@ export default function Menu() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
+                  className={`px-4 py-3 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
                   aria-pressed={selectedCategoryId === cat.id}
                 >
                   {cat.name}
@@ -437,7 +437,7 @@ export default function Menu() {
 
       {/* Search and Filter Section */}
       <div className="w-full sticky top-[104px] sm:top-[112px] z-30 bg-blue-50/95 backdrop-blur supports-[backdrop-filter]:bg-blue-50/90 border-b border-blue-200 shadow-sm">
-        <div className="container mx-auto px-2 py-3">
+        <div className="container mx-auto px-2 py-2 sm:py-3">
           {/* Search Input */}
           <div className="mb-3">
             <input
@@ -486,7 +486,7 @@ export default function Menu() {
                         : [...prev, filter.id]
                     );
                   }}
-                  className={`px-3 py-1 rounded-full text-sm border-2 transition-colors shadow-sm ${
+                  className={`px-3 py-2 rounded-full text-sm border-2 transition-colors shadow-sm ${
                     selectedFilters.includes(filter.id)
                       ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500"
                       : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"
