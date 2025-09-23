@@ -171,8 +171,8 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "باقة التجميل المميزة",
+              "description": "باقة علاج تجميل مميزة شاملة بتقنيات متقدمة.",
               "beforePrice": "150,000 دينار",
               "afterPrice": "100,000 دينار"
             },

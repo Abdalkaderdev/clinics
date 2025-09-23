@@ -172,8 +172,8 @@
           "items": [
             {
               "id": "service-1",
-              "name": "",
-              "description": "",
+              "name": "Premium Beauty Package",
+              "description": "Comprehensive premium beauty treatment package with advanced techniques.",
               "beforePrice": "150,000 IQD",
               "afterPrice": "100,000 IQD"
             },
