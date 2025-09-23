@@ -94,16 +94,24 @@ export default function Menu() {
     
     const observers: (() => void)[] = [];
     
-    selectedClinic.categories.forEach((category) => {
-      const element = document.getElementById(`category-${category.id}`);
-      if (element) {
-        const cleanup = observeCategory(category.id, element);
-        observers.push(cleanup);
-      }
-    });
+    try {
+      selectedClinic.categories.forEach((category) => {
+        const element = document.getElementById(`category-${category.id}`);
+        if (element && observeCategory) {
+          const cleanup = observeCategory(category.id, element);
+          if (cleanup) observers.push(cleanup);
+        }
+      });
+    } catch (error) {
+      console.warn('Error setting up category observers:', error);
+    }
     
     return () => {
-      observers.forEach(cleanup => cleanup());
+      try {
+        observers.forEach(cleanup => cleanup());
+      } catch (error) {
+        console.warn('Error cleaning up observers:', error);
+      }
     };
   }, [selectedClinic, selectedCategoryId, observeCategory]);
 
