@@ -712,8 +712,8 @@
             },
             {
               "id": "service-12",
-              "name": "",
-              "description": "",
+              "name": "Excess Meat Removal",
+              "description": "Professional excess meat removal treatment.",
               "beforePrice": "$90",
               "afterPrice": "$60"
             },
@@ -755,8 +755,8 @@
             },
             {
               "id": "service-18",
-              "name": "",
-              "description": "",
+              "name": "Full Body Laser Hair Removal with Cynosure Elite",
+              "description": "Complete full body laser hair removal using advanced Cynosure Elite technology.",
               "beforePrice": "200,000 IQD",
               "afterPrice": "140,000 IQD"
             },
