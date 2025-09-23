@@ -401,7 +401,7 @@ export default function Menu() {
                 className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
               >
-                <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? '' : 'rotate-180'}`} />
               </button>
             </div>
           </div>
