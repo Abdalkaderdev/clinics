@@ -11,7 +11,8 @@ function sanitizeInput(input: unknown): unknown {
     return input
       .replace(/[\r\n]/g, " ") // Remove newlines
       .replace(/[%{}]/g, "_") // Replace dangerous chars
-      .replace(/[\u0000-\u001F\u007F-\u009F]/g, ""); // Remove control chars
+      .replace(/[\cA-\cZ]/g, "") // Remove control chars
+      .replace(/[\x7F-\x9F]/g, ""); // Remove extended control chars
   }
   if (typeof input === "object" && input !== null) {
     const sanitized: Record<string, unknown> = {};

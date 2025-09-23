@@ -215,7 +215,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                         <span className="text-xs text-red-500 mb-1 font-semibold whitespace-nowrap">
                           {t("before", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold break-words text-center">
+                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold whitespace-nowrap text-center">
                           {item.beforePrice ||
                             formatPrice(
                               item.originalPrice || item.price,
@@ -246,7 +246,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                         <span className="text-xs text-red-500 mb-1 font-semibold whitespace-nowrap">
                           {t("before", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold break-words text-center">
+                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold whitespace-nowrap text-center">
                           {item.beforePrice ||
                             (typeof item.originalPrice === "number"
                               ? formatPrice(item.originalPrice, currency)
@@ -260,7 +260,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                         <span className="text-xs text-green-600 mb-1 font-semibold whitespace-nowrap">
                           {t("after", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-lg sm:text-2xl font-bold text-green-600 break-words text-center">
+                        <span className="text-lg sm:text-2xl font-bold text-green-600 whitespace-nowrap text-center">
                           {item.afterPrice ||
                             (typeof item.price === "number"
                               ? formatPrice(item.price, currency)
@@ -286,14 +286,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                           {item.beforePrice}
                         </span>
                         <span className="flex-shrink-0">{isRTL ? "←" : "→"}</span>
-                        <span className="text-green-600 break-words">
+                        <span className="text-green-600 whitespace-nowrap">
                           {item.afterPrice}
                         </span>
                       </div>
                     ) : typeof item.price === "number" ? (
-                      <span className="break-words block text-center">{formatPrice(item.price, currency)}</span>
+                      <span className="whitespace-nowrap block text-center">{formatPrice(item.price, currency)}</span>
                     ) : (
-                      <span className="break-words block text-center">
+                      <span className="whitespace-nowrap block text-center">
                         {item.afterPrice ||
                         item.beforePrice ||
                         t("contactForPricing", language as "en" | "ar" | "ku")}

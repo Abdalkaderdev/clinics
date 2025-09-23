@@ -84,9 +84,16 @@ export default function Menu() {
   const [favorites] = useState<string[]>([]);
   const [headerCollapsed, setHeaderCollapsed] = useState(false);
 
-  useScrollCategory({
+  const { activeCategory, scrollToCategory } = useScrollCategory({
     categories: selectedClinic?.categories.map((cat) => cat.id) || [],
   });
+
+  // Update selected category when scrolling
+  useEffect(() => {
+    if (activeCategory && activeCategory !== selectedCategoryId) {
+      setSelectedCategoryId(activeCategory);
+    }
+  }, [activeCategory, selectedCategoryId]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
     urlCategory || "all"
   );
@@ -386,8 +393,13 @@ export default function Menu() {
                 {[{ id: "all", name: t("all", lang as "en" | "ar" | "ku") }, ...selectedClinic.categories.map((c) => ({ id: c.id, name: c.name }))].map((cat) => (
                   <button
                     key={cat.id}
-                    onClick={() => setSelectedCategoryId(cat.id)}
-                    className={`px-4 py-3 rounded-full text-sm font-medium min-h-[44px] min-w-[44px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}
+                    onClick={() => {
+                      setSelectedCategoryId(cat.id);
+                      if (cat.id !== 'all') {
+                        scrollToCategory(cat.id);
+                      }
+                    }}
+                    className={`px-3 py-2 rounded-full text-xs font-medium min-h-[36px] min-w-[36px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}
                     aria-pressed={selectedCategoryId === cat.id}
                     aria-label={`Filter by ${cat.name} category`}
                   >
@@ -445,10 +457,10 @@ export default function Menu() {
                   );
                   if (clinic) setSelectedClinic(clinic);
                 }}
-                className="px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 shadow-sm"
+                className="px-3 py-2 rounded-lg border-2 border-pink-200 bg-pink-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 shadow-sm hover:bg-pink-600 transition-colors"
               >
                 {clinicsData.clinics.map((clinic) => (
-                  <option key={clinic.id} value={clinic.id}>
+                  <option key={clinic.id} value={clinic.id} className="bg-pink-700 text-white">
                     {clinic.name}
                   </option>
                 ))}
@@ -483,20 +495,47 @@ export default function Menu() {
       {/* Menu Grid */}
       <main ref={mainRef} className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
         {visibleItems.length > 0 ? (
-          <div
-            className={`grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}
-          >
-            {visibleItems.map(({ item }) => (
-              <MenuItemCard
-                key={item.id}
-                item={item}
-                currency="$"
-                isRTL={isRTL}
-                isFavorite={favorites.includes(item.id)}
-                onFavoriteToggle={() => {}}
-                language={lang}
-              />
-            ))}
+          <div className={`space-y-8 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}>
+            {selectedCategoryId === "all" ? (
+              // Group by category when showing all
+              selectedClinic.categories.map((category) => {
+                const categoryItems = visibleItems.filter(({ categoryId }) => categoryId === category.id);
+                if (categoryItems.length === 0) return null;
+                return (
+                  <section key={category.id} id={`category-${category.id}`} className="scroll-mt-32">
+                    <h3 className="text-xl font-semibold mb-4 text-pink-900">{category.name}</h3>
+                    <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                      {categoryItems.map(({ item }) => (
+                        <MenuItemCard
+                          key={item.id}
+                          item={item}
+                          currency="$"
+                          isRTL={isRTL}
+                          isFavorite={favorites.includes(item.id)}
+                          onFavoriteToggle={() => {}}
+                          language={lang}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                );
+              })
+            ) : (
+              // Single category view
+              <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                {visibleItems.map(({ item }) => (
+                  <MenuItemCard
+                    key={item.id}
+                    item={item}
+                    currency="$"
+                    isRTL={isRTL}
+                    isFavorite={favorites.includes(item.id)}
+                    onFavoriteToggle={() => {}}
+                    language={lang}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         ) : (
           <motion.div

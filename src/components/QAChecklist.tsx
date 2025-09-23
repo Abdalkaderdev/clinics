@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge } from "@/components/ui/badge";
-import { CheckCircle, XCircle, AlertCircle } from "lucide-react";
+import { CheckCircle, AlertCircle } from "lucide-react";
 
 interface QACheckItem {
   id: string;
@@ -176,7 +176,7 @@ const QAChecklist: React.FC = () => {
     );
   };
 
-  const updateNotes = (id: string, notes: string) => {
+  const _updateNotes = (id: string, notes: string) => {
     setChecklist((prev) =>
       prev.map((item) => (item.id === id ? { ...item, notes } : item))
     );

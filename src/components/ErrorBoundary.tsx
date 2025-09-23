@@ -19,7 +19,7 @@ class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error, _errorInfo: ErrorInfo) {
     const sanitizedError = {
       message: error.message?.replace(/[\r\n\t]/g, ' ') || 'Unknown error',
       stack: error.stack?.replace(/[\r\n\t]/g, ' ') || 'No stack trace'
