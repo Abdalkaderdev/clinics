@@ -322,7 +322,7 @@ export default function Menu() {
               className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 min-h-[44px]"
               aria-label="Back to clinics"
             >
-              <span className="text-xl">←</span>
+              <span className="text-lg sm:text-xl">←</span>
               <span className="hidden sm:inline text-sm">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
             </button>
             
@@ -379,10 +379,10 @@ export default function Menu() {
               </div>
               <button
                 onClick={() => setHeaderCollapsed(!headerCollapsed)}
-                className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px]"
+                className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
               >
-                <ChevronDown className={`h-4 w-4 transition-transform ${headerCollapsed ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? 'rotate-180' : ''}`} />
               </button>
             </div>
           </div>

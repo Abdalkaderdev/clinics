@@ -164,7 +164,7 @@ const Categories = () => {
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors"
               aria-label="Back to home"
             >
-              <span className="text-xl">←</span>
+              <span className="text-lg sm:text-xl">←</span>
               <span className="hidden sm:inline">{t("home", lang as "en" | "ar" | "ku") || "Home"}</span>
             </button>
           </div>
