@@ -9,6 +9,7 @@ import { useScrollCategory } from "@/hooks/useScrollCategory";
 import ImageOptimized from "@/components/ImageOptimized";
 import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
+import { t } from "@/lib/translations";
 // Beauty Land Card logo
 const logo = "/images/beauty قبل نهائي.png";
 
@@ -156,18 +157,8 @@ export default function Menu() {
       } catch (error) {
         console.error("Error loading clinics:", error);
         toast({
-          title:
-            lang === "ar"
-              ? "خطأ في تحميل العيادات"
-              : lang === "ku"
-                ? "هەڵە لە بارکردنی کلینیک"
-                : "Error loading clinics",
-          description:
-            lang === "ar"
-              ? "يرجى تحديث الصفحة"
-              : lang === "ku"
-                ? "تکایە پەڕەکە نوێ بکەرەوە"
-                : "Please try refreshing the page",
+          title: t("errorLoadingClinics", lang as "en" | "ar" | "ku"),
+          description: t("refreshPage", lang as "en" | "ar" | "ku"),
           variant: "destructive",
         });
       } finally {
@@ -284,32 +275,17 @@ export default function Menu() {
     return [
       {
         id: "free",
-        label:
-          currentLanguage === "ar"
-            ? "🆓 الخدمات المجانية"
-            : currentLanguage === "ku"
-              ? "🆓 خزمەتگوزاری بەردەست"
-              : "🆓 Free Services",
+        label: t("freeServices", currentLanguage as "en" | "ar" | "ku"),
         count: 0,
       },
       {
         id: "discount",
-        label:
-          currentLanguage === "ar"
-            ? "💰 الخصم"
-            : currentLanguage === "ku"
-              ? "💰 خەڵات"
-              : "💰 Discount",
+        label: t("discount", currentLanguage as "en" | "ar" | "ku"),
         count: 0,
       },
       {
         id: "favorites",
-        label:
-          currentLanguage === "ar"
-            ? "❤️ المفضلة"
-            : currentLanguage === "ku"
-              ? "❤️ دڵخواز"
-              : "❤️ Favorites",
+        label: t("favorites", currentLanguage as "en" | "ar" | "ku"),
         count: favorites.length,
       },
     ];
@@ -331,11 +307,7 @@ export default function Menu() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <p className="text-destructive">
-          {lang === "ar"
-            ? "فشل في تحميل العيادات"
-            : lang === "ku"
-              ? "هەڵە لە بارکردنی کلینیک"
-              : "Failed to load clinics"}
+          {t("failedToLoadClinics", lang as "en" | "ar" | "ku")}
         </p>
       </div>
     );
@@ -343,7 +315,7 @@ export default function Menu() {
 
   return (
     <div
-      className={`min-h-screen bg-background ${isRTL ? "rtl font-arabic" : "ltr"}`}
+      className={`min-h-screen bg-background ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : "ltr"}`}
       dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Sticky Header with centered logo and language menu */}
@@ -371,12 +343,12 @@ export default function Menu() {
                 {languages.find((l) => l.code === selectedLang)?.label}
               </span>
               <ChevronDown
-                className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
+                className={`${isRTL ? 'mr-1' : 'ml-1'} h-4 w-4 transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
               />
             </button>
             {langMenuOpen && (
               <div
-                className="absolute right-0 mt-2 w-48 bg-pink-700 text-white rounded-lg shadow-xl py-2 z-50 border border-pink-600 animate-fade-in"
+                className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-2 w-48 bg-pink-700 text-white rounded-lg shadow-xl py-2 z-50 border border-pink-600 animate-fade-in`}
                 onClick={() => setLangMenuOpen(false)}
               >
                 {languages.map((lang) => (
@@ -394,7 +366,7 @@ export default function Menu() {
                     <span className="flex-1">{lang.label}</span>
                     {selectedLang === lang.code && (
                       <span
-                        className="ml-2 w-2 h-2 bg-pink-300 rounded-full inline-block"
+                        className={`${isRTL ? 'mr-2' : 'ml-2'} w-2 h-2 bg-pink-300 rounded-full inline-block`}
                         aria-label="Current language"
                       />
                     )}
@@ -440,7 +412,7 @@ export default function Menu() {
           <div className="overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
               {[
-                { id: "all", name: isRTL ? "الكل" : "All" },
+                { id: "all", name: t("all", lang as "en" | "ar" | "ku") },
                 ...selectedClinic.categories.map((c) => ({
                   id: c.id,
                   name: c.name,
@@ -467,13 +439,7 @@ export default function Menu() {
           <div className="mb-3">
             <input
               type="text"
-              placeholder={
-                lang === "ar"
-                  ? "البحث عن الخدمات..."
-                  : lang === "ku"
-                    ? "گەڕان بۆ خزمەتگوزاری..."
-                    : "Search services..."
-              }
+              placeholder={t("searchServices", lang as "en" | "ar" | "ku")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-900 placeholder:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 shadow-sm"
@@ -487,11 +453,7 @@ export default function Menu() {
               className="flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-700 hover:bg-pink-50 transition-colors shadow-sm"
             >
               <span>
-                {lang === "ar"
-                  ? "المرشحات"
-                  : lang === "ku"
-                    ? "فلتەر"
-                    : "Filters"}
+                {t("filters", lang as "en" | "ar" | "ku")}
               </span>
               <ChevronDown
                 className={`h-4 w-4 transition-transform ${showFilters ? "rotate-180" : ""}`}
@@ -503,11 +465,7 @@ export default function Menu() {
                 onClick={() => setSelectedFilters([])}
                 className="text-sm text-pink-600 hover:text-pink-800"
               >
-                {lang === "ar"
-                  ? "مسح الكل"
-                  : lang === "ku"
-                    ? "سڕینەوەی هەموو"
-                    : "Clear all"}
+                {t("clearAll", lang as "en" | "ar" | "ku")}
               </button>
             )}
           </div>
@@ -543,7 +501,7 @@ export default function Menu() {
       <main ref={mainRef} className="container mx-auto px-2 py-6 mt-4">
         {visibleItems.length > 0 ? (
           <div
-            className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? "rtl font-arabic" : ""}`}
+            className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}
           >
             {visibleItems.map(({ item, categoryId }) => (
               <MenuItemCard
@@ -564,11 +522,7 @@ export default function Menu() {
             animate={{ opacity: 1, y: 0 }}
           >
             <p className="text-lg text-foreground">
-              {lang === "ar"
-                ? "لا توجد خدمات"
-                : lang === "ku"
-                  ? "هیچ خزمەتگوزاریەک نەدۆزرایەوە"
-                  : "No services found."}
+              {t("noServicesFound", lang as "en" | "ar" | "ku")}
             </p>
           </motion.div>
         )}
@@ -579,11 +533,7 @@ export default function Menu() {
             onClick={() => navigate(`/categories/${lang}`)}
             className="px-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white border-0 shadow-md"
           >
-            {lang === "ar"
-              ? "الرجوع إلى العيادات"
-              : lang === "ku"
-                ? "گەڕانەوە بۆ کلینیک"
-                : "Back to clinics"}
+            {t("backToClinics", lang as "en" | "ar" | "ku")}
           </Button>
         </div>
       </main>

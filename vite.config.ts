@@ -14,27 +14,33 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     ViteImageOptimizer({
-      png: { quality: 70 }, jpeg: { quality: 70 }, jpg: { quality: 70 },
-      tiff: { quality: 70 }, webp: { quality: 70 }, avif: { quality: 70 },
-      exclude: /node_modules/, include: /\.(png|jpg|jpeg|gif|webp|svg|tiff|avif)$/i,
+      png: { quality: 70 },
+      jpeg: { quality: 70 },
+      jpg: { quality: 70 },
+      tiff: { quality: 70 },
+      webp: { quality: 70 },
+      avif: { quality: 70 },
+      exclude: /node_modules/,
+      include: /\.(png|jpg|jpeg|gif|webp|svg|tiff|avif)$/i,
     }),
-    mode === 'development' && componentTagger(),
-    mode === 'analyze' && visualizer({
-      filename: 'dist/stats.html',
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    mode === "development" && componentTagger(),
+    mode === "analyze" &&
+      visualizer({
+        filename: "dist/stats.html",
+        open: true,
+        gzipSize: true,
+        brotliSize: true,
+      }),
   ].filter(Boolean),
   build: {
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('framer-motion')) return 'vendor-motion';
-            if (id.includes('lucide-react')) return 'vendor-icons';
-            if (id.includes('@radix-ui')) return 'vendor-radix';
-            return 'vendor';
+          if (id.includes("node_modules")) {
+            if (id.includes("framer-motion")) return "vendor-motion";
+            if (id.includes("lucide-react")) return "vendor-icons";
+            if (id.includes("@radix-ui")) return "vendor-radix";
+            return "vendor";
           }
         },
       },
