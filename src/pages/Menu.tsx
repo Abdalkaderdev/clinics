@@ -433,64 +433,7 @@ export default function Menu() {
         clinicName={selectedClinic?.name}
       />
 
-      {/* Clinic and Category navigation */}
-      <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-pink-50/95 backdrop-blur supports-[backdrop-filter]:bg-pink-50/90 border-b border-pink-200 shadow-sm">
-        <div className="container mx-auto px-2 py-2 sm:py-3">
-          {/* Clinic selector */}
-          <div className="mb-3">
-            <h2 className="text-lg font-semibold mb-2">
-              {selectedClinic.name}
-            </h2>
-            <button
-              onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedClinic.location)}`, '_blank')}
-              className="text-sm text-blue-700 hover:text-blue-800 hover:underline mb-2 font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded px-1 py-0.5"
-              aria-label={`Open ${selectedClinic.location} in Google Maps`}
-            >
-              📍 {selectedClinic.location}
-            </button>
-            {clinicsData.clinics.length > 1 && (
-              <select
-                value={selectedClinic.id}
-                onChange={(e) => {
-                  const clinic = clinicsData.clinics.find(
-                    (c) => c.id.toString() === e.target.value
-                  );
-                  if (clinic) setSelectedClinic(clinic);
-                }}
-                className="px-3 py-2 rounded-lg border-2 border-pink-200 bg-pink-700 text-white focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 shadow-sm hover:bg-pink-600 transition-colors"
-              >
-                {clinicsData.clinics.map((clinic) => (
-                  <option key={clinic.id} value={clinic.id} className="bg-pink-700 text-white">
-                    {clinic.name}
-                  </option>
-                ))}
-              </select>
-            )}
-          </div>
-          {/* Category navigation */}
-          <div className="overflow-x-auto no-scrollbar">
-            <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
-              {[
-                { id: "all", name: t("all", lang as "en" | "ar" | "ku") },
-                ...selectedClinic.categories.map((c) => ({
-                  id: c.id,
-                  name: c.name,
-                })),
-              ].map((cat) => (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-3 rounded-full text-sm font-medium border-2 transition-colors min-h-[44px] min-w-[44px] ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-700 to-blue-700 text-white border-pink-700 shadow-md" : "bg-white text-slate-800 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
-                  aria-pressed={selectedCategoryId === cat.id}
-                  aria-label={`View ${cat.name} services`}
-                >
-                  {cat.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+
 
       {/* Menu Grid */}
       <main ref={mainRef} className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
