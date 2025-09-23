@@ -25,7 +25,7 @@ export const localImageByItemId: Record<string, string> = {
   "doner-pide": "/new/IMG_4192.JPG",
   "spinach-pide": "/images/optimized/IMG_2885.webp",
   "minced-meat-pide": "/images/optimized/minced.webp",
-  "lahmacun": "/images/optimized/IMG_3773.PNG.webp",
+  lahmacun: "/images/optimized/IMG_3773.PNG.webp",
   "lahmacun-plate": "/images/optimized/IMG_3775.PNG.webp",
   "special-pide": "/images/optimized/IMG_3770.PNG.webp",
 
@@ -47,33 +47,35 @@ export const localImageByItemId: Record<string, string> = {
   "kebap-plate-beef": "/images/optimized/IMG_1093_TIF.webp",
 
   // Beverages (use a representative image for all)
-  "cola": "/images/optimized/assorted-beverages.webp",
-  "fanta": "/images/optimized/assorted-beverages.webp",
-  "water": "/images/optimized/assorted-beverages.webp",
-  "sprite": "/images/optimized/assorted-beverages.webp",
+  cola: "/images/optimized/assorted-beverages.webp",
+  fanta: "/images/optimized/assorted-beverages.webp",
+  water: "/images/optimized/assorted-beverages.webp",
+  sprite: "/images/optimized/assorted-beverages.webp",
   "cola-diet": "/images/optimized/assorted-beverages.webp",
-  "yogurt": "/images/optimized/assorted-beverages.webp",
-  "soda": "/images/optimized/assorted-beverages.webp",
-  "tea": "/images/optimized/assorted-beverages.webp",
+  yogurt: "/images/optimized/assorted-beverages.webp",
+  soda: "/images/optimized/assorted-beverages.webp",
+  tea: "/images/optimized/assorted-beverages.webp",
 
   // Kids Meals
   "kids-nugget": "/images/optimized/IMG_3900.JPG.webp",
   "kids-fries": "/images/optimized/IMG_3904.JPG.webp",
-  
+
   // Special Pizzas
   "german-pizza": "/images/optimized/IMG_2865.webp",
   "kurdish-pizza": "/images/optimized/IMG_3902.JPG-medium.webp",
-  
+
   // Rizzo
   "rizzo-item": "/images/upload/IMG_4123.JPG",
 };
 
-export function resolveItemImage(item: { id?: string; image?: string }): string {
+export function resolveItemImage(item: {
+  id?: string;
+  image?: string;
+}): string {
   // Always prioritize curated local images over JSON image field
-  if (item?.id && localImageByItemId[item.id]) return localImageByItemId[item.id];
+  if (item?.id && localImageByItemId[item.id])
+    return localImageByItemId[item.id];
   // Fall back to JSON image field if no local mapping exists
   if (item?.image) return item.image;
   return fallbackLogo;
 }
-
-

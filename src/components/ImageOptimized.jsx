@@ -28,25 +28,25 @@ const ImageOptimized = ({
 
     // Check if WebP version exists
     const isWebp = /\.webp$/i.test(originalSrc);
-    const baseName = originalSrc.replace(/\.(webp|png|jpg|jpeg)$/i, '');
-    
+    const baseName = originalSrc.replace(/\.(webp|png|jpg|jpeg)$/i, "");
+
     if (isWebp) {
       return [
         `${baseName}-thumbnail.webp 150w`,
         `${baseName}-small.webp 300w`,
         `${baseName}-medium.webp 600w`,
         `${baseName}-large.webp 1200w`,
-        `${baseName}.webp 800w`
-      ].join(', ');
+        `${baseName}.webp 800w`,
+      ].join(", ");
     }
-    
+
     return undefined;
   };
 
   // Generate responsive sizes if not provided
   const generateSizes = (originalSizes) => {
     if (originalSizes) return originalSizes;
-    
+
     // Default responsive sizes
     return "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw";
   };
@@ -81,5 +81,3 @@ const ImageOptimized = ({
 };
 
 export default ImageOptimized;
-
-

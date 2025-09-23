@@ -45,20 +45,23 @@ const MenuSection: React.FC<MenuSectionProps> = ({
     <motion.section
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7, type: 'spring', stiffness: 80, damping: 18 }}
+      transition={{ duration: 0.7, type: "spring", stiffness: 80, damping: 18 }}
       id={`category-${category.id}`}
       className="mb-12 bg-background rounded-xl p-2 sm:p-4 scroll-mt-[88px] sm:scroll-mt-[112px]"
     >
       <motion.h2
         className="text-3xl md:text-4xl font-bold mb-6 px-4"
-        style={{ borderLeft: isRTL ? undefined : '6px solid hsl(39 92% 53%)', borderRight: isRTL ? '6px solid hsl(39 92% 53%)' : undefined }}
+        style={{
+          borderLeft: isRTL ? undefined : "6px solid hsl(39 92% 53%)",
+          borderRight: isRTL ? "6px solid hsl(39 92% 53%)" : undefined,
+        }}
       >
         {category.name}
       </motion.h2>
       <div
         className={
           `grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 px-4 py-6` +
-          (isRTL ? ' direction-rtl' : '')
+          (isRTL ? " direction-rtl" : "")
         }
       >
         {category.items.map((item: MenuItem) => (
@@ -76,4 +79,4 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   );
 };
 
-export default MenuSection; 
+export default MenuSection;

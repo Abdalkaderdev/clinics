@@ -13,7 +13,7 @@ import MenuItemCard from "@/components/MenuItemCard";
 const logo = "/images/beauty قبل نهائي.png";
 
 // Safe localStorage operations
-const safeGetItem = (key: string, fallback: string = ''): string => {
+const safeGetItem = (key: string, fallback: string = ""): string => {
   try {
     return localStorage.getItem(key) || fallback;
   } catch {
@@ -29,7 +29,7 @@ const safeSetItem = (key: string, value: string): void => {
   }
 };
 
-const safeParseJSON = <T>(jsonString: string, fallback: T): T => {
+const safeParseJSON = <T,>(jsonString: string, fallback: T): T => {
   try {
     return JSON.parse(jsonString);
   } catch {
@@ -66,32 +66,36 @@ interface ClinicsData {
 
 export default function Menu() {
   const { lang } = useParams();
-  const urlClinic = new URLSearchParams(window.location.search).get('clinic');
-  const urlCategory = new URLSearchParams(window.location.search).get('category');
+  const urlClinic = new URLSearchParams(window.location.search).get("clinic");
+  const urlCategory = new URLSearchParams(window.location.search).get(
+    "category"
+  );
   const navigate = useNavigate();
   const { toast } = useToast();
   const [clinicsData, setClinicsData] = useState<ClinicsData | null>(null);
   const [selectedClinic, setSelectedClinic] = useState<Clinic | null>(null);
   const [loading, setLoading] = useState(true);
   const [isRTL, setIsRTL] = useState(false);
-  
+
   // Search and filter states
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
   const [showFilters, setShowFilters] = useState(false);
   const [favorites, setFavorites] = useState<string[]>([]);
-  
+
   const { activeCategory } = useScrollCategory({
-    categories: selectedClinic?.categories.map(cat => cat.id) || []
+    categories: selectedClinic?.categories.map((cat) => cat.id) || [],
   });
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(urlCategory || "all");
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    urlCategory || "all"
+  );
 
   const mainRef = useRef<HTMLDivElement>(null);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
 
   // Load favorites from localStorage
   useEffect(() => {
-    const savedFavorites = safeGetItem('menuFavorites');
+    const savedFavorites = safeGetItem("menuFavorites");
     if (savedFavorites) {
       setFavorites(safeParseJSON(savedFavorites, []));
     }
@@ -112,8 +116,9 @@ export default function Menu() {
     setTimeout(() => {
       if (mainRef.current) {
         // Adjust offset for sticky headers (header + search/filters + nav)
-        const y = mainRef.current.getBoundingClientRect().top + window.scrollY - 24; // tweak offset as needed
-        window.scrollTo({ top: y, behavior: 'smooth' });
+        const y =
+          mainRef.current.getBoundingClientRect().top + window.scrollY - 24; // tweak offset as needed
+        window.scrollTo({ top: y, behavior: "smooth" });
       }
     }, 100);
   };
@@ -128,34 +133,42 @@ export default function Menu() {
     setLoading(true);
     const loadClinicsData = async () => {
       try {
-        console.log('Loading clinics data for language:', currentLanguage);
+        console.log("Loading clinics data for language:", currentLanguage);
         const response = await fetch(`/clinics_${currentLanguage}.json`);
-        console.log('Response status:', response.status);
+        console.log("Response status:", response.status);
         if (!response.ok) {
           throw new Error(`Failed to load clinics: ${response.status}`);
         }
         const data = await response.json();
-        console.log('Loaded clinics data:', data);
+        console.log("Loaded clinics data:", data);
         setClinicsData(data);
-        
+
         // Set selected clinic if specified in URL
         if (urlClinic) {
-          const clinic = data.clinics.find((c: Clinic) => c.id.toString() === urlClinic);
+          const clinic = data.clinics.find(
+            (c: Clinic) => c.id.toString() === urlClinic
+          );
           setSelectedClinic(clinic || data.clinics[0]);
         } else {
           setSelectedClinic(data.clinics[0]);
         }
-        console.log('Selected clinic:', data.clinics[0]);
+        console.log("Selected clinic:", data.clinics[0]);
       } catch (error) {
-        console.error('Error loading clinics:', error);
+        console.error("Error loading clinics:", error);
         toast({
-          title: lang === 'ar' ? "خطأ في تحميل العيادات" : 
-                 lang === 'ku' ? "هەڵە لە بارکردنی کلینیک" : 
-                 "Error loading clinics",
-          description: lang === 'ar' ? "يرجى تحديث الصفحة" : 
-                      lang === 'ku' ? "تکایە پەڕەکە نوێ بکەرەوە" : 
-                      "Please try refreshing the page",
-          variant: "destructive"
+          title:
+            lang === "ar"
+              ? "خطأ في تحميل العيادات"
+              : lang === "ku"
+                ? "هەڵە لە بارکردنی کلینیک"
+                : "Error loading clinics",
+          description:
+            lang === "ar"
+              ? "يرجى تحديث الصفحة"
+              : lang === "ku"
+                ? "تکایە پەڕەکە نوێ بکەرەوە"
+                : "Please try refreshing the page",
+          variant: "destructive",
         });
       } finally {
         setLoading(false);
@@ -167,70 +180,85 @@ export default function Menu() {
   // Toggle favorite item
   const toggleFavorite = (itemId: string) => {
     const newFavorites = favorites.includes(itemId)
-      ? favorites.filter(id => id !== itemId)
+      ? favorites.filter((id) => id !== itemId)
       : [...favorites, itemId];
     setFavorites(newFavorites);
-    safeSetItem('menuFavorites', JSON.stringify(newFavorites));
+    safeSetItem("menuFavorites", JSON.stringify(newFavorites));
   };
 
   // Build list of items filtered by selected category
   const allItems = useMemo(() => {
-    if (!selectedClinic) return [] as Array<{categoryId: string; categoryName: string; item: any}>;
-    return selectedClinic.categories.flatMap(cat =>
-      cat.items.map(item => ({
+    if (!selectedClinic)
+      return [] as Array<{
+        categoryId: string;
+        categoryName: string;
+        item: any;
+      }>;
+    return selectedClinic.categories.flatMap((cat) =>
+      cat.items.map((item) => ({
         categoryId: cat.id,
         categoryName: cat.name,
         item: {
           ...item,
-          price: item.isFree ? 0 : parseFloat(item.afterPrice.replace('$', '')),
-          originalPrice: parseFloat(item.beforePrice.replace('$', '')),
+          price: item.isFree ? 0 : parseFloat(item.afterPrice.replace("$", "")),
+          originalPrice: parseFloat(item.beforePrice.replace("$", "")),
           beforePrice: item.beforePrice,
           afterPrice: item.afterPrice,
           isFree: item.isFree,
           location: selectedClinic.location,
-          contact: selectedClinic.contact
-        }
+          contact: selectedClinic.contact,
+        },
       }))
     );
   }, [selectedClinic]);
 
   const visibleItems = useMemo(() => {
-    console.log('Calculating visible items...');
-    console.log('selectedClinic:', selectedClinic);
-    console.log('allItems:', allItems);
-    console.log('selectedCategoryId:', selectedCategoryId);
-    
+    console.log("Calculating visible items...");
+    console.log("selectedClinic:", selectedClinic);
+    console.log("allItems:", allItems);
+    console.log("selectedCategoryId:", selectedCategoryId);
+
     if (!selectedClinic) {
-      console.log('No selected clinic, returning empty array');
-      return [] as Array<{categoryId: string; categoryName: string; item: any}>;
+      console.log("No selected clinic, returning empty array");
+      return [] as Array<{
+        categoryId: string;
+        categoryName: string;
+        item: any;
+      }>;
     }
-    
-    let base = selectedCategoryId === 'all'
-      ? allItems
-      : allItems.filter(entry => entry.categoryId === selectedCategoryId);
-    
-    console.log('Base items after category filter:', base);
-    
+
+    let base =
+      selectedCategoryId === "all"
+        ? allItems
+        : allItems.filter((entry) => entry.categoryId === selectedCategoryId);
+
+    console.log("Base items after category filter:", base);
+
     // Filter by search query
     if (searchQuery.trim()) {
       const query = searchQuery.toLowerCase();
-      base = base.filter(({ item }) => 
-        item.name.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query) ||
-        (item.location && item.location.toLowerCase().includes(query))
+      base = base.filter(
+        ({ item }) =>
+          item.name.toLowerCase().includes(query) ||
+          item.description.toLowerCase().includes(query) ||
+          (item.location && item.location.toLowerCase().includes(query))
       );
     }
-    
+
     // Filter by selected filters
     if (selectedFilters.length > 0) {
       base = base.filter(({ item }) => {
-        return selectedFilters.every(filter => {
+        return selectedFilters.every((filter) => {
           switch (filter) {
-            case 'discount':
-              return !item.isFree && item.originalPrice && item.originalPrice > item.price;
-            case 'free':
+            case "discount":
+              return (
+                !item.isFree &&
+                item.originalPrice &&
+                item.originalPrice > item.price
+              );
+            case "free":
               return item.isFree === true;
-            case 'favorites':
+            case "favorites":
               return favorites.includes(item.id);
             default:
               return true;
@@ -238,35 +266,51 @@ export default function Menu() {
         });
       });
     }
-    
-    console.log('Final visible items:', base);
+
+    console.log("Final visible items:", base);
     return base;
-  }, [allItems, selectedClinic, selectedCategoryId, searchQuery, selectedFilters, favorites]);
+  }, [
+    allItems,
+    selectedClinic,
+    selectedCategoryId,
+    searchQuery,
+    selectedFilters,
+    favorites,
+  ]);
 
   // Available filter options for clinics
   const filterOptions = useMemo(() => {
-    const currentLanguage = lang || 'en';
+    const currentLanguage = lang || "en";
     return [
-      { 
-        id: 'free', 
-        label: currentLanguage === 'ar' ? '🆓 الخدمات المجانية' : 
-               currentLanguage === 'ku' ? '🆓 خزمەتگوزاری بەردەست' : 
-               '🆓 Free Services', 
-        count: 0 
+      {
+        id: "free",
+        label:
+          currentLanguage === "ar"
+            ? "🆓 الخدمات المجانية"
+            : currentLanguage === "ku"
+              ? "🆓 خزمەتگوزاری بەردەست"
+              : "🆓 Free Services",
+        count: 0,
       },
-      { 
-        id: 'discount', 
-        label: currentLanguage === 'ar' ? '💰 الخصم' : 
-               currentLanguage === 'ku' ? '💰 خەڵات' : 
-               '💰 Discount', 
-        count: 0 
+      {
+        id: "discount",
+        label:
+          currentLanguage === "ar"
+            ? "💰 الخصم"
+            : currentLanguage === "ku"
+              ? "💰 خەڵات"
+              : "💰 Discount",
+        count: 0,
       },
-      { 
-        id: 'favorites', 
-        label: currentLanguage === 'ar' ? '❤️ المفضلة' : 
-               currentLanguage === 'ku' ? '❤️ دڵخواز' : 
-               '❤️ Favorites', 
-        count: favorites.length 
+      {
+        id: "favorites",
+        label:
+          currentLanguage === "ar"
+            ? "❤️ المفضلة"
+            : currentLanguage === "ku"
+              ? "❤️ دڵخواز"
+              : "❤️ Favorites",
+        count: favorites.length,
       },
     ];
   }, [favorites, lang]);
@@ -287,52 +331,76 @@ export default function Menu() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <p className="text-destructive">
-        {lang === 'ar' ? "فشل في تحميل العيادات" : 
-         lang === 'ku' ? "هەڵە لە بارکردنی کلینیک" : 
-         "Failed to load clinics"}
-      </p>
+          {lang === "ar"
+            ? "فشل في تحميل العيادات"
+            : lang === "ku"
+              ? "هەڵە لە بارکردنی کلینیک"
+              : "Failed to load clinics"}
+        </p>
       </div>
     );
   }
 
   return (
     <div
-      className={`min-h-screen bg-background ${isRTL ? 'rtl font-arabic' : 'ltr'}`}
-      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`min-h-screen bg-background ${isRTL ? "rtl font-arabic" : "ltr"}`}
+      dir={isRTL ? "rtl" : "ltr"}
     >
       {/* Sticky Header with centered logo and language menu */}
       <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 sm:py-4 px-3 sm:px-4 shadow-lg border-b border-pink-500">
         <div className="grid grid-cols-3 items-center">
           <div />
           <div className="flex justify-center">
-            <ImageOptimized src={logo} alt="Beauty Land Card" className="h-10 sm:h-12 md:h-14 w-auto" width={400} priority={true} sizes="200px" />
+            <ImageOptimized
+              src={logo}
+              alt="Beauty Land Card"
+              className="h-10 sm:h-12 md:h-14 w-auto"
+              width={400}
+              priority={true}
+              sizes="200px"
+            />
           </div>
           {/* Language Menu Button shows current language */}
           <div className="relative justify-self-end">
-          <button
-            className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-400 text-white font-semibold border border-pink-600"
-            onClick={() => setLangMenuOpen(v => !v)}
-            aria-label="Open language menu"
-          >
-            <span>{languages.find(l => l.code === selectedLang)?.label}</span>
-            <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? 'rotate-180' : ''}`} />
-          </button>
-          {langMenuOpen && (
-            <div className="absolute right-0 mt-2 w-48 bg-pink-700 text-white rounded-lg shadow-xl py-2 z-50 border border-pink-600 animate-fade-in" onClick={() => setLangMenuOpen(false)}>
-              {languages.map(lang => (
-                <button
-                  key={lang.code}
-                  onClick={e => { e.stopPropagation(); handleLanguageSwitch(lang.code); }}
-                  className={`flex items-center w-full px-4 py-2 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${selectedLang === lang.code ? 'font-bold text-pink-300' : ''}`}
-                  aria-current={selectedLang === lang.code ? 'page' : undefined}
-                >
-                  <span className="flex-1">{lang.label}</span>
-                  {selectedLang === lang.code && (
-                    <span className="ml-2 w-2 h-2 bg-pink-300 rounded-full inline-block" aria-label="Current language" />
-                  )}
-                </button>
-              ))}
-            </div>
+            <button
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-400 text-white font-semibold border border-pink-600"
+              onClick={() => setLangMenuOpen((v) => !v)}
+              aria-label="Open language menu"
+            >
+              <span>
+                {languages.find((l) => l.code === selectedLang)?.label}
+              </span>
+              <ChevronDown
+                className={`ml-1 h-4 w-4 transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            {langMenuOpen && (
+              <div
+                className="absolute right-0 mt-2 w-48 bg-pink-700 text-white rounded-lg shadow-xl py-2 z-50 border border-pink-600 animate-fade-in"
+                onClick={() => setLangMenuOpen(false)}
+              >
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLanguageSwitch(lang.code);
+                    }}
+                    className={`flex items-center w-full px-4 py-2 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${selectedLang === lang.code ? "font-bold text-pink-300" : ""}`}
+                    aria-current={
+                      selectedLang === lang.code ? "page" : undefined
+                    }
+                  >
+                    <span className="flex-1">{lang.label}</span>
+                    {selectedLang === lang.code && (
+                      <span
+                        className="ml-2 w-2 h-2 bg-pink-300 rounded-full inline-block"
+                        aria-label="Current language"
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
             )}
           </div>
         </div>
@@ -343,19 +411,27 @@ export default function Menu() {
         <div className="container mx-auto px-2 py-3">
           {/* Clinic selector */}
           <div className="mb-3">
-            <h2 className="text-lg font-semibold mb-2">{selectedClinic.name}</h2>
-            <p className="text-sm text-muted-foreground mb-2">��� {selectedClinic.location}</p>
+            <h2 className="text-lg font-semibold mb-2">
+              {selectedClinic.name}
+            </h2>
+            <p className="text-sm text-muted-foreground mb-2">
+              ��� {selectedClinic.location}
+            </p>
             {clinicsData.clinics.length > 1 && (
               <select
                 value={selectedClinic.id}
                 onChange={(e) => {
-                  const clinic = clinicsData.clinics.find(c => c.id.toString() === e.target.value);
+                  const clinic = clinicsData.clinics.find(
+                    (c) => c.id.toString() === e.target.value
+                  );
                   if (clinic) setSelectedClinic(clinic);
                 }}
                 className="px-3 py-2 rounded-lg border-2 border-slate-200 bg-white text-slate-800 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 shadow-sm"
               >
-                {clinicsData.clinics.map(clinic => (
-                  <option key={clinic.id} value={clinic.id}>{clinic.name}</option>
+                {clinicsData.clinics.map((clinic) => (
+                  <option key={clinic.id} value={clinic.id}>
+                    {clinic.name}
+                  </option>
                 ))}
               </select>
             )}
@@ -364,13 +440,16 @@ export default function Menu() {
           <div className="overflow-x-auto no-scrollbar">
             <div className="flex items-center gap-2 sm:gap-3 whitespace-nowrap">
               {[
-                { id: 'all', name: isRTL ? 'الكل' : 'All' },
-                ...selectedClinic.categories.map(c => ({ id: c.id, name: c.name }))
-              ].map(cat => (
+                { id: "all", name: isRTL ? "الكل" : "All" },
+                ...selectedClinic.categories.map((c) => ({
+                  id: c.id,
+                  name: c.name,
+                })),
+              ].map((cat) => (
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? 'bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md' : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300'}`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
                   aria-pressed={selectedCategoryId === cat.id}
                 >
                   {cat.name}
@@ -388,56 +467,68 @@ export default function Menu() {
           <div className="mb-3">
             <input
               type="text"
-              placeholder={lang === 'ar' ? "البحث عن الخدمات..." : 
-                          lang === 'ku' ? "گەڕان بۆ خزمەتگوزاری..." : 
-                          "Search services..."}
+              placeholder={
+                lang === "ar"
+                  ? "البحث عن الخدمات..."
+                  : lang === "ku"
+                    ? "گەڕان بۆ خزمەتگوزاری..."
+                    : "Search services..."
+              }
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-900 placeholder:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 shadow-sm"
             />
           </div>
-          
+
           {/* Filter Toggle and Filters */}
           <div className="flex items-center justify-between">
             <button
               onClick={() => setShowFilters(!showFilters)}
               className="flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-700 hover:bg-pink-50 transition-colors shadow-sm"
             >
-                              <span>{lang === 'ar' ? "المرشحات" : 
-                       lang === 'ku' ? "فلتەر" : 
-                       "Filters"}</span>
-              <ChevronDown className={`h-4 w-4 transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+              <span>
+                {lang === "ar"
+                  ? "المرشحات"
+                  : lang === "ku"
+                    ? "فلتەر"
+                    : "Filters"}
+              </span>
+              <ChevronDown
+                className={`h-4 w-4 transition-transform ${showFilters ? "rotate-180" : ""}`}
+              />
             </button>
-            
+
             {selectedFilters.length > 0 && (
               <button
                 onClick={() => setSelectedFilters([])}
                 className="text-sm text-pink-600 hover:text-pink-800"
               >
-                {lang === 'ar' ? "مسح الكل" : 
-                 lang === 'ku' ? "سڕینەوەی هەموو" : 
-                 "Clear all"}
+                {lang === "ar"
+                  ? "مسح الكل"
+                  : lang === "ku"
+                    ? "سڕینەوەی هەموو"
+                    : "Clear all"}
               </button>
             )}
           </div>
-          
+
           {/* Filter Options */}
           {showFilters && (
             <div className="mt-3 flex flex-wrap gap-2">
-              {filterOptions.map(filter => (
+              {filterOptions.map((filter) => (
                 <button
                   key={filter.id}
                   onClick={() => {
-                    setSelectedFilters(prev => 
+                    setSelectedFilters((prev) =>
                       prev.includes(filter.id)
-                        ? prev.filter(f => f !== filter.id)
+                        ? prev.filter((f) => f !== filter.id)
                         : [...prev, filter.id]
                     );
                   }}
                   className={`px-3 py-1 rounded-full text-sm border-2 transition-colors shadow-sm ${
                     selectedFilters.includes(filter.id)
-                      ? 'bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500'
-                      : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300'
+                      ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500"
+                      : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"
                   }`}
                 >
                   {filter.label}
@@ -448,12 +539,12 @@ export default function Menu() {
         </div>
       </div>
 
-
-
       {/* Menu Grid */}
       <main ref={mainRef} className="container mx-auto px-2 py-6 mt-4">
         {visibleItems.length > 0 ? (
-          <div className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? 'rtl font-arabic' : ''}`}>
+          <div
+            className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? "rtl font-arabic" : ""}`}
+          >
             {visibleItems.map(({ item, categoryId }) => (
               <MenuItemCard
                 key={item.id}
@@ -467,11 +558,17 @@ export default function Menu() {
             ))}
           </div>
         ) : (
-          <motion.div className="text-center py-16" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+          <motion.div
+            className="text-center py-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
             <p className="text-lg text-foreground">
-              {lang === 'ar' ? "لا توجد خدمات" : 
-               lang === 'ku' ? "هیچ خزمەتگوزاریەک نەدۆزرایەوە" : 
-               "No services found."}
+              {lang === "ar"
+                ? "لا توجد خدمات"
+                : lang === "ku"
+                  ? "هیچ خزمەتگوزاریەک نەدۆزرایەوە"
+                  : "No services found."}
             </p>
           </motion.div>
         )}
@@ -482,9 +579,11 @@ export default function Menu() {
             onClick={() => navigate(`/categories/${lang}`)}
             className="px-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white border-0 shadow-md"
           >
-            {lang === 'ar' ? 'الرجوع إلى العيادات' : 
-             lang === 'ku' ? 'گەڕانەوە بۆ کلینیک' : 
-             'Back to clinics'}
+            {lang === "ar"
+              ? "الرجوع إلى العيادات"
+              : lang === "ku"
+                ? "گەڕانەوە بۆ کلینیک"
+                : "Back to clinics"}
           </Button>
         </div>
       </main>

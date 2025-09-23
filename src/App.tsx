@@ -22,12 +22,18 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter>
-            <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="min-h-screen flex items-center justify-center">
+                  Loading...
+                </div>
+              }
+            >
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/menu/:lang" element={<Menu />} />
                 <Route path="/categories/:lang" element={<Categories />} />
-                {process.env.NODE_ENV === 'development' && (
+                {process.env.NODE_ENV === "development" && (
                   <Route path="/qa-checklist" element={<QAChecklist />} />
                 )}
                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
