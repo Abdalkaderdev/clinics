@@ -113,7 +113,9 @@ export default function Menu() {
   const handleLanguageSwitch = (newLang: string) => {
     if (newLang === currentLanguage) return;
     safeSetItem("selectedLanguage", newLang);
-    navigate(`/menu/${newLang}`);
+    // Preserve clinic parameter when switching languages
+    const clinicParam = urlClinic ? `?clinic=${urlClinic}` : '';
+    navigate(`/menu/${newLang}${clinicParam}`);
     setTimeout(() => {
       if (mainRef.current) {
         // Adjust offset for sticky headers (header + search/filters + nav)

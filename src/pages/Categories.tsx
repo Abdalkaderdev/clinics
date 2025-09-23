@@ -2,7 +2,12 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import { t } from "@/lib/translations";
+import ImageOptimized from "@/components/ImageOptimized";
+
+const logo = "/images/beauty-final.png";
 
 interface ClinicItem {
   id: string;
@@ -34,8 +39,29 @@ const Categories = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const [isRTL, setIsRTL] = useState(false);
+
+  const languages = [
+    { code: "en", label: "English" },
+    { code: "ku", label: "كوردي" },
+    { code: "ar", label: "العربيه" },
+  ];
+
+  const handleLanguageSwitch = (newLang: string) => {
+    if (newLang === lang) return;
+    localStorage.setItem("selectedLanguage", newLang);
+    navigate(`/categories/${newLang}`);
+  };
 
   useEffect(() => {
+    if (lang) {
+      localStorage.setItem("selectedLanguage", lang);
+      setIsRTL(lang === "ar");
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      document.documentElement.lang = lang;
+    }
+    
     const load = async () => {
       try {
         setLoading(true);
@@ -118,7 +144,64 @@ const Categories = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className={`min-h-screen bg-background ${isRTL ? "rtl font-arabic" : lang === "ku" ? "font-kurdish" : "ltr"}`} dir={isRTL ? "rtl" : "ltr"}>
+      {/* Header with logo and language switcher */}
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 sm:py-4 px-3 sm:px-4 shadow-lg border-b border-pink-500">
+        <div className="grid grid-cols-3 items-center">
+          <div />
+          <div className="flex justify-center">
+            <ImageOptimized
+              src={logo}
+              alt="Beauty Land Card"
+              className="h-10 sm:h-12 md:h-14 w-auto"
+              width={400}
+              priority={true}
+              sizes="200px"
+              srcSet={"/images/beauty-final.png 400w"}
+            />
+          </div>
+          <div className="relative justify-self-end">
+            <button
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-400 text-white font-semibold border border-pink-600"
+              onClick={() => setLangMenuOpen((v) => !v)}
+              aria-label="Open language menu"
+            >
+              <span>
+                {languages.find((l) => l.code === lang)?.label}
+              </span>
+              <ChevronDown
+                className={`${isRTL ? 'mr-1' : 'ml-1'} h-4 w-4 transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
+              />
+            </button>
+            {langMenuOpen && (
+              <div
+                className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-2 w-48 bg-pink-700 text-white rounded-lg shadow-xl py-2 z-50 border border-pink-600 animate-fade-in`}
+                onClick={() => setLangMenuOpen(false)}
+              >
+                {languages.map((language) => (
+                  <button
+                    key={language.code}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleLanguageSwitch(language.code);
+                    }}
+                    className={`flex items-center w-full px-4 py-2 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${lang === language.code ? "font-bold text-pink-300" : ""}`}
+                    aria-current={lang === language.code ? "page" : undefined}
+                  >
+                    <span className="flex-1">{language.label}</span>
+                    {lang === language.code && (
+                      <span
+                        className={`${isRTL ? 'mr-2' : 'ml-2'} w-2 h-2 bg-pink-300 rounded-full inline-block`}
+                        aria-label="Current language"
+                      />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </header>
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">

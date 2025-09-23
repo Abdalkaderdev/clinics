@@ -1,0 +1,66 @@
+{
+  "timestamp": "2025-09-23T21:28:20.374Z",
+  "url": "https://beautylandcard.vip",
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "success": true
+    },
+    {
+      "path": "/categories/en",
+      "status": 200,
+      "success": true
+    },
+    {
+      "path": "/menu/en",
+      "status": 200,
+      "success": true
+    },
+    {
+      "path": "/categories/ar",
+      "status": 200,
+      "success": true
+    },
+    {
+      "path": "/menu/ar",
+      "status": 200,
+      "success": true
+    }
+  ],
+  "images": [],
+  "console": [],
+  "lighthouse": {
+    "performance": 75,
+    "accessibility": 96,
+    "bestPractices": 100,
+    "seo": 100,
+    "overall": 93
+  },
+  "summary": {
+    "routes": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "successRate": 100
+    },
+    "images": {
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "successRate": 100
+    },
+    "console": {
+      "errors": 0,
+      "clean": true
+    },
+    "lighthouse": {
+      "performance": 75,
+      "accessibility": 96,
+      "bestPractices": 100,
+      "seo": 100,
+      "overall": 93
+    },
+    "overallStatus": "🔴 NEEDS ATTENTION"
+  }
+}
