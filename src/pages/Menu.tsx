@@ -293,7 +293,7 @@ export default function Menu() {
   if (!clinicsData || !selectedClinic) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-destructive">
+        <p className="text-red-700 font-semibold">
           {t("failedToLoadClinics", lang as "en" | "ar" | "ku")}
         </p>
       </div>
@@ -315,7 +315,7 @@ export default function Menu() {
               className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 min-h-[44px]"
               aria-label="Back to clinics"
             >
-              <span>←</span>
+              <span className="text-xl">←</span>
               <span className="hidden sm:inline text-sm">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
             </button>
             
@@ -337,12 +337,15 @@ export default function Menu() {
                 <ChevronDown className="h-3 w-3" />
               </button>
               {langMenuOpen && (
-                <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-1 w-32 bg-pink-700 rounded shadow-xl py-1 z-50`}>
+                <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-1 w-32 bg-pink-700 rounded shadow-xl py-1 z-50 border border-pink-600`}>
                   {languages.map((language) => (
                     <button
                       key={language.code}
-                      onClick={() => handleLanguageSwitch(language.code)}
-                      className="w-full px-3 py-2 text-left hover:bg-pink-600 text-sm min-h-[44px]"
+                      onClick={() => {
+                        handleLanguageSwitch(language.code);
+                        setLangMenuOpen(false);
+                      }}
+                      className={`w-full px-3 py-2 text-left hover:bg-pink-600 text-sm min-h-[44px] text-white transition-colors ${selectedLang === language.code ? 'bg-pink-600 font-semibold' : ''}`}
                     >
                       {language.label}
                     </button>
@@ -359,7 +362,13 @@ export default function Menu() {
             <div className="flex items-center justify-between">
               <div className="flex-1 min-w-0">
                 <h2 className="text-sm font-semibold truncate">{selectedClinic.name}</h2>
-                <p className="text-xs text-pink-100 truncate">📍 {selectedClinic.location}</p>
+                <button
+                  onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedClinic.location)}`, '_blank')}
+                  className="text-xs text-pink-100 hover:text-white hover:underline transition-colors flex items-center gap-1 truncate focus:outline-none focus:ring-2 focus:ring-pink-300 rounded px-1 py-0.5"
+                  aria-label={`Open ${selectedClinic.location} in Google Maps`}
+                >
+                  📍 {selectedClinic.location}
+                </button>
               </div>
               <button
                 onClick={() => setHeaderCollapsed(!headerCollapsed)}
@@ -420,9 +429,13 @@ export default function Menu() {
             <h2 className="text-lg font-semibold mb-2">
               {selectedClinic.name}
             </h2>
-            <p className="text-sm text-muted-foreground mb-2">
-              ��� {selectedClinic.location}
-            </p>
+            <button
+              onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedClinic.location)}`, '_blank')}
+              className="text-sm text-blue-700 hover:text-blue-800 hover:underline mb-2 font-medium transition-colors flex items-center gap-1 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded px-1 py-0.5"
+              aria-label={`Open ${selectedClinic.location} in Google Maps`}
+            >
+              📍 {selectedClinic.location}
+            </button>
             {clinicsData.clinics.length > 1 && (
               <select
                 value={selectedClinic.id}
@@ -455,7 +468,7 @@ export default function Menu() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-3 rounded-full text-sm font-medium border-2 transition-colors min-h-[44px] min-w-[44px] ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
+                  className={`px-4 py-3 rounded-full text-sm font-medium border-2 transition-colors min-h-[44px] min-w-[44px] ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-700 to-blue-700 text-white border-pink-700 shadow-md" : "bg-white text-slate-800 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
                   aria-pressed={selectedCategoryId === cat.id}
                   aria-label={`View ${cat.name} services`}
                 >
@@ -501,7 +514,7 @@ export default function Menu() {
         <div className="mt-10 flex justify-center">
           <Button
             onClick={() => navigate(`/categories/${lang}`)}
-            className="px-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white border-0 shadow-md"
+            className="px-6 bg-gradient-to-r from-pink-700 to-blue-700 hover:from-pink-800 hover:to-blue-800 text-white border-0 shadow-md"
           >
             {t("backToClinics", lang as "en" | "ar" | "ku")}
           </Button>

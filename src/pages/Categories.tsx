@@ -164,7 +164,7 @@ const Categories = () => {
               className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors"
               aria-label="Back to home"
             >
-              <span className="text-lg">←</span>
+              <span className="text-xl">←</span>
               <span className="hidden sm:inline">{t("home", lang as "en" | "ar" | "ku") || "Home"}</span>
             </button>
           </div>
@@ -227,10 +227,10 @@ const Categories = () => {
           <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
             {t("partnersTitle", lang as "en" | "ar" | "ku")}
           </h1>
-          <p className="text-muted-foreground mb-2">
+          <p className="text-gray-700 mb-2">
             {t("clinicsCount", lang as "en" | "ar" | "ku")}
           </p>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-gray-700">
             {t("exclusiveDiscounts", lang as "en" | "ar" | "ku")}
           </p>
         </div>
@@ -254,7 +254,7 @@ const Categories = () => {
         </div>
 
         {clinicsWithServices.length > 0 ? (
-          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {clinicsWithServices.map((clinic) => {
               return (
                 <motion.button
@@ -282,7 +282,7 @@ const Categories = () => {
                         <h2 className="text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}
                         </h2>
-                        <p className="text-gray-800 text-xs sm:text-sm mb-3 leading-relaxed break-words">
+                        <p className="text-gray-900 text-xs sm:text-sm mb-3 leading-relaxed break-words font-medium">
                           📍 {clinic.location}
                         </p>
                       </div>
@@ -303,12 +303,12 @@ const Categories = () => {
                             return (
                               <>
                                 {freeCount > 0 && (
-                                  <span className="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-xs font-medium">
+                                  <span className="bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full text-xs font-bold">
                                     🎁 {freeCount} {t("freeItems", lang as "en" | "ar" | "ku")}
                                   </span>
                                 )}
                                 {discountCount > 0 && (
-                                  <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-medium">
+                                  <span className="bg-orange-100 text-orange-800 px-2 py-1 rounded-full text-xs font-bold">
                                     💰 {discountCount} {t("discountItems", lang as "en" | "ar" | "ku")}
                                   </span>
                                 )}
@@ -325,7 +325,7 @@ const Categories = () => {
           </div>
         ) : (
           <div className="text-center py-16">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-gray-800">
               {t("noClinicsFound", lang as "en" | "ar" | "ku")}
             </p>
           </div>

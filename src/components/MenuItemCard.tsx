@@ -15,6 +15,7 @@ interface MenuItem {
   afterPrice?: string;
   isFree?: boolean;
   location?: string;
+  mapUrl?: string;
   image?: string;
   popular?: boolean;
   vegetarian?: boolean;
@@ -26,7 +27,7 @@ interface MenuItem {
   vegan?: boolean;
   glutenFree?: boolean;
   allergens?: string[];
-  contact?: string; // Added for contact number
+  contact?: string;
 }
 
 // Props for MenuItemCard
@@ -141,15 +142,15 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
           <div className="flex-1 flex flex-col p-6 gap-3 items-center text-center relative">
             {/* Free or Discount badge */}
             {item.isFree ? (
-              <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[50%] z-10`}>
-                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-2 py-1 shadow-md whitespace-nowrap overflow-hidden ${language === "ar" ? "text-xs leading-loose" : "text-xs"}`}>
+              <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[45%] z-10`}>
+                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs sm:text-sm ${language === "ar" ? "leading-loose" : ""}`}>
                   💎 {t("free", language as "en" | "ar" | "ku")}
                 </Badge>
               </div>
             ) : (
               discountPercentage > 0 && (
-                <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[50%] z-10`}>
-                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-2 py-1 shadow-md whitespace-nowrap overflow-hidden ${language === "ar" ? "text-xs leading-loose" : "text-xs"}`}>
+                <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[45%] z-10`}>
+                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs sm:text-sm ${language === "ar" ? "leading-loose" : ""}`}>
                     -{discountPercentage}%
                   </Badge>
                 </div>
@@ -165,7 +166,8 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                   href={item.mapUrl || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.location)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-xs sm:text-sm text-blue-600 hover:underline mt-1 flex items-center max-w-full truncate ${language === "ku" ? "gap-2" : ""}`}
+                  className={`text-xs sm:text-sm text-blue-700 hover:text-blue-800 hover:underline mt-1 flex items-center max-w-full truncate font-medium transition-colors ${language === "ku" ? "gap-2" : ""}`}
+                  aria-label={`Open ${item.location} in maps`}
                 >
                   <span className={isRTL ? "ml-1" : "mr-1"}>📍</span>
                   <span className="truncate">{item.location}</span>
@@ -213,7 +215,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                         <span className="text-xs text-red-500 mb-1 font-semibold whitespace-nowrap">
                           {t("before", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold truncate max-w-full">
+                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold break-words text-center">
                           {item.beforePrice ||
                             formatPrice(
                               item.originalPrice || item.price,
@@ -244,7 +246,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                         <span className="text-xs text-red-500 mb-1 font-semibold whitespace-nowrap">
                           {t("before", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold truncate max-w-full">
+                        <span className="text-sm sm:text-lg text-red-500 line-through font-bold break-words text-center">
                           {item.beforePrice ||
                             (typeof item.originalPrice === "number"
                               ? formatPrice(item.originalPrice, currency)
@@ -258,7 +260,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                         <span className="text-xs text-green-600 mb-1 font-semibold whitespace-nowrap">
                           {t("after", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-lg sm:text-2xl font-bold text-green-600 truncate max-w-full">
+                        <span className="text-lg sm:text-2xl font-bold text-green-600 break-words text-center">
                           {item.afterPrice ||
                             (typeof item.price === "number"
                               ? formatPrice(item.price, currency)
@@ -284,14 +286,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                           {item.beforePrice}
                         </span>
                         <span className="flex-shrink-0">{isRTL ? "←" : "→"}</span>
-                        <span className="text-green-600 truncate">
+                        <span className="text-green-600 break-words">
                           {item.afterPrice}
                         </span>
                       </div>
                     ) : typeof item.price === "number" ? (
-                      <span className="truncate block">{formatPrice(item.price, currency)}</span>
+                      <span className="break-words block text-center">{formatPrice(item.price, currency)}</span>
                     ) : (
-                      <span className="truncate block text-center">
+                      <span className="break-words block text-center">
                         {item.afterPrice ||
                         item.beforePrice ||
                         t("contactForPricing", language as "en" | "ar" | "ku")}

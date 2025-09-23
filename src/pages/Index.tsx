@@ -141,27 +141,6 @@ const Index = () => {
           </motion.div>
         </motion.div>
 
-        {/* Content Preview */}
-        <motion.div className="mb-8" variants={itemVariants}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-pink-100">
-              <div className="text-2xl mb-2">🏥</div>
-              <h3 className="font-semibold text-pink-900 mb-1">8 Premium Clinics</h3>
-              <p className="text-sm text-gray-600">Beauty & medical centers in Erbil</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-blue-100">
-              <div className="text-2xl mb-2">💰</div>
-              <h3 className="font-semibold text-blue-900 mb-1">Up to 50% Off</h3>
-              <p className="text-sm text-gray-600">Exclusive discounts on treatments</p>
-            </div>
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-emerald-100">
-              <div className="text-2xl mb-2">🎁</div>
-              <h3 className="font-semibold text-emerald-900 mb-1">Free Services</h3>
-              <p className="text-sm text-gray-600">Complimentary consultations</p>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Language Selection */}
         <motion.div variants={itemVariants}>
           <Card className="bg-white backdrop-blur-sm shadow-lg border border-slate-200">
@@ -209,6 +188,27 @@ const Index = () => {
               </div>
             </CardContent>
           </Card>
+        </motion.div>
+
+        {/* Features Preview */}
+        <motion.div className="mt-8" variants={itemVariants}>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-pink-100">
+              <div className="text-3xl mb-2">🏥</div>
+              <h3 className="font-semibold text-pink-900 mb-1">8 Premium Clinics</h3>
+              <p className="text-sm text-gray-600">Beauty & medical centers in Erbil</p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-blue-100">
+              <div className="text-3xl mb-2">💰</div>
+              <h3 className="font-semibold text-blue-900 mb-1">Up to 50% Off</h3>
+              <p className="text-sm text-gray-600">Exclusive discounts on treatments</p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 border border-emerald-100">
+              <div className="text-3xl mb-2">🎁</div>
+              <h3 className="font-semibold text-emerald-900 mb-1">Free Services</h3>
+              <p className="text-sm text-gray-600">Complimentary consultations</p>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </div>
