@@ -115,15 +115,16 @@ export default function Menu() {
     };
   }, [selectedClinic, selectedCategoryId, observeCategory]);
 
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    urlCategory || "all"
+  );
+  
   // Update selected category when scrolling (only when viewing all categories)
   useEffect(() => {
     if (activeCategory && activeCategory !== selectedCategoryId && selectedCategoryId === "all") {
       setSelectedCategoryId(activeCategory);
     }
   }, [activeCategory]);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
-    urlCategory || "all"
-  );
 
   const mainRef = useRef<HTMLDivElement>(null);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
