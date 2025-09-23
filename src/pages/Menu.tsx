@@ -88,12 +88,12 @@ export default function Menu() {
     categories: selectedClinic?.categories.map((cat) => cat.id) || [],
   });
 
-  // Update selected category when scrolling
+  // Update selected category when scrolling (only when viewing all categories)
   useEffect(() => {
-    if (activeCategory && activeCategory !== selectedCategoryId) {
+    if (activeCategory && activeCategory !== selectedCategoryId && selectedCategoryId === "all") {
       setSelectedCategoryId(activeCategory);
     }
-  }, [activeCategory, selectedCategoryId]);
+  }, [activeCategory]);
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
     urlCategory || "all"
   );
