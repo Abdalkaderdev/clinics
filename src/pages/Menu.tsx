@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
 import { t } from "@/lib/translations";
 // Beauty Land Card logo
-const logo = "/images/beauty قبل نهائي.png";
+const logo = "/images/beauty-final.png";
 
 // Safe localStorage operations
 const safeGetItem = (key: string, fallback: string = ""): string => {

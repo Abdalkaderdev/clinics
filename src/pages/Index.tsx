@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { t } from "@/lib/translations";
 // Beauty Land Card logo
-const logo = "/images/beauty قبل نهائي.webp";
+const logo = "/images/beauty-final.webp";
 
 const Index = () => {
   const navigate = useNavigate();
