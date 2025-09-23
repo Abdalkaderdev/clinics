@@ -144,7 +144,7 @@ The application automatically adjusts layout and text direction for Arabic langu
 
 This project is automatically deployed on Vercel when changes are pushed to the main branch.
 
-**Live URL:** [Your Vercel URL]
+**Live URL:** [https://beautylandcard.vip](https://beautylandcard.vip)
 
 ## Brand Colors
 
