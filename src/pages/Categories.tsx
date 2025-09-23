@@ -274,20 +274,20 @@ const Categories = () => {
                   role="button"
                 >
                   <Card className="relative border-2 border-slate-200 hover:border-pink-300 focus-within:border-pink-400 focus-within:ring-4 focus-within:ring-pink-200 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
-                    <div className="p-6 text-center flex flex-col justify-between min-h-[200px] sm:min-h-[220px]">
+                    <div className="p-3 sm:p-4 md:p-6 text-center flex flex-col justify-between min-h-[180px] sm:min-h-[200px] md:min-h-[220px]">
                       <div className="flex-1">
                         <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                           🏥
                         </div>
-                        <h2 className="text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
+                        <h2 className="text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}
                         </h2>
-                        <p className="text-gray-900 text-xs sm:text-sm mb-3 leading-relaxed break-words font-medium">
+                        <p className="text-gray-900 text-xs sm:text-sm mb-2 sm:mb-3 leading-relaxed break-words font-medium">
                           📍 {clinic.location}
                         </p>
                       </div>
                       <div className="space-y-2 mt-auto">
-                        <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm">
+                        <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-2 sm:px-3 py-1 sm:py-2 rounded-full text-xs font-semibold shadow-sm">
                           {clinic.totalServices}{" "}
                           {t("services", lang as "en" | "ar" | "ku")} •{" "}
                           {t("discountsAvailable", lang as "en" | "ar" | "ku")}

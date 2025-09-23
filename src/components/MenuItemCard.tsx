@@ -139,25 +139,25 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
       <Card className={`overflow-hidden rounded-xl shadow-lg hover:shadow-xl bg-gradient-to-br from-pink-50 to-blue-50 flex flex-col min-h-fit border-2 border-pink-100 hover:border-pink-300 transition-all duration-300 ${getFontClass()}`}>
         <CardContent className="p-0">
           {/* Content Section */}
-          <div className="flex-1 flex flex-col p-6 gap-3 items-center text-center relative">
+          <div className="flex-1 flex flex-col p-3 sm:p-4 md:p-6 gap-2 sm:gap-3 items-center text-center relative">
             {/* Free or Discount badge */}
             {item.isFree ? (
               <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[45%] z-10`}>
-                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs sm:text-sm ${language === "ar" ? "leading-loose" : ""}`}>
+                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs ${language === "ar" ? "leading-loose" : ""}`}>
                   💎 {t("free", language as "en" | "ar" | "ku")}
                 </Badge>
               </div>
             ) : (
               discountPercentage > 0 && (
                 <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[45%] z-10`}>
-                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-1.5 py-0.5 sm:px-2 sm:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs sm:text-sm ${language === "ar" ? "leading-loose" : ""}`}>
+                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs ${language === "ar" ? "leading-loose" : ""}`}>
                     -{discountPercentage}%
                   </Badge>
                 </div>
               )
             )}
             <div className="flex flex-col items-center gap-1 mb-1 w-full">
-              <h3 className={`text-lg sm:text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-2 ${language === "ar" ? "leading-loose" : language === "ku" ? "leading-relaxed" : "leading-tight"}`} id={`title-${item.id}`}>
+              <h3 className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-1 sm:px-2 ${language === "ar" ? "leading-loose" : language === "ku" ? "leading-relaxed" : "leading-tight"}`} id={`title-${item.id}`}>
                 {item.name}
               </h3>
               {/* Location for clinics */}
@@ -201,7 +201,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                 </Badge>
               )}
             </div>
-            <p className={`text-gray-900 text-xs sm:text-sm mb-4 text-center ${language === "ar" ? "leading-loose px-1" : language === "ku" ? "leading-relaxed px-2" : "leading-relaxed"}`} role="text" aria-describedby={`desc-${item.id}`}>
+            <p className={`text-gray-900 text-xs sm:text-sm mb-3 sm:mb-4 text-center px-1 ${language === "ar" ? "leading-loose" : language === "ku" ? "leading-relaxed" : "leading-relaxed"}`} role="text" aria-describedby={`desc-${item.id}`}>
               {item.description}
             </p>
             {/* Price Section */}
@@ -313,7 +313,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                 <div className="flex gap-3 justify-center w-full mt-2">
                   <a
                     href={`tel:${sanitizePhoneNumber(item.contact)}`}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-pink-800 hover:bg-pink-900 text-white shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-offset-2 min-h-[44px]"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-2 rounded-full bg-pink-800 hover:bg-pink-900 text-white shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-offset-2 min-h-[40px] sm:min-h-[44px]"
                     aria-label={`Call ${item.name} at ${item.contact}`}
                     role="button"
                   >
@@ -322,7 +322,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                   </a>
                   <a
                     href={`https://wa.me/${sanitizePhoneNumber(item.contact).replace("+", "")}`}
-                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-800 hover:bg-green-900 text-white shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-offset-2 min-h-[44px]"
+                    className="flex items-center gap-1 sm:gap-2 px-2 sm:px-3 md:px-4 py-2 rounded-full bg-green-800 hover:bg-green-900 text-white shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-offset-2 min-h-[40px] sm:min-h-[44px]"
                     aria-label={`Send WhatsApp message to ${item.name}`}
                     target="_blank"
                     rel="noopener noreferrer"
