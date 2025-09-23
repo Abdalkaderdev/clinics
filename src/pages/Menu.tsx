@@ -84,9 +84,28 @@ export default function Menu() {
   const [favorites] = useState<string[]>([]);
   const [headerCollapsed, setHeaderCollapsed] = useState(false);
 
-  const { activeCategory, scrollToCategory } = useScrollCategory({
+  const { activeCategory, scrollToCategory, observeCategory } = useScrollCategory({
     categories: selectedClinic?.categories.map((cat) => cat.id) || [],
   });
+
+  // Setup intersection observers for category sections
+  useEffect(() => {
+    if (!selectedClinic || selectedCategoryId !== "all") return;
+    
+    const observers: (() => void)[] = [];
+    
+    selectedClinic.categories.forEach((category) => {
+      const element = document.getElementById(`category-${category.id}`);
+      if (element) {
+        const cleanup = observeCategory(category.id, element);
+        observers.push(cleanup);
+      }
+    });
+    
+    return () => {
+      observers.forEach(cleanup => cleanup());
+    };
+  }, [selectedClinic, selectedCategoryId, observeCategory]);
 
   // Update selected category when scrolling (only when viewing all categories)
   useEffect(() => {
