@@ -134,16 +134,14 @@ export default function Menu() {
     setLoading(true);
     const loadClinicsData = async () => {
       try {
-        console.log("Loading clinics data for language:", currentLanguage);
         const response = await fetch(`/clinics_${currentLanguage}.json`, {
           cache: "no-cache",
         });
-        console.log("Response status:", response.status);
         if (!response.ok) {
           throw new Error(`Failed to load clinics: ${response.status}`);
         }
         const data = await response.json();
-        console.log("Loaded clinics data:", data);
+
         setClinicsData(data);
 
         // Set selected clinic if specified in URL
@@ -155,7 +153,7 @@ export default function Menu() {
         } else {
           setSelectedClinic(data.clinics[0]);
         }
-        console.log("Selected clinic:", data.clinics[0]);
+
       } catch (error) {
         console.error("Error loading clinics:", error);
         toast({

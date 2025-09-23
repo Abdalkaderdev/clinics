@@ -59,8 +59,7 @@ const App = () => {
               </Routes>
             </Suspense>
           </BrowserRouter>
-          {/* Temporarily disabled analytics for debugging */}
-          {/* <Analytics /> */}
+          <Analytics />
         </TooltipProvider>
       </QueryClientProvider>
     </ErrorBoundary>

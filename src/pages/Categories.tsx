@@ -49,6 +49,7 @@ const Categories = () => {
         const json = await res.json();
         setData(json);
       } catch (err) {
+
         setError(t("loadError", lang as "en" | "ar" | "ku"));
       } finally {
         setLoading(false);
