@@ -4,7 +4,7 @@ A modern web application offering exclusive discounts and free services across p
 
 ## Features
 
-- 🏥 **7 Partner Clinics** - Premium beauty and medical centers
+- 🏥 **8 Partner Clinics** - Premium beauty and medical centers
 - 💰 **Exclusive Discounts** - Up to 50% off on treatments and services
 - 🎁 **Free Services** - Complimentary consultations and treatments
 - 🌍 **Multi-language Support** - English, Kurdish (Sorani), and Arabic
@@ -73,11 +73,19 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 7. Salon by Mostafa
 **Location:** 40m Street  
-**Contact:** (Contact number pending)  
+**Contact:** +9647508936202  
 **Services:**
-- 25 Beauty Services (IQD & USD pricing)
+- 28 Beauty Services (IQD & USD pricing)
 - Korean Peeling (50% discount)
-- **FREE Services:** 2 complimentary treatments
+- **FREE Services:** Free Design, Free Hairstyle
+
+### 8. Florencia Beauty Center
+**Location:** Erbil, Saydin Bakhtiary Waziran  
+**Contact:** +9647514609797 / +9647764609797  
+**Services:**
+- 34 Beauty Services (IQD & USD pricing)
+- Comprehensive laser treatments and HydraFacial services
+- **FREE Services:** Medical Examination, CO2, Plasma
 
 ## Tech Stack
 
@@ -125,10 +133,22 @@ npm run preview
 
 ## Development
 
+### Project Architecture
+- **Frontend Framework:** React 18 with TypeScript
+- **Build Tool:** Vite for fast development and optimized builds
+- **Routing:** React Router v6 with future flags enabled
+- **Styling:** Tailwind CSS with custom gradients and animations
+- **UI Components:** Shadcn/ui component library
+- **State Management:** React hooks and localStorage
+- **Analytics:** Vercel Analytics with custom tracking
+- **Internationalization:** Custom translation system
+
 ### Adding New Clinics
 1. Update clinic data in `public/clinics_*.json` files
 2. Ensure all three language files are synchronized
 3. Test discount calculations and contact integration
+4. Verify phone number validation and WhatsApp integration
+5. Update README clinic count and descriptions
 
 ### Supported Currencies
 - **USD ($)** - For premium services
@@ -139,6 +159,19 @@ The application automatically adjusts layout and text direction for Arabic langu
 - Arrow directions in price displays
 - Text alignment and spacing
 - Component positioning
+- Language switcher positioning
+
+### Translation System
+- Located in `src/lib/translations.ts`
+- Supports English (en), Arabic (ar), Kurdish (ku)
+- Used throughout all components with `t()` function
+- Covers UI text, clinic services, and user messages
+
+### Analytics & Tracking
+- Page views, language selection, clinic interactions
+- Contact method tracking (phone/WhatsApp)
+- Error tracking and performance monitoring
+- Non-blocking implementation to prevent navigation issues
 
 ## Deployment
 
@@ -153,13 +186,60 @@ This project is automatically deployed on Vercel when changes are pushed to the 
 - **Accent Purple**: #8B5CF6
 - **Success Green**: #059669
 
-## Contributing
+## Development Guidelines
 
+### Code Standards
+- Use TypeScript for type safety
+- Follow React best practices and hooks patterns
+- Implement proper error boundaries and loading states
+- Ensure accessibility compliance (WCAG AA)
+- Maintain responsive design for all screen sizes
+
+### Testing
+- Run `npm run build` before deployment
+- Test language switching functionality
+- Verify clinic data loading in all languages
+- Check phone/WhatsApp contact integration
+- Validate discount calculations and free service displays
+
+### Performance Optimization
+- Images optimized with WebP format
+- Code splitting with lazy loading
+- Efficient bundle sizes with Vite
+- Lighthouse score targets: 90+ across all metrics
+
+### Contributing
 When adding new services or clinics:
 1. Update all three language files simultaneously
 2. Test discount percentage calculations
 3. Verify contact integration (phone/WhatsApp)
 4. Ensure RTL layout compatibility
+5. Update README documentation
+6. Test analytics tracking functionality
+
+## Deployment
+
+### Automatic Deployment
+- Connected to Vercel for automatic deployments
+- Builds triggered on git push to main branch
+- Environment variables configured in Vercel dashboard
+- Custom domain: https://beautylandcard.vip
+
+### Manual Deployment
+```bash
+# Build and preview locally
+npm run build
+npm run preview
+
+# Deploy to Vercel
+vercel --prod
+```
+
+### Environment Setup
+- Node.js 22+ required
+- All dependencies managed via npm
+- No additional environment variables needed
+- Analytics automatically configured for production
 
 ## License
 
