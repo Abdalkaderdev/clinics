@@ -274,6 +274,7 @@
               "id": "service-15",
               "name": "Free Face Analysis",
               "description": "Complimentary facial skin analysis.",
+              "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
@@ -281,6 +282,7 @@
               "id": "service-16",
               "name": "Free Normal Plasma",
               "description": "Complimentary normal plasma treatment.",
+              "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
@@ -288,6 +290,7 @@
               "id": "service-17",
               "name": "Free Carbon Laser",
               "description": "Complimentary carbon laser treatment.",
+              "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             },
@@ -295,6 +298,7 @@
               "id": "service-18",
               "name": "Free Doctor Consultation (One Time)",
               "description": "Complimentary one-time doctor consultation.",
+              "beforePrice": "",
               "afterPrice": "FREE",
               "isFree": true
             }
