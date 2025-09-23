@@ -97,6 +97,7 @@ const Index = () => {
             priority={true}
             width={400}
             sizes="(min-width:1024px) 480px, 40vw"
+            srcSet={"/images/beauty-final.webp 800w"}
           />
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 sm:mb-4 drop-shadow-lg font-display tracking-wide"

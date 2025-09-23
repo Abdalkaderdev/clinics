@@ -330,6 +330,7 @@ export default function Menu() {
               width={400}
               priority={true}
               sizes="200px"
+              srcSet={"/images/beauty-final.png 400w"}
             />
           </div>
           {/* Language Menu Button shows current language */}

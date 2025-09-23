@@ -22,25 +22,9 @@ const ImageOptimized = ({
   const loading = priority ? "eager" : "lazy";
   const fetchPriority = priority ? "high" : "auto";
 
-  // Generate optimized srcset if not provided
-  const generateSrcSet = (originalSrc) => {
-    if (srcSet) return srcSet;
-
-    // Check if WebP version exists
-    const isWebp = /\.webp$/i.test(originalSrc);
-    const baseName = originalSrc.replace(/\.(webp|png|jpg|jpeg)$/i, "");
-
-    if (isWebp) {
-      return [
-        `${baseName}-thumbnail.webp 150w`,
-        `${baseName}-small.webp 300w`,
-        `${baseName}-medium.webp 600w`,
-        `${baseName}-large.webp 1200w`,
-        `${baseName}.webp 800w`,
-      ].join(", ");
-    }
-
-    return undefined;
+  // Only use provided srcSet; do not generate non-existent variants
+  const generateSrcSet = () => {
+    return srcSet;
   };
 
   // Generate responsive sizes if not provided
@@ -57,9 +41,17 @@ const ImageOptimized = ({
       return;
     }
     const img = e?.currentTarget;
-    if (img && img.src !== window.location.origin + "/images/logo.webp") {
-      img.src = "/images/logo.webp";
+    if (!img) return;
+    const currentSrc = img.getAttribute("src") || "";
+    const isWebp = /\.webp$/i.test(currentSrc);
+    if (isWebp) {
+      const fallbackPng = currentSrc.replace(/\.webp$/i, ".png");
+      if (fallbackPng !== currentSrc) {
+        img.src = fallbackPng;
+        return;
+      }
     }
+    img.src = "/placeholder.svg";
   };
 
   const imgProps = {
