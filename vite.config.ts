@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import { visualizer } from "rollup-plugin-visualizer";
 
@@ -23,7 +22,7 @@ export default defineConfig(({ mode }) => ({
       exclude: /node_modules/,
       include: /\.(png|jpg|jpeg|gif|webp|svg|tiff|avif)$/i,
     }),
-    mode === "development" && componentTagger(),
+
     mode === "analyze" &&
       visualizer({
         filename: "dist/stats.html",
