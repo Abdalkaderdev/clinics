@@ -740,8 +740,8 @@
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "International Needles",
+              "description": "Get 30% discount on all international needle treatments with Beauty Land Card.",
               "beforePrice": "Regular Price",
               "afterPrice": "30% OFF",
               "isSpecial": true

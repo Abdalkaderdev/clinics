@@ -739,8 +739,8 @@
             },
             {
               "id": "service-16",
-              "name": "",
-              "description": "",
+              "name": "الإبر الدولية",
+              "description": "احصل على خصم 30% على جميع علاجات الإبر الدولية ببطاقة بيوتي لاند.",
               "beforePrice": "السعر العادي",
               "afterPrice": "خصم 30%",
               "isSpecial": true
