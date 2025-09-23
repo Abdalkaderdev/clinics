@@ -1,7 +1,7 @@
-import { useLocation } from "react-router-dom";
+
 
 const NotFound = () => {
-  const location = useLocation();
+
 
   // intentionally silent in production
 

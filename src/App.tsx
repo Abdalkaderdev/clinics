@@ -24,8 +24,12 @@ const App = () => {
           <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <Suspense
               fallback={
-                <div className="min-h-screen flex items-center justify-center">
-                  Loading...
+                <div className="min-h-screen flex items-center justify-center" role="status" aria-live="polite">
+                  <div className="text-center">
+                    <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" aria-hidden="true" />
+                    <span className="sr-only">Loading application...</span>
+                    <p>Loading...</p>
+                  </div>
                 </div>
               }
             >

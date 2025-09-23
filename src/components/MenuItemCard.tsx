@@ -39,6 +39,7 @@ interface MenuItemCardProps {
   language?: string; // Add language prop
 }
 
+// Animation variants moved outside component for performance
 const itemVariants = {
   hidden: { opacity: 0, y: 30, scale: 0.95 },
   visible: {
@@ -64,6 +65,7 @@ const itemVariants = {
   },
 };
 
+// Memoized helper functions
 const formatPrice = (price: number, currency: string) => {
   if (currency === "IQD") {
     return `${price.toLocaleString()} ${currency}`;
@@ -73,35 +75,29 @@ const formatPrice = (price: number, currency: string) => {
 
 const parsePrice = (priceString: string): number => {
   if (!priceString) return 0;
-  // Remove currency symbols and commas, extract numbers
   const numStr = priceString.replace(/[^0-9.]/g, "");
   return parseFloat(numStr) || 0;
 };
 
 const validatePhoneNumber = (phone: string): boolean => {
   if (!phone || typeof phone !== "string") return false;
-  // Extract first number if multiple numbers are provided
-  const firstNumber = phone.split(/[\s\/]/)[0].trim();
-  // Remove spaces, dashes, and plus signs for validation
+  const firstNumber = phone.split(/[\s/]/)[0].trim();
   const cleaned = firstNumber.replace(/[\s\-+]/g, "");
-  // Check if it contains only digits and is reasonable length
   return /^\d{7,15}$/.test(cleaned);
 };
 
 const sanitizePhoneNumber = (phone: string): string => {
   if (!phone) return "";
-  // Extract first number if multiple numbers are provided (separated by / or space)
-  const firstNumber = phone.split(/[\s\/]/)[0].trim();
-  // Remove all non-digit characters except plus sign
+  const firstNumber = phone.split(/[\s/]/)[0].trim();
   return firstNumber.replace(/[^\d+]/g, "");
 };
+
+
 
 const MenuItemCard: React.FC<MenuItemCardProps> = ({
   item,
   currency,
   isRTL,
-  isFavorite,
-  onFavoriteToggle,
   language = "en",
 }) => {
   // Check if this is a clinic item (has location)
@@ -145,22 +141,22 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
           <div className="flex-1 flex flex-col p-6 gap-3 items-center text-center relative">
             {/* Free or Discount badge */}
             {item.isFree ? (
-              <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'} max-w-[40%]`}>
-                <Badge className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold text-sm px-3 py-1 shadow-md truncate max-w-full">
+              <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[50%] z-10`}>
+                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-2 py-1 shadow-md whitespace-nowrap overflow-hidden ${language === "ar" ? "text-xs leading-loose" : "text-xs"}`}>
                   💎 {t("free", language as "en" | "ar" | "ku")}
                 </Badge>
               </div>
             ) : (
               discountPercentage > 0 && (
-                <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'} max-w-[40%]`}>
-                  <Badge className="bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white font-bold text-sm px-3 py-1 shadow-md truncate max-w-full">
+                <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[50%] z-10`}>
+                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-2 py-1 shadow-md whitespace-nowrap overflow-hidden ${language === "ar" ? "text-xs leading-loose" : "text-xs"}`}>
                     -{discountPercentage}%
                   </Badge>
                 </div>
               )
             )}
             <div className="flex flex-col items-center gap-1 mb-1 w-full">
-              <h3 className={`text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-2 line-clamp-2 ${language === "ar" ? "leading-loose" : "leading-tight"}`}>
+              <h3 className={`text-lg sm:text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-2 ${language === "ar" ? "leading-loose" : language === "ku" ? "leading-relaxed" : "leading-tight"}`} id={`title-${item.id}`}>
                 {item.name}
               </h3>
               {/* Location for clinics */}
@@ -203,12 +199,12 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                 </Badge>
               )}
             </div>
-            <p className={`text-gray-700 text-xs sm:text-sm mb-4 text-center line-clamp-2 ${language === "ar" ? "leading-loose" : language === "ku" ? "leading-relaxed px-2" : "leading-relaxed"}`}>
+            <p className={`text-gray-900 text-xs sm:text-sm mb-4 text-center ${language === "ar" ? "leading-loose px-1" : language === "ku" ? "leading-relaxed px-2" : "leading-relaxed"}`} role="text" aria-describedby={`desc-${item.id}`}>
               {item.description}
             </p>
-            {/* Price and Contact Row */}
-            <div className="flex items-center justify-center mt-auto flex-row gap-3 w-full">
-              <div className="flex flex-col flex-1 items-center">
+            {/* Price Section */}
+            <div className="flex flex-col items-center mt-auto w-full gap-3">
+              <div className="flex flex-col items-center w-full">
                 {/* Free or regular pricing display */}
                 {item.isFree ? (
                   <div className="flex flex-col items-center gap-2">
@@ -225,14 +221,14 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                             )}
                         </span>
                       </div>
-                      <div className="text-xl sm:text-2xl font-bold text-pink-600 flex-shrink-0">
+                      <div className="text-xl sm:text-2xl font-bold text-pink-600 flex-shrink-0" aria-hidden="true">
                         {isRTL ? "←" : "→"}
                       </div>
                       <div className="flex flex-col items-center min-w-0 flex-1">
                         <span className="text-xs text-green-600 mb-1 font-semibold whitespace-nowrap">
                           {t("after", language as "en" | "ar" | "ku")}
                         </span>
-                        <span className="text-xl sm:text-2xl font-bold text-green-600">
+                        <span className="text-xl sm:text-2xl font-bold text-green-600" role="text" aria-label={`Current price: ${t("free", language as "en" | "ar" | "ku")}`}>
                           {t("free", language as "en" | "ar" | "ku")}
                         </span>
                       </div>
@@ -255,7 +251,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                               : item.originalPrice)}
                         </span>
                       </div>
-                      <div className="text-xl sm:text-2xl font-bold text-pink-600 flex-shrink-0">
+                      <div className="text-xl sm:text-2xl font-bold text-pink-600 flex-shrink-0" aria-hidden="true">
                         {isRTL ? "←" : "→"}
                       </div>
                       <div className="flex flex-col items-center min-w-0 flex-1">
@@ -309,29 +305,32 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                   </Badge>
                 )}
               </div>
-              {/* Contact Button */}
-              {isClinic &&
-                item.contact &&
-                validatePhoneNumber(item.contact) && (
-                  <div className={`flex flex-col gap-2 ${isRTL ? 'items-start' : 'items-end'} ml-2`}>
-                    <a
-                      href={`tel:${sanitizePhoneNumber(item.contact)}`}
-                      className="w-10 h-10 flex items-center justify-center rounded-full bg-pink-600 hover:bg-pink-700 text-white shadow-md transition-colors"
-                      aria-label={`Call ${item.name}`}
-                    >
-                      <Phone className="w-5 h-5" />
-                    </a>
-                    <a
-                      href={`https://wa.me/${sanitizePhoneNumber(item.contact).replace("+", "")}`}
-                      className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md transition-colors"
-                      aria-label={`WhatsApp ${item.name}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <MessageCircle className="w-5 h-5" />
-                    </a>
-                  </div>
-                )}
+              
+              {/* Contact Buttons */}
+              {isClinic && item.contact && validatePhoneNumber(item.contact) && (
+                <div className="flex gap-3 justify-center w-full mt-2">
+                  <a
+                    href={`tel:${sanitizePhoneNumber(item.contact)}`}
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-pink-800 hover:bg-pink-900 text-white shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-offset-2 min-h-[44px]"
+                    aria-label={`Call ${item.name} at ${item.contact}`}
+                    role="button"
+                  >
+                    <Phone className="w-4 h-4" aria-hidden="true" />
+                    <span className="text-sm font-medium">{t("call", language as "en" | "ar" | "ku") || "Call"}</span>
+                  </a>
+                  <a
+                    href={`https://wa.me/${sanitizePhoneNumber(item.contact).replace("+", "")}`}
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-green-800 hover:bg-green-900 text-white shadow-md transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-offset-2 min-h-[44px]"
+                    aria-label={`Send WhatsApp message to ${item.name}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    role="button"
+                  >
+                    <MessageCircle className="w-4 h-4" aria-hidden="true" />
+                    <span className="text-sm font-medium">WhatsApp</span>
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </CardContent>

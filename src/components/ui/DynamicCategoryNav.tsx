@@ -1,6 +1,14 @@
 import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
+// Animation variants moved outside component for performance
+const buttonVariants = {
+  active: { scale: 1.08 },
+  inactive: { scale: 1 },
+};
+
+const transition = { type: "spring", stiffness: 300, damping: 20 };
+
 interface Category {
   id: string;
   name: string;
@@ -66,8 +74,9 @@ const DynamicCategoryNav: React.FC<DynamicCategoryNavProps> = ({
             }`}
             aria-current={activeCategory === cat.id ? "page" : undefined}
             initial={false}
-            animate={activeCategory === cat.id ? { scale: 1.08 } : { scale: 1 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            animate={activeCategory === cat.id ? "active" : "inactive"}
+            variants={buttonVariants}
+            transition={transition}
           >
             {cat.name} <span className="opacity-70">({cat.count})</span>
           </motion.button>

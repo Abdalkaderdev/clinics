@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Languages, Stethoscope } from "lucide-react";
+import { Stethoscope } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
 import { trackPageView, trackLanguageSelect } from "@/lib/analytics";
 import { useEffect, useState } from "react";
@@ -9,6 +9,49 @@ import { useNavigate } from "react-router-dom";
 import { t } from "@/lib/translations";
 // Beauty Land Card logo
 const logo = "/images/beauty-final.webp";
+
+// Animation variants moved outside component for performance
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+    },
+  },
+};
+
+const buttonVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.2,
+    },
+  },
+  tap: {
+    scale: 0.95,
+  },
+};
 
 const Index = () => {
   const navigate = useNavigate();
@@ -37,54 +80,16 @@ const Index = () => {
     navigate(`/categories/${langCode}`);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-      },
-    },
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.2,
-      },
-    },
-    tap: {
-      scale: 0.95,
-    },
-  };
-
   return (
-    <div
-      id="main-content"
-      className="min-h-screen relative flex items-center justify-center bg-background"
-      role="main"
-    >
+    <>
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-pink-600 text-white px-4 py-2 rounded z-50">
+        Skip to main content
+      </a>
+      <div
+        id="main-content"
+        className="min-h-screen relative flex items-center justify-center bg-background"
+        role="main"
+      >
       {/* Content */}
       <motion.div
         className="relative z-10 text-center px-4 max-w-2xl mx-auto"
@@ -184,9 +189,20 @@ const Index = () => {
                       variant="default"
                       size="lg"
                       onClick={() => handleLanguageSelect(lang.code)}
-                      className={`w-full text-base sm:text-lg py-4 sm:py-6 bg-gradient-to-r from-pink-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 ${lang.code === "ar" ? "font-arabic" : ""}`}
+                      className={`w-full text-base sm:text-lg py-4 sm:py-6 transition-all duration-200 focus:outline-none focus:ring-4 focus:ring-pink-300 ${lang.code === currentLang ? "bg-gradient-to-r from-pink-700 to-blue-700 ring-2 ring-pink-300 ring-offset-2" : "bg-gradient-to-r from-pink-600 to-blue-600 hover:from-pink-700 hover:to-blue-700"} ${lang.code === "ar" ? "font-arabic" : ""}`}
+                      aria-label={`Select ${lang.name} language${lang.code === currentLang ? ' (currently selected)' : ''}`}
+                      aria-describedby={`lang-desc-${lang.code}`}
+                      role="button"
+                      aria-pressed={lang.code === currentLang}
                     >
-                      <span className="font-semibold">{lang.nativeName}</span>
+                      <div className="flex items-center justify-between w-full">
+                        <span className="font-semibold" id={`lang-desc-${lang.code}`}>{lang.nativeName}</span>
+                        {lang.code === currentLang && (
+                          <span className="ml-2 text-sm bg-white/20 px-2 py-1 rounded-full" aria-label="Current language">
+                            ✓
+                          </span>
+                        )}
+                      </div>
                     </Button>
                   </motion.div>
                 ))}
@@ -196,6 +212,7 @@ const Index = () => {
         </motion.div>
       </motion.div>
     </div>
+    </>
   );
 };
 

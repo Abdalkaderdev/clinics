@@ -208,6 +208,42 @@ const translations: Translations = {
     ar: "100% مجاني مع بطاقة بيوتي لاند!",
     ku: "100% بێ بەرامبەر لەگەڵ کارتی بیوتی لاند!",
   },
+  // New translations for improved UX
+  complimentaryService: {
+    en: "Complimentary",
+    ar: "مجاني",
+    ku: "بێ بەرامبەر",
+  },
+  freeItems: {
+    en: "free items",
+    ar: "عناصر مجانية",
+    ku: "بەخشین",
+  },
+  discountItems: {
+    en: "discounts",
+    ar: "خصومات",
+    ku: "خەڵات",
+  },
+  home: {
+    en: "Home",
+    ar: "الرئيسية",
+    ku: "سەرەتا",
+  },
+  loading: {
+    en: "Loading...",
+    ar: "جاري التحميل...",
+    ku: "بارکردن...",
+  },
+  call: {
+    en: "Call",
+    ar: "اتصال",
+    ku: "پەیوەندی",
+  },
+  searchHelpText: {
+    en: "Search through available services and treatments",
+    ar: "البحث في الخدمات والعلاجات المتاحة",
+    ku: "گەڕان لە خزمەتگوزاری و چارەسەرییەکان",
+  },
 };
 
 export const t = (key: string, lang: Language = "en"): string => {

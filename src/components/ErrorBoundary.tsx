@@ -20,7 +20,11 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("ErrorBoundary caught an error:", error, errorInfo);
+    const sanitizedError = {
+      message: error.message?.replace(/[\r\n\t]/g, ' ') || 'Unknown error',
+      stack: error.stack?.replace(/[\r\n\t]/g, ' ') || 'No stack trace'
+    };
+    console.error('ErrorBoundary caught an error:', sanitizedError.message);
   }
 
   render() {

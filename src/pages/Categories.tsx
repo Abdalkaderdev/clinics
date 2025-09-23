@@ -2,10 +2,11 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+
 import { ChevronDown } from "lucide-react";
 import { t } from "@/lib/translations";
 import ImageOptimized from "@/components/ImageOptimized";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 const logo = "/images/beauty-final.png";
 
@@ -15,6 +16,7 @@ interface ClinicItem {
   description: string;
   beforePrice: string;
   afterPrice: string;
+  isFree?: boolean;
 }
 interface ClinicCategory {
   id: string;
@@ -66,7 +68,9 @@ const Categories = () => {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch(`/clinics_${lang}.json`);
+        const allowedLangs = ['en', 'ar', 'ku'];
+        const safeLang = allowedLangs.includes(lang as string) ? lang : 'en';
+        const res = await fetch(`/clinics_${safeLang}.json`);
 
         if (!res.ok) {
           throw new Error(`Failed to load clinics: ${res.status}`);
@@ -75,7 +79,7 @@ const Categories = () => {
         const json = await res.json();
         setData(json);
       } catch (err) {
-
+        console.error('Failed to load clinic data:', err instanceof Error ? err.message : 'Unknown error');
         setError(t("loadError", lang as "en" | "ar" | "ku"));
       } finally {
         setLoading(false);
@@ -120,21 +124,27 @@ const Categories = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen bg-background flex items-center justify-center" role="main" aria-live="polite">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" aria-hidden="true" />
+          <p className="text-lg" aria-live="assertive">
+            {t("loading", lang as "en" | "ar" | "ku") || "Loading clinics..."}
+          </p>
+        </div>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
+      <div className="min-h-screen bg-background flex items-center justify-center" role="main" aria-live="assertive">
         <div className="text-center p-8">
-          <div className="text-6xl mb-4">⚠️</div>
-          <p className="text-lg text-destructive mb-4">{error}</p>
+          <div className="text-6xl mb-4" aria-hidden="true">⚠️</div>
+          <h1 className="text-lg text-red-700 mb-4" role="alert">{error}</h1>
           <button
             onClick={() => window.location.reload()}
-            className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600"
+            className="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-4 focus:ring-pink-300 min-h-[44px]"
+            aria-label="Reload page to try again"
           >
             {t("tryAgain", lang as "en" | "ar" | "ku")}
           </button>
@@ -211,6 +221,7 @@ const Categories = () => {
           </div>
         </div>
       </header>
+      <BreadcrumbNav language={lang || "en"} isRTL={isRTL} />
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
@@ -226,13 +237,20 @@ const Categories = () => {
 
         {/* Search Input */}
         <div className="mb-6 sm:mb-8">
-          <input
-            type="text"
-            placeholder={t("searchPlaceholder", lang as "en" | "ar" | "ku")}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full max-w-lg sm:max-w-xl mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-center shadow-sm"
-          />
+          <div className="relative max-w-2xl mx-auto">
+            <input
+              type="search"
+              placeholder={t("searchPlaceholder", lang as "en" | "ar" | "ku")}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={`w-full px-4 py-3 text-sm sm:text-base rounded-lg border-2 border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 shadow-sm min-h-[44px] ${isRTL ? 'text-right' : 'text-left'}`}
+              role="searchbox"
+              aria-label={t("searchPlaceholder", lang as "en" | "ar" | "ku")}
+            />
+            <div className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-3' : 'right-3'} text-slate-400`}>
+              🔍
+            </div>
+          </div>
         </div>
 
         {clinicsWithServices.length > 0 ? (
@@ -244,19 +262,27 @@ const Categories = () => {
                   whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => navigate(`/menu/${lang}?clinic=${clinic.id}`)}
-                  className="text-left w-full"
-                  aria-label={`Open ${clinic.name}`}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      navigate(`/menu/${lang}?clinic=${clinic.id}`);
+                    }
+                  }}
+                  className="text-left w-full focus:outline-none focus:ring-4 focus:ring-pink-400 focus:ring-offset-2 rounded-2xl"
+                  aria-label={`Open ${clinic.name} services menu. ${clinic.totalServices} services available with discounts and free treatments.`}
+                  tabIndex={0}
+                  role="button"
                 >
-                  <Card className="relative border-2 border-slate-200 hover:border-pink-300 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
+                  <Card className="relative border-2 border-slate-200 hover:border-pink-300 focus-within:border-pink-400 focus-within:ring-4 focus-within:ring-pink-200 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
                     <div className="p-6 text-center flex flex-col justify-between min-h-[200px] sm:min-h-[220px]">
                       <div className="flex-1">
                         <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
                           🏥
                         </div>
-                        <h2 className="text-slate-800 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
+                        <h2 className="text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl font-bold mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}
                         </h2>
-                        <p className="text-slate-600 text-xs sm:text-sm mb-3 leading-relaxed break-words">
+                        <p className="text-gray-800 text-xs sm:text-sm mb-3 leading-relaxed break-words">
                           📍 {clinic.location}
                         </p>
                       </div>
@@ -266,13 +292,29 @@ const Categories = () => {
                           {t("services", lang as "en" | "ar" | "ku")} •{" "}
                           {t("discountsAvailable", lang as "en" | "ar" | "ku")}
                         </div>
-                        <div className="flex justify-center gap-1">
-                          <span className="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-xs font-medium">
-                            🎁 FREE
-                          </span>
-                          <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-medium">
-                            💰 50% OFF
-                          </span>
+                        <div className="flex justify-center gap-1 flex-wrap">
+                          {(() => {
+                            const freeCount = clinic.categories.reduce((sum, cat) => 
+                              sum + cat.items.filter(item => item.isFree).length, 0
+                            );
+                            const discountCount = clinic.categories.reduce((sum, cat) => 
+                              sum + cat.items.filter(item => !item.isFree && item.beforePrice && item.afterPrice).length, 0
+                            );
+                            return (
+                              <>
+                                {freeCount > 0 && (
+                                  <span className="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-xs font-medium">
+                                    🎁 {freeCount} {t("freeItems", lang as "en" | "ar" | "ku")}
+                                  </span>
+                                )}
+                                {discountCount > 0 && (
+                                  <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-medium">
+                                    💰 {discountCount} {t("discountItems", lang as "en" | "ar" | "ku")}
+                                  </span>
+                                )}
+                              </>
+                            );
+                          })()} 
                         </div>
                       </div>
                     </div>

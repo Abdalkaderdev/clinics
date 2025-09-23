@@ -1,5 +1,17 @@
 import { useState, useEffect, useCallback } from "react";
 
+// Debounce utility for scroll events
+const debounce = <T extends (...args: unknown[]) => void>(
+  func: T,
+  delay: number
+): ((...args: Parameters<T>) => void) => {
+  let timeoutId: NodeJS.Timeout;
+  return (...args: Parameters<T>) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => func(...args), delay);
+  };
+};
+
 interface ScrollCategoryOptions {
   categories: string[];
   rootMargin?: string;
@@ -34,23 +46,22 @@ export const useScrollCategory = ({
         existingObserver.disconnect();
       }
 
+      const debouncedSetActiveCategory = debounce(setActiveCategory, 100);
+      
       const observer = new IntersectionObserver(
         (entries) => {
-          // Find all intersecting entries
           const visibleEntries = entries.filter(
             (entry) => entry.isIntersecting
           );
           if (visibleEntries.length > 0) {
-            // Pick the one closest to the top (smallest boundingClientRect.top)
             const topEntry = visibleEntries.reduce((prev, curr) =>
               prev.boundingClientRect.top < curr.boundingClientRect.top
                 ? prev
                 : curr
             );
-            // Extract categoryId from id (assumes id="category-<id>")
             const match = topEntry.target.id.match(/^category-(.+)$/);
             if (match) {
-              setActiveCategory(match[1]);
+              debouncedSetActiveCategory(match[1]);
             }
           }
         },

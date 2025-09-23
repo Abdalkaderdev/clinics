@@ -1,20 +1,20 @@
 // Analytics service for Beauty Land Card
 interface AnalyticsEvent {
   event: string;
-  properties?: Record<string, any>;
+  properties?: Record<string, unknown>;
   timestamp?: number;
 }
 
 // Sanitize user input to prevent log injection
-function sanitizeInput(input: any): any {
+function sanitizeInput(input: unknown): unknown {
   if (typeof input === "string") {
     return input
       .replace(/[\r\n]/g, " ") // Remove newlines
       .replace(/[%{}]/g, "_") // Replace dangerous chars
-      .replace(/[\x00-\x1f\x7f-\x9f]/g, ""); // Remove control chars
+      .replace(/[\u0000-\u001F\u007F-\u009F]/g, ""); // Remove control chars
   }
   if (typeof input === "object" && input !== null) {
-    const sanitized: Record<string, any> = {};
+    const sanitized: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(input)) {
       sanitized[sanitizeInput(key)] = sanitizeInput(value);
     }
@@ -53,7 +53,7 @@ class Analytics {
     });
   }
 
-  track(event: string, properties: Record<string, any> = {}) {
+  track(event: string, properties: Record<string, unknown> = {}) {
     if (!this.isEnabled) return;
 
     const analyticsEvent: AnalyticsEvent = {
@@ -71,8 +71,8 @@ class Analytics {
 
     // Send to Vercel Analytics if available (non-blocking)
     try {
-      if (typeof window !== "undefined" && (window as any).va?.track) {
-        (window as any).va.track(event, properties);
+      if (typeof window !== "undefined" && 'va' in window && typeof (window as { va?: { track: (event: string, properties: Record<string, unknown>) => void } }).va?.track === 'function') {
+        (window as { va: { track: (event: string, properties: Record<string, unknown>) => void } }).va.track(event, properties);
       }
     } catch (error) {
       // Silently fail - don't block user interactions

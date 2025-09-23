@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useRef, useMemo } from "react";
 import { Button } from "@/components/ui/button";
@@ -7,8 +6,8 @@ import { ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
 import ImageOptimized from "@/components/ImageOptimized";
-import { Separator } from "@/components/ui/separator";
 import MenuItemCard from "@/components/MenuItemCard";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { t } from "@/lib/translations";
 // Beauty Land Card logo
 const logo = "/images/beauty-final.png";
@@ -80,11 +79,12 @@ export default function Menu() {
 
   // Search and filter states
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
-  const [showFilters, setShowFilters] = useState(false);
-  const [favorites, setFavorites] = useState<string[]>([]);
+  const [selectedFilters] = useState<string[]>([]);
 
-  const { activeCategory } = useScrollCategory({
+  const [favorites] = useState<string[]>([]);
+  const [headerCollapsed, setHeaderCollapsed] = useState(false);
+
+  useScrollCategory({
     categories: selectedClinic?.categories.map((cat) => cat.id) || [],
   });
   const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
@@ -168,16 +168,9 @@ export default function Menu() {
       }
     };
     loadClinicsData();
-  }, [currentLanguage, urlClinic, toast]);
+  }, [currentLanguage, urlClinic, toast, lang]);
 
-  // Toggle favorite item
-  const toggleFavorite = (itemId: string) => {
-    const newFavorites = favorites.includes(itemId)
-      ? favorites.filter((id) => id !== itemId)
-      : [...favorites, itemId];
-    setFavorites(newFavorites);
-    safeSetItem("menuFavorites", JSON.stringify(newFavorites));
-  };
+
 
   // Build list of items filtered by selected category
   const allItems = useMemo(() => {
@@ -185,7 +178,7 @@ export default function Menu() {
       return [] as Array<{
         categoryId: string;
         categoryName: string;
-        item: any;
+        item: ClinicItem & { price: number; originalPrice: number; location?: string; contact?: string; };
       }>;
     return selectedClinic.categories.flatMap((cat) =>
       cat.items.map((item) => ({
@@ -206,17 +199,11 @@ export default function Menu() {
   }, [selectedClinic]);
 
   const visibleItems = useMemo(() => {
-    console.log("Calculating visible items...");
-    console.log("selectedClinic:", selectedClinic);
-    console.log("allItems:", allItems);
-    console.log("selectedCategoryId:", selectedCategoryId);
-
     if (!selectedClinic) {
-      console.log("No selected clinic, returning empty array");
       return [] as Array<{
         categoryId: string;
         categoryName: string;
-        item: any;
+        item: ClinicItem & { price: number; originalPrice: number; location?: string; contact?: string; };
       }>;
     }
 
@@ -224,8 +211,6 @@ export default function Menu() {
       selectedCategoryId === "all"
         ? allItems
         : allItems.filter((entry) => entry.categoryId === selectedCategoryId);
-
-    console.log("Base items after category filter:", base);
 
     // Filter by search query
     if (searchQuery.trim()) {
@@ -260,7 +245,6 @@ export default function Menu() {
       });
     }
 
-    console.log("Final visible items:", base);
     return base;
   }, [
     allItems,
@@ -272,7 +256,7 @@ export default function Menu() {
   ]);
 
   // Available filter options for clinics
-  const filterOptions = useMemo(() => {
+  useMemo(() => {
     const currentLanguage = lang || "en";
     return [
       {
@@ -295,12 +279,13 @@ export default function Menu() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <motion.div
-          animate={{ rotate: 360 }}
-          transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-          className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full"
-        />
+      <div className="min-h-screen bg-background flex items-center justify-center" role="main" aria-live="polite">
+        <div className="text-center">
+          <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" aria-hidden="true" />
+          <p className="text-lg" aria-live="assertive">
+            {t("loading", lang as "en" | "ar" | "ku") || "Loading..."}
+          </p>
+        </div>
       </div>
     );
   }
@@ -320,75 +305,112 @@ export default function Menu() {
       className={`min-h-screen bg-background ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : "ltr"}`}
       dir={isRTL ? "rtl" : "ltr"}
     >
-      {/* Sticky Header with centered logo and language menu */}
-      <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 sm:py-4 px-3 sm:px-4 shadow-lg border-b border-pink-500">
-        <div className="grid grid-cols-3 items-center">
-          <div className="justify-self-start">
+      {/* Consolidated Sticky Header */}
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white shadow-lg">
+        {/* Main Header Row */}
+        <div className="px-3 py-2 border-b border-pink-500">
+          <div className="grid grid-cols-3 items-center">
             <button
               onClick={() => navigate(`/categories/${lang}`)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors"
+              className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 min-h-[44px]"
               aria-label="Back to clinics"
             >
-              <span className="text-lg">←</span>
-              <span className="hidden sm:inline">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
+              <span>←</span>
+              <span className="hidden sm:inline text-sm">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
             </button>
-          </div>
-          <div className="flex justify-center">
+            
             <ImageOptimized
               src={logo}
               alt="Beauty Land Card"
-              className="h-10 sm:h-12 md:h-14 w-auto"
-              width={400}
+              className="h-8 w-auto mx-auto"
+              width={200}
               priority={true}
-              sizes="200px"
-              srcSet={"/images/beauty-final.png 400w"}
             />
-          </div>
-          {/* Language Menu Button shows current language */}
-          <div className="relative justify-self-end">
-            <button
-              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 hover:text-white focus:outline-none focus:ring-2 focus:ring-pink-400 text-white font-semibold border border-pink-600"
-              onClick={() => setLangMenuOpen((v) => !v)}
-              aria-label="Open language menu"
-            >
-              <span>
-                {languages.find((l) => l.code === selectedLang)?.label}
-              </span>
-              <ChevronDown
-                className={`${isRTL ? 'mr-1' : 'ml-1'} h-4 w-4 transition-transform ${langMenuOpen ? "rotate-180" : ""}`}
-              />
-            </button>
-            {langMenuOpen && (
-              <div
-                className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-2 w-48 bg-pink-700 text-white rounded-lg shadow-xl py-2 z-50 border border-pink-600 animate-fade-in`}
-                onClick={() => setLangMenuOpen(false)}
+            
+            <div className="relative justify-self-end">
+              <button
+                className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 text-sm min-h-[44px]"
+                onClick={() => setLangMenuOpen((v) => !v)}
+                aria-label="Language menu"
               >
-                {languages.map((lang) => (
+                <span>{languages.find((l) => l.code === selectedLang)?.label}</span>
+                <ChevronDown className="h-3 w-3" />
+              </button>
+              {langMenuOpen && (
+                <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-1 w-32 bg-pink-700 rounded shadow-xl py-1 z-50`}>
+                  {languages.map((language) => (
+                    <button
+                      key={language.code}
+                      onClick={() => handleLanguageSwitch(language.code)}
+                      className="w-full px-3 py-2 text-left hover:bg-pink-600 text-sm min-h-[44px]"
+                    >
+                      {language.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        {/* Collapsible Content */}
+        <div className={`transition-all duration-300 ${headerCollapsed ? 'max-h-0 overflow-hidden' : 'max-h-96'}`}>
+          <div className="px-3 py-2 bg-pink-600/80">
+            <div className="flex items-center justify-between">
+              <div className="flex-1 min-w-0">
+                <h2 className="text-sm font-semibold truncate">{selectedClinic.name}</h2>
+                <p className="text-xs text-pink-100 truncate">📍 {selectedClinic.location}</p>
+              </div>
+              <button
+                onClick={() => setHeaderCollapsed(!headerCollapsed)}
+                className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px]"
+                aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
+              >
+                <ChevronDown className={`h-4 w-4 transition-transform ${headerCollapsed ? 'rotate-180' : ''}`} />
+              </button>
+            </div>
+          </div>
+          
+          <div className="px-3 py-2 bg-pink-50 text-gray-800">
+            <div className="overflow-x-auto mb-2">
+              <div className="flex gap-1 whitespace-nowrap">
+                {[{ id: "all", name: t("all", lang as "en" | "ar" | "ku") }, ...selectedClinic.categories.map((c) => ({ id: c.id, name: c.name }))].map((cat) => (
                   <button
-                    key={lang.code}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleLanguageSwitch(lang.code);
-                    }}
-                    className={`flex items-center w-full px-4 py-3 text-left hover:bg-pink-600 hover:text-white focus:bg-pink-600 focus:text-white transition-colors relative ${selectedLang === lang.code ? "font-bold text-pink-300" : ""}`}
-                    aria-current={
-                      selectedLang === lang.code ? "page" : undefined
-                    }
+                    key={cat.id}
+                    onClick={() => setSelectedCategoryId(cat.id)}
+                    className={`px-4 py-3 rounded-full text-sm font-medium min-h-[44px] min-w-[44px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}
+                    aria-pressed={selectedCategoryId === cat.id}
+                    aria-label={`Filter by ${cat.name} category`}
                   >
-                    <span className="flex-1">{lang.label}</span>
-                    {selectedLang === lang.code && (
-                      <span
-                        className={`${isRTL ? 'mr-2' : 'ml-2'} w-2 h-2 bg-pink-300 rounded-full inline-block`}
-                        aria-label="Current language"
-                      />
-                    )}
+                    {cat.name}
                   </button>
                 ))}
               </div>
-            )}
+            </div>
+            
+            <input
+              type="search"
+              placeholder={t("searchServices", lang as "en" | "ar" | "ku")}
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full max-w-none px-4 py-3 text-sm rounded-lg border border-pink-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 min-h-[44px]"
+              role="searchbox"
+              aria-label={t("searchServices", lang as "en" | "ar" | "ku")}
+              aria-describedby="search-help"
+              autoComplete="off"
+            />
+            <div id="search-help" className="sr-only">
+              {t("searchHelpText", lang as "en" | "ar" | "ku") || "Search through available services and treatments"}
+            </div>
           </div>
         </div>
       </header>
+      
+      <BreadcrumbNav 
+        language={lang || "en"} 
+        isRTL={isRTL} 
+        clinicName={selectedClinic?.name}
+      />
 
       {/* Clinic and Category navigation */}
       <div className="w-full sticky top-[56px] sm:top-[64px] z-40 bg-pink-50/95 backdrop-blur supports-[backdrop-filter]:bg-pink-50/90 border-b border-pink-200 shadow-sm">
@@ -433,8 +455,9 @@ export default function Menu() {
                 <button
                   key={cat.id}
                   onClick={() => setSelectedCategoryId(cat.id)}
-                  className={`px-4 py-3 rounded-full text-sm font-medium border-2 transition-colors ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
+                  className={`px-4 py-3 rounded-full text-sm font-medium border-2 transition-colors min-h-[44px] min-w-[44px] ${selectedCategoryId === cat.id ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500 shadow-md" : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"}`}
                   aria-pressed={selectedCategoryId === cat.id}
+                  aria-label={`View ${cat.name} services`}
                 >
                   {cat.name}
                 </button>
@@ -444,85 +467,20 @@ export default function Menu() {
         </div>
       </div>
 
-      {/* Search and Filter Section */}
-      <div className="w-full sticky top-[104px] sm:top-[112px] z-30 bg-blue-50/95 backdrop-blur supports-[backdrop-filter]:bg-blue-50/90 border-b border-blue-200 shadow-sm">
-        <div className="container mx-auto px-2 py-2 sm:py-3">
-          {/* Search Input */}
-          <div className="mb-3">
-            <input
-              type="text"
-              placeholder={t("searchServices", lang as "en" | "ar" | "ku")}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-900 placeholder:text-pink-500 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 shadow-sm"
-            />
-          </div>
-
-          {/* Filter Toggle and Filters */}
-          <div className="flex items-center justify-between">
-            <button
-              onClick={() => setShowFilters(!showFilters)}
-              className="flex items-center gap-2 px-3 py-2 rounded-lg border-2 border-pink-200 bg-white text-pink-700 hover:bg-pink-50 transition-colors shadow-sm"
-            >
-              <span>
-                {t("filters", lang as "en" | "ar" | "ku")}
-              </span>
-              <ChevronDown
-                className={`h-4 w-4 transition-transform ${showFilters ? "rotate-180" : ""}`}
-              />
-            </button>
-
-            {selectedFilters.length > 0 && (
-              <button
-                onClick={() => setSelectedFilters([])}
-                className="text-sm text-pink-600 hover:text-pink-800"
-              >
-                {t("clearAll", lang as "en" | "ar" | "ku")}
-              </button>
-            )}
-          </div>
-
-          {/* Filter Options */}
-          {showFilters && (
-            <div className="mt-3 flex flex-wrap gap-2">
-              {filterOptions.map((filter) => (
-                <button
-                  key={filter.id}
-                  onClick={() => {
-                    setSelectedFilters((prev) =>
-                      prev.includes(filter.id)
-                        ? prev.filter((f) => f !== filter.id)
-                        : [...prev, filter.id]
-                    );
-                  }}
-                  className={`px-3 py-2 rounded-full text-sm border-2 transition-colors shadow-sm ${
-                    selectedFilters.includes(filter.id)
-                      ? "bg-gradient-to-r from-pink-500 to-blue-500 text-white border-pink-500"
-                      : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-pink-300"
-                  }`}
-                >
-                  {filter.label}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
       {/* Menu Grid */}
-      <main ref={mainRef} className="container mx-auto px-2 py-6 mt-4">
+      <main ref={mainRef} className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
         {visibleItems.length > 0 ? (
           <div
-            className={`grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}
+            className={`grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}
           >
-            {visibleItems.map(({ item, categoryId }) => (
+            {visibleItems.map(({ item }) => (
               <MenuItemCard
                 key={item.id}
                 item={item}
                 currency="$"
                 isRTL={isRTL}
                 isFavorite={favorites.includes(item.id)}
-                onFavoriteToggle={toggleFavorite}
+                onFavoriteToggle={() => {}}
                 language={lang}
               />
             ))}
