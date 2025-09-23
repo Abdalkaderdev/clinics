@@ -148,7 +148,16 @@ const Categories = () => {
       {/* Header with logo and language switcher */}
       <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 sm:py-4 px-3 sm:px-4 shadow-lg border-b border-pink-500">
         <div className="grid grid-cols-3 items-center">
-          <div />
+          <div className="justify-self-start">
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors"
+              aria-label="Back to home"
+            >
+              <span className="text-lg">←</span>
+              <span className="hidden sm:inline">{t("home", lang as "en" | "ar" | "ku") || "Home"}</span>
+            </button>
+          </div>
           <div className="flex justify-center">
             <ImageOptimized
               src={logo}
@@ -251,10 +260,20 @@ const Categories = () => {
                           📍 {clinic.location}
                         </p>
                       </div>
-                      <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto shadow-sm">
-                        {clinic.totalServices}{" "}
-                        {t("services", lang as "en" | "ar" | "ku")} •{" "}
-                        {t("discountsAvailable", lang as "en" | "ar" | "ku")}
+                      <div className="space-y-2 mt-auto">
+                        <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm">
+                          {clinic.totalServices}{" "}
+                          {t("services", lang as "en" | "ar" | "ku")} •{" "}
+                          {t("discountsAvailable", lang as "en" | "ar" | "ku")}
+                        </div>
+                        <div className="flex justify-center gap-1">
+                          <span className="bg-emerald-100 text-emerald-700 px-2 py-1 rounded-full text-xs font-medium">
+                            🎁 FREE
+                          </span>
+                          <span className="bg-orange-100 text-orange-700 px-2 py-1 rounded-full text-xs font-medium">
+                            💰 50% OFF
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </Card>

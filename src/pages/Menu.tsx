@@ -323,7 +323,16 @@ export default function Menu() {
       {/* Sticky Header with centered logo and language menu */}
       <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white py-3 sm:py-4 px-3 sm:px-4 shadow-lg border-b border-pink-500">
         <div className="grid grid-cols-3 items-center">
-          <div />
+          <div className="justify-self-start">
+            <button
+              onClick={() => navigate(`/categories/${lang}`)}
+              className="flex items-center gap-2 px-3 py-2 rounded-lg bg-pink-700 hover:bg-pink-600 transition-colors"
+              aria-label="Back to clinics"
+            >
+              <span className="text-lg">←</span>
+              <span className="hidden sm:inline">{t("backToClinics", lang as "en" | "ar" | "ku")}</span>
+            </button>
+          </div>
           <div className="flex justify-center">
             <ImageOptimized
               src={logo}
