@@ -5,6 +5,24 @@ interface AnalyticsEvent {
   timestamp?: number;
 }
 
+// Sanitize user input to prevent log injection
+function sanitizeInput(input: any): any {
+  if (typeof input === 'string') {
+    return input
+      .replace(/[\r\n]/g, ' ')  // Remove newlines
+      .replace(/[%{}]/g, '_')   // Replace dangerous chars
+      .replace(/[\x00-\x1f\x7f-\x9f]/g, ''); // Remove control chars
+  }
+  if (typeof input === 'object' && input !== null) {
+    const sanitized: Record<string, any> = {};
+    for (const [key, value] of Object.entries(input)) {
+      sanitized[sanitizeInput(key)] = sanitizeInput(value);
+    }
+    return sanitized;
+  }
+  return input;
+}
+
 class Analytics {
   private events: AnalyticsEvent[] = [];
   private isEnabled = true;
@@ -18,11 +36,11 @@ class Analytics {
     // Track JavaScript errors
     window.addEventListener('error', (event) => {
       this.track('error', {
-        message: event.message,
-        filename: event.filename,
+        message: sanitizeInput(event.message),
+        filename: sanitizeInput(event.filename),
         lineno: event.lineno,
         colno: event.colno,
-        error: event.error?.stack
+        error: sanitizeInput(event.error?.stack)
       });
     });
 
@@ -30,7 +48,7 @@ class Analytics {
     window.addEventListener('unhandledrejection', (event) => {
       this.track('error', {
         type: 'unhandledrejection',
-        reason: event.reason
+        reason: sanitizeInput(event.reason)
       });
     });
   }
@@ -39,13 +57,13 @@ class Analytics {
     if (!this.isEnabled) return;
 
     const analyticsEvent: AnalyticsEvent = {
-      event,
-      properties: {
+      event: sanitizeInput(event),
+      properties: sanitizeInput({
         ...properties,
         url: window.location.href,
         userAgent: navigator.userAgent,
         timestamp: Date.now()
-      },
+      }),
       timestamp: Date.now()
     };
 
@@ -56,9 +74,9 @@ class Analytics {
       (window as any).va.track(event, properties);
     }
 
-    // Log to console in development
+    // Log to console in development with sanitized data
     if (process.env.NODE_ENV === 'development') {
-      console.log('Analytics Event:', analyticsEvent);
+      console.log('Analytics Event:', sanitizeInput(analyticsEvent));
     }
   }
 

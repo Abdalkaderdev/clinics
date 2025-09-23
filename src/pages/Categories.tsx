@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
+import { t } from "@/lib/translations";
 
 
 interface ClinicItem { id: string; name: string; description: string; beforePrice: string; afterPrice: string }
@@ -14,15 +15,24 @@ const Categories = () => {
   const navigate = useNavigate();
   const [data, setData] = useState<ClinicsData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const load = async () => {
       try {
         setLoading(true);
+        setError(null);
         const res = await fetch(`/clinics_${lang}.json`);
+        
+        if (!res.ok) {
+          throw new Error(`Failed to load clinics: ${res.status}`);
+        }
+        
         const json = await res.json();
         setData(json);
+      } catch (err) {
+        setError(t('loadError', lang as 'en' | 'ar' | 'ku'));
       } finally {
         setLoading(false);
       }
@@ -49,10 +59,34 @@ const Categories = () => {
     );
   }, [allClinics, searchQuery]);
 
+  const clinicsWithServices = useMemo(() => 
+    filteredClinics.map(clinic => ({
+      ...clinic,
+      totalServices: clinic.categories.reduce((sum, cat) => sum + cat.items.length, 0)
+    })), [filteredClinics]
+  );
+
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center p-8">
+          <div className="text-6xl mb-4">⚠️</div>
+          <p className="text-lg text-destructive mb-4">{error}</p>
+          <button 
+            onClick={() => window.location.reload()} 
+            className="px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600"
+          >
+            {t('tryAgain', lang as 'en' | 'ar' | 'ku')}
+          </button>
+        </div>
       </div>
     );
   }
@@ -62,19 +96,13 @@ const Categories = () => {
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-8">
                   <h1 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-          {lang === 'ar' ? 'شركاء بطاقة بيوتي لاند' : 
-           lang === 'ku' ? 'هاوپەیمانی کارتی بیوتی لاند' : 
-           'Beauty Land Card Partners'}
+          {t('partnersTitle', lang as 'en' | 'ar' | 'ku')}
         </h1>
         <p className="text-muted-foreground mb-2">
-          {lang === 'ar' ? '12 عيادة متميزة في أربيل' : 
-           lang === 'ku' ? '12 کلینیکی پڕیمیۆم لە هەولێر' : 
-           '12 Premium Clinics in Erbil'}
+          {t('clinicsCount', lang as 'en' | 'ar' | 'ku')}
         </p>
           <p className="text-sm text-muted-foreground">
-          {lang === 'ar' ? 'خصومات حصرية وخدمات مجانية مع بطاقة بيوتي لاند' : 
-           lang === 'ku' ? 'خەڵات و خزمەتگوزاری بەردەست لەگەڵ کارتی بیوتی لاند' : 
-           'Exclusive discounts & free services with your Beauty Land Card'}
+          {t('exclusiveDiscounts', lang as 'en' | 'ar' | 'ku')}
         </p>
         </div>
         
@@ -82,17 +110,16 @@ const Categories = () => {
         <div className="mb-6 sm:mb-8">
           <input
             type="text"
-            placeholder={lang === 'ar' ? "البحث عن العيادات أو الخدمات..." : lang === 'ku' ? "گەڕان بۆ کلینیک یان خزمەتگوزاری..." : "Search clinics or services..."}
+            placeholder={t('searchPlaceholder', lang as 'en' | 'ar' | 'ku')}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full max-w-sm sm:max-w-md mx-auto px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-lg border border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-pink-500 text-center shadow-sm"
           />
         </div>
 
-        {filteredClinics.length > 0 ? (
+        {clinicsWithServices.length > 0 ? (
           <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredClinics.map((clinic) => {
-              const totalServices = clinic.categories.reduce((sum, cat) => sum + cat.items.length, 0);
+            {clinicsWithServices.map((clinic) => {
               return (
                 <motion.button
                   key={clinic.id}
@@ -114,7 +141,7 @@ const Categories = () => {
                         </p>
                       </div>
                                   <div className="bg-gradient-to-r from-pink-500 to-blue-500 text-white px-3 py-2 rounded-full text-xs sm:text-sm font-semibold mt-auto shadow-sm">
-              {totalServices} {lang === 'ar' ? 'خدمة' : lang === 'ku' ? 'خزمەتگوزاری' : 'services'} • {lang === 'ar' ? 'الخصومات متاحة' : lang === 'ku' ? 'خەڵات بەردەستە' : 'Discounts Available'}
+              {clinic.totalServices} {t('services', lang as 'en' | 'ar' | 'ku')} • {t('discountsAvailable', lang as 'en' | 'ar' | 'ku')}
             </div>
                     </div>
                   </Card>
@@ -125,7 +152,7 @@ const Categories = () => {
         ) : (
           <div className="text-center py-16">
             <p className="text-lg text-muted-foreground">
-              {lang === 'ar' ? "لم يتم العثور على عيادات" : lang === 'ku' ? "هیچ کلینیکێک نەدۆزرایەوە" : "No clinics found"}
+              {t('noClinicsFound', lang as 'en' | 'ar' | 'ku')}
             </p>
           </div>
         )}

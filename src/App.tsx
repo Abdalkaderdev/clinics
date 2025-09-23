@@ -15,8 +15,6 @@ const QAChecklist = lazy(() => import("./components/QAChecklist"));
 const queryClient = new QueryClient();
 
 const App = () => {
-  console.log('App component rendering...');
-  
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>

@@ -5,9 +5,10 @@ import { Languages, Stethoscope } from "lucide-react";
 import ImageOptimized from "@/components/ImageOptimized";
 import { trackPageView, trackLanguageSelect } from "@/lib/analytics";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { t } from "@/lib/translations";
 // Beauty Land Card logo
 const logo = "/images/beauty قبل نهائي.webp";
-import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -108,22 +109,20 @@ const Index = () => {
                  className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto leading-relaxed"
                  variants={itemVariants}
                >
-                 {currentLang === 'ar' ? 'خصومات وعناصر مجانية في 12 عيادة شريكة' : 
-                  currentLang === 'ku' ? 'خەڵات و بەخشین لە 12 کلینیک هاوپەیمان' : 
-                  'Discounts & freebies at 12 partner clinics'}
+                 {t('tagline', currentLang as 'en' | 'ar' | 'ku')}
                </motion.p>
                          <motion.div
                  className="flex flex-wrap justify-center gap-2 mb-6 text-sm sm:text-base"
                  variants={itemVariants}
                >
                  <span className="bg-pink-50 text-pink-700 px-3 py-1 rounded-full font-medium border border-pink-200">
-                   {currentLang === 'ar' ? 'علاجات التجميل' : currentLang === 'ku' ? 'چارەسەری جوانکاری' : 'Beauty Treatments'}
+                   {t('beautyTreatments', currentLang as 'en' | 'ar' | 'ku')}
                  </span>
                  <span className="bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-medium border border-blue-200">
-                   {currentLang === 'ar' ? 'الخدمات الطبية' : currentLang === 'ku' ? 'خزمەتگوزاری پزیشکی' : 'Medical Services'}
+                   {t('medicalServices', currentLang as 'en' | 'ar' | 'ku')}
                  </span>
                  <span className="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium border border-emerald-200">
-                   {currentLang === 'ar' ? 'العناصر المجانية متاحة' : currentLang === 'ku' ? 'بەخشین بەردەستە' : 'Free Items Available'}
+                   {t('freeItemsAvailable', currentLang as 'en' | 'ar' | 'ku')}
                  </span>
                </motion.div>
         </motion.div>
@@ -138,9 +137,7 @@ const Index = () => {
               >
                 <Stethoscope className="h-6 w-6 text-primary" />
                 <h2 className="text-2xl font-semibold text-foreground">
-                  {currentLang === 'ar' ? 'اختر لغتك' : 
-                   currentLang === 'ku' ? 'زمانت هەڵبژێرە' : 
-                   'Choose Your Language'}
+                  {t('chooseLanguage', currentLang as 'en' | 'ar' | 'ku')}
                 </h2>
               </motion.div>
               

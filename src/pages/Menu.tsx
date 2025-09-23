@@ -12,6 +12,31 @@ import MenuItemCard from "@/components/MenuItemCard";
 // Beauty Land Card logo
 const logo = "/images/beauty قبل نهائي.png";
 
+// Safe localStorage operations
+const safeGetItem = (key: string, fallback: string = ''): string => {
+  try {
+    return localStorage.getItem(key) || fallback;
+  } catch {
+    return fallback;
+  }
+};
+
+const safeSetItem = (key: string, value: string): void => {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Silently fail if localStorage is unavailable
+  }
+};
+
+const safeParseJSON = <T>(jsonString: string, fallback: T): T => {
+  try {
+    return JSON.parse(jsonString);
+  } catch {
+    return fallback;
+  }
+};
+
 interface ClinicItem {
   id: string;
   name: string;
@@ -66,9 +91,9 @@ export default function Menu() {
 
   // Load favorites from localStorage
   useEffect(() => {
-    const savedFavorites = localStorage.getItem('menuFavorites');
+    const savedFavorites = safeGetItem('menuFavorites');
     if (savedFavorites) {
-      setFavorites(JSON.parse(savedFavorites));
+      setFavorites(safeParseJSON(savedFavorites, []));
     }
   }, []);
 
@@ -82,7 +107,7 @@ export default function Menu() {
   const selectedLang = currentLanguage;
   const handleLanguageSwitch = (newLang: string) => {
     if (newLang === currentLanguage) return;
-    localStorage.setItem("selectedLanguage", newLang);
+    safeSetItem("selectedLanguage", newLang);
     navigate(`/menu/${newLang}`);
     setTimeout(() => {
       if (mainRef.current) {
@@ -96,7 +121,7 @@ export default function Menu() {
   // Load clinics data based on lang param
   useEffect(() => {
     if (!currentLanguage) return;
-    localStorage.setItem("selectedLanguage", currentLanguage);
+    safeSetItem("selectedLanguage", currentLanguage);
     setIsRTL(currentLanguage === "ar");
     document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = currentLanguage;
@@ -145,7 +170,7 @@ export default function Menu() {
       ? favorites.filter(id => id !== itemId)
       : [...favorites, itemId];
     setFavorites(newFavorites);
-    localStorage.setItem('menuFavorites', JSON.stringify(newFavorites));
+    safeSetItem('menuFavorites', JSON.stringify(newFavorites));
   };
 
   // Build list of items filtered by selected category

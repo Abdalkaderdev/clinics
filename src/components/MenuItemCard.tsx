@@ -67,6 +67,24 @@ const parsePrice = (priceString: string): number => {
   return parseFloat(numStr) || 0;
 };
 
+const validatePhoneNumber = (phone: string): boolean => {
+  if (!phone || typeof phone !== 'string') return false;
+  // Extract first number if multiple numbers are provided
+  const firstNumber = phone.split(/[\s\/]/)[0].trim();
+  // Remove spaces, dashes, and plus signs for validation
+  const cleaned = firstNumber.replace(/[\s\-+]/g, '');
+  // Check if it contains only digits and is reasonable length
+  return /^\d{7,15}$/.test(cleaned);
+};
+
+const sanitizePhoneNumber = (phone: string): string => {
+  if (!phone) return '';
+  // Extract first number if multiple numbers are provided (separated by / or space)
+  const firstNumber = phone.split(/[\s\/]/)[0].trim();
+  // Remove all non-digit characters except plus sign
+  return firstNumber.replace(/[^\d+]/g, '');
+};
+
 const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFavorite, onFavoriteToggle, language = 'en' }) => {
   // Check if this is a clinic item (has location)
   const isClinic = !!item.location;
@@ -229,19 +247,17 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({ item, currency, isRTL, isFa
                   )}
                 </div>
                 {/* Contact Button */}
-                {isClinic && item.contact && (
+                {isClinic && item.contact && validatePhoneNumber(item.contact) && (
                   <div className="flex flex-col items-end gap-2">
                     <a
-                      href={`tel:${item.contact}`}
+                      href={`tel:${sanitizePhoneNumber(item.contact)}`}
                       className="w-10 h-10 flex items-center justify-center rounded-full bg-pink-600 hover:bg-pink-700 text-white shadow-md transition-colors"
                       aria-label={`Call ${item.name}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       <Phone className="w-5 h-5" />
                     </a>
                     <a
-                      href={`https://wa.me/${item.contact.replace('+', '')}`}
+                      href={`https://wa.me/${sanitizePhoneNumber(item.contact).replace('+', '')}`}
                       className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-md transition-colors"
                       aria-label={`WhatsApp ${item.name}`}
                       target="_blank"
