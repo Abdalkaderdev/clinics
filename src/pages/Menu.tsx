@@ -383,7 +383,7 @@ export default function Menu() {
                     );
                     if (clinic) setSelectedClinic(clinic);
                   }}
-                  className="mt-2 px-2 py-1 rounded bg-pink-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-300"
+                  className="mt-2 px-3 py-2 rounded-lg bg-pink-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 hover:bg-pink-600 transition-colors min-h-[44px]"
                 >
                   {clinicsData.clinics.map((clinic) => (
                     <option key={clinic.id} value={clinic.id} className="bg-pink-700 text-white">
@@ -468,16 +468,26 @@ export default function Menu() {
                       <h3 className="text-xl font-semibold text-pink-900 m-0">{category.name}</h3>
                     </div>
                     <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                      {categoryItems.map(({ item }) => (
-                        <MenuItemCard
+                      {categoryItems.map(({ item }, index) => (
+                        <motion.div
                           key={item.id}
-                          item={item}
-                          currency="$"
-                          isRTL={isRTL}
-                          isFavorite={favorites.includes(item.id)}
-                          onFavoriteToggle={() => {}}
-                          language={lang}
-                        />
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ 
+                            duration: 0.3, 
+                            delay: index * 0.05,
+                            ease: "easeOut"
+                          }}
+                        >
+                          <MenuItemCard
+                            item={item}
+                            currency="$"
+                            isRTL={isRTL}
+                            isFavorite={favorites.includes(item.id)}
+                            onFavoriteToggle={() => {}}
+                            language={lang}
+                          />
+                        </motion.div>
                       ))}
                     </div>
                   </section>
@@ -486,16 +496,26 @@ export default function Menu() {
             ) : (
               // Single category view
               <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {visibleItems.map(({ item }) => (
-                  <MenuItemCard
+                {visibleItems.map(({ item }, index) => (
+                  <motion.div
                     key={item.id}
-                    item={item}
-                    currency="$"
-                    isRTL={isRTL}
-                    isFavorite={favorites.includes(item.id)}
-                    onFavoriteToggle={() => {}}
-                    language={lang}
-                  />
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ 
+                      duration: 0.3, 
+                      delay: index * 0.05,
+                      ease: "easeOut"
+                    }}
+                  >
+                    <MenuItemCard
+                      item={item}
+                      currency="$"
+                      isRTL={isRTL}
+                      isFavorite={favorites.includes(item.id)}
+                      onFavoriteToggle={() => {}}
+                      language={lang}
+                    />
+                  </motion.div>
                 ))}
               </div>
             )}
