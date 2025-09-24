@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState, useRef, useMemo } from "react";
+import { useEffect, useState, useRef, useMemo, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
@@ -10,6 +10,8 @@ import MenuItemCard from "@/components/MenuItemCard";
 import MenuItemSkeleton from "@/components/MenuItemSkeleton";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { t } from "@/lib/translations";
+import { parsePriceToNumber, sanitizeQuery } from "@/lib/utils";
+import { useClinics, type SupportedLang } from "@/hooks/useClinics";
 // Beauty Land Card logo
 const logo = "/images/beauty-final.png";
 
@@ -149,6 +151,34 @@ export default function Menu() {
   ];
   const currentLanguage = lang || "en";
   const selectedLang = currentLanguage;
+  const { data: rqClinicsData, isLoading, isError } = useClinics(currentLanguage as SupportedLang);
+
+  const handleCategoryClick = useCallback((id: string) => {
+    setSelectedCategoryId(id);
+    if (id !== 'all') {
+      const element = document.getElementById(`category-${id}`);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+      }
+    }
+  }, []);
+
+  const handleCategoriesKeyNav = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (!categoryList.length) return;
+    const currentIndex = Math.max(0, categoryList.findIndex(c => c.id === selectedCategoryId));
+    if (e.key === 'ArrowRight') {
+      const next = categoryList[Math.min(currentIndex + 1, categoryList.length - 1)];
+      handleCategoryClick(next.id);
+    } else if (e.key === 'ArrowLeft') {
+      const prev = categoryList[Math.max(currentIndex - 1, 0)];
+      handleCategoryClick(prev.id);
+    } else if (e.key === 'Home') {
+      handleCategoryClick(categoryList[0].id);
+    } else if (e.key === 'End') {
+      handleCategoryClick(categoryList[categoryList.length - 1].id);
+    }
+  }, [categoryList, selectedCategoryId, handleCategoryClick]);
+
   const handleLanguageSwitch = (newLang: string) => {
     if (newLang === currentLanguage) return;
     localStorage.setItem("selectedLanguage", newLang);
@@ -165,7 +195,7 @@ export default function Menu() {
     }, 100);
   };
 
-  // Load clinics data based on lang param
+  // RTL and language setup + react-query data sync
   useEffect(() => {
     if (!currentLanguage) return;
     localStorage.setItem("selectedLanguage", currentLanguage);
@@ -173,42 +203,34 @@ export default function Menu() {
     setIsRTL(rtl);
     document.documentElement.dir = rtl ? "rtl" : "ltr";
     document.documentElement.lang = currentLanguage;
-    setLoading(true);
-    const loadClinicsData = async () => {
-      try {
-        const response = await fetch(`/clinics_${currentLanguage}.json`, {
-          cache: "no-cache",
-        });
-        if (!response.ok) {
-          throw new Error(`Failed to load clinics: ${response.status}`);
-        }
-        const data = await response.json();
+  }, [currentLanguage]);
 
-        setClinicsData(data);
+  useEffect(() => {
+    setLoading(isLoading);
+  }, [isLoading]);
 
-        // Set selected clinic if specified in URL
-        if (urlClinic) {
-          const clinic = data.clinics.find(
-            (c: Clinic) => c.id.toString() === urlClinic
-          );
-          setSelectedClinic(clinic || data.clinics[0]);
-        } else {
-          setSelectedClinic(data.clinics[0]);
-        }
-
-      } catch (error) {
-        console.error("Error loading clinics:", error);
-        toast({
-          title: t("errorLoadingClinics", lang as "en" | "ar" | "ku"),
-          description: t("refreshPage", lang as "en" | "ar" | "ku"),
-          variant: "destructive",
-        });
-      } finally {
-        setLoading(false);
+  useEffect(() => {
+    if (rqClinicsData) {
+      setClinicsData(rqClinicsData as ClinicsData);
+      const data = rqClinicsData as ClinicsData;
+      if (urlClinic) {
+        const clinic = data.clinics.find((c: Clinic) => c.id.toString() === urlClinic);
+        setSelectedClinic(clinic || data.clinics[0]);
+      } else {
+        setSelectedClinic(data.clinics[0]);
       }
-    };
-    loadClinicsData();
-  }, [currentLanguage, urlClinic, toast, lang]);
+    }
+  }, [rqClinicsData, urlClinic]);
+
+  useEffect(() => {
+    if (isError) {
+      toast({
+        title: t("errorLoadingClinics", lang as "en" | "ar" | "ku"),
+        description: t("refreshPage", lang as "en" | "ar" | "ku"),
+        variant: "destructive",
+      });
+    }
+  }, [isError, toast, lang]);
 
 
 
@@ -231,14 +253,8 @@ export default function Menu() {
         categoryName: cat.name,
         item: {
           ...item,
-          price: item.isFree ? 0 : (() => {
-            const price = parseFloat(item.afterPrice.replace("$", ""));
-            return isNaN(price) ? 0 : price;
-          })(),
-          originalPrice: (() => {
-            const price = parseFloat(item.beforePrice.replace("$", ""));
-            return isNaN(price) ? 0 : price;
-          })(),
+          price: item.isFree ? 0 : parsePriceToNumber(item.afterPrice),
+          originalPrice: parsePriceToNumber(item.beforePrice),
           beforePrice: item.beforePrice,
           afterPrice: item.afterPrice,
           isFree: item.isFree,
@@ -461,25 +477,15 @@ export default function Menu() {
         <div className={`transition-all duration-300 ${headerCollapsed ? 'max-h-0 overflow-hidden' : 'max-h-96'}`}>
           <div className="px-3 py-2 bg-pink-50 text-gray-800">
             <div className="overflow-x-auto mb-2">
-              <div className="flex gap-1 whitespace-nowrap">
+              <div className="flex gap-1 whitespace-nowrap" role="tablist" aria-label="Categories" onKeyDown={handleCategoriesKeyNav}>
                 {categoryList.map((cat) => (
                   <button
                     key={cat.id}
-                    onClick={() => {
-                      setSelectedCategoryId(cat.id);
-                      if (cat.id !== 'all') {
-                        const element = document.getElementById(`category-${cat.id}`);
-                        if (element) {
-                          element.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'start',
-                            inline: 'nearest'
-                          });
-                        }
-                      }
-                    }}
+                    onClick={() => handleCategoryClick(cat.id)}
                     className={`px-3 py-2 rounded-full text-xs font-medium min-h-[40px] min-w-[40px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}
                     aria-pressed={selectedCategoryId === cat.id}
+                    aria-current={selectedCategoryId === cat.id ? 'true' : undefined}
+                    role="tab"
                     aria-label={`Filter by ${cat.name} category`}
                   >
                     {cat.name}
@@ -493,7 +499,7 @@ export default function Menu() {
               type="search"
               placeholder={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => setSearchQuery(sanitizeQuery(e.target.value))}
               className="w-full max-w-none px-4 py-3 text-sm rounded-lg border border-pink-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 min-h-[44px] transition-all duration-150"
               role="searchbox"
               aria-label={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
@@ -503,6 +509,9 @@ export default function Menu() {
             />
             <div id="search-help" className="sr-only">
               {t("searchHelpText", lang as "en" | "ar" | "ku") || "Search through available services and treatments. Press Ctrl+K to focus search, use number keys 1-9 for category navigation."}
+            </div>
+            <div className="sr-only" aria-live="polite">
+              {t("searchResultsCount", lang as "en" | "ar" | "ku")}: {visibleItems.length}
             </div>
           </div>
         </div>

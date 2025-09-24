@@ -7,6 +7,8 @@ import { ChevronDown } from "lucide-react";
 import { t } from "@/lib/translations";
 import ImageOptimized from "@/components/ImageOptimized";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import { useClinics, type SupportedLang } from "@/hooks/useClinics";
+import { sanitizeQuery } from "@/lib/utils";
 
 const logo = "/images/beauty-final.png";
 
@@ -56,6 +58,8 @@ const Categories = () => {
     navigate(`/categories/${newLang}`);
   };
 
+  const { data: rqData, isLoading, isError } = useClinics((lang || 'en') as SupportedLang);
+
   useEffect(() => {
     if (lang) {
       localStorage.setItem("selectedLanguage", lang);
@@ -64,30 +68,19 @@ const Categories = () => {
       document.documentElement.dir = rtl ? "rtl" : "ltr";
       document.documentElement.lang = lang;
     }
-    
-    const load = async () => {
-      try {
-        setLoading(true);
-        setError(null);
-        const allowedLangs = ['en', 'ar', 'ku'];
-        const safeLang = allowedLangs.includes(lang as string) ? lang : 'en';
-        const res = await fetch(`/clinics_${safeLang}.json`);
-
-        if (!res.ok) {
-          throw new Error(`Failed to load clinics: ${res.status}`);
-        }
-
-        const json = await res.json();
-        setData(json);
-      } catch (err) {
-        console.error('Failed to load clinic data:', err instanceof Error ? err.message : 'Unknown error');
-        setError(t("loadError", lang as "en" | "ar" | "ku"));
-      } finally {
-        setLoading(false);
-      }
-    };
-    load();
   }, [lang]);
+
+  useEffect(() => {
+    setLoading(isLoading);
+  }, [isLoading]);
+
+  useEffect(() => {
+    if (rqData) setData(rqData as ClinicsData);
+  }, [rqData]);
+
+  useEffect(() => {
+    if (isError) setError(t("loadError", lang as "en" | "ar" | "ku"));
+  }, [isError, lang]);
 
   const allClinics = useMemo(() => data?.clinics ?? [], [data]);
 
@@ -259,11 +252,14 @@ const Categories = () => {
               type="search"
               placeholder={t("searchPlaceholder", lang as "en" | "ar" | "ku")}
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => setSearchQuery(sanitizeQuery(e.target.value))}
               className={`w-full px-4 py-3 text-sm sm:text-base rounded-lg border-2 border-slate-200 bg-white text-slate-800 placeholder:text-slate-500 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 shadow-sm min-h-[44px] ${isRTL ? 'text-right' : 'text-left'}`}
               role="searchbox"
               aria-label={t("searchPlaceholder", lang as "en" | "ar" | "ku")}
             />
+            <div className="sr-only" aria-live="polite">
+              {t("searchResultsCount", lang as "en" | "ar" | "ku")}: {clinicsWithServices.length}
+            </div>
             <div className={`absolute top-1/2 transform -translate-y-1/2 ${isRTL ? 'left-3' : 'right-3'} text-slate-400`}>
               🔍
             </div>
