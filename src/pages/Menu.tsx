@@ -403,13 +403,31 @@ export default function Menu() {
                 >
                   📍 {selectedClinic.location}
                 </button>
+                {clinicsData && clinicsData.clinics.length > 1 && (
+                  <select
+                    value={selectedClinic.id}
+                    onChange={(e) => {
+                      const clinic = clinicsData.clinics.find(
+                        (c) => c.id.toString() === e.target.value
+                      );
+                      if (clinic) setSelectedClinic(clinic);
+                    }}
+                    className="mt-2 px-2 py-1 rounded bg-pink-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-300"
+                  >
+                    {clinicsData.clinics.map((clinic) => (
+                      <option key={clinic.id} value={clinic.id} className="bg-pink-700 text-white">
+                        {clinic.name}
+                      </option>
+                    ))}
+                  </select>
+                )}
               </div>
               <button
                 onClick={() => setHeaderCollapsed(!headerCollapsed)}
                 className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
                 aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
               >
-                <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? '' : 'rotate-180'}`} />
+                <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? 'rotate-180' : ''}`} />
               </button>
             </div>
           </div>
