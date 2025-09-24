@@ -124,10 +124,21 @@ const Categories = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center" role="main" aria-live="polite">
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-blue-50 flex items-center justify-center" role="main" aria-live="polite">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" aria-hidden="true" />
-          <p className="text-lg" aria-live="assertive">
+          <div className="relative mb-6">
+            <ImageOptimized
+              src={logo}
+              alt="Beauty Land Card"
+              className="h-16 w-auto mx-auto animate-pulse"
+              width={200}
+              priority={true}
+              sizes="200px"
+              srcSet="/images/beauty-final.png 400w"
+            />
+            <div className="absolute inset-0 rounded-full border-4 border-pink-200 border-t-pink-500 animate-spin" aria-hidden="true" />
+          </div>
+          <p className="text-lg font-semibold text-pink-900 animate-pulse" aria-live="assertive">
             {t("loading", lang as "en" | "ar" | "ku") || "Loading clinics..."}
           </p>
         </div>
