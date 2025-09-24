@@ -46,6 +46,27 @@ class ErrorBoundary extends Component<Props, State> {
             >
               Refresh Page
             </button>
+            <div className="mt-4">
+              <button
+                onClick={async () => {
+                  try {
+                    if ('serviceWorker' in navigator) {
+                      const regs = await navigator.serviceWorker.getRegistrations();
+                      await Promise.all(regs.map(r => r.unregister()));
+                    }
+                    if ('caches' in window) {
+                      const keys = await caches.keys();
+                      await Promise.all(keys.map(k => caches.delete(k)));
+                    }
+                  } catch {}
+                  window.location.reload();
+                }}
+                className="px-4 py-2 text-sm text-pink-700 bg-pink-100 hover:bg-pink-200 rounded-full border border-pink-200"
+                title="Clear cached app files and reload"
+              >
+                Force update app
+              </button>
+            </div>
             {process.env.NODE_ENV === "development" && this.state.error && (
               <details className="mt-4 text-left">
                 <summary className="cursor-pointer text-sm text-gray-500">
