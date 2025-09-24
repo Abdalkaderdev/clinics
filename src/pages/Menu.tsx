@@ -83,6 +83,9 @@ export default function Menu() {
 
   const [favorites] = useState<string[]>([]);
   const [headerCollapsed, setHeaderCollapsed] = useState(false);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
+    urlCategory || "all"
+  );
 
   const { activeCategory, scrollToCategory, observeCategory } = useScrollCategory({
     categories: selectedClinic?.categories.map((cat) => cat.id) || [],
@@ -115,10 +118,6 @@ export default function Menu() {
     };
   }, [selectedClinic, selectedCategoryId, observeCategory]);
 
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
-    urlCategory || "all"
-  );
-  
   // Update selected category when scrolling (only when viewing all categories)
   useEffect(() => {
     if (activeCategory && activeCategory !== selectedCategoryId && selectedCategoryId === "all") {
