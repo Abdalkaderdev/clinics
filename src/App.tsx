@@ -3,14 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
 import Menu from "./pages/Menu";
 import NotFound from "./pages/NotFound";
 import Categories from "./pages/Categories";
-import QAChecklist from "./components/QAChecklist";
+const QAChecklist = lazy(() => import("./components/QAChecklist"));
 
 // Safe localStorage access
 const getSavedLanguage = () => {
