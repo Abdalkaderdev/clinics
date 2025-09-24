@@ -7,6 +7,7 @@ import { useToast } from "@/hooks/use-toast";
 import { useScrollCategory } from "@/hooks/useScrollCategory";
 import ImageOptimized from "@/components/ImageOptimized";
 import MenuItemCard from "@/components/MenuItemCard";
+import MenuItemSkeleton from "@/components/MenuItemSkeleton";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { t } from "@/lib/translations";
 // Beauty Land Card logo
@@ -104,6 +105,32 @@ export default function Menu() {
 
   const mainRef = useRef<HTMLDivElement>(null);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      // Ctrl/Cmd + K for search focus
+      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+        e.preventDefault();
+        searchInputRef.current?.focus();
+      }
+      // Number keys 1-9 for category navigation
+      if (e.key >= '1' && e.key <= '9' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        const categoryIndex = parseInt(e.key) - 1;
+        const categories = [{ id: "all" }, ...selectedClinic?.categories || []];
+        if (categories[categoryIndex]) {
+          setSelectedCategoryId(categories[categoryIndex].id);
+          if (categories[categoryIndex].id !== 'all') {
+            scrollToCategory(categories[categoryIndex].id);
+          }
+        }
+      }
+    };
+    
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [selectedClinic, scrollToCategory]);
 
 
 
@@ -264,21 +291,14 @@ export default function Menu() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-blue-50 flex items-center justify-center" role="main" aria-live="polite">
-        <div className="text-center">
-          <div className="relative mb-6">
-            <ImageOptimized
-              src={logo}
-              alt="Beauty Land Card"
-              className="h-16 w-auto mx-auto animate-pulse"
-              width={200}
-              priority={true}
-            />
-            <div className="absolute inset-0 rounded-full border-4 border-pink-200 border-t-pink-500 animate-spin" aria-hidden="true" />
+      <div className={`min-h-screen bg-background ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : "ltr"}`} dir={isRTL ? "rtl" : "ltr"}>
+        <header className="sticky top-0 z-50 bg-gradient-to-r from-pink-600 to-blue-600 text-white shadow-lg h-20 animate-pulse"></header>
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
+          <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <MenuItemSkeleton key={index} />
+            ))}
           </div>
-          <p className="text-lg font-semibold text-pink-900 animate-pulse" aria-live="assertive">
-            {t("loading", lang as "en" | "ar" | "ku") || "Loading..."}
-          </p>
         </div>
       </div>
     );
@@ -318,7 +338,7 @@ export default function Menu() {
           <div className="grid grid-cols-3 items-center">
             <button
               onClick={() => navigate(`/categories/${lang}`)}
-              className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 min-h-[44px]"
+              className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 focus:bg-pink-600 active:bg-pink-800 active:scale-95 transition-all duration-150 min-h-[44px] focus:outline-none focus:ring-2 focus:ring-pink-300"
               aria-label="Back to clinics"
             >
               <span className="text-lg">←</span>
@@ -335,7 +355,7 @@ export default function Menu() {
             
             <div className="relative justify-self-end">
               <button
-                className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 text-sm min-h-[44px]"
+                className="flex items-center gap-1 px-2 py-2 rounded bg-pink-700 hover:bg-pink-600 focus:bg-pink-600 active:bg-pink-800 active:scale-95 transition-all duration-150 text-sm min-h-[44px] focus:outline-none focus:ring-2 focus:ring-pink-300"
                 onClick={() => setLangMenuOpen((v) => !v)}
                 aria-label="Language menu"
               >
@@ -428,18 +448,19 @@ export default function Menu() {
             </div>
             
             <input
+              ref={searchInputRef}
               type="search"
               placeholder={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full max-w-none px-4 py-3 text-sm rounded-lg border border-pink-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 min-h-[44px]"
+              className="w-full max-w-none px-4 py-3 text-sm rounded-lg border border-pink-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 min-h-[44px] transition-all duration-150"
               role="searchbox"
               aria-label={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
               aria-describedby="search-help"
               autoComplete="off"
             />
             <div id="search-help" className="sr-only">
-              {t("searchHelpText", lang as "en" | "ar" | "ku") || "Search through available services and treatments"}
+              {t("searchHelpText", lang as "en" | "ar" | "ku") || "Search through available services and treatments. Press Ctrl+K to focus search, use number keys 1-9 for category navigation."}
             </div>
           </div>
         </div>
