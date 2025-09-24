@@ -176,11 +176,7 @@ const QAChecklist: React.FC = () => {
     );
   };
 
-  const _updateNotes = (id: string, notes: string) => {
-    setChecklist((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, notes } : item))
-    );
-  };
+
 
   const completedCount = checklist.filter((item) => item.completed).length;
   const criticalCompleted = checklist.filter(

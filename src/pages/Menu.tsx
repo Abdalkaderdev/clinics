@@ -12,30 +12,7 @@ import { t } from "@/lib/translations";
 // Beauty Land Card logo
 const logo = "/images/beauty-final.png";
 
-// Safe localStorage operations
-const safeGetItem = (key: string, fallback: string = ""): string => {
-  try {
-    return localStorage.getItem(key) || fallback;
-  } catch {
-    return fallback;
-  }
-};
 
-const safeSetItem = (key: string, value: string): void => {
-  try {
-    localStorage.setItem(key, value);
-  } catch {
-    // Silently fail if localStorage is unavailable
-  }
-};
-
-const safeParseJSON = <T,>(jsonString: string, fallback: T): T => {
-  try {
-    return JSON.parse(jsonString);
-  } catch {
-    return fallback;
-  }
-};
 
 interface ClinicItem {
   id: string;
@@ -123,18 +100,12 @@ export default function Menu() {
     if (activeCategory && activeCategory !== selectedCategoryId && selectedCategoryId === "all") {
       setSelectedCategoryId(activeCategory);
     }
-  }, [activeCategory]);
+  }, [activeCategory, selectedCategoryId]);
 
   const mainRef = useRef<HTMLDivElement>(null);
   const [langMenuOpen, setLangMenuOpen] = useState(false);
 
-  // Load favorites from localStorage
-  useEffect(() => {
-    const savedFavorites = safeGetItem("menuFavorites");
-    if (savedFavorites) {
-      setFavorites(safeParseJSON(savedFavorites, []));
-    }
-  }, []);
+
 
   // Language switcher logic
   const languages = [
@@ -146,7 +117,7 @@ export default function Menu() {
   const selectedLang = currentLanguage;
   const handleLanguageSwitch = (newLang: string) => {
     if (newLang === currentLanguage) return;
-    safeSetItem("selectedLanguage", newLang);
+    localStorage.setItem("selectedLanguage", newLang);
     // Preserve clinic parameter when switching languages
     const clinicParam = urlClinic ? `?clinic=${urlClinic}` : '';
     navigate(`/menu/${newLang}${clinicParam}`);
@@ -163,7 +134,7 @@ export default function Menu() {
   // Load clinics data based on lang param
   useEffect(() => {
     if (!currentLanguage) return;
-    safeSetItem("selectedLanguage", currentLanguage);
+    localStorage.setItem("selectedLanguage", currentLanguage);
     setIsRTL(currentLanguage === "ar");
     document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
     document.documentElement.lang = currentLanguage;
@@ -289,27 +260,7 @@ export default function Menu() {
     favorites,
   ]);
 
-  // Available filter options for clinics
-  useMemo(() => {
-    const currentLanguage = lang || "en";
-    return [
-      {
-        id: "free",
-        label: t("freeServices", currentLanguage as "en" | "ar" | "ku"),
-        count: 0,
-      },
-      {
-        id: "discount",
-        label: t("discount", currentLanguage as "en" | "ar" | "ku"),
-        count: 0,
-      },
-      {
-        id: "favorites",
-        label: t("favorites", currentLanguage as "en" | "ar" | "ku"),
-        count: favorites.length,
-      },
-    ];
-  }, [favorites, lang]);
+
 
   if (loading) {
     return (

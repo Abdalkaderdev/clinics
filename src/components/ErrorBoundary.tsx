@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo, ReactNode } from "react";
+import React, { Component, ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
@@ -19,7 +19,7 @@ class ErrorBoundary extends Component<Props, State> {
     return { hasError: true, error };
   }
 
-  componentDidCatch(error: Error, _errorInfo: ErrorInfo) {
+  componentDidCatch(error: Error) {
     const sanitizedError = {
       message: error.message?.replace(/[\r\n\t]/g, ' ') || 'Unknown error',
       stack: error.stack?.replace(/[\r\n\t]/g, ' ') || 'No stack trace'
