@@ -464,7 +464,9 @@ export default function Menu() {
                 if (categoryItems.length === 0) return null;
                 return (
                   <section key={category.id} id={`category-${category.id}`} className="scroll-mt-32">
-                    <h3 className="text-xl font-semibold mb-4 text-pink-900">{category.name}</h3>
+                    <div className="bg-gradient-to-r from-pink-50 to-blue-50 border-l-4 border-pink-500 rounded-r-lg px-4 py-3 mb-6">
+                      <h3 className="text-xl font-semibold text-pink-900 m-0">{category.name}</h3>
+                    </div>
                     <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                       {categoryItems.map(({ item }) => (
                         <MenuItemCard
