@@ -67,7 +67,7 @@ const BreadcrumbNav: React.FC<BreadcrumbNavProps> = ({
   return (
     <div className={`bg-slate-50 border-b border-slate-200 px-4 py-2 ${isRTL ? "rtl" : "ltr"}`}>
       <Breadcrumb>
-        <BreadcrumbList className={isRTL ? "flex-row-reverse" : ""}>
+        <BreadcrumbList className={isRTL ? "flex-row-reverse space-x-reverse" : ""}>
           {breadcrumbs.map((crumb, index) => (
             <React.Fragment key={`${crumb.href}-${index}`}>
               <BreadcrumbItem>

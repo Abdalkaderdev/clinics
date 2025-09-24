@@ -435,7 +435,14 @@ export default function Menu() {
                     onClick={() => {
                       setSelectedCategoryId(cat.id);
                       if (cat.id !== 'all') {
-                        scrollToCategory(cat.id);
+                        const element = document.getElementById(`category-${cat.id}`);
+                        if (element) {
+                          element.scrollIntoView({ 
+                            behavior: 'smooth', 
+                            block: 'start',
+                            inline: 'nearest'
+                          });
+                        }
                       }
                     }}
                     className={`px-3 py-2 rounded-full text-xs font-medium min-h-[40px] min-w-[40px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}

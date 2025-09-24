@@ -142,15 +142,15 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
           <div className="flex-1 flex flex-col p-3 sm:p-4 md:p-6 gap-2 sm:gap-3 items-center text-center relative">
             {/* Free or Discount badge */}
             {item.isFree ? (
-              <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[45%] z-10`}>
-                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs ${language === "ar" ? "leading-loose" : ""}`}>
+              <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'} z-10`}>
+                <Badge className={`bg-gradient-to-r from-green-600 to-green-700 text-white font-bold px-2 py-1 shadow-md whitespace-nowrap text-xs ${language === "ar" ? "leading-loose" : ""}`}>
                   💎 {t("free", language as "en" | "ar" | "ku")}
                 </Badge>
               </div>
             ) : (
               discountPercentage > 0 && (
-                <div className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} max-w-[45%] z-10`}>
-                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-1 py-0.5 sm:px-1.5 sm:py-0.5 md:px-2 md:py-1 shadow-md whitespace-nowrap overflow-hidden text-xs ${language === "ar" ? "leading-loose" : ""}`}>
+                <div className={`absolute top-3 ${isRTL ? 'left-3' : 'right-3'} z-10`}>
+                  <Badge className={`bg-gradient-to-r from-pink-600 to-blue-600 text-white font-bold px-2 py-1 shadow-md whitespace-nowrap text-xs ${language === "ar" ? "leading-loose" : ""}`}>
                     -{discountPercentage}%
                   </Badge>
                 </div>
