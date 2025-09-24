@@ -406,7 +406,10 @@ export default function Menu() {
                     const clinic = clinicsData.clinics.find(
                       (c) => c.id.toString() === e.target.value
                     );
-                    if (clinic) setSelectedClinic(clinic);
+                    if (clinic) {
+                      setSelectedClinic(clinic);
+                      setSelectedCategoryId('all');
+                    }
                   }}
                   className="mt-2 px-3 py-2 rounded-lg bg-pink-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 hover:bg-pink-600 transition-colors min-h-[44px]"
                 >
@@ -495,7 +498,7 @@ export default function Menu() {
             {selectedCategoryId === "all" ? (
               // Group by category when showing all
               selectedClinic.categories.map((category) => {
-                const categoryItems = visibleItems.filter(({ categoryId }) => categoryId === category.id);
+                const categoryItems = allItems.filter(({ categoryId }) => categoryId === category.id);
                 if (categoryItems.length === 0) return null;
                 return (
                   <section key={category.id} id={`category-${category.id}`} className="scroll-mt-32">
