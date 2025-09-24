@@ -429,12 +429,12 @@ export default function Menu() {
             
             <input
               type="search"
-              placeholder={t("searchServices", lang as "en" | "ar" | "ku")}
+              placeholder={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full max-w-none px-4 py-3 text-sm rounded-lg border border-pink-200 focus:outline-none focus:ring-4 focus:ring-pink-400 focus:border-pink-500 min-h-[44px]"
               role="searchbox"
-              aria-label={t("searchServices", lang as "en" | "ar" | "ku")}
+              aria-label={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
               aria-describedby="search-help"
               autoComplete="off"
             />

@@ -244,6 +244,11 @@ const translations: Translations = {
     ar: "البحث في الخدمات والعلاجات المتاحة",
     ku: "گەڕان لە خزمەتگوزاری و چارەسەرییەکان",
   },
+  searchServicesWithCount: {
+    en: "Search among {count} services...",
+    ar: "البحث بين {count} خدمة...",
+    ku: "گەڕان لەنێو {count} خزمەتگوزاری...",
+  },
 };
 
 export const t = (key: string, lang: Language = "en"): string => {
