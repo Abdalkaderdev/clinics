@@ -82,7 +82,11 @@ const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
           const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color;
           const sanitizedKey = key.replace(/[^a-zA-Z0-9-_]/g, '');
           const sanitizedColor = color?.replace(/[^a-zA-Z0-9#().,% -]/g, '') || '';
-          return sanitizedColor ? `  --color-${sanitizedKey}: ${sanitizedColor};` : null;
+          // Additional XSS protection
+          if (!sanitizedKey || !sanitizedColor || sanitizedColor.includes('<') || sanitizedColor.includes('>')) {
+            return null;
+          }
+          return `  --color-${sanitizedKey}: ${sanitizedColor};`;
         })
         .filter(Boolean)
         .join('\n');
@@ -233,7 +237,7 @@ const ChartTooltipContent = React.forwardRef<
                       </div>
                       {item.value && (
                         <span className="font-mono font-medium tabular-nums text-foreground">
-                          {item.value.toLocaleString()}
+                          {typeof item.value === 'number' ? item.value.toLocaleString() : String(item.value)}
                         </span>
                       )}
                     </div>

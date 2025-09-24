@@ -5,8 +5,11 @@ interface AnalyticsEvent {
   timestamp?: number;
 }
 
-// Sanitize user input to prevent log injection
-function sanitizeInput(input: unknown): unknown {
+// Sanitize user input to prevent log injection with depth protection
+function sanitizeInput(input: unknown, depth = 0, visited = new WeakSet()): unknown {
+  // Prevent infinite recursion
+  if (depth > 10) return '[Max Depth Reached]';
+  
   if (typeof input === "string") {
     return input
       .replace(/[\r\n]/g, " ") // Remove newlines
@@ -14,10 +17,16 @@ function sanitizeInput(input: unknown): unknown {
       .replace(/[\cA-\cZ]/g, "") // Remove control chars
       .replace(/[\x7F-\x9F]/g, ""); // Remove extended control chars
   }
+  
   if (typeof input === "object" && input !== null) {
+    // Prevent circular references
+    if (visited.has(input)) return '[Circular Reference]';
+    visited.add(input);
+    
     const sanitized: Record<string, unknown> = {};
     for (const [key, value] of Object.entries(input)) {
-      sanitized[sanitizeInput(key)] = sanitizeInput(value);
+      const sanitizedKey = typeof key === 'string' ? key.replace(/[^a-zA-Z0-9_]/g, '_') : String(key);
+      sanitized[sanitizedKey] = sanitizeInput(value, depth + 1, visited);
     }
     return sanitized;
   }
@@ -57,15 +66,15 @@ class Analytics {
   track(event: string, properties: Record<string, unknown> = {}) {
     if (!this.isEnabled) return;
 
+    const timestamp = Date.now();
     const analyticsEvent: AnalyticsEvent = {
-      event: sanitizeInput(event),
+      event: sanitizeInput(event) as string,
       properties: sanitizeInput({
         ...properties,
         url: window.location.href,
         userAgent: navigator.userAgent,
-        timestamp: Date.now(),
-      }),
-      timestamp: Date.now(),
+      }) as Record<string, unknown>,
+      timestamp,
     };
 
     this.events.push(analyticsEvent);

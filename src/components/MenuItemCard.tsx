@@ -128,15 +128,11 @@ const MenuItemCard: React.FC<MenuItemCardProps> = React.memo(({
 
 
 
-  const getFontClass = () => {
-    if (language === "ar") return "font-arabic";
-    if (language === "ku") return "font-kurdish";
-    return "";
-  };
+  const fontClass = language === "ar" ? "font-arabic" : language === "ku" ? "font-kurdish" : "";
 
   return (
     <motion.div variants={itemVariants} whileHover="hover" className="h-full">
-      <Card className={`overflow-hidden rounded-xl shadow-lg hover:shadow-xl bg-gradient-to-br from-pink-50 to-blue-50 flex flex-col min-h-fit border-2 border-pink-100 hover:border-pink-300 transition-all duration-300 ${getFontClass()}`}>
+      <Card className={`overflow-hidden rounded-xl shadow-lg hover:shadow-xl bg-gradient-to-br from-pink-50 to-blue-50 flex flex-col min-h-fit border-2 border-pink-100 hover:border-pink-300 transition-all duration-300 ${fontClass}`}>
         <CardContent className="p-0">
           {/* Content Section */}
           <div className="flex-1 flex flex-col p-3 sm:p-4 md:p-6 gap-2 sm:gap-3 items-center text-center relative">
@@ -183,22 +179,22 @@ const MenuItemCard: React.FC<MenuItemCardProps> = React.memo(({
               )}
               {item.spicy && (
                 <Badge className="bg-primary text-[hsl(42_73%_94%)] truncate max-w-full">
-                  {t("hot", language as "en" | "ar" | "ku")}
+                  {t("trending", language as "en" | "ar" | "ku")}
                 </Badge>
               )}
               {item.vegetarian && (
                 <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)] truncate max-w-full">
-                  {t("vegetarian", language as "en" | "ar" | "ku")}
+                  {t("organic", language as "en" | "ar" | "ku")}
                 </Badge>
               )}
               {item.vegan && (
                 <Badge className="bg-[hsl(82_70%_38%)] text-[hsl(42_73%_94%)] truncate max-w-full">
-                  {t("vegan", language as "en" | "ar" | "ku")}
+                  {t("naturalIngredients", language as "en" | "ar" | "ku")}
                 </Badge>
               )}
               {item.glutenFree && (
                 <Badge className="bg-secondary text-[hsl(0_0%_15%)] truncate max-w-full">
-                  {t("glutenFree", language as "en" | "ar" | "ku")}
+                  {t("allergenFree", language as "en" | "ar" | "ku")}
                 </Badge>
               )}
             </div>

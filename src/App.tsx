@@ -12,7 +12,23 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const Categories = lazy(() => import("./pages/Categories"));
 const QAChecklist = lazy(() => import("./components/QAChecklist"));
 
-const queryClient = new QueryClient();
+// Safe localStorage access
+const getSavedLanguage = () => {
+  try {
+    return localStorage.getItem("selectedLanguage") || "en";
+  } catch {
+    return "en";
+  }
+};
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      gcTime: 1000 * 60 * 10, // 10 minutes
+    },
+  },
+});
 
 const App = () => {
   return (
@@ -39,7 +55,7 @@ const App = () => {
                   path="/menu"
                   element={
                     <Navigate
-                      to={`/menu/${localStorage.getItem("selectedLanguage") || "en"}`}
+                      to={`/menu/${getSavedLanguage()}`}
                       replace
                     />
                   }
@@ -49,7 +65,7 @@ const App = () => {
                   path="/categories"
                   element={
                     <Navigate
-                      to={`/categories/${localStorage.getItem("selectedLanguage") || "en"}`}
+                      to={`/categories/${getSavedLanguage()}`}
                       replace
                     />
                   }

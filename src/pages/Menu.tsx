@@ -223,8 +223,14 @@ export default function Menu() {
         categoryName: cat.name,
         item: {
           ...item,
-          price: item.isFree ? 0 : parseFloat(item.afterPrice.replace("$", "")),
-          originalPrice: parseFloat(item.beforePrice.replace("$", "")),
+          price: item.isFree ? 0 : (() => {
+            const price = parseFloat(item.afterPrice.replace("$", ""));
+            return isNaN(price) ? 0 : price;
+          })(),
+          originalPrice: (() => {
+            const price = parseFloat(item.beforePrice.replace("$", ""));
+            return isNaN(price) ? 0 : price;
+          })(),
           beforePrice: item.beforePrice,
           afterPrice: item.afterPrice,
           isFree: item.isFree,
