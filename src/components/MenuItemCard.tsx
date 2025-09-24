@@ -95,7 +95,7 @@ const sanitizePhoneNumber = (phone: string): string => {
 
 
 
-const MenuItemCard: React.FC<MenuItemCardProps> = ({
+const MenuItemCard: React.FC<MenuItemCardProps> = React.memo(({
   item,
   currency,
   isRTL,
@@ -340,6 +340,8 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
       </Card>
     </motion.div>
   );
-};
+});
+
+MenuItemCard.displayName = 'MenuItemCard';
 
 export default MenuItemCard;

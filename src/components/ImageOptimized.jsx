@@ -20,7 +20,7 @@ const ImageOptimized = ({
   if (!alt) throw new Error("ImageOptimized requires an `alt` description.");
 
   const loading = priority ? "eager" : "lazy";
-  const fetchPriority = priority ? "high" : "auto";
+  const fetchPriority = priority ? "high" : "low";
 
   // Only use provided srcSet; do not generate non-existent variants
   const generateSrcSet = () => {

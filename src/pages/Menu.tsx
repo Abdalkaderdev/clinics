@@ -204,6 +204,11 @@ export default function Menu() {
 
 
 
+  // Memoized category list for navigation
+  const categoryList = useMemo(() => {
+    return [{ id: "all", name: t("all", lang as "en" | "ar" | "ku") }, ...(selectedClinic?.categories.map((c) => ({ id: c.id, name: c.name })) || [])];
+  }, [selectedClinic, lang]);
+
   // Build list of items filtered by selected category
   const allItems = useMemo(() => {
     if (!selectedClinic)
@@ -429,7 +434,7 @@ export default function Menu() {
           <div className="px-3 py-2 bg-pink-50 text-gray-800">
             <div className="overflow-x-auto mb-2">
               <div className="flex gap-1 whitespace-nowrap">
-                {[{ id: "all", name: t("all", lang as "en" | "ar" | "ku") }, ...selectedClinic.categories.map((c) => ({ id: c.id, name: c.name }))].map((cat) => (
+                {categoryList.map((cat) => (
                   <button
                     key={cat.id}
                     onClick={() => {
