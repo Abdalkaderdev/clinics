@@ -30,19 +30,20 @@ class ErrorBoundary extends Component<Props, State> {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50">
-          <div className="max-w-md mx-auto text-center p-6">
-            <h1 className="text-2xl font-bold text-red-600 mb-4">
-              Something went wrong
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 to-blue-50">
+          <div className="max-w-md mx-auto text-center p-6 bg-white rounded-2xl shadow-lg border border-pink-100">
+            <div className="text-6xl mb-4">😔</div>
+            <h1 className="text-2xl font-bold text-pink-900 mb-4">
+              Oops! Something went wrong
             </h1>
-            <p className="text-gray-600 mb-4">
-              We're sorry, but something went wrong while loading the page.
+            <p className="text-gray-700 mb-6 leading-relaxed">
+              We're having trouble loading your beauty services. Please try refreshing the page.
             </p>
             <button
               onClick={() => window.location.reload()}
-              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              className="bg-gradient-to-r from-pink-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-pink-700 hover:to-blue-700 transition-all duration-200 font-semibold shadow-md min-h-[44px]"
             >
-              Reload Page
+              Refresh Page
             </button>
             {process.env.NODE_ENV === "development" && this.state.error && (
               <details className="mt-4 text-left">

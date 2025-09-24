@@ -148,13 +148,18 @@ const Categories = () => {
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center" role="main" aria-live="assertive">
-        <div className="text-center p-8">
-          <div className="text-6xl mb-4" aria-hidden="true">⚠️</div>
-          <h1 className="text-lg text-red-700 mb-4" role="alert">{error}</h1>
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-blue-50 flex items-center justify-center" role="main" aria-live="assertive">
+        <div className="max-w-md mx-auto text-center p-6 bg-white rounded-2xl shadow-lg border border-pink-100">
+          <div className="text-6xl mb-4" aria-hidden="true">🏥</div>
+          <h1 className="text-xl font-bold text-pink-900 mb-4" role="alert">
+            Unable to Load Clinics
+          </h1>
+          <p className="text-gray-700 mb-6 leading-relaxed">
+            We're having trouble connecting to our beauty services. Please check your connection and try again.
+          </p>
           <button
             onClick={() => window.location.reload()}
-            className="px-4 py-2 bg-pink-600 text-white rounded-lg hover:bg-pink-700 focus:outline-none focus:ring-4 focus:ring-pink-300 min-h-[44px]"
+            className="bg-gradient-to-r from-pink-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-pink-700 hover:to-blue-700 transition-all duration-200 font-semibold shadow-md min-h-[44px]"
             aria-label="Reload page to try again"
           >
             {t("tryAgain", lang as "en" | "ar" | "ku")}

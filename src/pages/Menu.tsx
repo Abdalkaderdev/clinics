@@ -286,10 +286,22 @@ export default function Menu() {
 
   if (!clinicsData || !selectedClinic) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <p className="text-red-700 font-semibold">
-          {t("failedToLoadClinics", lang as "en" | "ar" | "ku")}
-        </p>
+      <div className="min-h-screen bg-gradient-to-br from-pink-50 to-blue-50 flex items-center justify-center">
+        <div className="max-w-md mx-auto text-center p-6 bg-white rounded-2xl shadow-lg border border-pink-100">
+          <div className="text-6xl mb-4">🏥</div>
+          <h1 className="text-xl font-bold text-pink-900 mb-4">
+            {t("failedToLoadClinics", lang as "en" | "ar" | "ku")}
+          </h1>
+          <p className="text-gray-700 mb-6">
+            {t("refreshPage", lang as "en" | "ar" | "ku")}
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="bg-gradient-to-r from-pink-600 to-blue-600 text-white px-6 py-3 rounded-full hover:from-pink-700 hover:to-blue-700 transition-all duration-200 font-semibold shadow-md min-h-[44px]"
+          >
+            {t("tryAgain", lang as "en" | "ar" | "ku") || "Try Again"}
+          </button>
+        </div>
       </div>
     );
   }
