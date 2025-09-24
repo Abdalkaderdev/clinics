@@ -409,6 +409,7 @@ export default function Menu() {
                     if (clinic) {
                       setSelectedClinic(clinic);
                       setSelectedCategoryId('all');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
                   className="mt-2 px-3 py-2 rounded-lg bg-pink-700 text-white text-sm focus:outline-none focus:ring-2 focus:ring-pink-300 hover:bg-pink-600 transition-colors min-h-[44px]"
