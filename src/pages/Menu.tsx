@@ -74,11 +74,11 @@ export default function Menu() {
   // Setup intersection observers for category sections
   useEffect(() => {
     if (!selectedClinic || selectedCategoryId !== "all") return;
-    
+
     const observers: (() => void)[] = [];
-    
+
     try {
-      selectedClinic.categories.forEach((category) => {
+      (selectedClinic.categories ?? []).forEach((category) => {
         const element = document.getElementById(`category-${category.id}`);
         if (element && observeCategory) {
           const cleanup = observeCategory(category.id, element);
@@ -88,10 +88,10 @@ export default function Menu() {
     } catch (error) {
       console.warn('Error setting up category observers:', error);
     }
-    
+
     return () => {
       try {
-        observers.forEach(cleanup => cleanup());
+        observers.forEach((cleanup) => cleanup());
       } catch (error) {
         console.warn('Error cleaning up observers:', error);
       }
@@ -152,6 +152,11 @@ export default function Menu() {
   const currentLanguage = lang || "en";
   const selectedLang = currentLanguage;
   const { data: rqClinicsData, isLoading, isError } = useClinics(currentLanguage as SupportedLang);
+
+  // Memoized category list for navigation (must be declared before usage)
+  const categoryList = useMemo(() => {
+    return [{ id: "all", name: t("all", lang as "en" | "ar" | "ku") }, ...(selectedClinic?.categories.map((c) => ({ id: c.id, name: c.name })) || [])];
+  }, [selectedClinic, lang]);
 
   const handleCategoryClick = useCallback((id: string) => {
     setSelectedCategoryId(id);
@@ -233,12 +238,6 @@ export default function Menu() {
   }, [isError, toast, lang]);
 
 
-
-  // Memoized category list for navigation
-  const categoryList = useMemo(() => {
-    return [{ id: "all", name: t("all", lang as "en" | "ar" | "ku") }, ...(selectedClinic?.categories.map((c) => ({ id: c.id, name: c.name })) || [])];
-  }, [selectedClinic, lang]);
-
   // Build list of items filtered by selected category
   const allItems = useMemo(() => {
     if (!selectedClinic)
@@ -247,7 +246,7 @@ export default function Menu() {
         categoryName: string;
         item: ClinicItem & { price: number; originalPrice: number; location?: string; contact?: string; };
       }>;
-    return selectedClinic.categories.flatMap((cat) =>
+    return (selectedClinic.categories ?? []).flatMap((cat) =>
       cat.items.map((item) => ({
         categoryId: cat.id,
         categoryName: cat.name,
@@ -276,7 +275,7 @@ export default function Menu() {
 
     // Check if selected category exists in current clinic
     const categoryExists = selectedCategoryId === "all" ||
-      selectedClinic.categories.some((cat) => cat.id === selectedCategoryId);
+      (selectedClinic.categories ?? []).some((cat) => cat.id === selectedCategoryId);
 
     // If category doesn't exist in this clinic, fall back to showing all items
     if (!categoryExists) {
@@ -531,7 +530,7 @@ export default function Menu() {
           <div className={`space-y-8 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}>
             {selectedCategoryId === "all" ? (
               // Group by category when showing all
-              selectedClinic.categories.map((category) => {
+              (selectedClinic.categories ?? []).map((category) => {
                 const categoryItems = allItems.filter(({ categoryId }) => categoryId === category.id);
                 if (categoryItems.length === 0) return null;
                 return (
