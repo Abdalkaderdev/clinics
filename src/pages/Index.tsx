@@ -56,12 +56,16 @@ const buttonVariants = {
 const Index = () => {
   const navigate = useNavigate();
   const [currentLang, setCurrentLang] = useState("en");
+  const isRTL = ["ar", "ku"].includes(currentLang);
 
   // Track page view on mount and get current language
   useEffect(() => {
     trackPageView("home");
     const savedLang = localStorage.getItem("selectedLanguage") || "en";
     setCurrentLang(savedLang);
+    const rtl = ["ar", "ku"].includes(savedLang);
+    document.documentElement.dir = rtl ? "rtl" : "ltr";
+    document.documentElement.lang = savedLang;
   }, []);
 
   const languages = [
@@ -87,7 +91,8 @@ const Index = () => {
       </a>
       <div
         id="main-content"
-        className="min-h-screen relative flex items-center justify-center bg-background"
+        className={`min-h-screen relative flex items-center justify-center bg-background ${isRTL ? "rtl font-arabic" : currentLang === "ku" ? "font-kurdish" : "ltr"}`}
+        dir={isRTL ? "rtl" : "ltr"}
         role="main"
       >
       {/* Content */}

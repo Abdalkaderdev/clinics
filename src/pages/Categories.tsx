@@ -59,8 +59,9 @@ const Categories = () => {
   useEffect(() => {
     if (lang) {
       localStorage.setItem("selectedLanguage", lang);
-      setIsRTL(lang === "ar");
-      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+      const rtl = ["ar", "ku"].includes(lang);
+      setIsRTL(rtl);
+      document.documentElement.dir = rtl ? "rtl" : "ltr";
       document.documentElement.lang = lang;
     }
     

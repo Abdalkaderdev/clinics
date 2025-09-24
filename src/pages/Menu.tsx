@@ -107,6 +107,13 @@ export default function Menu() {
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const searchInputRef = useRef<HTMLInputElement>(null);
 
+  // Reset category when clinic changes to prevent empty states
+  useEffect(() => {
+    if (selectedClinic) {
+      setSelectedCategoryId('all');
+    }
+  }, [selectedClinic?.id]);
+
   // Keyboard shortcuts
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -162,8 +169,9 @@ export default function Menu() {
   useEffect(() => {
     if (!currentLanguage) return;
     localStorage.setItem("selectedLanguage", currentLanguage);
-    setIsRTL(currentLanguage === "ar");
-    document.documentElement.dir = currentLanguage === "ar" ? "rtl" : "ltr";
+    const rtl = ["ar", "ku"].includes(currentLanguage);
+    setIsRTL(rtl);
+    document.documentElement.dir = rtl ? "rtl" : "ltr";
     document.documentElement.lang = currentLanguage;
     setLoading(true);
     const loadClinicsData = async () => {
@@ -248,6 +256,15 @@ export default function Menu() {
         categoryName: string;
         item: ClinicItem & { price: number; originalPrice: number; location?: string; contact?: string; };
       }>;
+    }
+
+    // Check if selected category exists in current clinic
+    const categoryExists = selectedCategoryId === "all" ||
+      selectedClinic.categories.some((cat) => cat.id === selectedCategoryId);
+
+    // If category doesn't exist in this clinic, fall back to showing all items
+    if (!categoryExists) {
+      return allItems;
     }
 
     let base =
@@ -413,8 +430,9 @@ export default function Menu() {
                       (c) => c.id.toString() === e.target.value
                     );
                     if (clinic) {
-                      setSelectedClinic(clinic);
+                      // Reset category first to prevent empty state
                       setSelectedCategoryId('all');
+                      setSelectedClinic(clinic);
                       window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                   }}
