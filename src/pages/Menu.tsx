@@ -417,6 +417,7 @@ export default function Menu() {
               onClick={() => setHeaderCollapsed(!headerCollapsed)}
               className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
+              title={t("tooltipCollapseHeader", lang as "en" | "ar" | "ku")}
             >
               <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? 'rotate-180' : ''}`} />
             </button>
@@ -457,6 +458,7 @@ export default function Menu() {
               role="searchbox"
               aria-label={t("searchServicesWithCount", lang as "en" | "ar" | "ku").replace("{count}", allItems.length.toString())}
               aria-describedby="search-help"
+              title={t("tooltipSearchShortcut", lang as "en" | "ar" | "ku")}
               autoComplete="off"
             />
             <div id="search-help" className="sr-only">

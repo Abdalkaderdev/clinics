@@ -168,6 +168,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = ({
                   rel="noopener noreferrer"
                   className={`text-xs sm:text-sm text-blue-700 hover:text-blue-800 hover:underline mt-1 flex items-center max-w-full truncate font-medium transition-colors ${language === "ku" ? "gap-2" : ""}`}
                   aria-label={`Open ${item.location} in maps`}
+                  title={t("tooltipLocationMap", language as "en" | "ar" | "ku")}
                 >
                   <span className={isRTL ? "ml-1" : "mr-1"}>📍</span>
                   <span className="truncate">{item.location}</span>

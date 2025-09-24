@@ -249,6 +249,21 @@ const translations: Translations = {
     ar: "البحث بين {count} خدمة...",
     ku: "گەڕان لەنێو {count} خزمەتگوزاری...",
   },
+  tooltipCollapseHeader: {
+    en: "Click to collapse/expand clinic details and categories",
+    ar: "انقر لطي/توسيع تفاصيل العيادة والفئات",
+    ku: "کرتە بکە بۆ شاردنەوە/دەرخستنی وردەکاری کلینیک و پۆلەکان",
+  },
+  tooltipSearchShortcut: {
+    en: "Press Ctrl+K to focus search quickly",
+    ar: "اضغط Ctrl+K للتركيز على البحث بسرعة",
+    ku: "Ctrl+K دابگرە بۆ گەڕان بە خێرایی",
+  },
+  tooltipLocationMap: {
+    en: "Click to open location in Google Maps",
+    ar: "انقر لفتح الموقع في خرائط جوجل",
+    ku: "کرتە بکە بۆ کردنەوەی شوێن لە گووگڵ مەپ",
+  },
 };
 
 export const t = (key: string, lang: Language = "en"): string => {
