@@ -396,7 +396,7 @@ export default function Menu() {
                         scrollToCategory(cat.id);
                       }
                     }}
-                    className={`px-3 py-2 rounded-full text-xs font-medium min-h-[36px] min-w-[36px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}
+                    className={`px-3 py-2 rounded-full text-xs font-medium min-h-[40px] min-w-[40px] ${selectedCategoryId === cat.id ? "bg-pink-500 text-white" : "bg-white text-gray-700 hover:bg-pink-100"}`}
                     aria-pressed={selectedCategoryId === cat.id}
                     aria-label={`Filter by ${cat.name} category`}
                   >
