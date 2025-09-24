@@ -11,16 +11,14 @@ const root = createRoot(rootElement);
 root.render(<App />);
 
 // Register service worker
+// TEMP HOTFIX: fully disable Service Worker to prevent stale/mixed bundles
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then((registration) => {
-        console.log('SW registered');
-        // When a new Service Worker takes control, reload to ensure consistent assets
-        navigator.serviceWorker.addEventListener('controllerchange', () => {
-          window.location.reload();
-        });
-      })
-      .catch(() => console.log('SW registration failed'));
+    navigator.serviceWorker.getRegistrations()
+      .then(regs => Promise.all(regs.map(r => r.unregister())))
+      .catch(() => {});
+    if ('caches' in window) {
+      caches.keys().then(keys => Promise.all(keys.map(k => caches.delete(k)))).catch(() => {});
+    }
   });
 }
