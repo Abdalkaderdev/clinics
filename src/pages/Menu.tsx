@@ -390,48 +390,49 @@ export default function Menu() {
           </div>
         </div>
         
-        {/* Collapsible Content */}
-        <div className={`transition-all duration-300 ${headerCollapsed ? 'max-h-0 overflow-hidden' : 'max-h-96'}`}>
-          <div className="px-3 py-2 bg-pink-600/80">
-            <div className="flex items-center justify-between">
-              <div className="flex-1 min-w-0">
-                <h2 className="text-sm font-semibold truncate">{selectedClinic.name}</h2>
-                <button
-                  onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedClinic.location)}`, '_blank')}
-                  className="text-xs text-pink-100 hover:text-white hover:underline transition-colors flex items-center gap-1 truncate focus:outline-none focus:ring-2 focus:ring-pink-300 rounded px-1 py-0.5"
-                  aria-label={`Open ${selectedClinic.location} in Google Maps`}
-                >
-                  📍 {selectedClinic.location}
-                </button>
-                {clinicsData && clinicsData.clinics.length > 1 && (
-                  <select
-                    value={selectedClinic.id}
-                    onChange={(e) => {
-                      const clinic = clinicsData.clinics.find(
-                        (c) => c.id.toString() === e.target.value
-                      );
-                      if (clinic) setSelectedClinic(clinic);
-                    }}
-                    className="mt-2 px-2 py-1 rounded bg-pink-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-300"
-                  >
-                    {clinicsData.clinics.map((clinic) => (
-                      <option key={clinic.id} value={clinic.id} className="bg-pink-700 text-white">
-                        {clinic.name}
-                      </option>
-                    ))}
-                  </select>
-                )}
-              </div>
+        {/* Always Visible Clinic Info */}
+        <div className="px-3 py-2 bg-pink-600/80">
+          <div className="flex items-center justify-between">
+            <div className="flex-1 min-w-0">
+              <h2 className="text-sm font-semibold truncate">{selectedClinic.name}</h2>
               <button
-                onClick={() => setHeaderCollapsed(!headerCollapsed)}
-                className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
-                aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
+                onClick={() => window.open(`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(selectedClinic.location)}`, '_blank')}
+                className="text-xs text-pink-100 hover:text-white hover:underline transition-colors flex items-center gap-1 truncate focus:outline-none focus:ring-2 focus:ring-pink-300 rounded px-1 py-0.5"
+                aria-label={`Open ${selectedClinic.location} in Google Maps`}
               >
-                <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? 'rotate-180' : ''}`} />
+                📍 {selectedClinic.location}
               </button>
+              {clinicsData && clinicsData.clinics.length > 1 && (
+                <select
+                  value={selectedClinic.id}
+                  onChange={(e) => {
+                    const clinic = clinicsData.clinics.find(
+                      (c) => c.id.toString() === e.target.value
+                    );
+                    if (clinic) setSelectedClinic(clinic);
+                  }}
+                  className="mt-2 px-2 py-1 rounded bg-pink-700 text-white text-xs focus:outline-none focus:ring-2 focus:ring-pink-300"
+                >
+                  {clinicsData.clinics.map((clinic) => (
+                    <option key={clinic.id} value={clinic.id} className="bg-pink-700 text-white">
+                      {clinic.name}
+                    </option>
+                  ))}
+                </select>
+              )}
             </div>
+            <button
+              onClick={() => setHeaderCollapsed(!headerCollapsed)}
+              className="ml-2 p-2 rounded hover:bg-pink-500 min-h-[44px] min-w-[44px] flex items-center justify-center"
+              aria-label={headerCollapsed ? 'Expand' : 'Collapse'}
+            >
+              <ChevronDown className={`h-5 w-5 transition-transform duration-200 ${headerCollapsed ? 'rotate-180' : ''}`} />
+            </button>
           </div>
-          
+        </div>
+        
+        {/* Collapsible Categories and Search */}
+        <div className={`transition-all duration-300 ${headerCollapsed ? 'max-h-0 overflow-hidden' : 'max-h-96'}`}>
           <div className="px-3 py-2 bg-pink-50 text-gray-800">
             <div className="overflow-x-auto mb-2">
               <div className="flex gap-1 whitespace-nowrap">
