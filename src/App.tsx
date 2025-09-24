@@ -3,14 +3,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import ErrorBoundary from "./components/ErrorBoundary";
 import Index from "./pages/Index";
-const Menu = lazy(() => import("./pages/Menu"));
-const NotFound = lazy(() => import("./pages/NotFound"));
-const Categories = lazy(() => import("./pages/Categories"));
-const QAChecklist = lazy(() => import("./components/QAChecklist"));
+import Menu from "./pages/Menu";
+import NotFound from "./pages/NotFound";
+import Categories from "./pages/Categories";
+import QAChecklist from "./components/QAChecklist";
 
 // Safe localStorage access
 const getSavedLanguage = () => {
@@ -38,17 +38,7 @@ const App = () => {
           <Toaster />
           <Sonner />
           <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-            <Suspense
-              fallback={
-                <div className="min-h-screen flex items-center justify-center" role="status" aria-live="polite">
-                  <div className="text-center">
-                    <div className="w-8 h-8 border-2 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" aria-hidden="true" />
-                    <span className="sr-only">Loading application...</span>
-                    <p>Loading...</p>
-                  </div>
-                </div>
-              }
-            >
+            <Suspense fallback={null}>
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route
