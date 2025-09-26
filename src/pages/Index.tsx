@@ -56,14 +56,14 @@ const buttonVariants = {
 const Index = () => {
   const navigate = useNavigate();
   const [currentLang, setCurrentLang] = useState("en");
-  const isRTL = ["ar", "ku"].includes(currentLang);
+  const isRTL = ["ar"].includes(currentLang);
 
   // Track page view on mount and get current language
   useEffect(() => {
     trackPageView("home");
     const savedLang = localStorage.getItem("selectedLanguage") || "en";
     setCurrentLang(savedLang);
-    const rtl = ["ar", "ku"].includes(savedLang);
+    const rtl = ["ar"].includes(savedLang);
     document.documentElement.dir = rtl ? "rtl" : "ltr";
     document.documentElement.lang = savedLang;
   }, []);

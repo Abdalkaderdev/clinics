@@ -63,7 +63,7 @@ const Categories = () => {
   useEffect(() => {
     if (lang) {
       localStorage.setItem("selectedLanguage", lang);
-      const rtl = ["ar", "ku"].includes(lang);
+      const rtl = ["ar"].includes(lang);
       setIsRTL(rtl);
       document.documentElement.dir = rtl ? "rtl" : "ltr";
       document.documentElement.lang = lang;

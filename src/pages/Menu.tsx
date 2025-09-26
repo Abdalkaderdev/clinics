@@ -204,7 +204,7 @@ export default function Menu() {
   useEffect(() => {
     if (!currentLanguage) return;
     localStorage.setItem("selectedLanguage", currentLanguage);
-    const rtl = ["ar", "ku"].includes(currentLanguage);
+    const rtl = ["ar"].includes(currentLanguage);
     setIsRTL(rtl);
     document.documentElement.dir = rtl ? "rtl" : "ltr";
     document.documentElement.lang = currentLanguage;
