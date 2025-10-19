@@ -12,7 +12,7 @@ A modern web application offering exclusive discounts and free services across p
 - ♿ **Accessibility** - WCAG AA compliant with RTL support
 - 🔒 **Security** - HTTPS, CSP, and security headers
 - 📊 **Analytics** - Track user interactions and clinic visits
-- 📞 **Direct Contact** - Call and WhatsApp integration
+- 📞 **Direct Contact** - Call integration
 
 ## Partner Clinics
 
@@ -147,7 +147,7 @@ npm run preview
 1. Update clinic data in `public/clinics_*.json` files
 2. Ensure all three language files are synchronized
 3. Test discount calculations and contact integration
-4. Verify phone number validation and WhatsApp integration
+4. Verify phone number validation and call integration
 5. Update README clinic count and descriptions
 
 ### Supported Currencies
@@ -169,7 +169,7 @@ The application automatically adjusts layout and text direction for Arabic langu
 
 ### Analytics & Tracking
 - Page views, language selection, clinic interactions
-- Contact method tracking (phone/WhatsApp)
+- Contact method tracking (phone calls)
 - Error tracking and performance monitoring
 - Non-blocking implementation to prevent navigation issues
 
@@ -199,7 +199,7 @@ This project is automatically deployed on Vercel when changes are pushed to the 
 - Run `npm run build` before deployment
 - Test language switching functionality
 - Verify clinic data loading in all languages
-- Check phone/WhatsApp contact integration
+- Check phone contact integration
 - Validate discount calculations and free service displays
 
 ### Performance Optimization
@@ -212,7 +212,7 @@ This project is automatically deployed on Vercel when changes are pushed to the 
 When adding new services or clinics:
 1. Update all three language files simultaneously
 2. Test discount percentage calculations
-3. Verify contact integration (phone/WhatsApp)
+3. Verify contact integration (phone calls)
 4. Ensure RTL layout compatibility
 5. Update README documentation
 6. Test analytics tracking functionality

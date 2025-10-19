@@ -100,6 +100,6 @@ Update all three files simultaneously:
 ## Contact Integration
 All clinics support:
 - **Phone**: `tel:+964XXXXXXXXX`
-- **WhatsApp**: `https://wa.me/964XXXXXXXXX`
+- **Call**: `tel:+964XXXXXXXXX`
 
-Format: +9647XXXXXXXXX (remove + for WhatsApp links)
+Format: +9647XXXXXXXXX (use as-is for call links)
