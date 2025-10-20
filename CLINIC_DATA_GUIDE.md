@@ -4,7 +4,7 @@
 
 ### Dr. Ala Ismail Shakur Clinic (ID: 1)
 **Location:** Bakhtiary 20m Street, in front of Holland Bazaar, Erbil  
-**Contact:** +9647761897258 / +9647501430705
+**Contact:** +9647501430705
 
 **Categories:**
 1. **General Medicine** - 10% Surgery Discount
@@ -15,7 +15,7 @@
 
 ### Queen Art Center (ID: 2)
 **Location:** Koya Road, in front of Majidi Mall, Erbil  
-**Contact:** +9647761897258 / +9647501430705
+**Contact:** +9647501430705
 
 **Services:**
 - Service 1: 150,000→100,000 IQD (name TBD)

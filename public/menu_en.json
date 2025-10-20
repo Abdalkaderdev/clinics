@@ -21,7 +21,7 @@
           "originalPrice": 200000,
           "location": "Central District, Baghdad",
           "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-2",
@@ -31,7 +31,7 @@
           "originalPrice": 180000,
           "location": "Al-Mansour District, Baghdad",
           "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-3",
@@ -41,7 +41,7 @@
           "originalPrice": 120000,
           "location": "Al-Karrada District, Baghdad",
           "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-4",
@@ -51,7 +51,7 @@
           "originalPrice": 150000,
           "location": "Al-Jadriya District, Baghdad",
           "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-5",
@@ -61,7 +61,7 @@
           "originalPrice": 250000,
           "location": "Al-Yarmouk District, Baghdad",
           "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-6",
@@ -71,7 +71,7 @@
           "originalPrice": 190000,
           "location": "Al-Adhamiya District, Baghdad",
           "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-7",
@@ -81,7 +81,7 @@
           "originalPrice": 220000,
           "location": "Al-Zayouna District, Baghdad",
           "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-8",
@@ -91,7 +91,7 @@
           "originalPrice": 280000,
           "location": "Al-Saadoun District, Baghdad",
           "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-9",
@@ -101,7 +101,7 @@
           "originalPrice": 140000,
           "location": "Al-Dora District, Baghdad",
           "image": "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-10",
@@ -111,7 +111,7 @@
           "originalPrice": 170000,
           "location": "Al-Kadhimiya District, Baghdad",
           "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-11",
@@ -121,7 +121,7 @@
           "originalPrice": 300000,
           "location": "Al-Hurriya District, Baghdad",
           "image": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         },
         {
           "id": "clinic-12",
@@ -131,7 +131,7 @@
           "originalPrice": 110000,
           "location": "Al-Shaab District, Baghdad",
           "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
-          "contact": "+9647761897258 / +9647501430705"
+          "contact": "+9647501430705"
         }
       ]
     }

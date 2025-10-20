@@ -18,7 +18,7 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 1. Dr. Ala Ismail Shakur Clinic
 **Location:** Bakhtiary 20m Street, in front of Holland Bazaar, Erbil  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - Injectable Treatments (Botox, Dermal Fillers)
 - Regenerative Treatments (PRP, Mesotherapy)
@@ -28,7 +28,7 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 2. Queen Art Center
 **Location:** Koya Road, in front of Majidi Mall, Erbil  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - Premium HydraFacial (VIP & VVIP)
 - International Fillers (Korean, French, German, Swiss)
@@ -39,14 +39,14 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 3. Sozy MN Center
 **Location:** Erbil, Shorsh Street, in front of Shorsh Medical Hospital, Floor 5, opposite Mega Mall  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - 43 Beauty Services with IQD and USD pricing
 - Comprehensive beauty treatments
 
 ### 4. Luminos Beauty Center
 **Location:** Italy  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - Korean, French, Russian, Swiss Fillers
 - Hitox & Dysport Botox
@@ -57,14 +57,14 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 5. Dr. Farhad Jaff Clinic
 **Location:** Erbil, Havalan  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - 13 Medical Services (IQD & USD pricing)
 - **FREE Services:** 2 complimentary treatments
 
 ### 6. Dr. Honar Beauty Center
 **Location:** Erbil, Dream Villa, Number 1151  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - Premium beauty treatments ($15-$1500 range)
 - Botox, Fillers, Plasma treatments
@@ -73,7 +73,7 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 7. Salon by Mostafa
 **Location:** 40m Street  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - 28 Beauty Services (IQD & USD pricing)
 - Korean Peeling (50% discount)
@@ -81,7 +81,7 @@ A modern web application offering exclusive discounts and free services across p
 
 ### 8. Florencia Beauty Center
 **Location:** Erbil, Saydin Bakhtiary Waziran  
-**Contact:** +9647761897258 / +9647501430705  
+**Contact:** +9647501430705  
 **Services:**
 - 34 Beauty Services (IQD & USD pricing)
 - Comprehensive laser treatments and HydraFacial services
