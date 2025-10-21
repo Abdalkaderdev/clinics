@@ -63,9 +63,7 @@ export default function Menu() {
 
   const [favorites] = useState<string[]>([]);
   const [headerCollapsed, setHeaderCollapsed] = useState(false);
-  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(
-    urlCategory || "all"
-  );
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>("all");
 
   const { activeCategory, scrollToCategory, observeCategory } = useScrollCategory({
     categories: selectedClinic?.categories.map((cat) => cat.id) || [],
@@ -238,7 +236,7 @@ export default function Menu() {
   }, [isError, toast, lang]);
 
 
-  // Build list of items filtered by selected category
+  // Build list of all items from all categories
   const allItems = useMemo(() => {
     if (!selectedClinic)
       return [] as Array<{
@@ -273,19 +271,10 @@ export default function Menu() {
       }>;
     }
 
-    // Check if selected category exists in current clinic
-    const categoryExists = selectedCategoryId === "all" ||
-      (selectedClinic.categories ?? []).some((cat) => cat.id === selectedCategoryId);
-
-    // If category doesn't exist in this clinic, fall back to showing all items
-    if (!categoryExists) {
-      return allItems;
-    }
-
-    let base =
-      selectedCategoryId === "all"
-        ? allItems
-        : allItems.filter((entry) => entry.categoryId === selectedCategoryId);
+    // Always show all items by default, but allow category filtering
+    let base = selectedCategoryId === "all" 
+      ? allItems 
+      : allItems.filter((entry) => entry.categoryId === selectedCategoryId);
 
     // Filter by search query
     if (searchQuery.trim()) {
@@ -528,6 +517,15 @@ export default function Menu() {
       <main ref={mainRef} className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-4 sm:py-6 md:py-8">
         {visibleItems.length > 0 ? (
           <div className={`space-y-8 ${isRTL ? "rtl font-arabic" : currentLanguage === "ku" ? "font-kurdish" : ""}`}>
+            {/* All Services Summary */}
+            <div className="text-center mb-6">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                {selectedClinic.name} - All Services
+              </h2>
+              <p className="text-gray-600">
+                {allItems.length} services available • Use categories above to filter
+              </p>
+            </div>
             {selectedCategoryId === "all" ? (
               // Group by category when showing all
               (selectedClinic.categories ?? []).map((category) => {
