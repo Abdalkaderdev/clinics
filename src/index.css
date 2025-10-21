@@ -104,4 +104,49 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  /* Service Icon Enhancements */
+  .service-icon {
+    @apply w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-pink-200 shadow-md hover:shadow-lg transition-all duration-200;
+    animation: subtle-pulse 3s ease-in-out infinite;
+  }
+  
+  .service-icon-overlay {
+    @apply absolute inset-0 rounded-full bg-gradient-to-br from-pink-100/20 to-blue-100/20 pointer-events-none;
+    animation: subtle-glow 4s ease-in-out infinite alternate;
+  }
+  
+  .service-icon-container {
+    @apply relative flex justify-center;
+  }
+  
+  .service-icon-container:hover .service-icon {
+    @apply scale-105 border-pink-300;
+    animation: none;
+  }
+  
+  .service-icon-container:hover .service-icon-overlay {
+    @apply from-pink-200/30 to-blue-200/30;
+    animation: none;
+  }
+  
+  @keyframes subtle-pulse {
+    0%, 100% { 
+      transform: scale(1);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    50% { 
+      transform: scale(1.02);
+      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    }
+  }
+  
+  @keyframes subtle-glow {
+    0% { 
+      background: linear-gradient(135deg, rgb(252 165 165 / 0.2), rgb(147 197 253 / 0.2));
+    }
+    100% { 
+      background: linear-gradient(135deg, rgb(251 207 232 / 0.3), rgb(147 197 253 / 0.3));
+    }
+  }
 }

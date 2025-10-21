@@ -289,8 +289,19 @@ const Categories = () => {
                   <Card className="relative border-2 border-slate-200 hover:border-pink-300 focus-within:border-pink-400 focus-within:ring-4 focus-within:ring-pink-200 overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white h-full group">
                     <div className="p-3 sm:p-4 md:p-6 text-center flex flex-col justify-between min-h-[180px] sm:min-h-[200px] md:min-h-[220px]">
                       <div className="flex-1">
-                        <div className="text-4xl sm:text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                          🏥
+                        <div className="mb-4 service-icon-container group-hover:scale-110 transition-transform duration-300">
+                          <div className="relative">
+                            <ImageOptimized
+                              src={logo}
+                              alt="Clinic icon placeholder"
+                              className="service-icon"
+                              width={64}
+                              height={64}
+                              sizes="(max-width: 640px) 48px, (max-width: 768px) 56px, 64px"
+                            />
+                            {/* Subtle overlay for visual enhancement */}
+                            <div className="service-icon-overlay"></div>
+                          </div>
                         </div>
                         <h2 className="text-gray-900 text-sm sm:text-base md:text-lg lg:text-xl font-bold mb-2 sm:mb-3 leading-tight break-words hyphens-auto">
                           {clinic.name}

@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
 import { Phone, MessageCircle } from "lucide-react";
 import { t } from "@/lib/translations";
+import ImageOptimized from "@/components/ImageOptimized";
 
 interface MenuItem {
   id: string;
@@ -93,6 +94,42 @@ const sanitizePhoneNumber = (phone: string): string => {
   return firstNumber.replace(/[^\d+]/g, "");
 };
 
+// Service icon mapping function - returns logo as placeholder for all services
+const getServiceIcon = (serviceName: string): string => {
+  // For now, use the Beauty Land Card logo as placeholder for all services
+  // This can be enhanced later with specific icons for different service categories
+  return "/images/beauty-final.webp";
+};
+
+// Service category detection for future icon differentiation
+const getServiceCategory = (serviceName: string): string => {
+  const name = serviceName.toLowerCase();
+  
+  if (name.includes('botox') || name.includes('filler') || name.includes('injectable')) {
+    return 'injectable';
+  }
+  if (name.includes('laser') || name.includes('hair removal') || name.includes('co2') || name.includes('hifu')) {
+    return 'laser';
+  }
+  if (name.includes('surgery') || name.includes('rhinoplasty') || name.includes('blepharoplasty')) {
+    return 'surgery';
+  }
+  if (name.includes('hydrafacial') || name.includes('facial') || name.includes('skin')) {
+    return 'facial';
+  }
+  if (name.includes('hair') || name.includes('haircut') || name.includes('styling')) {
+    return 'hair';
+  }
+  if (name.includes('nail') || name.includes('manicure') || name.includes('pedicure')) {
+    return 'nail';
+  }
+  if (name.includes('free') || name.includes('consultation')) {
+    return 'free';
+  }
+  
+  return 'general';
+};
+
 
 
 const MenuItemCard: React.FC<MenuItemCardProps> = React.memo(({
@@ -129,6 +166,7 @@ const MenuItemCard: React.FC<MenuItemCardProps> = React.memo(({
 
 
   const fontClass = language === "ar" ? "font-arabic" : language === "ku" ? "font-kurdish" : "";
+  const serviceCategory = getServiceCategory(item.name);
 
   return (
     <motion.div variants={itemVariants} whileHover="hover" className="h-full">
@@ -152,6 +190,62 @@ const MenuItemCard: React.FC<MenuItemCardProps> = React.memo(({
                 </div>
               )
             )}
+            {/* Service Icon */}
+            <div className="mb-3 service-icon-container">
+              <div className="relative">
+                <ImageOptimized
+                  src={getServiceIcon(item.name)}
+                  alt="Service icon placeholder"
+                  className={`service-icon ${
+                    serviceCategory === 'injectable' ? 'border-pink-300' :
+                    serviceCategory === 'laser' ? 'border-blue-300' :
+                    serviceCategory === 'surgery' ? 'border-purple-300' :
+                    serviceCategory === 'facial' ? 'border-rose-300' :
+                    serviceCategory === 'hair' ? 'border-amber-300' :
+                    serviceCategory === 'nail' ? 'border-emerald-300' :
+                    serviceCategory === 'free' ? 'border-green-300' :
+                    'border-pink-200'
+                  }`}
+                  width={64}
+                  height={64}
+                  sizes="(max-width: 640px) 48px, (max-width: 768px) 56px, 64px"
+                />
+                {/* Subtle overlay for visual enhancement */}
+                <div className={`service-icon-overlay ${
+                  serviceCategory === 'injectable' ? 'from-pink-200/30 to-pink-300/20' :
+                  serviceCategory === 'laser' ? 'from-blue-200/30 to-blue-300/20' :
+                  serviceCategory === 'surgery' ? 'from-purple-200/30 to-purple-300/20' :
+                  serviceCategory === 'facial' ? 'from-rose-200/30 to-rose-300/20' :
+                  serviceCategory === 'hair' ? 'from-amber-200/30 to-amber-300/20' :
+                  serviceCategory === 'nail' ? 'from-emerald-200/30 to-emerald-300/20' :
+                  serviceCategory === 'free' ? 'from-green-200/30 to-green-300/20' :
+                  'from-pink-100/20 to-blue-100/20'
+                }`}></div>
+              </div>
+              {/* Service Category Indicator */}
+              <div className="mt-1">
+                <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                  serviceCategory === 'injectable' ? 'bg-pink-100 text-pink-700' :
+                  serviceCategory === 'laser' ? 'bg-blue-100 text-blue-700' :
+                  serviceCategory === 'surgery' ? 'bg-purple-100 text-purple-700' :
+                  serviceCategory === 'facial' ? 'bg-rose-100 text-rose-700' :
+                  serviceCategory === 'hair' ? 'bg-amber-100 text-amber-700' :
+                  serviceCategory === 'nail' ? 'bg-emerald-100 text-emerald-700' :
+                  serviceCategory === 'free' ? 'bg-green-100 text-green-700' :
+                  'bg-gray-100 text-gray-700'
+                }`}>
+                  {serviceCategory === 'injectable' ? '💉' :
+                   serviceCategory === 'laser' ? '⚡' :
+                   serviceCategory === 'surgery' ? '🏥' :
+                   serviceCategory === 'facial' ? '✨' :
+                   serviceCategory === 'hair' ? '💇' :
+                   serviceCategory === 'nail' ? '💅' :
+                   serviceCategory === 'free' ? '🎁' :
+                   '🔧'}
+                </span>
+              </div>
+            </div>
+
             <div className="flex flex-col items-center gap-1 mb-1 w-full">
               <h3 className={`text-sm sm:text-base md:text-lg lg:text-xl font-bold text-pink-900 text-center break-words hyphens-auto w-full px-1 sm:px-2 ${language === "ar" ? "leading-loose" : language === "ku" ? "leading-relaxed" : "leading-tight"}`} id={`title-${item.id}`}>
                 {item.name}
