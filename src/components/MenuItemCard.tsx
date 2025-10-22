@@ -94,12 +94,105 @@ const sanitizePhoneNumber = (phone: string): string => {
   return firstNumber.replace(/[^\d+]/g, "");
 };
 
-// Service photo mapping function - returns placeholder photos for different service types
+// Service photo mapping function - returns appropriate photos for different service types
 const getServicePhoto = (serviceName: string): string => {
   const name = serviceName.toLowerCase();
   
-  // Use the Beauty Land Card logo as placeholder for all services
-  // This can be replaced with actual service photos later
+  // Injectable treatments (Botox, Fillers, etc.)
+  if (name.includes('botox') || name.includes('بوتوكس') || name.includes('بۆتۆکس')) {
+    return "/images/injectable1.webp";
+  }
+  if (name.includes('filler') || name.includes('فيلر') || name.includes('فیلەر') || 
+      name.includes('korean') || name.includes('french') || name.includes('german') || 
+      name.includes('swiss') || name.includes('russian') || name.includes('romanian')) {
+    return "/images/injectable1.webp";
+  }
+  
+  // Facial treatments (HydraFacial, CO2, etc.)
+  if (name.includes('hydrafacial') || name.includes('هايدرافيشل') || name.includes('هایدرافیشڵ') ||
+      name.includes('facial') || name.includes('face') || name.includes('ڕوو') || name.includes('وجه')) {
+    return "/images/facial treatment.webp";
+  }
+  if (name.includes('co2') || name.includes('carbon') || name.includes('كربون') || name.includes('کاربۆن') ||
+      name.includes('peeling') || name.includes('تقشير') || name.includes('پاککردنەوە')) {
+    return "/images/facial treatment.webp";
+  }
+  
+  // Laser treatments
+  if (name.includes('laser') || name.includes('ليزر') || name.includes('لەیزەر') ||
+      name.includes('hair removal') || name.includes('إزالة شعر') || name.includes('لابردنی موو')) {
+    return "/images/laser treatment.webp";
+  }
+  if (name.includes('full body') || name.includes('كامل الجسم') || name.includes('تەواوی لەش') ||
+      name.includes('half body') || name.includes('نصف الجسم') || name.includes('نیوەی لەش')) {
+    return "/images/laser treatment.webp";
+  }
+  
+  // Hair services
+  if (name.includes('hair') || name.includes('شعر') || name.includes('پرچ') ||
+      name.includes('haircut') || name.includes('قص') || name.includes('بڕین') ||
+      name.includes('hairstyle') || name.includes('تسريحة') || name.includes('شێواز') ||
+      name.includes('highlight') || name.includes('هايلايت') || name.includes('هایلایت') ||
+      name.includes('dye') || name.includes('صبغة') || name.includes('ڕەنگکردن')) {
+    return "/images/hair services.webp";
+  }
+  
+  // Nail care services
+  if (name.includes('nail') || name.includes('أظافر') || name.includes('نێخن') ||
+      name.includes('manicure') || name.includes('مانيكير') || name.includes('مانیکیور') ||
+      name.includes('pedicure') || name.includes('باديكير') || name.includes('پێدیکیور') ||
+      name.includes('polish') || name.includes('طلاء') || name.includes('پۆلیش') ||
+      name.includes('gel') || name.includes('جل')) {
+    return "/images/nail care.webp";
+  }
+  
+  // Eye and brow treatments
+  if (name.includes('eye') || name.includes('عين') || name.includes('چاو') ||
+      name.includes('eyelid') || name.includes('جفن') || name.includes('پڵک') ||
+      name.includes('brow') || name.includes('حاجب') || name.includes('برۆ') ||
+      name.includes('eyebrow') || name.includes('eyelash') || name.includes('رموش') || name.includes('برژانگ') ||
+      name.includes('blepharoplasty') || name.includes('جراحة الجفون') || name.includes('نەشتەرگەری پڵک')) {
+    return "/images/eye and brow treatment.webp";
+  }
+  
+  // Skin care treatments
+  if (name.includes('skin') || name.includes('بشرة') || name.includes('پێست') ||
+      name.includes('mesotherapy') || name.includes('ميزوثيرابي') || name.includes('میزۆثیراپی') ||
+      name.includes('plasma') || name.includes('بلازما') || name.includes('پلازما') ||
+      name.includes('prp') || name.includes('microneedling') || name.includes('مايكرونيدلينج') ||
+      name.includes('hifu') || name.includes('هايفو') || name.includes('هایفو') ||
+      name.includes('rf') || name.includes('secret') || name.includes('سيكريت') || name.includes('نهێنی')) {
+    return "/images/skin care.webp";
+  }
+  
+  // Surgical treatments
+  if (name.includes('surgery') || name.includes('جراحة') || name.includes('نەشتەرگەری') ||
+      name.includes('surgical') || name.includes('جراحي') || name.includes('نەشتەرگەری') ||
+      name.includes('rhinoplasty') || name.includes('تجميل الأنف') || name.includes('جوانکاری لوت') ||
+      name.includes('otoplasty') || name.includes('تجميل الأذن') || name.includes('جوانکاری گوێ') ||
+      name.includes('augmentation') || name.includes('تكبير') || name.includes('گەورەکردن') ||
+      name.includes('implant') || name.includes('زرع') || name.includes('چاندن') ||
+      name.includes('lift') || name.includes('رفع') || name.includes('برزکردنەوە')) {
+    return "/images/surgical treatments.webp";
+  }
+  
+  // Free services
+  if (name.includes('free') || name.includes('مجاني') || name.includes('بێ بەرامبەر') ||
+      name.includes('complimentary') || name.includes('مجاناً') || name.includes('بەخۆڕایی') ||
+      name.includes('consultation') || name.includes('استشارة') || name.includes('راوێژکاری') ||
+      name.includes('analysis') || name.includes('تحليل') || name.includes('شیکردنەوە')) {
+    return "/images/free services.webp";
+  }
+  
+  // Special discounts
+  if (name.includes('discount') || name.includes('خصم') || name.includes('خەڵات') ||
+      name.includes('off') || name.includes('تخفيض') || name.includes('خەڵات') ||
+      name.includes('special') || name.includes('خاص') || name.includes('تایبەت') ||
+      name.includes('sale') || name.includes('عرض') || name.includes('فرۆشتن')) {
+    return "/images/special discount.webp";
+  }
+  
+  // Default fallback - use the Beauty Land Card logo for unmatched services
   return "/images/beauty-final.webp";
 };
 
