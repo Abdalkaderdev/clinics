@@ -192,6 +192,116 @@ const getServicePhoto = (serviceName: string): string => {
     return "/images/special discount.webp";
   }
   
+  // Mole removal and skin treatments
+  if (name.includes('mole') || name.includes('شامة') || name.includes('خاڵ') ||
+      name.includes('tattoo') || name.includes('وشم') || name.includes('تاتوو') ||
+      name.includes('removal') || name.includes('إزالة') || name.includes('لابردن')) {
+    return "/images/skin care.webp";
+  }
+  
+  // HIFU and RF treatments
+  if (name.includes('hifu') || name.includes('هايفو') || name.includes('هایفو') ||
+      name.includes('rf') || name.includes('secret') || name.includes('سيكريت') || name.includes('نهێنی') ||
+      name.includes('dermapen') || name.includes('ديرمابين') || name.includes('دیرماپین') ||
+      name.includes('microneedling') || name.includes('مايكرونيدلينج') || name.includes('مایکرۆنیدلینگ')) {
+    return "/images/skin care.webp";
+  }
+  
+  // Plasma and regenerative treatments
+  if (name.includes('plasma') || name.includes('بلازما') || name.includes('پلازما') ||
+      name.includes('mesotherapy') || name.includes('ميزوثيرابي') || name.includes('میزۆثیراپی') ||
+      name.includes('prp') || name.includes('morpheus') || name.includes('مورفيوس') || name.includes('مۆرفیۆس')) {
+    return "/images/skin care.webp";
+  }
+  
+  // HydraFacial and CO2 treatments
+  if (name.includes('hydrafacial') || name.includes('هايدرافيشل') || name.includes('هایدرافیشڵ') ||
+      name.includes('co2') || name.includes('carbon') || name.includes('كربون') || name.includes('کاربۆن') ||
+      name.includes('peeling') || name.includes('تقشير') || name.includes('پاککردنەوە')) {
+    return "/images/facial treatment.webp";
+  }
+  
+  // Excess fat/meat removal and body treatments
+  if (name.includes('excess') || name.includes('زائد') || name.includes('زیادە') ||
+      name.includes('fat') || name.includes('دهون') || name.includes('چەوری') ||
+      name.includes('meat') || name.includes('لحم') || name.includes('گۆشت') ||
+      name.includes('carbon') || name.includes('كربون') || name.includes('کاربۆن')) {
+    return "/images/skin care.webp";
+  }
+  
+  // Hair services (comprehensive)
+  if (name.includes('hair') || name.includes('شعر') || name.includes('پرچ') ||
+      name.includes('haircut') || name.includes('قص') || name.includes('بڕین') ||
+      name.includes('hairstyle') || name.includes('تسريحة') || name.includes('شێواز') ||
+      name.includes('highlight') || name.includes('هايلايت') || name.includes('هایلایت') ||
+      name.includes('dye') || name.includes('صبغة') || name.includes('ڕەنگکردن') ||
+      name.includes('crystal') || name.includes('كريستال') || name.includes('کریستاڵ') ||
+      name.includes('creatine') || name.includes('كرياتين') || name.includes('کریاتین') ||
+      name.includes('mohair') || name.includes('موهير') || name.includes('مۆهیر') ||
+      name.includes('toning') || name.includes('تونينج') || name.includes('رینساج') ||
+      name.includes('extension') || name.includes('تمديد') || name.includes('درێژکردن') ||
+      name.includes('synthetic') || name.includes('صناعي') || name.includes('دەستکرد') ||
+      name.includes('natural') || name.includes('طبيعي') || name.includes('سروشتی') ||
+      name.includes('wax') || name.includes('شمع') || name.includes('مۆم')) {
+    return "/images/hair services.webp";
+  }
+  
+  // Nail services (comprehensive)
+  if (name.includes('nail') || name.includes('أظافر') || name.includes('نێخن') ||
+      name.includes('manicure') || name.includes('مانيكير') || name.includes('مانیکیور') ||
+      name.includes('pedicure') || name.includes('باديكير') || name.includes('پێدیکیور') ||
+      name.includes('polish') || name.includes('طلاء') || name.includes('پۆلیش') ||
+      name.includes('gel') || name.includes('جل') || name.includes('جێل') ||
+      name.includes('extension') || name.includes('تمديد') || name.includes('درێژکردن')) {
+    return "/images/nail care.webp";
+  }
+  
+  // Makeup and beauty services
+  if (name.includes('makeup') || name.includes('مكياج') || name.includes('میکئاپ') ||
+      name.includes('design') || name.includes('تصميم') || name.includes('دیزاین') ||
+      name.includes('consultation') || name.includes('استشارة') || name.includes('راوێژکاری') ||
+      name.includes('analysis') || name.includes('تحليل') || name.includes('شیکردنەوە') ||
+      name.includes('examination') || name.includes('فحص') || name.includes('پشکنین') ||
+      name.includes('sonar') || name.includes('سونار') || name.includes('سۆنار')) {
+    return "/images/free services.webp";
+  }
+  
+  // Surgical procedures
+  if (name.includes('surgery') || name.includes('جراحة') || name.includes('نەشتەرگەری') ||
+      name.includes('surgical') || name.includes('جراحي') || name.includes('نەشتەرگەری') ||
+      name.includes('rhinoplasty') || name.includes('تجميل الأنف') || name.includes('جوانکاری لوت') ||
+      name.includes('otoplasty') || name.includes('تجميل الأذن') || name.includes('جوانکاری گوێ') ||
+      name.includes('augmentation') || name.includes('تكبير') || name.includes('گەورەکردن') ||
+      name.includes('implant') || name.includes('زرع') || name.includes('چاندن') ||
+      name.includes('lift') || name.includes('رفع') || name.includes('برزکردنەوە') ||
+      name.includes('blepharoplasty') || name.includes('جراحة الجفون') || name.includes('نەشتەرگەری پڵک') ||
+      name.includes('breast') || name.includes('ثدي') || name.includes('مەمک') ||
+      name.includes('buttock') || name.includes('أرداف') || name.includes('پاشکۆڵ') ||
+      name.includes('forehead') || name.includes('جبهة') || name.includes('ناوچەوان')) {
+    return "/images/surgical treatments.webp";
+  }
+  
+  // Eye and brow treatments (comprehensive)
+  if (name.includes('eye') || name.includes('عين') || name.includes('چاو') ||
+      name.includes('eyelid') || name.includes('جفن') || name.includes('پڵک') ||
+      name.includes('brow') || name.includes('حاجب') || name.includes('برۆ') ||
+      name.includes('eyebrow') || name.includes('eyelash') || name.includes('رموش') || name.includes('برژانگ') ||
+      name.includes('blepharoplasty') || name.includes('جراحة الجفون') || name.includes('نەشتەرگەری پڵک') ||
+      name.includes('lifting') || name.includes('رفع') || name.includes('برزکردنەوە')) {
+    return "/images/eye and brow treatment.webp";
+  }
+  
+  // Advanced treatments and devices
+  if (name.includes('amber') || name.includes('عنبر') || name.includes('کاهرەبا') ||
+      name.includes('salmon') || name.includes('سلمون') || name.includes('سەلمۆن') ||
+      name.includes('gold') || name.includes('ذهب') || name.includes('زێڕین') ||
+      name.includes('caviar') || name.includes('كافيار') || name.includes('کاڤیار') ||
+      name.includes('nano') || name.includes('نانو') || name.includes('نانۆ') ||
+      name.includes('dermatic') || name.includes('ديرماتيك') || name.includes('دیرماتیک') ||
+      name.includes('korean') || name.includes('كوري') || name.includes('کۆریایی')) {
+    return "/images/skin care.webp";
+  }
+  
   // Default fallback - use the Beauty Land Card logo for unmatched services
   return "/images/beauty-final.webp";
 };
