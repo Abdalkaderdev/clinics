@@ -240,9 +240,9 @@ const translations: Translations = {
     ku: "پەیوەندی",
   },
   searchHelpText: {
-    en: "Search through available services and treatments",
-    ar: "البحث في الخدمات والعلاجات المتاحة",
-    ku: "گەڕان لە خزمەتگوزاری و چارەسەرییەکان",
+    en: "Search through available services and treatments. Press Ctrl+K to focus search, use number keys 1-9 for category navigation.",
+    ar: "البحث في الخدمات والعلاجات المتاحة. اضغط Ctrl+K للتركيز على البحث، استخدم الأرقام 1-9 للتنقل بين الفئات.",
+    ku: "گەڕان لە خزمەتگوزاری و چارەسەرییەکان. Ctrl+K دابگرە بۆ گەڕان، ژمارەکان 1-9 بەکاربهێنە بۆ گەڕان لە پۆلەکان.",
   },
   searchServicesWithCount: {
     en: "Search among {count} services...",

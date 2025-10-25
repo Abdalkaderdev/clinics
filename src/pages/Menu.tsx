@@ -161,8 +161,13 @@ export default function Menu() {
     if (id !== 'all') {
       const element = document.getElementById(`category-${id}`);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+        // Scroll to category with offset for sticky header
+        const y = element.getBoundingClientRect().top + window.scrollY - 120; // Adjust offset as needed
+        window.scrollTo({ top: y, behavior: 'smooth' });
       }
+    } else {
+      // Scroll to top when "All" is selected
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, []);
 
@@ -271,10 +276,8 @@ export default function Menu() {
       }>;
     }
 
-    // Always show all items by default, but allow category filtering
-    let base = selectedCategoryId === "all" 
-      ? allItems 
-      : allItems.filter((entry) => entry.categoryId === selectedCategoryId);
+    // Always show all items - no category filtering
+    let base = allItems;
 
     // Filter by search query
     if (searchQuery.trim()) {
@@ -313,7 +316,6 @@ export default function Menu() {
   }, [
     allItems,
     selectedClinic,
-    selectedCategoryId,
     searchQuery,
     selectedFilters,
     favorites,
@@ -496,7 +498,7 @@ export default function Menu() {
               autoComplete="off"
             />
             <div id="search-help" className="sr-only">
-              {t("searchHelpText", lang as "en" | "ar" | "ku") || "Search through available services and treatments. Press Ctrl+K to focus search, use number keys 1-9 for category navigation."}
+              {t("searchHelpText", lang as "en" | "ar" | "ku")}
             </div>
             <div className="sr-only" aria-live="polite">
               {t("searchResultsCount", lang as "en" | "ar" | "ku")}: {visibleItems.length}
@@ -523,71 +525,58 @@ export default function Menu() {
                 {selectedClinic.name} - All Services
               </h2>
               <p className="text-gray-600">
-                {allItems.length} services available • Use categories above to filter
+                {allItems.length} services available • Click categories above to navigate
               </p>
             </div>
-            {selectedCategoryId === "all" ? (
-              // Group by category when showing all
-              (selectedClinic.categories ?? []).map((category) => {
-                const categoryItems = allItems.filter(({ categoryId }) => categoryId === category.id);
-                if (categoryItems.length === 0) return null;
-                return (
-                  <section key={category.id} id={`category-${category.id}`} className="scroll-mt-32">
-                    <div className="bg-gradient-to-r from-pink-50 to-blue-50 border-l-4 border-pink-500 rounded-r-lg px-4 py-3 mb-6">
-                      <h3 className="text-xl font-semibold text-pink-900 m-0">{category.name}</h3>
-                    </div>
-                    <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                      {categoryItems.map(({ item }, index) => (
-                        <motion.div
-                          key={item.id}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ 
-                            duration: 0.3, 
-                            delay: index * 0.05,
-                            ease: "easeOut"
-                          }}
-                        >
-                          <MenuItemCard
-                            item={item}
-                            currency="$"
-                            isRTL={isRTL}
-                            isFavorite={favorites.includes(item.id)}
-                            onFavoriteToggle={() => {}}
-                            language={lang}
-                          />
-                        </motion.div>
-                      ))}
-                    </div>
-                  </section>
-                );
-              })
-            ) : (
-              // Single category view
-              <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {visibleItems.map(({ item }, index) => (
-                  <motion.div
-                    key={item.id}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ 
-                      duration: 0.3, 
-                      delay: index * 0.05,
-                      ease: "easeOut"
-                    }}
-                  >
-                    <MenuItemCard
-                      item={item}
-                      currency="$"
-                      isRTL={isRTL}
-                      isFavorite={favorites.includes(item.id)}
-                      onFavoriteToggle={() => {}}
-                      language={lang}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-            )}
+            
+            {/* Always show all categories grouped - no filtering */}
+            {(selectedClinic.categories ?? []).map((category) => {
+              const categoryItems = allItems.filter(({ categoryId }) => categoryId === category.id);
+              if (categoryItems.length === 0) return null;
+              
+              // Check if this category is currently active (for highlighting)
+              const isActiveCategory = selectedCategoryId === category.id;
+              
+              return (
+                <section key={category.id} id={`category-${category.id}`} className="scroll-mt-32">
+                  <div className={`bg-gradient-to-r from-pink-50 to-blue-50 border-l-4 border-pink-500 rounded-r-lg px-4 py-3 mb-6 transition-all duration-300 ${
+                    isActiveCategory ? 'ring-2 ring-pink-400 ring-offset-2 bg-gradient-to-r from-pink-100 to-blue-100' : ''
+                  }`}>
+                    <h3 className="text-xl font-semibold text-pink-900 m-0 flex items-center gap-2">
+                      {category.name}
+                      {isActiveCategory && (
+                        <span className="text-sm bg-pink-200 text-pink-800 px-2 py-1 rounded-full">
+                          Active
+                        </span>
+                      )}
+                    </h3>
+                  </div>
+                  <div className="grid gap-4 sm:gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {categoryItems.map(({ item }, index) => (
+                      <motion.div
+                        key={item.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ 
+                          duration: 0.3, 
+                          delay: index * 0.05,
+                          ease: "easeOut"
+                        }}
+                      >
+                        <MenuItemCard
+                          item={item}
+                          currency="$"
+                          isRTL={isRTL}
+                          isFavorite={favorites.includes(item.id)}
+                          onFavoriteToggle={() => {}}
+                          language={lang}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
           </div>
         ) : (
           <motion.div
