@@ -616,6 +616,22 @@
               "description": "لابردنی مووی پشتی مل بە ئامێری لەیزەری سنۆ وایت.",
               "beforePrice": "20,000 دینار",
               "afterPrice": "15,000 دینار"
+            },
+            {
+              "id": "free-service-1",
+              "name": "لەیزەری ڕوو بێ بەرامبەر",
+              "description": "چارەسەری لەیزەری ڕوو بێ بەرامبەر.",
+              "beforePrice": "",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "پشکنینی ساڵانە بێ بەرامبەر",
+              "description": "پشکنینی پزیشکی بێ بەرامبەر بۆ ساڵێک.",
+              "beforePrice": "",
+              "afterPrice": "بێ بەرامبەر",
+              "isFree": true
             }
           ]
         }

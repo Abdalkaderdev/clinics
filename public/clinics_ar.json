@@ -616,6 +616,22 @@
               "description": "إزالة شعر خلف الرقبة باستخدام جهاز ليزر سنو وايت.",
               "beforePrice": "20,000 دينار",
               "afterPrice": "15,000 دينار"
+            },
+            {
+              "id": "free-service-1",
+              "name": "ليزر الوجه مجاني",
+              "description": "علاج ليزر الوجه المجاني.",
+              "beforePrice": "",
+              "afterPrice": "مجاني",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "فحص سنوي مجاني",
+              "description": "فحص طبي مجاني لمدة سنة واحدة.",
+              "beforePrice": "",
+              "afterPrice": "مجاني",
+              "isFree": true
             }
           ]
         }

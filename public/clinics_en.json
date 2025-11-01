@@ -617,6 +617,22 @@
               "description": "Back of the neck hair removal using Snow White laser device.",
               "beforePrice": "20,000 IQD",
               "afterPrice": "15,000 IQD"
+            },
+            {
+              "id": "free-service-1",
+              "name": "Free Laser for Face",
+              "description": "Complimentary facial laser treatment.",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
+            },
+            {
+              "id": "free-service-2",
+              "name": "Free Year Examination",
+              "description": "Complimentary medical examination for one year.",
+              "beforePrice": "",
+              "afterPrice": "FREE",
+              "isFree": true
             }
           ]
         }
